@@ -1,3 +1,4 @@
+webservice:  
 bước 1: download file demo_sum.zip(file visual studio code)  
 bước 2: download file demo_websever(file sql)  
 bước 3: run file demo_sum  
@@ -6,3 +7,18 @@ curl -X POST https://localhost:7021/api/tinhtong
 -H "Content-Type: application/json"   
 -d "{\"soA\": ,\"soB\":  }"  \\ ví dụ: -d "{\"soA\": 10 ,\"soB\": 8 }"  
  
+
+
+firebase:  
+bước 1: dowload file demo_sum2.zip(file visual studio code)  
+bước 2: search : https://firebase.google.com/  
+           + tạo tài khoản  
+           + tạo project   
+           + tạo URl  
+bước 3: mở file appsettings.json  
+       + dán url vô dòng baseurl // ví dụ:  "BaseUrl": "https://demosum2-5a296-default-rtdb.asia-southeast1.firebasedatabase.app"  không có dấu "/" ở cuối  
+bước 4: mở cmd nhập lệnh:  
+curl -X POST https://localhost:7021/api/tinhtong   
+-H "Content-Type: application/json"   
+-d "{\"soA\": ,\"soB\":  }"  \\ ví dụ: -d "{\"soA\": 10 ,\"soB\": 8 }"
+       
