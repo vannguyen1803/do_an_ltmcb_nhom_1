@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VS_Proj_Doan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd46677d8a9aaf59a75be286d66577a5782ae80b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a0e5ce72e7c7fcc10bc6515544649cecfcd8f33")]
 [assembly: System.Reflection.AssemblyProductAttribute("VS_Proj_Doan")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VS_Proj_Doan")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

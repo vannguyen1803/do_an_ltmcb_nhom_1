@@ -1,6 +1,6 @@
 ﻿namespace VS_Proj_Doan
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         ///  Required designer variable.
@@ -40,15 +40,9 @@
             button8 = new Button();
             label1 = new Label();
             button7 = new Button();
-            pn_tgb = new Panel();
-            pn_acc = new Panel();
-            pn_pomo = new Panel();
-            pn_clock = new Panel();
-            pn_note = new Panel();
-            pn_aim = new Panel();
+            pn_home = new Panel();
             pn_menu.SuspendLayout();
             pn_header.SuspendLayout();
-            pn_tgb.SuspendLayout();
             SuspendLayout();
             // 
             // pn_menu
@@ -76,7 +70,7 @@
             btn_acc.Font = new Font("Segoe UI", 14F);
             btn_acc.Location = new Point(0, 449);
             btn_acc.Name = "btn_acc";
-            btn_acc.Size = new Size(246, 72);
+            btn_acc.Size = new Size(240, 72);
             btn_acc.TabIndex = 5;
             btn_acc.Text = "Tài khoản";
             btn_acc.TextAlign = ContentAlignment.MiddleRight;
@@ -92,7 +86,7 @@
             btn_pomo.Font = new Font("Segoe UI", 14F);
             btn_pomo.Location = new Point(0, 375);
             btn_pomo.Name = "btn_pomo";
-            btn_pomo.Size = new Size(246, 72);
+            btn_pomo.Size = new Size(240, 72);
             btn_pomo.TabIndex = 4;
             btn_pomo.Text = "Pomodoro";
             btn_pomo.TextAlign = ContentAlignment.MiddleRight;
@@ -108,7 +102,7 @@
             btn_clock.Font = new Font("Segoe UI", 14F);
             btn_clock.Location = new Point(0, 302);
             btn_clock.Name = "btn_clock";
-            btn_clock.Size = new Size(246, 72);
+            btn_clock.Size = new Size(240, 72);
             btn_clock.TabIndex = 3;
             btn_clock.Text = "Đồng hồ";
             btn_clock.TextAlign = ContentAlignment.MiddleRight;
@@ -124,7 +118,7 @@
             btn_note.Font = new Font("Segoe UI", 14F);
             btn_note.Location = new Point(0, 229);
             btn_note.Name = "btn_note";
-            btn_note.Size = new Size(246, 72);
+            btn_note.Size = new Size(240, 72);
             btn_note.TabIndex = 2;
             btn_note.Text = "Ghi chú";
             btn_note.TextAlign = ContentAlignment.MiddleRight;
@@ -140,7 +134,7 @@
             btn_aim.Font = new Font("Segoe UI", 14F);
             btn_aim.Location = new Point(0, 156);
             btn_aim.Name = "btn_aim";
-            btn_aim.Size = new Size(246, 72);
+            btn_aim.Size = new Size(240, 72);
             btn_aim.TabIndex = 1;
             btn_aim.Text = "Mục tiêu";
             btn_aim.TextAlign = ContentAlignment.MiddleRight;
@@ -158,7 +152,7 @@
             btn_tgb.ForeColor = SystemColors.ActiveCaptionText;
             btn_tgb.Location = new Point(0, 79);
             btn_tgb.Name = "btn_tgb";
-            btn_tgb.Size = new Size(246, 72);
+            btn_tgb.Size = new Size(240, 72);
             btn_tgb.TabIndex = 0;
             btn_tgb.Text = "Thời gian biểu";
             btn_tgb.TextAlign = ContentAlignment.MiddleRight;
@@ -180,7 +174,7 @@
             // 
             // button9
             // 
-            button9.Location = new Point(659, 16);
+            button9.Location = new Point(674, 20);
             button9.Name = "button9";
             button9.Size = new Size(45, 31);
             button9.TabIndex = 6;
@@ -199,7 +193,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(773, 21);
+            label1.Location = new Point(752, 23);
             label1.Name = "label1";
             label1.Size = new Size(50, 20);
             label1.TabIndex = 4;
@@ -207,77 +201,37 @@
             // 
             // button7
             // 
-            button7.Location = new Point(6, 12);
+            button7.Location = new Point(6, 22);
             button7.Name = "button7";
             button7.Size = new Size(94, 29);
             button7.TabIndex = 3;
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
             // 
-            // pn_tgb
+            // pn_home
             // 
-            pn_tgb.Controls.Add(pn_acc);
-            pn_tgb.Controls.Add(pn_pomo);
-            pn_tgb.Controls.Add(pn_clock);
-            pn_tgb.Controls.Add(pn_note);
-            pn_tgb.Controls.Add(pn_aim);
-            pn_tgb.Location = new Point(252, 76);
-            pn_tgb.Name = "pn_tgb";
-            pn_tgb.Size = new Size(879, 540);
-            pn_tgb.TabIndex = 3;
+            pn_home.Dock = DockStyle.Fill;
+            pn_home.Location = new Point(246, 70);
+            pn_home.Name = "pn_home";
+            pn_home.Size = new Size(885, 546);
+            pn_home.TabIndex = 3;
             // 
-            // pn_acc
-            // 
-            pn_acc.Location = new Point(514, 261);
-            pn_acc.Name = "pn_acc";
-            pn_acc.Size = new Size(250, 125);
-            pn_acc.TabIndex = 3;
-            // 
-            // pn_pomo
-            // 
-            pn_pomo.Location = new Point(66, 325);
-            pn_pomo.Name = "pn_pomo";
-            pn_pomo.Size = new Size(250, 125);
-            pn_pomo.TabIndex = 2;
-            // 
-            // pn_clock
-            // 
-            pn_clock.Location = new Point(567, 41);
-            pn_clock.Name = "pn_clock";
-            pn_clock.Size = new Size(250, 125);
-            pn_clock.TabIndex = 1;
-            // 
-            // pn_note
-            // 
-            pn_note.Location = new Point(301, 41);
-            pn_note.Name = "pn_note";
-            pn_note.Size = new Size(206, 206);
-            pn_note.TabIndex = 0;
-            // 
-            // pn_aim
-            // 
-            pn_aim.Location = new Point(18, 41);
-            pn_aim.Name = "pn_aim";
-            pn_aim.Size = new Size(237, 206);
-            pn_aim.TabIndex = 0;
-            // 
-            // Form1
+            // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1131, 616);
-            Controls.Add(pn_tgb);
+            Controls.Add(pn_home);
             Controls.Add(pn_header);
             Controls.Add(pn_menu);
-            Name = "Form1";
+            Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             pn_menu.ResumeLayout(false);
             pn_header.ResumeLayout(false);
             pn_header.PerformLayout();
-            pn_tgb.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -295,11 +249,6 @@
         private Button button8;
         private Label label1;
         private Button button7;
-        private Panel pn_tgb;
-        private Panel pn_aim;
-        private Panel pn_note;
-        private Panel pn_acc;
-        private Panel pn_pomo;
-        private Panel pn_clock;
+        private Panel pn_home;
     }
 }

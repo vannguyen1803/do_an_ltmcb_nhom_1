@@ -35,11 +35,14 @@
             btn_login = new Button();
             label3 = new Label();
             button1 = new Button();
+            btn_forget_pass = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Location = new Point(29, 72);
             label1.Name = "label1";
             label1.Size = new Size(180, 35);
@@ -49,6 +52,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Location = new Point(91, 150);
             label2.Name = "label2";
             label2.Size = new Size(118, 35);
@@ -71,7 +75,7 @@
             // 
             // btn_login
             // 
-            btn_login.Location = new Point(215, 205);
+            btn_login.Location = new Point(295, 213);
             btn_login.Name = "btn_login";
             btn_login.Size = new Size(172, 46);
             btn_login.TabIndex = 4;
@@ -81,6 +85,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 12F);
             label3.Location = new Point(29, 265);
             label3.Name = "label3";
@@ -90,7 +95,8 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ButtonFace;
+            button1.BackColor = Color.White;
+            button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9F);
             button1.Location = new Point(426, 265);
             button1.Name = "button1";
@@ -99,10 +105,35 @@
             button1.Text = "Đăng ký tài khoản";
             button1.UseVisualStyleBackColor = false;
             // 
+            // btn_forget_pass
+            // 
+            btn_forget_pass.Font = new Font("Segoe UI", 11F);
+            btn_forget_pass.Location = new Point(252, 312);
+            btn_forget_pass.Name = "btn_forget_pass";
+            btn_forget_pass.Size = new Size(157, 32);
+            btn_forget_pass.TabIndex = 7;
+            btn_forget_pass.Text = "quên mật khẩu";
+            btn_forget_pass.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI", 11F);
+            label4.Location = new Point(63, 316);
+            label4.Name = "label4";
+            label4.Size = new Size(168, 25);
+            label4.TabIndex = 8;
+            label4.Text = "Quên mật khẩu???";
+            // 
             // Login
             // 
             AutoScaleMode = AutoScaleMode.None;
+            BackgroundImage = Properties.Resources.theme;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(btn_forget_pass);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(btn_login);
@@ -128,5 +159,7 @@
         private Button btn_login;
         private Label label3;
         private Button button1;
+        private Button btn_forget_pass;
+        private Label label4;
     }
 }
