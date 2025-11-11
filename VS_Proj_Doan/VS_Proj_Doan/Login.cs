@@ -19,6 +19,18 @@ namespace VS_Proj_Doan
             InitializeComponent();
         }
 
-        
+        private void btn_signup_Click(object sender, EventArgs e)
+        {
+            Signup signup = new Signup();
+            signup.Owner = this;
+            signup.Show();
+        }
+
+        private void btn_forget_pass_Click(object sender, EventArgs e)
+        {
+            forget_pass pass_reset = new forget_pass();
+            pass_reset.Owner = this;
+            pass_reset.Show();
+        }
     }
 }

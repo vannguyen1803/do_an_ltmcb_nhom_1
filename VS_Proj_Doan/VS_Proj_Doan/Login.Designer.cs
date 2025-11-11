@@ -34,7 +34,7 @@
             tb_pass = new TextBox();
             btn_login = new Button();
             label3 = new Label();
-            button1 = new Button();
+            btn_signup = new Button();
             btn_forget_pass = new Button();
             label4 = new Label();
             SuspendLayout();
@@ -93,17 +93,18 @@
             label3.TabIndex = 5;
             label3.Text = " Nếu chưa có tài khoản, hãy đăng ký tại đây";
             // 
-            // button1
+            // btn_signup
             // 
-            button1.BackColor = Color.White;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F);
-            button1.Location = new Point(426, 265);
-            button1.Name = "button1";
-            button1.Size = new Size(165, 29);
-            button1.TabIndex = 6;
-            button1.Text = "Đăng ký tài khoản";
-            button1.UseVisualStyleBackColor = false;
+            btn_signup.BackColor = Color.White;
+            btn_signup.FlatStyle = FlatStyle.Flat;
+            btn_signup.Font = new Font("Segoe UI", 9F);
+            btn_signup.Location = new Point(426, 265);
+            btn_signup.Name = "btn_signup";
+            btn_signup.Size = new Size(165, 29);
+            btn_signup.TabIndex = 6;
+            btn_signup.Text = "Đăng ký tài khoản";
+            btn_signup.UseVisualStyleBackColor = false;
+            btn_signup.Click += btn_signup_Click;
             // 
             // btn_forget_pass
             // 
@@ -114,6 +115,7 @@
             btn_forget_pass.TabIndex = 7;
             btn_forget_pass.Text = "quên mật khẩu";
             btn_forget_pass.UseVisualStyleBackColor = true;
+            btn_forget_pass.Click += btn_forget_pass_Click;
             // 
             // label4
             // 
@@ -134,7 +136,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(label4);
             Controls.Add(btn_forget_pass);
-            Controls.Add(button1);
+            Controls.Add(btn_signup);
             Controls.Add(label3);
             Controls.Add(btn_login);
             Controls.Add(tb_pass);
@@ -158,7 +160,7 @@
         private TextBox tb_pass;
         private Button btn_login;
         private Label label3;
-        private Button button1;
+        private Button btn_signup;
         private Button btn_forget_pass;
         private Label label4;
     }

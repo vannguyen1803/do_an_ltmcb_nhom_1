@@ -22,7 +22,9 @@ namespace VS_Proj_Doan
         static async Task Main() // ✅ dùng async Task
         {
             ApplicationConfiguration.Initialize();
-
+            Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
             FirebaseInit.Init();
             await FirebaseInit.SeedDataAsync(); // ✅ chạy seed async
 
