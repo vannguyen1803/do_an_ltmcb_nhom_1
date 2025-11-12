@@ -1,0 +1,24 @@
+﻿<Window x:Class="DoAnCuoiKy.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:local="clr-namespace:DoAnCuoiKy"
+        mc:Ignorable="d" 
+        Title="Home" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F7">
+
+    <!-- Đây là Grid chính chứa nội dung của trang Home -->
+    <Grid>
+        <TextBlock Text="Đăng nhập thành công!"
+                   FontSize="32"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#333"/>
+
+        <!-- Bạn có thể thêm nội dung trang chủ của mình vào đây -->
+
+    </Grid>
+</Window>

@@ -1,0 +1,374 @@
+﻿<Window x:Class="DoAnCuoiKy.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DoAnCuoiKy"
+        mc:Ignorable="d"
+        Title="Login" 
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#F5F5F7">
+
+    <Window.Resources>
+
+        <!-- Style cho Button chính (có màu chuyển gradient) -->
+        <!-- Style này vẫn giữ nguyên cho nút "Sign In" ở cuối form -->
+        <Style x:Key="GradientButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="15">
+                            <Border.Background>
+                                <!-- THAY ĐỔI: Dùng màu đậm và rõ nét hơn -->
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <GradientStop Color="#7B61FF" Offset="0.0" />
+                                    <!-- Đậm hơn #A18FFF -->
+                                    <GradientStop Color="#6A8BFF" Offset="1.0" />
+                                    <!-- Đậm hơn #82A0FF -->
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <!-- THAY ĐỔI: Khi di chuột vào, đổi nền thành màu đậm hơn thay vì giảm Opacity -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                            <GradientStop Color="#6A50E6" Offset="0.0" />
+                                            <!-- Đậm hơn #7B61FF -->
+                                            <GradientStop Color="#5978E6" Offset="1.0" />
+                                            <!-- Đậm hơn #6A8BFF -->
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style cho Button viền -->
+        <Style x:Key="OutlineButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#444"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="15" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F9F9F9"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- 
+        Dùng cho nút "Sign in with Google".
+        -->
+        <Style x:Key="WhiteButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#444"/>
+            <!-- Màu chữ xám -->
+            <Setter Property="Background" Value="White"/>
+            <!-- Nền trắng -->
+            <Setter Property="BorderThickness" Value="1"/>
+            <!-- Viền mỏng -->
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <!-- Màu viền xám nhạt -->
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" CornerRadius="15" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+
+                        <!-- Hiệu ứng khi di chuột vào: thay đổi màu nền -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#F9F9F9"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- XÓA BỎ: Đã xóa FacebookButtonStyle vì chúng ta sẽ dùng chung WhiteButtonStyle -->
+
+        <!-- MỚI: Style cho nút Xem/Ẩn mật khẩu (nút phẳng, không viền) -->
+        <Style x:Key="TogglePasswordButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <!-- THAY ĐỔI: Chỉnh lại Padding cho icon -->
+            <Setter Property="Padding" Value="0,0,10,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- THAY ĐỔI: Thêm Width, Height cho icon -->
+                        <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
+                                Width="30" Height="25">
+                            <ContentPresenter x:Name="presenter" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                        <!-- THAY ĐỔI: Thêm Trigger cho con mắt khi di chuột -->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="presenter" Property="Opacity" Value="0.7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <!-- 
+    BỐ CỤC CHÍNH CỦA CỬA SỔ
+    Chúng ta dùng Grid để đặt khung đăng nhập vào giữa.
+    -->
+    <Grid>
+
+        <!-- 
+        Đây là Khung (Border) chính màu trắng
+        Nó có bo góc (CornerRadius) và bóng đổ (DropShadowEffect).
+        -->
+        <Border Width="800" Height="500"
+                Background="White"
+                CornerRadius="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+            <!-- Hiệu ứng bóng đổ mềm mại -->
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" 
+                                  BlurRadius="30" 
+                                  Color="Black" 
+                                  Opacity="0.1" />
+            </Border.Effect>
+
+            <!-- 
+            Bên trong khung trắng, chúng ta dùng Grid 2 cột
+            Cột 1 (Bên trái) cho hình ảnh
+            Cột 2 (Bên phải) cho Form đăng nhập
+            -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350" />
+                    <!-- Cột 1: Rộng 350px -->
+                    <ColumnDefinition Width="*" />
+                    <!-- Cột 2: Lấp đầy phần còn lại -->
+                </Grid.ColumnDefinitions>
+
+                <!-- 
+                ======================================
+                CỘT 1: HÌNH ẢNH (BÊN TRÁI)
+                ======================================
+                -->
+                <!-- 
+                Chúng ta dùng Border để "cắt" (Clip) ảnh
+                Bo góc chỉ ở bên trái (20, 0, 0, 20)
+                -->
+                <Border CornerRadius="20,0,0,20" ClipToBounds="True">
+
+
+                    <!-- 
+                    ĐƯỜNG DẪN ĐÃ ĐÚNG.
+                    NHƯNG BẠN CẦN CHẮC CHẮN ĐÃ SET "Build Action" = "Resource"
+                    CHO FILE "login.jpg" TRONG CỬA SỔ PROPERTIES.
+                    
+                    Tôi cũng cập nhật Stretch="UniformToFill" theo code bạn dán.
+                    Lưu ý: "UniformToFill" sẽ lấp đầy khung nhưng có thể cắt mất ảnh.
+                    "Uniform" sẽ hiển thị toàn bộ ảnh nhưng có thể có viền trống.
+                    -->
+                    <Image Source="/Images/login.jpg" 
+                           Stretch="UniformToFill" />
+                </Border>
+
+                <!-- 
+                ======================================
+                CỘT 2: FORM (BÊN PHẢI)
+                ======================================
+                -->
+                <!-- 
+                Grid.Column="1" để đặt nội dung này vào cột thứ hai.
+                Dùng StackPanel để xếp các control (TextBlock, Button, ...)
+                theo chiều dọc, từ trên xuống dưới.
+                -->
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="40">
+
+                    <!-- Tiêu đề -->
+                    <TextBlock Text="Đăng nhập" 
+                               FontSize="28" 
+                               FontWeight="Bold" 
+                               Foreground="#333"
+                               Margin="0,0,0,20" />
+
+                    <!-- 
+                    THAY ĐỔI: Đã thay Grid 2 cột bằng StackPanel (xếp dọc)
+                    để các nút có đủ không gian.
+                    -->
+                    <StackPanel Margin="0,0,0,20">
+
+                        <!-- Nút Google -->
+                        <Button Style="{StaticResource WhiteButtonStyle}" Margin="0,0,0,10">
+                            <!-- THÊM: HorizontalAlignment="Center" để căn giữa logo+chữ -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Image Source="/Images/gg-logo.png" 
+                                       Width="18" Height="18" 
+                                       VerticalAlignment="Center" 
+                                       Margin="0,0,8,0"/>
+                                <TextBlock Text="Đăng nhập với Google" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Nút Facebook -->
+                        <!-- THAY ĐỔI: Dùng chung "WhiteButtonStyle" để giống nút Google -->
+                        <Button Style="{StaticResource WhiteButtonStyle}">
+                            <!-- THÊM: HorizontalAlignment="Center" để căn giữa logo+chữ -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Image Source="/Images/fb-logo.png" 
+                                       Width="18" Height="18" 
+                                       VerticalAlignment="Center" 
+                                       Margin="0,0,8,0"/>
+                                <TextBlock Text="Đăng nhập với Facebook" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                    <!-- Nhãn "Email" -->
+                    <TextBlock Text="Email" 
+                               FontSize="12" 
+                               Foreground="Gray" 
+                               Margin="0,0,0,5"/>
+
+                    <!-- 
+                    Ô nhập Email (TextBox)
+                    -->
+                    <Border CornerRadius="10" BorderBrush="LightGray" BorderThickness="1" Background="White" Margin="0,0,0,15">
+                        <TextBox x:Name="tb_email" 
+                                 BorderThickness="0"  
+                                 Margin="8,5" 
+                                 FontSize="14"
+                                 VerticalContentAlignment="Center"
+                                 Height="28"/>
+                    </Border>
+
+                    <!-- Nhãn "Password" -->
+                    <TextBlock Text="Mật khẩu" 
+                               FontSize="12" 
+                               Foreground="Gray" 
+                               Margin="0,0,0,5"/>
+
+                    <!-- 
+                    THAY ĐỔI: Ô nhập Password (PasswordBox)
+                    Bây giờ Border sẽ chứa 1 Grid, Grid chứa PasswordBox, TextBox (ẩn) và Nút Xem/Ẩn
+                    -->
+                    <Border CornerRadius="10" BorderBrush="LightGray" BorderThickness="1" Background="White">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Hộp Password (ẩn) -->
+                            <PasswordBox x:Name="tb_pass" 
+                                         Grid.Column="0"
+                                         BorderThickness="0" 
+                                         Margin="8,5" 
+                                         FontSize="14"
+                                         VerticalContentAlignment="Center"
+                                         Height="28"/>
+
+                            <!-- Hộp Text (hiện) - Bị ẩn lúc đầu -->
+                            <TextBox x:Name="tb_pass_visible"
+                                     Grid.Column="0"
+                                     BorderThickness="0" 
+                                     Margin="8,5" 
+                                     FontSize="14"
+                                     VerticalContentAlignment="Center"
+                                     Height="28"
+                                     Visibility="Collapsed"/>
+                            <!-- QUAN TRỌNG: Ẩn ban đầu -->
+
+                            <!-- Nút Xem/Ẩn -->
+                            <Button x:Name="btn_toggle_pass"
+                                    Grid.Column="1"
+                                    Style="{StaticResource TogglePasswordButtonStyle}"
+                                    Click="btn_toggle_pass_Click">
+                                <!-- THAY ĐỔI: Thay Content="Xem" bằng Image -->
+                                <!-- THAY ĐỔI: Bỏ Opacity="0.5" để ảnh rõ nét -->
+                                <Image x:Name="img_toggle_pass" 
+                                       Source="/Images/eye_close.png" 
+                                       Width="18" Height="18" />
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <!-- MỚI: TextBlock để hiển thị thông báo lỗi -->
+                    <TextBlock x:Name="tb_error"
+                               Foreground="Red"
+                               TextAlignment="Center"
+                               Margin="0,15,0,0"
+                               TextWrapping="Wrap"/>
+
+                    <!-- 
+                    Nút "Sign In" chính
+                    THÊM: Click="SignInButton_Click" để liên kết với C#
+                    -->
+                    <Button Content="Đăng nhập" 
+                            Style="{StaticResource GradientButtonStyle}"
+                            Margin="0,15,0,0"
+                            Click="SignInButton_Click"/>
+
+                    <!-- Link "Sign up" -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                        <TextBlock Text="Không có tài khoản? " 
+                                   Foreground="Gray"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock>
+                            <Hyperlink TextDecorations="None" Foreground="#82A0FF" Cursor="Hand">
+                                Đăng ký
+                            </Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
