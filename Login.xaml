@@ -27,27 +27,22 @@
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" CornerRadius="15">
                             <Border.Background>
-                                <!-- THAY ĐỔI: Dùng màu đậm và rõ nét hơn -->
                                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                     <GradientStop Color="#7B61FF" Offset="0.0" />
-                                    <!-- Đậm hơn #A18FFF -->
                                     <GradientStop Color="#6A8BFF" Offset="1.0" />
-                                    <!-- Đậm hơn #82A0FF -->
                                 </LinearGradientBrush>
                             </Border.Background>
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
 
                         <ControlTemplate.Triggers>
-                            <!-- THAY ĐỔI: Khi di chuột vào, đổi nền thành màu đậm hơn thay vì giảm Opacity -->
+                            <!--Khi di chuột vào, đổi nền thành màu đậm hơn thay vì giảm Opacity -->
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="border" Property="Background">
                                     <Setter.Value>
                                         <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                                             <GradientStop Color="#6A50E6" Offset="0.0" />
-                                            <!-- Đậm hơn #7B61FF -->
                                             <GradientStop Color="#5978E6" Offset="1.0" />
-                                            <!-- Đậm hơn #6A8BFF -->
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -111,7 +106,6 @@
                                 BorderThickness="{TemplateBinding BorderThickness}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
-
                         <!-- Hiệu ứng khi di chuột vào: thay đổi màu nền -->
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -123,9 +117,7 @@
             </Setter>
         </Style>
 
-        <!-- XÓA BỎ: Đã xóa FacebookButtonStyle vì chúng ta sẽ dùng chung WhiteButtonStyle -->
-
-        <!-- MỚI: Style cho nút Xem/Ẩn mật khẩu (nút phẳng, không viền) -->
+        <!-- Style cho nút Xem/Ẩn mật khẩu (nút phẳng, không viền) -->
         <Style x:Key="TogglePasswordButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -137,7 +129,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <!-- THAY ĐỔI: Thêm Width, Height cho icon -->
+                        <!--Thêm Width, Height cho icon -->
                         <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
                                 Width="30" Height="25">
                             <ContentPresenter x:Name="presenter" VerticalAlignment="Center" HorizontalAlignment="Center" />
@@ -157,7 +149,7 @@
 
     <!-- 
     BỐ CỤC CHÍNH CỦA CỬA SỔ
-    Chúng ta dùng Grid để đặt khung đăng nhập vào giữa.
+    Dùng Grid để đặt khung đăng nhập vào giữa.
     -->
     <Grid>
 
@@ -198,21 +190,10 @@
                 ======================================
                 -->
                 <!-- 
-                Chúng ta dùng Border để "cắt" (Clip) ảnh
+                Dùng Border để "cắt" (Clip) ảnh
                 Bo góc chỉ ở bên trái (20, 0, 0, 20)
                 -->
                 <Border CornerRadius="20,0,0,20" ClipToBounds="True">
-
-
-                    <!-- 
-                    ĐƯỜNG DẪN ĐÃ ĐÚNG.
-                    NHƯNG BẠN CẦN CHẮC CHẮN ĐÃ SET "Build Action" = "Resource"
-                    CHO FILE "login.jpg" TRONG CỬA SỔ PROPERTIES.
-                    
-                    Tôi cũng cập nhật Stretch="UniformToFill" theo code bạn dán.
-                    Lưu ý: "UniformToFill" sẽ lấp đầy khung nhưng có thể cắt mất ảnh.
-                    "Uniform" sẽ hiển thị toàn bộ ảnh nhưng có thể có viền trống.
-                    -->
                     <Image Source="/Images/login.jpg" 
                            Stretch="UniformToFill" />
                 </Border>
@@ -237,7 +218,7 @@
                                Margin="0,0,0,20" />
 
                     <!-- 
-                    THAY ĐỔI: Đã thay Grid 2 cột bằng StackPanel (xếp dọc)
+                    Đã thay Grid 2 cột bằng StackPanel (xếp dọc)
                     để các nút có đủ không gian.
                     -->
                     <StackPanel Margin="0,0,0,20">
@@ -255,7 +236,7 @@
                         </Button>
 
                         <!-- Nút Facebook -->
-                        <!-- THAY ĐỔI: Dùng chung "WhiteButtonStyle" để giống nút Google -->
+                        <!--Dùng chung "WhiteButtonStyle" để giống nút Google -->
                         <Button Style="{StaticResource WhiteButtonStyle}">
                             <!-- THÊM: HorizontalAlignment="Center" để căn giữa logo+chữ -->
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -293,7 +274,7 @@
                                Margin="0,0,0,5"/>
 
                     <!-- 
-                    THAY ĐỔI: Ô nhập Password (PasswordBox)
+                    Ô nhập Password (PasswordBox)
                     Bây giờ Border sẽ chứa 1 Grid, Grid chứa PasswordBox, TextBox (ẩn) và Nút Xem/Ẩn
                     -->
                     <Border CornerRadius="10" BorderBrush="LightGray" BorderThickness="1" Background="White">
@@ -321,7 +302,7 @@
                                      VerticalContentAlignment="Center"
                                      Height="28"
                                      Visibility="Collapsed"/>
-                            <!-- QUAN TRỌNG: Ẩn ban đầu -->
+                            <!-- Ẩn ban đầu -->
 
                             <!-- Nút Xem/Ẩn -->
                             <Button x:Name="btn_toggle_pass"
@@ -337,7 +318,7 @@
                         </Grid>
                     </Border>
 
-                    <!-- MỚI: TextBlock để hiển thị thông báo lỗi -->
+                    <!--TextBlock để hiển thị thông báo lỗi -->
                     <TextBlock x:Name="tb_error"
                                Foreground="Red"
                                TextAlignment="Center"
