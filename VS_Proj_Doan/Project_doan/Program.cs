@@ -130,7 +130,7 @@ namespace Project_doan
                     ThoiGianDangNhap = DateTime.UtcNow,             // ✅
                     ThoiGianDangXuat = (DateTime?)null,
                     DiaChiIP = "192.168.1.10",
-                    ThietBi = "PC"
+                    ThietBi = "Laptop"
                 };
                 await db.Collection("LichSu_DangNhap").AddAsync(lichSu);
             }
