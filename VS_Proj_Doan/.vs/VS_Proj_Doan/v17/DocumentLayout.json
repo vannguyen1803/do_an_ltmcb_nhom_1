@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\",
+  "WorkspaceRootPath": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\testdoan1\\vs_proj_doan\\project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an_ck\\vs_proj_doan\\project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\project_doan\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -40,9 +40,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Login.cs",
-              "DocumentMoniker": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Login.cs",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.cs",
               "RelativeDocumentMoniker": "Project_doan\\Login.cs",
-              "ToolTip": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Login.cs",
+              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.cs",
               "RelativeToolTip": "Project_doan\\Login.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -52,9 +52,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Program.cs",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Program.cs",
               "RelativeDocumentMoniker": "Project_doan\\Program.cs",
-              "ToolTip": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Program.cs",
+              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Program.cs",
               "RelativeToolTip": "Project_doan\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -65,10 +65,10 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Login.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Login.cs",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.cs",
               "RelativeDocumentMoniker": "Project_doan\\Login.cs",
               "ToolTip": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Login.cs [Design]",
-              "RelativeToolTip": "Project_doan\\Login.cs [Design]",
+              "RelativeToolTip": "..\\..\\testdoan1\\VS_Proj_Doan\\Project_doan\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T07:11:29.184Z"
             },
@@ -76,10 +76,10 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Form1.cs",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Form1.cs",
               "RelativeDocumentMoniker": "Project_doan\\Form1.cs",
               "ToolTip": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Form1.cs [Design]",
-              "RelativeToolTip": "Project_doan\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\..\\testdoan1\\VS_Proj_Doan\\Project_doan\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T07:04:02.183Z"
             }
