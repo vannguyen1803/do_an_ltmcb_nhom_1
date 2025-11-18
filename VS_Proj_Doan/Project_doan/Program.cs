@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Firestore;
 using System;
@@ -11,13 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Project_doan.Program;
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
->>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
 
 namespace Project_doan
 {
@@ -27,7 +20,7 @@ namespace Project_doan
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-<<<<<<< HEAD
+
         static async Task Main() // ✅ dùng async Task
         {
             Application.EnableVisualStyles();
@@ -144,13 +137,5 @@ namespace Project_doan
                 await db.Collection("LichSu_DangNhap").AddAsync(lichSu);
             }
         }
-=======
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-        }
->>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
     }
 }
