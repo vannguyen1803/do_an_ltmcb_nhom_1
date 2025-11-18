@@ -255,6 +255,21 @@
           }
         }
       },
+      "Guna.UI2.WinForms/2.0.4.7": {
+        "type": "package",
+        "dependencies": {
+          "System.Management": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0-windows7.0/Guna.UI2.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/Guna.UI2.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "type": "package",
         "compile": {
@@ -780,6 +795,28 @@
         "packageIcon.png"
       ]
     },
+    "Guna.UI2.WinForms/2.0.4.7": {
+      "sha512": "8BdBYsfnntuICbFMHIZsd5morwURN8Ucsvq7wJeyLV1Z1ze6CAIxVKEirufgjGIiXfF0M0sCr9EVFloZSazWew==",
+      "type": "package",
+      "path": "guna.ui2.winforms/2.0.4.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "guna.ui2.winforms.2.0.4.7.nupkg.sha512",
+        "guna.ui2.winforms.nuspec",
+        "icon.png",
+        "lib/net40/Guna.UI2.dll",
+        "lib/net45/Guna.UI2.dll",
+        "lib/net461/Guna.UI2.dll",
+        "lib/net472/Guna.UI2.dll",
+        "lib/net48/Guna.UI2.dll",
+        "lib/net6.0-windows7.0/Guna.UI2.dll",
+        "lib/net7.0-windows7.0/Guna.UI2.dll",
+        "lib/netcoreapp3.1/Guna.UI2.dll"
+      ]
+    },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "sha512": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
       "type": "package",
@@ -1055,7 +1092,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "Google.Cloud.Firestore >= 3.12.0"
+      "Google.Cloud.Firestore >= 3.12.0",
+      "Guna.UI2.WinForms >= 2.0.4.7"
     ]
   },
   "packageFolders": {
@@ -1080,7 +1118,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows"
+        "net8.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1088,7 +1126,7 @@
       },
       "frameworks": {
         "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+          "targetAlias": "net8.0-windows7.0",
           "projectReferences": {}
         }
       },
@@ -1106,11 +1144,15 @@
     },
     "frameworks": {
       "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows",
+        "targetAlias": "net8.0-windows7.0",
         "dependencies": {
           "Google.Cloud.Firestore": {
             "target": "Package",
             "version": "[3.12.0, )"
+          },
+          "Guna.UI2.WinForms": {
+            "target": "Package",
+            "version": "[2.0.4.7, )"
           }
         },
         "imports": [

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uQWgLCwRm2s=",
+  "dgSpecHash": "uCxvw9PX7Cw=",
   "success": true,
   "projectFilePath": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\VS_Proj_Doan.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\grpc.core.api\\2.71.0\\grpc.core.api.2.71.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\grpc.net.client\\2.71.0\\grpc.net.client.2.71.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\grpc.net.common\\2.71.0\\grpc.net.common.2.71.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\guna.ui2.winforms\\2.0.4.7\\guna.ui2.winforms.2.0.4.7.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",

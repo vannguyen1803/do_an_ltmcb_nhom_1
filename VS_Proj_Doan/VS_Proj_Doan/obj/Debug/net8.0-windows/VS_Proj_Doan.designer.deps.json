@@ -181,6 +181,17 @@
           }
         }
       },
+      "Guna.UI2.WinForms/2.0.4.7": {
+        "dependencies": {
+          "System.Management": "7.0.2"
+        },
+        "runtime": {
+          "lib/net7.0-windows7.0/Guna.UI2.dll": {
+            "assemblyVersion": "2.0.4.7",
+            "fileVersion": "2.0.4.7"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -371,6 +382,13 @@
       "sha512": "sha512-v0c8R97TwRYwNXlC8GyRXwYTCNufpDfUtj9la+wUrZFzVWkFJuNAltU+c0yI3zu0jl54k7en6u2WKgZgd57r2Q==",
       "path": "grpc.net.common/2.71.0",
       "hashPath": "grpc.net.common.2.71.0.nupkg.sha512"
+    },
+    "Guna.UI2.WinForms/2.0.4.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8BdBYsfnntuICbFMHIZsd5morwURN8Ucsvq7wJeyLV1Z1ze6CAIxVKEirufgjGIiXfF0M0sCr9EVFloZSazWew==",
+      "path": "guna.ui2.winforms/2.0.4.7",
+      "hashPath": "guna.ui2.winforms.2.0.4.7.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
       "type": "package",
