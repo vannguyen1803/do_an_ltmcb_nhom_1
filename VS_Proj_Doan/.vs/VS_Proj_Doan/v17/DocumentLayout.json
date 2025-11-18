@@ -3,7 +3,6 @@
   "WorkspaceRootPath": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\",
   "Documents": [
     {
-<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an_ck\\vs_proj_doan\\project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,14 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-=======
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an\\vs_proj_doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an\\vs_proj_doan\\project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
     }
   ],
   "DocumentGroupContainers": [
@@ -35,37 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 553,
-<<<<<<< HEAD
           "SelectedChildIndex": 3,
-=======
-          "SelectedChildIndex": 1,
->>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\Project_doan\\Program.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Program.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\Project_doan\\Program.cs",
-              "RelativeToolTip": "Project_doan\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T07:46:33.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\Project_doan\\Login.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Login.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\Project_doan\\Login.cs [Design]",
-              "RelativeToolTip": "Project_doan\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T07:46:30.8Z",
-              "EditorCaption": " [Design]"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
@@ -73,7 +35,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -95,7 +56,7 @@
               "RelativeDocumentMoniker": "Project_doan\\Program.cs",
               "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Program.cs",
               "RelativeToolTip": "Project_doan\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAkwIQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T07:03:47.118Z",
               "EditorCaption": ""
@@ -121,8 +82,6 @@
               "RelativeToolTip": "..\\..\\testdoan1\\VS_Proj_Doan\\Project_doan\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T07:04:02.183Z"
-=======
->>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
             }
           ]
         },
