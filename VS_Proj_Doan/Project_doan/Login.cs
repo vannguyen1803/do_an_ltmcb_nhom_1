@@ -14,13 +14,10 @@ namespace Project_doan
 {
     public partial class Login : Form
     {
-<<<<<<< HEAD
-        
-=======
->>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
         public Login()
         {
             InitializeComponent();
+            pb_imagelogin.Image=Properties.Resources.
         }
     }
 }
