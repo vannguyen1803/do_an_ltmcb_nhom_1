@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\testdoan1\\vs_proj_doan\\project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,6 +18,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\project_doan\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+=======
+      "AbsoluteMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|e:\\ltmcb\\do_an\\vs_proj_doan\\vs_proj_doan\\forget-pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|solutionrelative:vs_proj_doan\\forget-pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|e:\\ltmcb\\do_an\\vs_proj_doan\\vs_proj_doan\\vs_proj_doan.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|solutionrelative:vs_proj_doan\\vs_proj_doan.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|E:\\LTMCB\\Do_an\\VS_Proj_Doan\\vs_proj_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|solutionrelative:vs_proj_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|e:\\ltmcb\\do_an\\vs_proj_doan\\vs_proj_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|solutionrelative:vs_proj_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|e:\\ltmcb\\do_an\\vs_proj_doan\\vs_proj_doan\\vs_proj_doan.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5DB9AFE4-9EAE-4BD9-A3A5-79E9E2BCBD25}|VS_Proj_Doan\\VS_Proj_Doan.csproj|solutionrelative:vs_proj_doan\\vs_proj_doan.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+>>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
     }
   ],
   "DocumentGroupContainers": [
@@ -51,6 +72,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Program.cs",
               "RelativeDocumentMoniker": "Project_doan\\Program.cs",
@@ -71,6 +93,16 @@
               "RelativeToolTip": "Project_doan\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T07:11:29.184Z"
+=======
+              "Title": "forget-pass.cs [Design]",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\forget-pass.cs",
+              "RelativeDocumentMoniker": "VS_Proj_Doan\\forget-pass.cs",
+              "ToolTip": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\forget-pass.cs [Design]",
+              "RelativeToolTip": "VS_Proj_Doan\\forget-pass.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T16:39:44.802Z",
+              "EditorCaption": " [Design]"
+>>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
             },
             {
               "$type": "Document",
@@ -81,7 +113,49 @@
               "ToolTip": "E:\\LTMCB\\testdoan1\\VS_Proj_Doan\\Project_doan\\Form1.cs [Design]",
               "RelativeToolTip": "Project_doan\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2025-11-18T07:04:02.183Z"
+=======
+              "WhenOpened": "2025-11-11T15:02:41.961Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VS_Proj_Doan",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "RelativeDocumentMoniker": "VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "ToolTip": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "RelativeToolTip": "VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-11T07:30:50.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VS_Proj_Doan.csproj",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "RelativeDocumentMoniker": "VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "ToolTip": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "RelativeToolTip": "VS_Proj_Doan\\VS_Proj_Doan.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-11T07:26:25.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\Login.cs",
+              "RelativeDocumentMoniker": "VS_Proj_Doan\\Login.cs",
+              "ToolTip": "E:\\LTMCB\\Do_an\\VS_Proj_Doan\\VS_Proj_Doan\\Login.cs [Design]",
+              "RelativeToolTip": "VS_Proj_Doan\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T07:14:40.325Z",
+              "EditorCaption": " [Design]"
+>>>>>>> 0cc89e5760bc2abeb075930f892ccbac76d4f44d
             }
           ]
         },
