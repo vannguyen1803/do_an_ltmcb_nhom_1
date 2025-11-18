@@ -17,7 +17,7 @@ namespace Project_doan
         public Login()
         {
             InitializeComponent();
-            pb_imagelogin.Image=Properties.Resources.
+            
         }
     }
 }
