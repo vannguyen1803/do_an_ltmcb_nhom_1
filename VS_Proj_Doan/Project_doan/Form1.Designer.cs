@@ -51,7 +51,6 @@
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.guna2PictureBox1.Image = global::Project_doan.Properties.Resources.USER_NAME;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-4, -3);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

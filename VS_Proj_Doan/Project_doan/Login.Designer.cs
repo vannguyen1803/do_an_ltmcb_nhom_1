@@ -201,7 +201,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PictureBox1.BorderRadius = 15;
-            this.guna2PictureBox1.Image = global::Project_doan.Properties.Resources.login;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
