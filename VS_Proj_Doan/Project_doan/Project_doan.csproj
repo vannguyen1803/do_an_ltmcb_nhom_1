@@ -149,6 +149,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FirebaseAuthService.cs" />
     <Compile Include="Forgot_pass.cs">
       <SubType>Form</SubType>
     </Compile>
