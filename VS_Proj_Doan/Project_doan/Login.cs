@@ -14,21 +14,20 @@ namespace Project_doan
 {
     public partial class Login : Form
     {
-        FirebaseAuthService firebase = new FirebaseAuthService();
+        FirestoreUserService firebase = new FirestoreUserService();
         public Login()
         {
             InitializeComponent();
 
         }
-
-        private async void guna2GradientButton1_Click(object sender, EventArgs e)
+        private async void guna2GradientButton1_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string email = tb_username.Text.Trim();
+                string username = tb_username.Text.Trim();
                 string password = tb_pass.Text.Trim();
-                string result = await firebase.SignInAsync(email, password);
-                if (result.Contains("idToken"))
+                string result = await firebase.SignInAsync(username, password);
+                if (result == "SUCCESS")
                 {
                     Form1 form1 = new Form1();
                     form1.Show();
@@ -42,14 +41,14 @@ namespace Project_doan
             }
         }
 
-        private void llb_signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llb_signup_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Signup signup = new Signup();
             signup.Show();
             this.Hide();
         }
 
-        private void llb_forgot_pass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void llb_forgot_pass_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Forgot_pass f_pass = new Forgot_pass();
             f_pass.Show();

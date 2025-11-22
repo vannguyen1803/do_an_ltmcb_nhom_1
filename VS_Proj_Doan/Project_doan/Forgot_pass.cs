@@ -12,7 +12,7 @@ namespace Project_doan
 {
     public partial class Forgot_pass : Form
     {
-        FirebaseAuthService firebase = new FirebaseAuthService();
+        FirestoreUserService firebase = new FirestoreUserService();
         public Forgot_pass()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace Project_doan
                 MessageBox.Show("Đã gửi về email khôi phục mật khẩu");
                 Login login = new Login();
                 login.Show();
-                this.Hide();
+                this.Close();
             }
             catch (Exception ex)
             {
