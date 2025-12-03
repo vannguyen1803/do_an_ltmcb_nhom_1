@@ -87,6 +87,7 @@
             this.llb_forgot_pass.TabIndex = 10;
             this.llb_forgot_pass.TabStop = true;
             this.llb_forgot_pass.Text = "Quên mật khẩu";
+            this.llb_forgot_pass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_forgot_pass_LinkClicked);
             // 
             // label4
             // 
@@ -108,6 +109,7 @@
             this.llb_signup.TabIndex = 8;
             this.llb_signup.TabStop = true;
             this.llb_signup.Text = "Đăng ký";
+            this.llb_signup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_signup_LinkClicked);
             // 
             // guna2GradientButton1
             // 
@@ -133,6 +135,7 @@
             this.guna2GradientButton1.Size = new System.Drawing.Size(421, 45);
             this.guna2GradientButton1.TabIndex = 7;
             this.guna2GradientButton1.Text = "Đăng nhập";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // label3
             // 
@@ -203,10 +206,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SFU Belle", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(410, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 53);
+            this.label1.Size = new System.Drawing.Size(202, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng nhập";
             // 

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_doan.Models;
 
 namespace Project_doan
 {
@@ -27,13 +28,19 @@ namespace Project_doan
             {
                 string email = tb_username.Text.Trim();
                 string password = tb_pass.Text.Trim();
-                string result = await firebase.SignInAsync(email, password);
-                if (result.Contains("idToken"))
+                var result = await firebase.SignInAsync(email, password);
+
+                string mand = result.localId;
+
+                if (!string.IsNullOrEmpty(result.idToken))
                 {
+                    UserSession.MaND = mand;
+
                     Form1 form1 = new Form1();
                     form1.Show();
                     this.Hide();
                 }
+
 
             }
             catch (Exception ex)

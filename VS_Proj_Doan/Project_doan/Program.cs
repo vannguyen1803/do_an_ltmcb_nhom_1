@@ -27,7 +27,7 @@ namespace Project_doan
             //FirebaseInit.Init();
             //await FirebaseInit.SeedDataAsync(); // ✅ chạy seed async
 
-            Application.Run(new Login());
+            Application.Run(new DisplayTimer());
         }
 
         //public static class FirebaseInit

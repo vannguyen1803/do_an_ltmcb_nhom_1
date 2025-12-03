@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Project_doan.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,7 @@ namespace Project_doan
             return result;
         }
 
-        public async Task<string> SignInAsync(string email, string password)
+        public async Task<LoginResult> SignInAsync(string email, string password)
         {
             var client = new HttpClient();
             var request = new
@@ -55,7 +56,9 @@ namespace Project_doan
             if (!response.IsSuccessStatusCode)
                 throw new Exception($"Đăng nhập thất bại: {result}");
 
-            return result;
+            var loginResult = JsonConvert.DeserializeObject<LoginResult>(result);
+           
+            return loginResult;
         }
 
         public async Task<string> ResetPasswordAsync(string email)
