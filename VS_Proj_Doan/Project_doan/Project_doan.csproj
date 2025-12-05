@@ -152,6 +152,7 @@
     <Compile Include="Calendar.Designer.cs">
       <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Event.cs" />
     <Compile Include="FirebaseAuthService.cs" />
     <Compile Include="Forgot_pass.cs">
       <SubType>Form</SubType>
