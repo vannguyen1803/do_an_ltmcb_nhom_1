@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_signup = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.tb_email = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tb_fullname = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_pass = new Guna.UI2.WinForms.Guna2TextBox();
@@ -47,10 +47,10 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.guna2GradientButton1);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox2);
+            this.guna2Panel1.Controls.Add(this.btn_signup);
+            this.guna2Panel1.Controls.Add(this.tb_email);
             this.guna2Panel1.Controls.Add(this.label5);
-            this.guna2Panel1.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel1.Controls.Add(this.tb_fullname);
             this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.tb_pass);
@@ -63,52 +63,53 @@
             this.guna2Panel1.Size = new System.Drawing.Size(947, 523);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // guna2GradientButton1
+            // btn_signup
             // 
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderRadius = 20;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.SteelBlue;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.SlateBlue;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(383, 415);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.BorderRadius = 20;
-            this.guna2GradientButton1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.ShadowDecoration.CustomizableEdges.BottomLeft = false;
-            this.guna2GradientButton1.ShadowDecoration.Depth = 20;
-            this.guna2GradientButton1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 5, 10, 10);
-            this.guna2GradientButton1.Size = new System.Drawing.Size(421, 45);
-            this.guna2GradientButton1.TabIndex = 22;
-            this.guna2GradientButton1.Text = "Đăng nhập";
+            this.btn_signup.BackColor = System.Drawing.Color.Transparent;
+            this.btn_signup.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_signup.BorderRadius = 20;
+            this.btn_signup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_signup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_signup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_signup.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_signup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_signup.FillColor = System.Drawing.Color.SteelBlue;
+            this.btn_signup.FillColor2 = System.Drawing.Color.SlateBlue;
+            this.btn_signup.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_signup.ForeColor = System.Drawing.Color.White;
+            this.btn_signup.Location = new System.Drawing.Point(383, 415);
+            this.btn_signup.Name = "btn_signup";
+            this.btn_signup.ShadowDecoration.BorderRadius = 20;
+            this.btn_signup.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.btn_signup.ShadowDecoration.CustomizableEdges.BottomLeft = false;
+            this.btn_signup.ShadowDecoration.Depth = 20;
+            this.btn_signup.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 5, 10, 10);
+            this.btn_signup.Size = new System.Drawing.Size(421, 45);
+            this.btn_signup.TabIndex = 22;
+            this.btn_signup.Text = "Đăng ký";
+            this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
             // 
-            // guna2TextBox2
+            // tb_email
             // 
-            this.guna2TextBox2.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.guna2TextBox2.BorderRadius = 10;
-            this.guna2TextBox2.BorderThickness = 2;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(370, 264);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(450, 36);
-            this.guna2TextBox2.TabIndex = 21;
+            this.tb_email.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.tb_email.BorderRadius = 10;
+            this.tb_email.BorderThickness = 2;
+            this.tb_email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_email.DefaultText = "";
+            this.tb_email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_email.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tb_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_email.Location = new System.Drawing.Point(370, 264);
+            this.tb_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_email.Name = "tb_email";
+            this.tb_email.PlaceholderText = "";
+            this.tb_email.SelectedText = "";
+            this.tb_email.Size = new System.Drawing.Size(450, 36);
+            this.tb_email.TabIndex = 21;
             // 
             // label5
             // 
@@ -121,27 +122,27 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Email";
             // 
-            // guna2TextBox1
+            // tb_fullname
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.BorderThickness = 2;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(370, 177);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(450, 36);
-            this.guna2TextBox1.TabIndex = 19;
+            this.tb_fullname.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.tb_fullname.BorderRadius = 10;
+            this.tb_fullname.BorderThickness = 2;
+            this.tb_fullname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_fullname.DefaultText = "";
+            this.tb_fullname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tb_fullname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tb_fullname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_fullname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_fullname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_fullname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tb_fullname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tb_fullname.Location = new System.Drawing.Point(370, 177);
+            this.tb_fullname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_fullname.Name = "tb_fullname";
+            this.tb_fullname.PlaceholderText = "";
+            this.tb_fullname.SelectedText = "";
+            this.tb_fullname.Size = new System.Drawing.Size(450, 36);
+            this.tb_fullname.TabIndex = 19;
             // 
             // label4
             // 
@@ -267,14 +268,14 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox tb_email;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox tb_fullname;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox tb_pass;
         private Guna.UI2.WinForms.Guna2TextBox tb_username;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_signup;
     }
 }

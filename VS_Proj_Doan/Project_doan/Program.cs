@@ -20,11 +20,11 @@ namespace Project_doan
         /// </summary>
         [STAThread]
 
-        static async Task Main() // ✅ dùng async Task
+        static void Main() // ✅ dùng async Task
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //FirebaseInit.Init();
+            Init();
             //await FirebaseInit.SeedDataAsync(); // ✅ chạy seed async
 
             Application.Run(new Login());
@@ -42,6 +42,7 @@ namespace Project_doan
 
             db = FirestoreDb.Create("do-an-ltmcb-nhom1"); // 🔸 thay bằng project id của bạn
         }
+        
         //public static async Task SeedDataAsync()
         //{
         //    Console.WriteLine("⚙️  Bắt đầu tạo dữ liệu mẫu...");

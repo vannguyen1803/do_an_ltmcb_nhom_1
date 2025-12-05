@@ -22,7 +22,7 @@ namespace Project_doan
         {
             try
             {
-                string email = guna2Button1.Text.Trim();
+                string email = tb_email.Text.Trim();
                 string result = await firebase.ResetPasswordAsync(email);
                 MessageBox.Show("Đã gửi về email khôi phục mật khẩu");
                 Login login = new Login();
