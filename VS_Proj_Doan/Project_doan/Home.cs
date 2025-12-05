@@ -12,6 +12,7 @@ namespace Project_doan
 {
     public partial class Home : Form
     {
+
         public Home()
         {
             InitializeComponent();
@@ -24,13 +25,10 @@ namespace Project_doan
 
         private void btn_cal_Click(object sender, EventArgs e)
         {
-            this.Invoke((MethodInvoker)delegate
-            {
-                pn_content.Controls.Clear();
-                Calendar calendarControl = new Calendar();
-                calendarControl.Dock = DockStyle.Fill; 
-                pn_content.Controls.Add(calendarControl);
-            });
+            pn_content.Controls.Clear();
+            var calendarControl = new Calendar();
+            calendarControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(calendarControl);
         }
     }
 }

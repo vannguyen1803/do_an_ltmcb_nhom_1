@@ -22,41 +22,83 @@ namespace Project_doan
         public Calendar()
         {
             InitializeComponent();
+
+            CreateDayHeader();
             buildCalendar();
             CreateMonthCalendar(month, year);
+            lb_month.Text=month.ToString();
+            lb_year.Text=year.ToString();
+        }
+        private void CreateDayHeader()
+        {
+           
+            for (int i = 0; i < 7; i++)
+                weekday.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.285f));
+
+            string[] days = { "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN" };
+
+            for (int i = 0; i < 7; i++)
+            {
+                Label lbl = new Label();
+                lbl.Text = days[i];
+                lbl.Dock = DockStyle.Fill;
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+                lbl.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                lbl.BackColor = Color.Transparent;
+
+                weekday.Controls.Add(lbl, i, 0);
+            }
+
+            this.Controls.Add(weekday);
         }
         void buildCalendar()
         {
             pn_day.Controls.Clear();
             daycell.Clear();
             dayButtons.Clear();
-            int width = 116;
-            int height = 68;
-            int margincell =0;
-            for (int row = 0; row < 6; row++)
-            {
-                for (int col = 0; col < 7; col++) {
-                    Panel p = new Panel();
-                    p.Width = width;
-                    p.Height = height;
-                    p.BackColor = Color.White;
-                    p.BorderStyle = BorderStyle.FixedSingle;
-                    p.Location = new Point(col * (width + margincell), row * (height + margincell));
-                    pn_day.Controls.Add(p);
-                    daycell.Add(p);
 
-                    var btn = new Guna.UI2.WinForms.Guna2CircleButton();
-                    btn.Width = 32;
-                    btn.Height = 32;
-                    btn.FillColor = Color.Transparent;
-                    p.Controls.Add(btn);
-                    dayButtons.Add(btn);
+            for (int r = 0; r < pn_day.RowCount; r++)
+            {
+                for (int c = 0; c < pn_day.ColumnCount; c++)
+                {
+                // Tạo cell panel
+                Panel cell = new Panel();
+                cell.Dock = DockStyle.Fill;
+                cell.BackColor = Color.White;
+                cell.Margin = new Padding(1);
+
+                // Tạo nút ngày
+                var btn = new Guna2CircleButton();
+                btn.Width = 34;
+                btn.Height = 34;
+                btn.FillColor = Color.LightGray;
+                btn.Location = new Point(2, 2);
+                btn.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+                btn.AutoSize = true;
+                btn.TextAlign = (HorizontalAlignment)ContentAlignment.MiddleCenter;
+                btn.Padding = new Padding(0);
+                btn.Margin = new Padding(0);
+                cell.Controls.Add(btn);
+
+                daycell.Add(cell);
+                dayButtons.Add(btn);
+
+                pn_day.Controls.Add(cell, c, r);
                 }
-                
             }
+            
+
         }
+
         void CreateMonthCalendar(int month, int year)
         {
+            foreach (var btn in dayButtons)
+            {
+                btn.Text = "";
+                btn.Tag = null;
+                btn.Visible = false; // ẩn button khi không phải ngày hợp lệ
+            }
+
             DateTime firstDay = new DateTime(year, month, 1);
 
             // Tính Offset (số ô trống)
@@ -64,27 +106,26 @@ namespace Project_doan
 
             // 1. Chuyển DayOfWeek thành 1-7 (1=Mon, 7=Sun)
             // (int)firstDay.DayOfWeek cho 0=Sun, 1=Mon, ..., 6=Sat
-            int offset = (int)firstDay.DayOfWeek;
+            int offset = (int)firstDay.DayOfWeek; // 0..6
 
-            // 2. Chuyển sang 0=Mon, 6=Sun (vì lịch của bạn bắt đầu bằng MON)
-            if (offset == 0) // Nếu là Sunday
-            {
-                offset = 7; 
-            }
-            else 
-            {
-                offset = offset - 1;
-            }
+            // Chuyển đổi sang hệ 0=Mon → 6=Sun
+            if (offset == 0)
+                offset = 6;           // Chủ Nhật → cuối tuần
+            else
+                offset -= 1;          // Các ngày còn lại giảm 1
 
             int dayCount = DateTime.DaysInMonth(year, month);
 
-            int btnIndex = offset; // Đây là chỉ số ô bắt đầu điền ngày (0 đến 41)
+            int index = offset; // vị trí button trong 42 ô
 
             for (int day = 1; day <= dayCount; day++)
             {
-                dayButtons[btnIndex].Text = day.ToString();
-                dayButtons[btnIndex].Tag = new DateTime(year, month, day);
-                btnIndex++;
+                var btn = dayButtons[index];
+                btn.Text = day.ToString();
+                btn.Tag = new DateTime(year, month, day);
+                btn.Visible = true;
+
+                index++;
             }
         }
     }

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pn_menu = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cal = new System.Windows.Forms.Button();
             this.pn_header = new System.Windows.Forms.Panel();
             this.pn_content = new System.Windows.Forms.Panel();
-            this.btn_cal = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.pn_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,61 @@
             this.pn_menu.Size = new System.Drawing.Size(223, 593);
             this.pn_menu.TabIndex = 0;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(98, 349);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Tài khoản";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(62, 283);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Pomodoro";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(71, 240);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(84, 25);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Đồng hồ";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(71, 192);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Ghi chú";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(71, 138);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Mục tiêu";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btn_cal
+            // 
+            this.btn_cal.Location = new System.Drawing.Point(62, 85);
+            this.btn_cal.Name = "btn_cal";
+            this.btn_cal.Size = new System.Drawing.Size(113, 23);
+            this.btn_cal.TabIndex = 0;
+            this.btn_cal.Text = "Thời gian biểu";
+            this.btn_cal.UseVisualStyleBackColor = true;
+            this.btn_cal.Click += new System.EventHandler(this.btn_cal_Click);
+            // 
             // pn_header
             // 
             this.pn_header.Dock = System.Windows.Forms.DockStyle.Top;
@@ -69,61 +124,6 @@
             this.pn_content.Name = "pn_content";
             this.pn_content.Size = new System.Drawing.Size(857, 542);
             this.pn_content.TabIndex = 2;
-            // 
-            // btn_cal
-            // 
-            this.btn_cal.Location = new System.Drawing.Point(62, 85);
-            this.btn_cal.Name = "btn_cal";
-            this.btn_cal.Size = new System.Drawing.Size(113, 23);
-            this.btn_cal.TabIndex = 0;
-            this.btn_cal.Text = "Thời gian biểu";
-            this.btn_cal.UseVisualStyleBackColor = true;
-            this.btn_cal.Click += new System.EventHandler(this.btn_cal_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(71, 138);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Mục tiêu";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(71, 192);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Ghi chú";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(71, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 25);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Đồng hồ";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(62, 271);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Pomodoro";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(98, 349);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Tài khoản";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
