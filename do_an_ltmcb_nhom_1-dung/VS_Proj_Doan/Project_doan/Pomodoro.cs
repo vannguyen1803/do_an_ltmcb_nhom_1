@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace Project_doan
 {
-    public partial class Form1 : Form
+    public partial class Pomodoro : Form
     {
-        public Form1()
+        public Pomodoro()
         {
             InitializeComponent();
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
 
         }
