@@ -30,5 +30,18 @@ namespace Project_doan
             calendarControl.Dock = DockStyle.Fill;
             pn_content.Controls.Add(calendarControl);
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            User u = new User();
+            u.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Note note = new Note();
+            note.ShowDialog();
+        }
     }
 }

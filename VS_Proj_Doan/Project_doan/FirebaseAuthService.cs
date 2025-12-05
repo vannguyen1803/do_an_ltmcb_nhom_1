@@ -19,7 +19,8 @@ namespace Project_doan
         {
             _db = new FirestoreService().GetDb();
         }
-        //Đăng nhập
+        //Login
+
         public async Task<string> SignInAsync(string username, string password)
         {
             try
@@ -40,6 +41,23 @@ namespace Project_doan
 
                 if (data.ContainsKey("Pass") && data["Pass"].ToString() == password)
                 {
+                    UserSession.Email = data["Email"].ToString();
+                    UserSession.Username = data["Username"].ToString();
+                    UserSession.HoTen = data["HoTen"].ToString();
+                    UserSession.Phone = data.ContainsKey("Phone") ? data["Phone"].ToString() : "";
+                    UserSession.Language = data.ContainsKey("Language") ? data["Language"].ToString() : "";
+                    if (data.ContainsKey("Birthday"))
+                    {
+                        Timestamp t = (Timestamp)data["Birthday"];
+                        UserSession.Birthday = t.ToDateTime();
+                    }
+                    else
+                    {
+                        UserSession.Birthday = DateTime.MinValue;
+                    }
+
+                    UserSession.ScheduleCache = await GetAllSchedulesAsync();
+
                     return "SUCCESS";
                 }
 
@@ -50,7 +68,7 @@ namespace Project_doan
                 return "Lỗi đăng nhập: " + ex.Message;
             }
         }
-        //Đăng ký
+        //signup
         public async Task<string> SignUpAsync(string username, string password, string email, string hoten)
         {
             try
@@ -89,7 +107,7 @@ namespace Project_doan
                 return "Lỗi đăng ký: " + ex.Message;
             }
         }
-        //Quên mật khẩu
+        //foget password
         public async Task<string> ResetPasswordAsync(string email)
         {
             try
@@ -115,6 +133,265 @@ namespace Project_doan
             catch (Exception ex)
             {
                 return "Lỗi reset mật khẩu: " + ex.Message;
+            }
+        }
+
+
+        // user_detail
+        public async Task<string> UserdetailAsync(string phone, DateTime birthday, string language)
+        {
+            try
+            {
+                string username = UserSession.Username;
+                if (string.IsNullOrEmpty(username))
+                    return "Không tìm thấy thông tin session user";
+
+                CollectionReference users = _db.Collection("NguoiDung");
+                Query query = users.WhereEqualTo("Username", username);
+
+                QuerySnapshot snap = await query.GetSnapshotAsync();
+                if (snap.Count == 0)
+                    return "Không tìm thấy user trong Firestore";
+                DocumentReference userDoc = snap.Documents[0].Reference;
+                if (string.IsNullOrEmpty(phone))
+                {
+                    phone = "";
+                    await userDoc.UpdateAsync(new Dictionary<string, object>
+                    {
+                        { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
+                        { "Language", language }
+                    });
+                    UserSession.Birthday = birthday;
+                    UserSession.Language = language;
+                }
+                else
+                {
+                    await userDoc.UpdateAsync(new Dictionary<string, object>
+        {
+            { "Phone", phone },
+            { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
+            { "Language", language }
+        });
+
+                    UserSession.Phone = phone;
+                    UserSession.Birthday = birthday;
+                    UserSession.Language = language;
+                }
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi cập nhật: " + ex.Message;
+            }
+        }
+
+        //getcurrentuser
+        private async Task<DocumentReference> GetCurrentUserDocAsync()
+        {
+            CollectionReference users = _db.Collection("NguoiDung");
+            Query query = users.WhereEqualTo("Username", UserSession.Username);
+
+            QuerySnapshot snap = await query.GetSnapshotAsync();
+
+            if (snap.Count == 0)
+                return null;
+
+            return snap.Documents[0].Reference;
+        }
+
+        // Save note 
+        public async Task<string> SaveNoteAsync(string content)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                string noteId = Guid.NewGuid().ToString();
+
+                var noteData = new Dictionary<string, object>
+        {
+            { "Id", noteId },
+            { "Content", content }
+
+        };
+
+                await userDoc
+                    .Collection("Notes")
+                    .Document(noteId)
+                    .SetAsync(noteData);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi lưu note: " + ex.Message;
+            }
+        }
+
+
+        // LoadNote
+        public async Task<List<Dictionary<string, object>>> GetAllNotesAsync()
+        {
+            var list = new List<Dictionary<string, object>>();
+
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return list;
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("Notes")
+
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
+                {
+                    list.Add(doc.ToDictionary());
+                }
+
+                return list;
+            }
+            catch
+            {
+                return list;
+            }
+        }
+
+
+        //saveSchedule
+        public async Task<string> SaveScheduleAsync(DateTime date, string content)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                string dateKey = date.ToString("yyyy-MM-dd");
+
+                var data = new Dictionary<string, object>
+        {
+            { "Date", dateKey },
+            { "Content", content },
+            { "UpdatedAt", Timestamp.GetCurrentTimestamp() }
+        };
+
+                await userDoc
+                    .Collection("Schedule")
+                    .Document(dateKey)
+                    .SetAsync(data);
+                UserSession.ScheduleCache[dateKey] = content;
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi lưu lịch: " + ex.Message;
+            }
+        }
+        // loadSchedule
+        public async Task<string> GetScheduleAsync(DateTime date)
+        {
+            try
+            {
+                string dateKey = date.ToString("yyyy-MM-dd");
+
+                // Kiểm tra cache trước
+                if (UserSession.ScheduleCache.ContainsKey(dateKey))
+                {
+                    return UserSession.ScheduleCache[dateKey];
+                }
+
+                return "";
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        // Load all schedule  
+        public async Task<Dictionary<string, string>> GetAllSchedulesAsync()
+        {
+            var scheduleDict = new Dictionary<string, string>();
+
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return scheduleDict;
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("Schedule")
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
+                {
+                    var data = doc.ToDictionary();
+                    if (data.ContainsKey("Date") && data.ContainsKey("Content"))
+                    {
+                        string dateKey = data["Date"].ToString();
+                        string content = data["Content"].ToString();
+                        scheduleDict[dateKey] = content;
+                    }
+                }
+
+                return scheduleDict;
+            }
+            catch (Exception ex)
+            {
+                return scheduleDict;
+            }
+        }
+        // Update Note
+        public async Task<string> UpdateNoteAsync(string noteId, string content)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                var noteData = new Dictionary<string, object>
+        {
+            { "Id", noteId },
+            { "Content", content }
+        };
+
+                await userDoc
+                    .Collection("Notes")
+                    .Document(noteId)
+                    .SetAsync(noteData);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi cập nhật note: " + ex.Message;
+            }
+        }
+
+        // Delete Note
+        public async Task<string> DeleteNoteAsync(string noteId)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                await userDoc
+                    .Collection("Notes")
+                    .Document(noteId)
+                    .DeleteAsync();
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi xóa note: " + ex.Message;
             }
         }
     }
