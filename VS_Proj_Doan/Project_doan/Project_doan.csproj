@@ -230,9 +230,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="serviceAccountKey.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -297,8 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\login.jpg" />
-    <None Include="Resources\play-button.png" />
-    <None Include="Resources\pause.png" />
     <Resource Include="Resources\login.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

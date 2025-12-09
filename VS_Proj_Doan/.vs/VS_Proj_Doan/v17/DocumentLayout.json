@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\usercontrols\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\usercontrols\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\usercontrols\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -15,15 +19,15 @@
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\displaytimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\usercontrols\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\usercontrols\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\usercontrols\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -31,19 +35,19 @@
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\displaytimer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\models\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\models\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\models\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\models\\loginresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\models\\loginresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\models\\loginresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\services\\pomoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\services\\pomoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\services\\pomoservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,12 +55,8 @@
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\models\\pomodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\models\\pomodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\models\\pomodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\do_an_ltmcb\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\serviceaccountkey.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\serviceaccountkey.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\UserControls\\Timers.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 521,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,7 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Project_doan\\Properties\\Resources.resx",
+              "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Properties\\Resources.resx*",
+              "RelativeToolTip": "Project_doan\\Properties\\Resources.resx*",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAwwHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-09T13:41:32.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Login.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.cs",
               "RelativeDocumentMoniker": "Project_doan\\Login.cs",
@@ -106,24 +119,22 @@
               "RelativeToolTip": "Project_doan\\Login.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAIwCgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T05:58:04.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T05:58:04.045Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DisplayTimer.cs [Design]",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\DisplayTimer.cs",
               "RelativeDocumentMoniker": "Project_doan\\DisplayTimer.cs",
               "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\DisplayTimer.cs [Design]",
               "RelativeToolTip": "Project_doan\\DisplayTimer.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:01:10.776Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T16:01:10.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DisplayTimer.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\DisplayTimer.cs",
               "RelativeDocumentMoniker": "Project_doan\\DisplayTimer.cs",
@@ -131,41 +142,39 @@
               "RelativeToolTip": "Project_doan\\DisplayTimer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T13:06:31.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T13:06:31.671Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.cs",
               "RelativeDocumentMoniker": "Project_doan\\Login.cs",
               "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.cs [Design]",
               "RelativeToolTip": "Project_doan\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T05:58:01.813Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-03T05:58:01.813Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Pomodoro.cs [Design]",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\UserControls\\Pomodoro.cs",
               "RelativeDocumentMoniker": "Project_doan\\UserControls\\Pomodoro.cs",
-              "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\UserControls\\Pomodoro.cs [Design]*",
-              "RelativeToolTip": "Project_doan\\UserControls\\Pomodoro.cs [Design]*",
+              "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\UserControls\\Pomodoro.cs [Design]",
+              "RelativeToolTip": "Project_doan\\UserControls\\Pomodoro.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T16:27:10.651Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Pomodoro.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\UserControls\\Pomodoro.cs",
               "RelativeDocumentMoniker": "Project_doan\\UserControls\\Pomodoro.cs",
-              "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\UserControls\\Pomodoro.cs*",
-              "RelativeToolTip": "Project_doan\\UserControls\\Pomodoro.cs*",
+              "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\UserControls\\Pomodoro.cs",
+              "RelativeToolTip": "Project_doan\\UserControls\\Pomodoro.cs",
               "ViewState": "AgIAAGoAAAAAAAAAAAAwwGkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T16:29:39.034Z",
@@ -173,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DisplayTimer.Designer.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\DisplayTimer.Designer.cs",
               "RelativeDocumentMoniker": "Project_doan\\DisplayTimer.Designer.cs",
@@ -181,12 +190,11 @@
               "RelativeToolTip": "Project_doan\\DisplayTimer.Designer.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAMwDYAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T12:54:38.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T12:54:38.638Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "LoginResult.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Models\\LoginResult.cs",
               "RelativeDocumentMoniker": "Project_doan\\Models\\LoginResult.cs",
@@ -194,12 +202,11 @@
               "RelativeToolTip": "Project_doan\\Models\\LoginResult.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T06:19:47.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T06:19:47.666Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UserSession.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Models\\UserSession.cs",
               "RelativeDocumentMoniker": "Project_doan\\Models\\UserSession.cs",
@@ -207,12 +214,11 @@
               "RelativeToolTip": "Project_doan\\Models\\UserSession.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T04:53:32.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T04:53:32.806Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PomoServices.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Services\\PomoServices.cs",
               "RelativeDocumentMoniker": "Project_doan\\Services\\PomoServices.cs",
@@ -220,12 +226,11 @@
               "RelativeToolTip": "Project_doan\\Services\\PomoServices.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAwB8AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T03:46:40.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T03:46:40.493Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "FirebaseAuthService.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\FirebaseAuthService.cs",
               "RelativeDocumentMoniker": "Project_doan\\FirebaseAuthService.cs",
@@ -233,12 +238,11 @@
               "RelativeToolTip": "Project_doan\\FirebaseAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T04:14:22.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T04:14:22.086Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Program.cs",
               "RelativeDocumentMoniker": "Project_doan\\Program.cs",
@@ -246,12 +250,11 @@
               "RelativeToolTip": "Project_doan\\Program.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAADwv20AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T12:48:49.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T12:48:49.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "PomoData.cs",
               "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Models\\PomoData.cs",
               "RelativeDocumentMoniker": "Project_doan\\Models\\PomoData.cs",
@@ -259,21 +262,7 @@
               "RelativeToolTip": "Project_doan\\Models\\PomoData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T06:19:59.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "serviceAccountKey.json",
-              "DocumentMoniker": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\serviceAccountKey.json",
-              "RelativeDocumentMoniker": "Project_doan\\serviceAccountKey.json",
-              "ToolTip": "D:\\Do_an_LTMCB\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\serviceAccountKey.json",
-              "RelativeToolTip": "Project_doan\\serviceAccountKey.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-03T06:09:48.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T06:19:59.67Z"
             },
             {
               "$type": "Document",
