@@ -29,7 +29,7 @@ namespace Project_doan
             try
             {
                 string content = await firebase.GetScheduleAsync(selectedDate);
-                richTextBox1.Text = content;
+                tb_note.Text = content;
             }
             catch (Exception ex)
             {
@@ -38,14 +38,14 @@ namespace Project_doan
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void btn_save_Click(object sender, EventArgs e)
         {
             try
             {
-                button1.Enabled = false;
-                button1.Text = "Đang lưu...";
+                btn_save.Enabled = false;
+                btn_save.Text = "Đang lưu...";
 
-                string content = richTextBox1.Text.Trim();
+                string content = tb_note.Text.Trim();
                 string result = await firebase.SaveScheduleAsync(selectedDate, content);
 
                 if (result == "SUCCESS")
@@ -68,9 +68,11 @@ namespace Project_doan
             }
             finally
             {
-                button1.Enabled = true;
-                button1.Text = "Lưu";
+                btn_save.Enabled = true;
+                btn_save.Text = "Lưu";
             }
         }
+
+        
     }
 }
