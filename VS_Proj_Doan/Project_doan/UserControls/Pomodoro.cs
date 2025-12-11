@@ -45,14 +45,13 @@ namespace Project_doan.UserControls
         }
         private void cbb_option_SelectedIndexChanged(object sender, EventArgs e)
         {
-            StopAndReset();
 
             string select = cbb_option.SelectedItem.ToString();
 
             if (select == "25/5")
             {
-                workTime = TimeSpan.FromMinutes(25);
-                breakTime = TimeSpan.FromMinutes(5);
+                workTime = TimeSpan.FromMinutes(1);
+                breakTime = TimeSpan.FromMinutes(1);
             }
             else
             {
@@ -61,7 +60,7 @@ namespace Project_doan.UserControls
             }
             lb_timepomo.Text = workTime.ToString(@"mm\:ss");
         }
-        private void btn_pomo_Click(object sender, EventArgs e)
+        private async void btn_pomo_Click(object sender, EventArgs e)
         {
             if (cbb_option.SelectedIndex == -1)
             {
@@ -69,9 +68,10 @@ namespace Project_doan.UserControls
                 return;
             }
 
-            if (timer1.Enabled)
+            if (currentState == PomoState.Work || currentState == PomoState.Break)
             {
-                StopAndReset();
+                
+                await StopAndReset();
             }
             else
             {
@@ -102,37 +102,51 @@ namespace Project_doan.UserControls
         }
         private async Task StopAndReset()
         {
-            if (sessionCount > 0)
-            {
-                if (pomoServices == null)
-                {
-                    pomoServices = new PomoServices();
-                }
-                PomoData log = new PomoData()
-                {
-                    MaND = UserSession.MaND,
-                    NgayThucHien = DateTime.UtcNow.Date,
-                    SoPhien = sessionCount,
-                    TongThoiGian = totalMinuteWork,
-                    MaPomodoro = Guid.NewGuid().ToString()
-                };
-                await pomoServices.AddPomo(log);
-            }
             timer1.Stop();
-            currentState = PomoState.None;
+            DialogResult dialogResult =  MessageBox.Show("Bạn có chắc chắn muốn dừng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            
+            if (dialogResult == DialogResult.No)
+            {
+                timer1.Start();
+                return;
+            }
 
             btn_pomo.Text = "Start";
-            lb_break.ForeColor= Color.Black;
-            lb_pomo.ForeColor= Color.Black;
 
-            if(cbb_option.SelectedIndex != -1)
+            lb_break.ForeColor = Color.Black;
+            lb_pomo.ForeColor = Color.Black;
+
+            lb_timepomo.Text = workTime.ToString(@"mm\:ss");
+
+            PomoState oldState = currentState;
+            currentState = PomoState.None;
+
+            if (sessionCount > 0)
             {
-                lb_timepomo.Text = workTime.ToString(@"mm\:ss");
+                try
+                {
+                    if (pomoServices == null)
+                    {
+                        pomoServices = new PomoServices();
+                    }
+                    PomoData log = new PomoData()
+                    {
+                        MaND = UserSession.MaND,
+                        NgayThucHien = DateTime.UtcNow.Date,
+                        SoPhien = sessionCount,
+                        TongThoiGian = totalMinuteWork,
+                        MaPomodoro = Guid.NewGuid().ToString()
+                    };
+                    await pomoServices.AddPomo(log);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                lb_timepomo.Text = "00:00";
-            }
+            sessionCount = 0;
+            totalMinuteWork = 0;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
