@@ -50,8 +50,8 @@ namespace Project_doan.UserControls
 
             if (select == "25/5")
             {
-                workTime = TimeSpan.FromMinutes(1);
-                breakTime = TimeSpan.FromMinutes(1);
+                workTime = TimeSpan.FromMinutes(25);
+                breakTime = TimeSpan.FromMinutes(5);
             }
             else
             {
