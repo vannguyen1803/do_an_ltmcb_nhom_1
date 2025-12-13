@@ -55,7 +55,7 @@ namespace Project_doan
             this.weekday.Name = "weekday";
             this.weekday.RowCount = 1;
             this.weekday.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.weekday.Size = new System.Drawing.Size(976, 43);
+            this.weekday.Size = new System.Drawing.Size(1000, 44);
             this.weekday.TabIndex = 3;
             // 
             // pn_header
@@ -69,7 +69,7 @@ namespace Project_doan
             this.pn_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_header.Location = new System.Drawing.Point(0, 0);
             this.pn_header.Name = "pn_header";
-            this.pn_header.Size = new System.Drawing.Size(976, 48);
+            this.pn_header.Size = new System.Drawing.Size(1000, 48);
             this.pn_header.TabIndex = 0;
             // 
             // label1
@@ -105,9 +105,9 @@ namespace Project_doan
             this.btn_nextmonth.FlatAppearance.BorderSize = 0;
             this.btn_nextmonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nextmonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_nextmonth.Location = new System.Drawing.Point(485, 7);
+            this.btn_nextmonth.Location = new System.Drawing.Point(614, 5);
             this.btn_nextmonth.Name = "btn_nextmonth";
-            this.btn_nextmonth.Size = new System.Drawing.Size(188, 42);
+            this.btn_nextmonth.Size = new System.Drawing.Size(83, 42);
             this.btn_nextmonth.TabIndex = 2;
             this.btn_nextmonth.Text = ">";
             this.btn_nextmonth.UseVisualStyleBackColor = false;
@@ -117,7 +117,7 @@ namespace Project_doan
             this.lb_month.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_month.AutoSize = true;
             this.lb_month.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lb_month.Location = new System.Drawing.Point(385, 11);
+            this.lb_month.Location = new System.Drawing.Point(463, 11);
             this.lb_month.Name = "lb_month";
             this.lb_month.Size = new System.Drawing.Size(66, 25);
             this.lb_month.TabIndex = 1;
@@ -133,9 +133,9 @@ namespace Project_doan
             this.btn_premonth.FlatAppearance.BorderSize = 0;
             this.btn_premonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_premonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_premonth.Location = new System.Drawing.Point(280, 7);
+            this.btn_premonth.Location = new System.Drawing.Point(280, 5);
             this.btn_premonth.Name = "btn_premonth";
-            this.btn_premonth.Size = new System.Drawing.Size(194, 42);
+            this.btn_premonth.Size = new System.Drawing.Size(83, 42);
             this.btn_premonth.TabIndex = 0;
             this.btn_premonth.Text = "<";
             this.btn_premonth.UseVisualStyleBackColor = false;
@@ -151,7 +151,7 @@ namespace Project_doan
             this.pn_day.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.pn_day.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.pn_day.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pn_day.Location = new System.Drawing.Point(0, 92);
+            this.pn_day.Location = new System.Drawing.Point(0, 93);
             this.pn_day.Name = "pn_day";
             this.pn_day.RowCount = 6;
             this.pn_day.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -160,7 +160,7 @@ namespace Project_doan
             this.pn_day.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.pn_day.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.pn_day.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.pn_day.Size = new System.Drawing.Size(976, 535);
+            this.pn_day.Size = new System.Drawing.Size(1000, 555);
             this.pn_day.TabIndex = 2;
             // 
             // Calendar
@@ -171,7 +171,8 @@ namespace Project_doan
             this.Controls.Add(this.weekday);
             this.Controls.Add(this.pn_header);
             this.Name = "Calendar";
-            this.Size = new System.Drawing.Size(976, 627);
+            this.Size = new System.Drawing.Size(1000, 648);
+            this.Load += new System.EventHandler(this.Calendar_Load);
             this.pn_header.ResumeLayout(false);
             this.pn_header.PerformLayout();
             this.ResumeLayout(false);

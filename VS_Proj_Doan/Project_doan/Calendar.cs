@@ -23,7 +23,7 @@ namespace Project_doan
         int month = DateTime.Now.Month;
         int year = DateTime.Now.Year;
 
-        FirebaseAuthService firebase = new FirebaseAuthService();
+        
 
         public Calendar()
         {
@@ -252,6 +252,10 @@ namespace Project_doan
 
             CreateMonthCalendar(month, year);
         }
-        
+
+        private void Calendar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

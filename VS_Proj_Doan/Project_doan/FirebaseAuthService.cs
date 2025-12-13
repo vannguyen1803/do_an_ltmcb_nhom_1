@@ -57,6 +57,7 @@ namespace Project_doan
                     }
 
                     UserSession.ScheduleCache = await GetAllSchedulesAsync();
+                    UserSession.NoteCache   = await GetAllNotesAsync();
 
                     return "SUCCESS";
                 }

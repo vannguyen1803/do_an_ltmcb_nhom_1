@@ -12,17 +12,34 @@ namespace Project_doan
 {
     public partial class Home : Form
     {
-
+        FirebaseAuthService firebase = new FirebaseAuthService();
+        private Calendar calendar;
+        private Account acc;
+        private Ghi_chu note;
         public Home()
         {
             InitializeComponent();
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private async void Home_Load(object sender, EventArgs e)
         {
+            // Load toàn bộ dữ liệu từ Firebase
+            UserSession.ScheduleCache = await firebase.GetAllSchedulesAsync();
+            UserSession.NoteCache = await firebase.GetAllNotesAsync();
 
+            // Tạo Calendar
+            calendar = new Calendar();
+            calendar.Dock = DockStyle.Fill;
+
+            //Tạo account
+            var acc = new Account();
+            acc.Dock = DockStyle.Fill;
+
+            //Tạo ghi chú
+            var note = new Ghi_chu();
+            note.Dock = DockStyle.Fill;
         }
-
+        
         private void btn_cal_Click(object sender, EventArgs e)
         {
             
@@ -34,9 +51,7 @@ namespace Project_doan
             btn_pomo.FillColor = Color.Transparent;
 
             pn_content.Controls.Clear();
-            var calendarControl = new Calendar();
-            calendarControl.Dock = DockStyle.Fill;
-            pn_content.Controls.Add(calendarControl);
+            pn_content.Controls.Add(calendar);
         }
 
         private void btn_acc_Click(object sender, EventArgs e)
@@ -50,8 +65,7 @@ namespace Project_doan
             btn_pomo.FillColor = Color.Transparent;
 
             pn_content.Controls.Clear();
-            var acc = new Account();
-            acc.Dock = DockStyle.Fill;
+            
             pn_content.Controls.Add(acc);
         }
 
@@ -66,8 +80,7 @@ namespace Project_doan
             btn_pomo.FillColor = Color.Transparent;
 
             pn_content.Controls.Clear();
-            var note = new Ghi_chu();
-            note.Dock = DockStyle.Fill;
+            
             pn_content.Controls.Add(note);
         }
 
