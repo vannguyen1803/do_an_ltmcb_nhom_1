@@ -411,6 +411,7 @@ namespace Project_doan
             { "Id", aimId },
             { "Ten", aim.ten },
             { "MoTa", aim.mota },
+            { "TrangThai", (int)aim.status },
             { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
             { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
         };
@@ -451,6 +452,7 @@ namespace Project_doan
                         Id = data["Id"].ToString(),
                         ten = data["Ten"].ToString(),
                         mota = data["MoTa"].ToString(),
+                        status = (AimStatus)Convert.ToInt32(data["TrangThai"]),
                         date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
                         date_end = ((Timestamp)data["DateEnd"]).ToDateTime()
                     };
@@ -478,6 +480,7 @@ namespace Project_doan
         {
             { "Ten", aim.ten },
             { "MoTa", aim.mota },
+            { "TrangThai", (int)aim.status },
             { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
             { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
         };
