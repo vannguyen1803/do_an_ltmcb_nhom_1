@@ -35,7 +35,9 @@ namespace Project_doan
                 {
                     Home home = new Home();
                     home.Show();
+                    this.Hide();
                 }
+
             }
             catch (Exception ex)
             {

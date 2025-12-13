@@ -15,30 +15,29 @@ namespace Project_doan
 {
     internal class FirebaseAuthService
     {
-        private readonly FirestoreDb db;
+        private readonly FirestoreDb _db;
 
         public FirebaseAuthService()
         {
-            db = FirestoreServices.GetDb();
+            _db = FirestoreServices.GetDb();
         }
         //Login
 
-        public async Task<string> SignInAsync(string email, string password)
-
+        public async Task<string> SignInAsync(string username, string password)
         {
             try
             {
-                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                     return "Vui lòng nhập username và password";
 
-                CollectionReference users = db.Collection("NguoiDung");
-                Query query = users.WhereEqualTo("Username", email);
+                CollectionReference users = _db.Collection("NguoiDung");
+                Query query = users.WhereEqualTo("Username", username);
 
                 QuerySnapshot result = await query.GetSnapshotAsync();
 
                 if (result.Count == 0)
                     return "Username không tồn tại";
-                    
+
                 DocumentSnapshot doc = result.Documents[0];
                 var data = doc.ToDictionary();
 
@@ -86,7 +85,7 @@ namespace Project_doan
                     return "Vui lòng nhập đủ thông tin";
                 }
 
-                CollectionReference users = db.Collection("NguoiDung");
+                CollectionReference users = _db.Collection("NguoiDung");
                 Query query = users.WhereEqualTo("Username", username);
 
                 QuerySnapshot snap = await query.GetSnapshotAsync();
@@ -120,7 +119,7 @@ namespace Project_doan
                 if (string.IsNullOrEmpty(email))
                     return "Vui lòng nhập email";
 
-                CollectionReference users = db.Collection("NguoiDung");
+                CollectionReference users = _db.Collection("NguoiDung");
                 Query query = users.WhereEqualTo("Email", email);
 
                 QuerySnapshot snap = await query.GetSnapshotAsync();
@@ -151,7 +150,7 @@ namespace Project_doan
                 if (string.IsNullOrEmpty(username))
                     return "Không tìm thấy thông tin session user";
 
-                CollectionReference users = db.Collection("NguoiDung");
+                CollectionReference users = _db.Collection("NguoiDung");
                 Query query = users.WhereEqualTo("Username", username);
 
                 QuerySnapshot snap = await query.GetSnapshotAsync();
@@ -193,7 +192,7 @@ namespace Project_doan
         //getcurrentuser
         private async Task<DocumentReference> GetCurrentUserDocAsync()
         {
-            CollectionReference users = db.Collection("NguoiDung");
+            CollectionReference users = _db.Collection("NguoiDung");
             Query query = users.WhereEqualTo("Username", UserSession.Username);
 
             QuerySnapshot snap = await query.GetSnapshotAsync();
@@ -399,5 +398,130 @@ namespace Project_doan
                 return "Lỗi xóa note: " + ex.Message;
             }
         }
+        //Thêm mục tiêu
+        public async Task<string> AddAimAsync(Aim aim)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                string aimId = Guid.NewGuid().ToString();
+                aim.Id = aimId;
+
+                var data = new Dictionary<string, object>
+        {
+            { "Id", aimId },
+            { "Ten", aim.ten },
+            { "MoTa", aim.mota },
+            { "TrangThai", (int)aim.status },
+            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+        };
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aimId)
+                    .SetAsync(data);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi thêm mục tiêu: " + ex.Message;
+            }
+        }
+        //Lấy dữ liệu mục tiêu
+        public async Task<List<Aim>> GetAllAimsAsync()
+        {
+            var list = new List<Aim>();
+
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return list;
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("MucTieu")
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
+                {
+                    var data = doc.ToDictionary();
+
+                    Aim aim = new Aim
+                    {
+                        Id = data["Id"].ToString(),
+                        ten = data["Ten"].ToString(),
+                        mota = data["MoTa"].ToString(),
+                        status = (AimStatus)Convert.ToInt32(data["TrangThai"]),
+                        date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
+                        date_end = ((Timestamp)data["DateEnd"]).ToDateTime()
+                    };
+
+                    list.Add(aim);
+                }
+
+                return list;
+            }
+            catch
+            {
+                return list;
+            }
+        }
+        //Update dữ liệu
+        public async Task<string> UpdateAimAsync(Aim aim)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                var data = new Dictionary<string, object>
+        {
+            { "Ten", aim.ten },
+            { "MoTa", aim.mota },
+            { "TrangThai", (int)aim.status },
+            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+        };
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aim.Id)
+                    .UpdateAsync(data);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi cập nhật mục tiêu: " + ex.Message;
+            }
+        }
+        //Xóa mục tiêu
+        public async Task<string> DeleteAimAsync(string aimId)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aimId)
+                    .DeleteAsync();
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi xóa mục tiêu: " + ex.Message;
+            }
+        }
+
     }
 }

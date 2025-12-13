@@ -122,7 +122,7 @@
             this.day_start.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.day_start.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.day_start.Name = "day_start";
-            this.day_start.Size = new System.Drawing.Size(260, 36);
+            this.day_start.Size = new System.Drawing.Size(200, 36);
             this.day_start.TabIndex = 6;
             this.day_start.UseTransparentBackground = true;
             this.day_start.Value = new System.DateTime(2025, 12, 11, 2, 24, 50, 229);
@@ -138,7 +138,7 @@
             this.day_end.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.day_end.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.day_end.Name = "day_end";
-            this.day_end.Size = new System.Drawing.Size(261, 36);
+            this.day_end.Size = new System.Drawing.Size(200, 36);
             this.day_end.TabIndex = 7;
             this.day_end.Value = new System.DateTime(2025, 12, 11, 2, 24, 55, 331);
             // 

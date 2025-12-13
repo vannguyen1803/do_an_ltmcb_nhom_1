@@ -16,6 +16,7 @@ namespace Project_doan
     public partial class Home : Form
     {
         Aim aim;
+        
 
         public Home()
         {
@@ -24,7 +25,7 @@ namespace Project_doan
 
         private void Home_Load(object sender, EventArgs e)
         {
-            KiemTraVaGuiMail(aim);
+            
         }
 
         private void btn_cal_Click(object sender, EventArgs e)
@@ -49,20 +50,36 @@ namespace Project_doan
         }
         private void KiemTraVaGuiMail(Aim aim)
         {
-            if (aim == null)
-            {
-                return; 
-            }
-            TimeSpan conLai = aim.date_end - DateTime.Now;
-            int days = conLai.Days;
+            TimeSpan conlai = aim.date_end - DateTime.Now;
+            int days = conlai.Days;
 
-            if (days == 30)
+            switch (days)
             {
-                GuiMailThongBao(aim, "Còn 1 tháng để hoàn thành mục tiêu!");
-            }
-            else if (days == 7)
-            {
-                GuiMailThongBao(aim, "Còn 1 tuần để hoàn thành mục tiêu!");
+                case int n when (days <= 1):
+                    GuiMailThongBao(aim, "Ngày cuối cùng để hoàn thành mục tiêu!");
+                    break;
+                case int n when (days <= 7):
+                    GuiMailThongBao(aim, "Tuần cuối cùng để hoàn thành mục tiêu!");
+                    break;
+                case int n when (days <= 14):
+                    GuiMailThongBao(aim, "Còn 2 tuần để hoàn thành mục tiêu!");
+                    break;
+                case int n when (days <= 30):
+                    GuiMailThongBao(aim, "Còn 1 tháng để hoàn thành mục tiêu!");
+                    break;
+                case int n when (days <= 60):
+                    GuiMailThongBao(aim, "Còn 2 tháng để hoàn thành mục tiêu!");
+                    break;
+                case int n when (days <= 90):
+                    GuiMailThongBao(aim, "Còn 3 tháng để hoàn thành mục tiêu!");
+                    break;
+                case int n when (days <= 180):
+                    GuiMailThongBao(aim, "Còn 6 tháng để hoàn thành mục tiêu!");
+                    break;
+                case int n when (days <= 365):
+                    GuiMailThongBao(aim, "Còn 1 năm để hoàn thành mục tiêu!");
+                    break;
+
             }
         }
         private void GuiMailThongBao(Aim aim, string tieu_de)
@@ -101,11 +118,11 @@ namespace Project_doan
         </div>
 
         <div class='highlight'>
-            Hãy tiếp tục cố gắng để đạt mục tiêu! 💪🔥
+            Hãy tiếp tục cố gắng để đạt mục tiêu! 
         </div>
 
         <div class='footer'>
-            Email được gửi tự động từ hệ thống Aim Tracker.
+            Email được gửi tự động từ hệ thống quản lý học tập.
         </div>
     </div>
 </body>
@@ -118,28 +135,27 @@ namespace Project_doan
             mail.Body = html;
             mail.IsBodyHtml = true;
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-            smtp.Credentials = new NetworkCredential("yourmail@gmail.com", "app-password");
+            smtp.Credentials = new NetworkCredential("nguyenthimeow03@gmail.com", "njec pyjt vrhp djot");
             smtp.EnableSsl = true;
 
             smtp.Send(mail);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void btn_pomo_Click(object sender, EventArgs e)
         {
             pn_content.Controls.Clear();
             var PomodoroControl = new Pomodoro();
             PomodoroControl.Dock = DockStyle.Fill;
             pn_content.Controls.Add(PomodoroControl);
+        }
+
+        private void btn_aim_Click(object sender, EventArgs e)
+        {
+            pn_content.Controls.Clear();
+            var AimControl = new Muc_tieu();
+            AimControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(AimControl);
         }
     }
 }
