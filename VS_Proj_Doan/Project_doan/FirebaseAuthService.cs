@@ -394,5 +394,127 @@ namespace Project_doan
                 return "Lỗi xóa note: " + ex.Message;
             }
         }
+        //Thêm mục tiêu
+        public async Task<string> AddAimAsync(Aim aim)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                string aimId = Guid.NewGuid().ToString();
+                aim.Id = aimId;
+
+                var data = new Dictionary<string, object>
+        {
+            { "Id", aimId },
+            { "Ten", aim.ten },
+            { "MoTa", aim.mota },
+            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+        };
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aimId)
+                    .SetAsync(data);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi thêm mục tiêu: " + ex.Message;
+            }
+        }
+        //Lấy dữ liệu mục tiêu
+        public async Task<List<Aim>> GetAllAimsAsync()
+        {
+            var list = new List<Aim>();
+
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return list;
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("MucTieu")
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
+                {
+                    var data = doc.ToDictionary();
+
+                    Aim aim = new Aim
+                    {
+                        Id = data["Id"].ToString(),
+                        ten = data["Ten"].ToString(),
+                        mota = data["MoTa"].ToString(),
+                        date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
+                        date_end = ((Timestamp)data["DateEnd"]).ToDateTime()
+                    };
+
+                    list.Add(aim);
+                }
+
+                return list;
+            }
+            catch
+            {
+                return list;
+            }
+        }
+        //Update dữ liệu
+        public async Task<string> UpdateAimAsync(Aim aim)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                var data = new Dictionary<string, object>
+        {
+            { "Ten", aim.ten },
+            { "MoTa", aim.mota },
+            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+        };
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aim.Id)
+                    .UpdateAsync(data);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi cập nhật mục tiêu: " + ex.Message;
+            }
+        }
+        //Xóa mục tiêu
+        public async Task<string> DeleteAimAsync(string aimId)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aimId)
+                    .DeleteAsync();
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi xóa mục tiêu: " + ex.Message;
+            }
+        }
+
     }
 }

@@ -8,6 +8,7 @@ namespace Project_doan
 {
     internal class Aim
     {
+        public string Id { get; set; }
         public string ten { get; set; }
         public string mota { get; set; }
         public DateTime date_start { get; set; }
