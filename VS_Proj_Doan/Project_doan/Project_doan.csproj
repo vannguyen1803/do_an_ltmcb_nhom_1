@@ -146,6 +146,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,12 @@
     </Compile>
     <Compile Include="Forgot_pass.Designer.cs">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ghi_chu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ghi_chu.Designer.cs">
+      <DependentUpon>Ghi_chu.cs</DependentUpon>
     </Compile>
     <Compile Include="Note.cs">
       <SubType>Form</SubType>
@@ -212,6 +224,9 @@
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
+    <EmbeddedResource Include="Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ghi_chu.resx">
+      <DependentUpon>Ghi_chu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
