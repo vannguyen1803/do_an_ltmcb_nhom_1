@@ -146,6 +146,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aim.cs" />
     <Compile Include="Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +172,12 @@
     </Compile>
     <Compile Include="Forgot_pass.Designer.cs">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Muc_tieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Muc_tieu.Designer.cs">
+      <DependentUpon>Muc_tieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Note.cs">
       <SubType>Form</SubType>
@@ -223,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Muc_tieu.resx">
+      <DependentUpon>Muc_tieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
