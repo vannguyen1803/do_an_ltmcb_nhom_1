@@ -101,6 +101,8 @@ namespace Project_doan
                 AutoSize = true,
                 Cursor = Cursors.Hand
             };
+            addPanel.Controls.Add(lblPlus);
+            
 
             lblPlus.Location = new Point(
                 (addPanel.Width - lblPlus.Width) / 2,
@@ -115,14 +117,14 @@ namespace Project_doan
                 AutoSize = true,
                 Cursor = Cursors.Hand
             };
+            addPanel.Controls.Add(lblText);
 
             lblText.Location = new Point(
                 (addPanel.Width - lblText.Width) / 2,
-                addPanel.Height - 30
+                addPanel.Height - 20
             );
 
-            addPanel.Controls.Add(lblPlus);
-            addPanel.Controls.Add(lblText);
+            
 
             addPanel.Click += AddNewPanel_Click;
             lblPlus.Click += AddNewPanel_Click;

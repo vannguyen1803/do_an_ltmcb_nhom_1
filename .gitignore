@@ -31,3 +31,4 @@ packages/
 *.db
 *.DS_Store
 Thumbs.db
+/VS_Proj_Doan/Project_doan/serviceAccountKey.json

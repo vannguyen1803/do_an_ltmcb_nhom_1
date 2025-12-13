@@ -25,25 +25,83 @@ namespace Project_doan
 
         private void btn_cal_Click(object sender, EventArgs e)
         {
+            
+            btn_cal.FillColor = Color.FromArgb(51,153,255);
+            btn_aim.FillColor = Color.Transparent;
+            btn_note.FillColor = Color.Transparent;
+            btn_diary.FillColor = Color.Transparent;
+            btn_acc.FillColor = Color.Transparent;
+            btn_pomo.FillColor = Color.Transparent;
+
             pn_content.Controls.Clear();
             var calendarControl = new Calendar();
             calendarControl.Dock = DockStyle.Fill;
             pn_content.Controls.Add(calendarControl);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btn_acc_Click(object sender, EventArgs e)
         {
-            User u = new User();
-            u.Show();
-            this.Hide();
+            
+            btn_cal.FillColor = Color.Transparent;
+            btn_aim.FillColor = Color.Transparent;
+            btn_note.FillColor = Color.Transparent;
+            btn_diary.FillColor = Color.Transparent;
+            btn_acc.FillColor = Color.FromArgb(51, 153, 255);
+            btn_pomo.FillColor = Color.Transparent;
+
+            pn_content.Controls.Clear();
+            var acc = new Account();
+            acc.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(acc);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_note_Click(object sender, EventArgs e)
         {
+            
+            btn_cal.FillColor = Color.Transparent;
+            btn_aim.FillColor = Color.Transparent;
+            btn_note.FillColor = Color.FromArgb(51, 153, 255); ;
+            btn_diary.FillColor = Color.Transparent;
+            btn_acc.FillColor = Color.Transparent;
+            btn_pomo.FillColor = Color.Transparent;
+
             pn_content.Controls.Clear();
             var note = new Ghi_chu();
             note.Dock = DockStyle.Fill;
             pn_content.Controls.Add(note);
         }
+
+        private void btn_aim_Click(object sender, EventArgs e)
+        {
+            btn_cal.FillColor = Color.Transparent;
+            btn_aim.FillColor = Color.FromArgb(51, 153, 255);
+            btn_note.FillColor = Color.Transparent;
+            btn_diary.FillColor = Color.Transparent;
+            btn_acc.FillColor = Color.Transparent;
+            btn_pomo.FillColor = Color.Transparent;
+        }
+
+        private void btn_diary_Click(object sender, EventArgs e)
+        {
+            btn_cal.FillColor = Color.Transparent;
+            btn_aim.FillColor = Color.Transparent;
+            btn_note.FillColor = Color.Transparent;
+            btn_diary.FillColor = Color.FromArgb(51, 153, 255);
+            btn_acc.FillColor = Color.Transparent;
+            btn_pomo.FillColor = Color.Transparent;
+        }
+
+        private void btn_pomo_Click(object sender, EventArgs e)
+        {
+            btn_cal.FillColor = Color.Transparent;
+            btn_aim.FillColor = Color.Transparent;
+            btn_note.FillColor = Color.Transparent;
+            btn_diary.FillColor = Color.Transparent;
+            btn_acc.FillColor = Color.Transparent;
+            btn_pomo.FillColor = Color.FromArgb(51, 153, 255);
+        }
+
+
+
     }
 }
