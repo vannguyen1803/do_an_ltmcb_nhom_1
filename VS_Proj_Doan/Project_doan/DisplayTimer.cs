@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Project_doan
 {
-    public partial class Muc_tieu : UserControl
+    public partial class DisplayTimer : Form
     {
-        public Muc_tieu()
+        public DisplayTimer()
         {
             InitializeComponent();
+
+
         }
     }
 }

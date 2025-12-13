@@ -1,5 +1,3 @@
-using Google.Apis.Auth.OAuth2;
-using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Apis.Auth.OAuth2;
+using Google.Cloud.Firestore;
+using Project_doan.Services;
 using static Project_doan.Program;
 
 namespace Project_doan
@@ -24,25 +25,13 @@ namespace Project_doan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Init();
+
+            FirestoreService.Initialize();
             //await FirebaseInit.SeedDataAsync(); // ✅ chạy seed async
 
             Application.Run(new Login());
         }
-
-        //public static class FirebaseInit
-        //{
-        private static FirestoreDb db;
-
-        // 🔹 Khởi tạo kết nối Firestore
-        public static void Init()
-        {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"serviceAccountKey.json";
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-
-            //db = FirestoreDb.Create("do-an-ltmcb-nhom1"); // 🔸 thay bằng project id của bạn
-        }
-        
+             
         //public static async Task SeedDataAsync()
         //{
         //    Console.WriteLine("⚙️  Bắt đầu tạo dữ liệu mẫu...");

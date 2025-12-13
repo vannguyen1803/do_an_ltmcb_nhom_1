@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_doan.Models;
 
 namespace Project_doan
 {
@@ -34,6 +35,7 @@ namespace Project_doan
                     home.Show();
                     this.Hide();
                 }
+
 
             }
             catch (Exception ex)

@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Project_doan.UserControls;
 
 namespace Project_doan
 {
@@ -48,6 +49,7 @@ namespace Project_doan
         }
         private void KiemTraVaGuiMail(Aim aim)
         {
+            if (aim == null) return;
             TimeSpan conLai = aim.date_end - DateTime.Now;
             int days = conLai.Days;
 
@@ -119,5 +121,20 @@ namespace Project_doan
             smtp.Send(mail);
         }
 
+        private void btn_pomo_Click(object sender, EventArgs e)
+        {
+            pn_content.Controls.Clear();
+            var PomodoroControl = new Pomodoro();
+            PomodoroControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(PomodoroControl);
+        }
+
+        private void btn_aim_Click(object sender, EventArgs e)
+        {
+            pn_content.Controls.Clear();
+            var AimControl = new Muc_tieu();
+            AimControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(AimControl);
+        }
     }
 }
