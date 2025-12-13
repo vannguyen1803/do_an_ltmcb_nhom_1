@@ -151,64 +151,77 @@ namespace Project_doan
         }
         private void LoadTaskForButton(Guna2CircleButton button, DateTime date)
         {
-            try
-            {
-                string dateKey = date.ToString("yyyy-MM-dd");
+            string dateKey = date.ToString("yyyy-MM-dd");
 
-                if (UserSession.ScheduleCache.ContainsKey(dateKey))
+            if (!buttonTaskLabelMap.ContainsKey(button))
+                return;
+
+            var label = buttonTaskLabelMap[button];
+            label.Text = "";
+
+            if (UserSession.ScheduleCache.ContainsKey(dateKey))
+            {
+                var events = UserSession.ScheduleCache[dateKey];
+                if (events.Count > 0)
                 {
-                    string content = UserSession.ScheduleCache[dateKey];
+                    label.Text = string.Join(
+                        Environment.NewLine,
+                        events.Take(3).Select(e => "• " + e.Title)
+                    );
 
-                    if (!string.IsNullOrEmpty(content) && buttonTaskLabelMap.ContainsKey(button))
-                    {
-                        string preview = content.Length > 20
-                            ? content.Substring(0, 17) + "..."
-                            : content;
-
-                        buttonTaskLabelMap[button].Text = preview;
-                        
-                    }
+                    if (events.Count > 3)
+                        label.Text += Environment.NewLine + "...";
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
-        private async void Button_Click(object sender, EventArgs e)
+
+        private void Button_Click(object sender, EventArgs e)
         {
             Control ctrl = sender as Control;
             Guna2CircleButton button = null;
 
             if (ctrl is Guna2CircleButton)
-            {
-                button = ctrl as Guna2CircleButton;
-            }
+                button = (Guna2CircleButton)ctrl;
             else if (ctrl is Label)
             {
-                foreach (var kvp in buttonTaskLabelMap)
-                {
-                    if (kvp.Value == ctrl)
-                    {
-                        button = kvp.Key;
-                        break;
-                    }
-                }
+                button = buttonTaskLabelMap
+                    .FirstOrDefault(x => x.Value == ctrl).Key;
             }
 
             if (button == null || !buttonDateMap.ContainsKey(button))
                 return;
 
             DateTime selectedDate = buttonDateMap[button];
+            string dateKey = selectedDate.ToString("yyyy-MM-dd");
 
-            ScheduleNote noteForm = new ScheduleNote(selectedDate);
+            if (!UserSession.ScheduleCache.ContainsKey(dateKey))
+                UserSession.ScheduleCache[dateKey] = new List<Event>();
 
-            if (noteForm.ShowDialog() == DialogResult.OK)
+            var events = UserSession.ScheduleCache[dateKey];
+
+            Schedule_day frm = new Schedule_day(selectedDate, events);
+            // ADD
+            frm.OnAddEvent += (ev) =>
             {
-                LoadTaskForButton(button, selectedDate);
-            }
+                if (!UserSession.ScheduleCache.ContainsKey(dateKey))
+                    UserSession.ScheduleCache[dateKey] = new List<Event>();
+
+                UserSession.ScheduleCache[dateKey].Add(ev);
+                RefreshCalendar();
+            };
+
+            // DELETE (đã có)
+            frm.OnDeleteEvent += async (ev) =>
+            {
+                await firebase.DeleteEventAsync(ev.UId);
+                UserSession.ScheduleCache[dateKey].Remove(ev);
+                RefreshCalendar();
+            };
+
+            frm.ShowDialog();
         }
+
 
         public void RefreshCalendar()
         {
@@ -239,5 +252,6 @@ namespace Project_doan
 
             CreateMonthCalendar(month, year);
         }
+        
     }
 }

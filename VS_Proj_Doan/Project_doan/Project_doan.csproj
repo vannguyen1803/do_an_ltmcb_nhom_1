@@ -152,11 +152,18 @@
     <Compile Include="Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aim.cs" />
     <Compile Include="Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Calendar.Designer.cs">
       <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEvent.Designer.cs">
+      <DependentUpon>EditEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="EditNote.cs">
       <SubType>Form</SubType>
@@ -171,6 +178,12 @@
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Event.cs" />
+    <Compile Include="Event_day.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Event_day.Designer.cs">
+      <DependentUpon>Event_day.cs</DependentUpon>
+    </Compile>
     <Compile Include="FirebaseAuthService.cs" />
     <Compile Include="Forgot_pass.cs">
       <SubType>Form</SubType>
@@ -184,11 +197,23 @@
     <Compile Include="Ghi_chu.Designer.cs">
       <DependentUpon>Ghi_chu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Muc_tieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Muc_tieu.Designer.cs">
+      <DependentUpon>Muc_tieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Note.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Note.Designer.cs">
       <DependentUpon>Note.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule_day.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule_day.Designer.cs">
+      <DependentUpon>Schedule_day.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <SubType>Form</SubType>
@@ -210,12 +235,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleNote.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScheduleNote.Designer.cs">
-      <DependentUpon>ScheduleNote.cs</DependentUpon>
-    </Compile>
     <Compile Include="Services\FirestoreService.cs" />
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
@@ -230,11 +249,17 @@
     <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditEvent.resx">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditNote.resx">
       <DependentUpon>EditNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Event_day.resx">
+      <DependentUpon>Event_day.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
@@ -242,8 +267,14 @@
     <EmbeddedResource Include="Ghi_chu.resx">
       <DependentUpon>Ghi_chu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Muc_tieu.resx">
+      <DependentUpon>Muc_tieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schedule_day.resx">
+      <DependentUpon>Schedule_day.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
@@ -264,9 +295,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ScheduleNote.resx">
-      <DependentUpon>ScheduleNote.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>

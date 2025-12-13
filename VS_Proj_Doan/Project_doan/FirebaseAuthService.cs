@@ -262,7 +262,7 @@ namespace Project_doan
 
 
         //saveSchedule
-        public async Task<string> SaveScheduleAsync(DateTime date, string content)
+        public async Task<string> SaveScheduleAsync(DateTime date, Event ev)
         {
             try
             {
@@ -271,19 +271,30 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 string dateKey = date.ToString("yyyy-MM-dd");
+                if (string.IsNullOrEmpty(ev.UId))
+                    ev.UId = Guid.NewGuid().ToString();
 
                 var data = new Dictionary<string, object>
         {
-            { "Date", dateKey },
-            { "Content", content },
+            { "UId", ev.UId },
+            { "Title", ev.Title },
+            { "Start", ev.Start },
+            { "End", ev.End },
+            { "Frequency", ev.Frequency },
+            { "Description", ev.Description },
             { "UpdatedAt", Timestamp.GetCurrentTimestamp() }
         };
 
                 await userDoc
-                    .Collection("Schedule")
-                    .Document(dateKey)
-                    .SetAsync(data);
-                UserSession.ScheduleCache[dateKey] = content;
+            .Collection("Schedule")
+            .Document(dateKey)
+            .Collection("Events")
+            .Document(ev.UId)
+            .SetAsync(data);
+                if (!UserSession.ScheduleCache.ContainsKey(dateKey))
+                    UserSession.ScheduleCache[dateKey] = new List<Event>();
+
+                UserSession.ScheduleCache[dateKey].Add(ev);
 
                 return "SUCCESS";
             }
@@ -293,29 +304,53 @@ namespace Project_doan
             }
         }
         // loadSchedule
-        public async Task<string> GetScheduleAsync(DateTime date)
+        public async Task<List<Event>> GetScheduleAsync(DateTime date)
         {
+            string dateKey = date.ToString("yyyy-MM-dd");
+
+            // Kiểm tra cache trước
+            if (UserSession.ScheduleCache.ContainsKey(dateKey))
+                return UserSession.ScheduleCache[dateKey];
             try
             {
-                string dateKey = date.ToString("yyyy-MM-dd");
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return new List<Event>();
 
-                // Kiểm tra cache trước
-                if (UserSession.ScheduleCache.ContainsKey(dateKey))
+                var snapshot = await userDoc
+                    .Collection("Schedule")
+                    .Document(dateKey)
+                    .Collection("Events")
+                    .GetSnapshotAsync();
+
+                List<Event> events = new List<Event>();
+                foreach (var doc in snapshot.Documents)
                 {
-                    return UserSession.ScheduleCache[dateKey];
+                    var data = doc.ToDictionary();
+
+                    events.Add(new Event
+                    {
+                        UId = data["UId"].ToString(),
+                        Title = data["Title"].ToString(),
+                        Start = ((Timestamp)data["Start"]).ToDateTime(),
+                        End = ((Timestamp)data["End"]).ToDateTime(),
+                        Frequency = data["Frequency"].ToString(),
+                        Description = data["Description"].ToString()
+                    });
                 }
 
-                return "";
+                UserSession.ScheduleCache[dateKey] = events;
+                return events;
             }
             catch
             {
-                return "";
+                return new List<Event>(); 
             }
         }
         // Load all schedule  
-        public async Task<Dictionary<string, string>> GetAllSchedulesAsync()
+        public async Task<Dictionary<string, List<Event>>> GetAllSchedulesAsync()
         {
-            var scheduleDict = new Dictionary<string, string>();
+            var scheduleDict = new Dictionary<string, List<Event>>();
 
             try
             {
@@ -329,22 +364,105 @@ namespace Project_doan
 
                 foreach (var doc in snap.Documents)
                 {
-                    var data = doc.ToDictionary();
-                    if (data.ContainsKey("Date") && data.ContainsKey("Content"))
+                    string dateKey = doc.Id;
+
+                    QuerySnapshot eventsSnapshot = await doc
+                        .Reference
+                        .Collection("Events")
+                        .GetSnapshotAsync();
+
+                    List<Event> events = new List<Event>();
+                    foreach (var evDoc in eventsSnapshot.Documents)
                     {
-                        string dateKey = data["Date"].ToString();
-                        string content = data["Content"].ToString();
-                        scheduleDict[dateKey] = content;
+                        var data = evDoc.ToDictionary();
+
+                        events.Add(new Event
+                        {
+                            UId = data["UId"].ToString(),
+                            Title = data["Title"].ToString(),
+                            Start = ((Timestamp)data["Start"]).ToDateTime(),
+                            End = ((Timestamp)data["End"]).ToDateTime(),
+                            Frequency = data["Frequency"].ToString(),
+                            Description = data["Description"].ToString()
+                        });
                     }
+
+                    scheduleDict[dateKey] = events;
                 }
+                // Update cache
+                UserSession.ScheduleCache = scheduleDict;
 
                 return scheduleDict;
             }
-            catch (Exception ex)
+            catch 
             {
                 return scheduleDict;
             }
         }
+        //Update event
+        public async Task UpdateEventAsync(DateTime date, Event ev)
+        {
+            var userDoc = await GetCurrentUserDocAsync();
+            if (userDoc == null) return;
+
+            string dateKey = date.ToString("yyyy-MM-dd");
+
+            var data = new Dictionary<string, object>
+    {
+        { "Title", ev.Title },
+        { "Description", ev.Description },
+        { "Start", ev.Start },
+        { "End", ev.End },
+        { "Frequency", ev.Frequency },
+        { "TimezoneId", ev.TimezoneId }
+    };
+
+            await userDoc
+                .Collection("Schedule")
+                .Document(dateKey)
+                .Collection("Events")
+                .Document(ev.UId)
+                .UpdateAsync(data);
+        }
+
+        // Delete event
+        public async Task<string> DeleteEventAsync(string eventId)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                // Tìm event trong toàn bộ các ngày
+                QuerySnapshot daysSnapshot = await userDoc
+                    .Collection("Schedule")
+                    .GetSnapshotAsync();
+
+                foreach (var dayDoc in daysSnapshot.Documents)
+                {
+                    var eventRef = dayDoc
+                        .Reference
+                        .Collection("Events")
+                        .Document(eventId);
+
+                    var evSnap = await eventRef.GetSnapshotAsync();
+
+                    if (evSnap.Exists)
+                    {
+                        await eventRef.DeleteAsync();
+                        return "SUCCESS";
+                    }
+                }
+
+                return "Không tìm thấy event";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi xóa event: " + ex.Message;
+            }
+        }
+
         // Update Note
         public async Task<string> UpdateNoteAsync(string noteId, string content)
         {
@@ -394,5 +512,130 @@ namespace Project_doan
                 return "Lỗi xóa note: " + ex.Message;
             }
         }
+        //Thêm mục tiêu
+        public async Task<string> AddAimAsync(Aim aim)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                string aimId = Guid.NewGuid().ToString();
+                aim.Id = aimId;
+
+                var data = new Dictionary<string, object>
+        {
+            { "Id", aimId },
+            { "Ten", aim.ten },
+            { "MoTa", aim.mota },
+            { "TrangThai", (int)aim.status },
+            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+        };
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aimId)
+                    .SetAsync(data);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi thêm mục tiêu: " + ex.Message;
+            }
+        }
+        //Lấy dữ liệu mục tiêu
+        public async Task<List<Aim>> GetAllAimsAsync()
+        {
+            var list = new List<Aim>();
+
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return list;
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("MucTieu")
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
+                {
+                    var data = doc.ToDictionary();
+
+                    Aim aim = new Aim
+                    {
+                        Id = data["Id"].ToString(),
+                        ten = data["Ten"].ToString(),
+                        mota = data["MoTa"].ToString(),
+                        status = (AimStatus)Convert.ToInt32(data["TrangThai"]),
+                        date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
+                        date_end = ((Timestamp)data["DateEnd"]).ToDateTime()
+                    };
+
+                    list.Add(aim);
+                }
+
+                return list;
+            }
+            catch
+            {
+                return list;
+            }
+        }
+        //Update dữ liệu
+        public async Task<string> UpdateAimAsync(Aim aim)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                var data = new Dictionary<string, object>
+        {
+            { "Ten", aim.ten },
+            { "MoTa", aim.mota },
+            { "TrangThai", (int)aim.status },
+            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+        };
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aim.Id)
+                    .UpdateAsync(data);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi cập nhật mục tiêu: " + ex.Message;
+            }
+        }
+        //Xóa mục tiêu
+        public async Task<string> DeleteAimAsync(string aimId)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                await userDoc
+                    .Collection("MucTieu")
+                    .Document(aimId)
+                    .DeleteAsync();
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi xóa mục tiêu: " + ex.Message;
+            }
+        }
+
     }
 }
