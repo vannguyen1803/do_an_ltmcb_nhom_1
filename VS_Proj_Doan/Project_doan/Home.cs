@@ -40,8 +40,10 @@ namespace Project_doan
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Note note = new Note();
-            note.ShowDialog();
+            pn_content.Controls.Clear();
+            var note = new Ghi_chu();
+            note.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(note);
         }
     }
 }

@@ -172,6 +172,12 @@
     <Compile Include="Forgot_pass.Designer.cs">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ghi_chu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ghi_chu.Designer.cs">
+      <DependentUpon>Ghi_chu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Note.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ghi_chu.resx">
+      <DependentUpon>Ghi_chu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
