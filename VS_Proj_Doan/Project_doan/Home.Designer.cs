@@ -56,9 +56,9 @@
             // 
             // btn_acc
             // 
-            this.btn_acc.Location = new System.Drawing.Point(98, 349);
+            this.btn_acc.Location = new System.Drawing.Point(62, 349);
             this.btn_acc.Name = "btn_acc";
-            this.btn_acc.Size = new System.Drawing.Size(75, 23);
+            this.btn_acc.Size = new System.Drawing.Size(93, 23);
             this.btn_acc.TabIndex = 5;
             this.btn_acc.Text = "Tài khoản";
             this.btn_acc.UseVisualStyleBackColor = true;

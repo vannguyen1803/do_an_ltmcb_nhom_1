@@ -48,7 +48,7 @@ namespace Project_doan
 
                     item.SetData(aim);
 
-                    item.Width = flowLayoutPanel1.ClientSize.Width - 25;
+                    item.Width = flowLayoutPanel1.ClientSize.Width;
 
                     item.OnDeleteCliked += async (s, args) =>
                     {
@@ -196,7 +196,5 @@ namespace Project_doan
             dtp_start.Value = DateTime.Now;
             dtp_end.Value = DateTime.Now;
         }
-
     }
-}
-        
+}      

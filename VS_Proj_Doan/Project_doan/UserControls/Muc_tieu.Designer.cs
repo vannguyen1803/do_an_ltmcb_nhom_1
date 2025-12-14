@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pn_newAim = new Guna.UI2.WinForms.Guna2Panel();
+            this.rtb_mota = new System.Windows.Forms.RichTextBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
             this.dtp_end = new System.Windows.Forms.DateTimePicker();
@@ -41,13 +42,15 @@
             this.pn_listAim = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_add = new Guna.UI2.WinForms.Guna2Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.rtb_mota = new System.Windows.Forms.RichTextBox();
             this.pn_newAim.SuspendLayout();
             this.pn_listAim.SuspendLayout();
             this.SuspendLayout();
             // 
             // pn_newAim
             // 
+            this.pn_newAim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_newAim.Controls.Add(this.rtb_mota);
             this.pn_newAim.Controls.Add(this.btn_save);
             this.pn_newAim.Controls.Add(this.btn_back);
@@ -58,11 +61,18 @@
             this.pn_newAim.Controls.Add(this.label3);
             this.pn_newAim.Controls.Add(this.label2);
             this.pn_newAim.Controls.Add(this.lb_title);
-            this.pn_newAim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_newAim.Location = new System.Drawing.Point(0, 0);
             this.pn_newAim.Name = "pn_newAim";
             this.pn_newAim.Size = new System.Drawing.Size(921, 607);
             this.pn_newAim.TabIndex = 2;
+            // 
+            // rtb_mota
+            // 
+            this.rtb_mota.Location = new System.Drawing.Point(243, 156);
+            this.rtb_mota.Name = "rtb_mota";
+            this.rtb_mota.Size = new System.Drawing.Size(258, 96);
+            this.rtb_mota.TabIndex = 11;
+            this.rtb_mota.Text = "";
             // 
             // btn_save
             // 
@@ -149,9 +159,11 @@
             // 
             // pn_listAim
             // 
+            this.pn_listAim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_listAim.Controls.Add(this.btn_add);
             this.pn_listAim.Controls.Add(this.flowLayoutPanel1);
-            this.pn_listAim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_listAim.Location = new System.Drawing.Point(0, 0);
             this.pn_listAim.Name = "pn_listAim";
             this.pn_listAim.Size = new System.Drawing.Size(921, 607);
@@ -159,6 +171,7 @@
             // 
             // btn_add
             // 
+            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -182,14 +195,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 557);
             this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // rtb_mota
-            // 
-            this.rtb_mota.Location = new System.Drawing.Point(243, 156);
-            this.rtb_mota.Name = "rtb_mota";
-            this.rtb_mota.Size = new System.Drawing.Size(258, 96);
-            this.rtb_mota.TabIndex = 11;
-            this.rtb_mota.Text = "";
             // 
             // Muc_tieu
             // 
