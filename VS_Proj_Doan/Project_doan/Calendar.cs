@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Project_doan
 {
@@ -23,7 +24,7 @@ namespace Project_doan
         public event Func<Event, Task> OnDeleteEventRequested;
         int month = DateTime.Now.Month;
         int year = DateTime.Now.Year;
-
+        string monthName = DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture);
         public Calendar()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace Project_doan
             CreateDayHeader();
             buildCalendar();
             CreateMonthCalendar(month, year);
-            lb_month.Text = month.ToString();
+            lb_month.Text = monthName;
             lb_year.Text = year.ToString();
         }
 
@@ -48,7 +49,7 @@ namespace Project_doan
                 lbl.Text = days[i];
                 lbl.Dock = DockStyle.Fill;
                 lbl.TextAlign = ContentAlignment.MiddleCenter;
-                lbl.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                lbl.Font = new Font("Segoe UI", 11);
                 lbl.BackColor = Color.Transparent;
 
                 weekday.Controls.Add(lbl, i, 0);
@@ -71,13 +72,14 @@ namespace Project_doan
                 {
                     Panel cell = new Panel();
                     cell.Dock = DockStyle.Fill;
-                    cell.BackColor = Color.White;
-                    cell.Margin = new Padding(1);
+                    cell.BackColor = Color.FromArgb(228, 243, 255);
+                    cell.Margin = new Padding(0);
 
                     var btn = new Guna2CircleButton();
                     btn.Width = 34;
                     btn.Height = 34;
-                    btn.FillColor = Color.LightGray;
+                    btn.FillColor = Color.FromArgb(141, 201, 250);
+                    btn.ForeColor = Color.Black;
                     btn.Location = new Point(2, 2);
                     btn.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
                     btn.AutoSize = true;
@@ -114,7 +116,7 @@ namespace Project_doan
                 btn.Text = "";
                 btn.Tag = null;
                 btn.Visible = false;
-                btn.FillColor = Color.LightGray;
+                btn.FillColor = Color.FromArgb(141, 201, 250);
 
                 if (buttonTaskLabelMap.ContainsKey(btn))
                 {
@@ -274,6 +276,27 @@ namespace Project_doan
         private void Calendar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_nextmonth_Click(object sender, EventArgs e)
+        {
+            month ++;
+            if (month > 12)
+            {
+                month = 1;
+                year++;
+            }
+            ChangeMonth(month, year);
+        }
+
+        private void btn_premonth_Click(object sender, EventArgs e)
+        {
+            month--;
+            if (month <= 0) {
+                month = 12;
+                year--;
+            }
+            ChangeMonth(month, year);
         }
     }
 }
