@@ -23,13 +23,21 @@ namespace Project_doan
 
         private async void Home_Load(object sender, EventArgs e)
         {
-            // Load toàn bộ dữ liệu từ Firebase
+            // Load toàn bộ dữ liệu schedule từ Firebase
             UserSession.ScheduleCache = await firebase.GetAllSchedulesAsync();
             UserSession.NoteCache = await firebase.GetAllNotesAsync();
 
             // Tạo Calendar
             calendar = new Calendar();
             calendar.Dock = DockStyle.Fill;
+            calendar.OnRequestSchedule += async (date) =>
+            {
+                return await firebase.GetScheduleAsync(date);
+            };
+            calendar.OnDeleteEventRequested += async (ev) =>
+            {
+                await firebase.DeleteEventAsync(ev);
+            };
 
             //Tạo account
             var acc = new Account();
@@ -52,6 +60,8 @@ namespace Project_doan
 
             pn_content.Controls.Clear();
             pn_content.Controls.Add(calendar);
+            calendar.GoToToday();
+            calendar.RefreshCalendar();
         }
 
         private void btn_acc_Click(object sender, EventArgs e)

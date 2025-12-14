@@ -10,8 +10,7 @@ namespace Project_doan
     {
         DangThucHien = 0,
         HoanThanh = 1,
-        TamDung = 2,
-        ThatBai = 3
+        ChuaThucHien = 2
     }
     internal class Aim
     {

@@ -19,11 +19,10 @@ namespace Project_doan
         List<Guna2CircleButton> dayButtons = new List<Guna2CircleButton>();
         private Dictionary<Guna2CircleButton, DateTime> buttonDateMap = new Dictionary<Guna2CircleButton, DateTime>();
         private Dictionary<Guna2CircleButton, Label> buttonTaskLabelMap = new Dictionary<Guna2CircleButton, Label>();
-
+        public event Func<DateTime, Task<List<Event>>> OnRequestSchedule;
+        public event Func<Event, Task> OnDeleteEventRequested;
         int month = DateTime.Now.Month;
         int year = DateTime.Now.Year;
-
-        
 
         public Calendar()
         {
@@ -176,7 +175,7 @@ namespace Project_doan
         }
 
 
-        private void Button_Click(object sender, EventArgs e)
+        private async void Button_Click(object sender, EventArgs e)
         {
             Control ctrl = sender as Control;
             Guna2CircleButton button = null;
@@ -195,28 +194,47 @@ namespace Project_doan
             DateTime selectedDate = buttonDateMap[button];
             string dateKey = selectedDate.ToString("yyyy-MM-dd");
 
-            if (!UserSession.ScheduleCache.ContainsKey(dateKey))
-                UserSession.ScheduleCache[dateKey] = new List<Event>();
+            List<Event> events = new List<Event>();
+            if (UserSession.ScheduleCache.ContainsKey(dateKey))
+            {
+                // Đã có cache → dùng luôn
+                events = UserSession.ScheduleCache[dateKey];
+            }
+            else if (OnRequestSchedule != null)
+            {
+                // Chưa có → hỏi Home → Home gọi Firebase
+                var taskResult = OnRequestSchedule.Invoke(selectedDate);
+                events = await taskResult;
 
-            var events = UserSession.ScheduleCache[dateKey];
+                // Cache lại (Nếu logic của Home/FirebaseService không làm điều này)
+                UserSession.ScheduleCache[dateKey] = events;
+            }
+            events = events.OrderBy(ev => ev.Start).ToList();
 
             Schedule_day frm = new Schedule_day(selectedDate, events);
             // ADD
             frm.OnAddEvent += (ev) =>
             {
-                if (!UserSession.ScheduleCache.ContainsKey(dateKey))
-                    UserSession.ScheduleCache[dateKey] = new List<Event>();
-
-                UserSession.ScheduleCache[dateKey].Add(ev);
+                
                 RefreshCalendar();
             };
 
             // DELETE (đã có)
             frm.OnDeleteEvent += async (ev) =>
             {
-                await firebase.DeleteEventAsync(ev.UId);
-                UserSession.ScheduleCache[dateKey].Remove(ev);
+                // 1. Xóa trong cache
+                if (UserSession.ScheduleCache.ContainsKey(dateKey))
+                {
+                    UserSession.ScheduleCache[dateKey].RemoveAll(item => item.UId == ev.UId);
+
+                    
+                }
+                // 2. Refresh UI
                 RefreshCalendar();
+
+                // 3. Báo cho Home xử lý Firebase
+                if (OnDeleteEventRequested != null)
+                    await OnDeleteEventRequested(ev);
             };
 
             frm.ShowDialog();

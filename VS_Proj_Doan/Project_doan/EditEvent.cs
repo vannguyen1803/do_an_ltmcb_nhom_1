@@ -9,6 +9,7 @@ namespace Project_doan
         private readonly FirebaseAuthService firebase = new FirebaseAuthService();
 
         private DateTime _date;
+        private DateTime _originalDate;
         private bool _isEditMode = false;
 
         public Event CurrentEvent { get; private set; }
@@ -18,6 +19,7 @@ namespace Project_doan
         {
             InitializeComponent();
             _date = date;
+            _originalDate = date;
         }
 
         // 👉 EDIT MODE
@@ -27,6 +29,7 @@ namespace Project_doan
             _isEditMode = true;
             CurrentEvent = ev;
             _date = ev.Start.Date;
+            _originalDate = ev.Start.Date;
         }
 
         private void EditEvent_Load(object sender, EventArgs e)

@@ -28,7 +28,6 @@ namespace Project_doan
         private void LoadEvents()
         {
             flp_events.Controls.Clear();
-
             if (_events.Count == 0)
             {
                 flp_events.Controls.Add(new Label
@@ -50,10 +49,28 @@ namespace Project_doan
 
                 item.OnDelete += Item_OnDelete;
 
+                // Thêm event cho phép chỉnh sửa
+                item.Click += Item_OnClick; // Khi click vào panel Event_day
+
                 flp_events.Controls.Add(item);
             }
         }
+        private void Item_OnClick(object sender, EventArgs e)
+        {
+            var item = sender as Event_day;
+            if (item == null) return;
 
+            EditEvent frm = new EditEvent(item.CurrentEvent); // Dùng constructor EDIT MODE
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                // Sau khi chỉnh sửa, LoadEvents để làm mới list
+                LoadEvents();
+
+                // Báo cho Calendar biết đã có sự kiện được cập nhật/thay đổi
+                OnAddEvent?.Invoke(frm.CurrentEvent); // Reuse OnAddEvent cho việc Update
+            }
+        }
         private void Item_OnDelete(Event_day item)
         {
             if (MessageBox.Show(
@@ -84,7 +101,7 @@ namespace Project_doan
 
                 LoadEvents();
 
-                // báo cho Calendar / parent
+                // báo cho Calendar 
                 OnAddEvent?.Invoke(newEvent);
             }
         }
