@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Project_doan
 {
-    internal enum AimStatus
+    public enum AimStatus
     {
         DangThucHien = 0,
         HoanThanh = 1,
-        TamDung = 2,
-        ThatBai = 3
+        ChuaThucHien = 2
     }
-    internal class Aim
+    public class Aim
     {
         public string Id { get; set; }
-        public string ten { get; set; }
+        public string title { get; set; }
         public string mota { get; set; }
         public AimStatus status { get; set; }
         public DateTime date_start { get; set; }

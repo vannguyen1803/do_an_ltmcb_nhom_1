@@ -177,11 +177,11 @@ namespace Project_doan
                 else
                 {
                     await userDoc.UpdateAsync(new Dictionary<string, object>
-        {
-            { "Phone", phone },
-            { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
-            { "Language", language }
-        });
+                    {
+                        { "Phone", phone },
+                        { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
+                        { "Language", language }
+                    });
 
                     UserSession.Phone = phone;
                     UserSession.Birthday = birthday;
@@ -221,11 +221,11 @@ namespace Project_doan
                 string noteId = Guid.NewGuid().ToString();
 
                 var noteData = new Dictionary<string, object>
-        {
-            { "Id", noteId },
-            { "Content", content }
+                {
+                    { "Id", noteId },
+                    { "Content", content }
 
-        };
+                };
 
                 await userDoc
                     .Collection("Notes")
@@ -283,11 +283,11 @@ namespace Project_doan
                 string dateKey = date.ToString("yyyy-MM-dd");
 
                 var data = new Dictionary<string, object>
-        {
-            { "Date", dateKey },
-            { "Content", content },
-            { "UpdatedAt", Timestamp.GetCurrentTimestamp() }
-        };
+                {
+                    { "Date", dateKey },
+                    { "Content", content },
+                    { "UpdatedAt", Timestamp.GetCurrentTimestamp() }
+                };
 
                 await userDoc
                     .Collection("Schedule")
@@ -365,10 +365,10 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 var noteData = new Dictionary<string, object>
-        {
-            { "Id", noteId },
-            { "Content", content }
-        };
+                {
+                    { "Id", noteId },
+                    { "Content", content }
+                };
 
                 await userDoc
                     .Collection("Notes")
@@ -417,14 +417,14 @@ namespace Project_doan
                 aim.Id = aimId;
 
                 var data = new Dictionary<string, object>
-        {
-            { "Id", aimId },
-            { "Ten", aim.ten },
-            { "MoTa", aim.mota },
-            { "TrangThai", (int)aim.status },
-            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
-            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
-        };
+                {
+                    { "Id", aimId },
+                    { "Ten", aim.title },
+                    { "MoTa", aim.mota },
+                    { "TrangThai", (int)aim.status },
+                    { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+                };
 
                 await userDoc
                     .Collection("MucTieu")
@@ -460,7 +460,7 @@ namespace Project_doan
                     Aim aim = new Aim
                     {
                         Id = data["Id"].ToString(),
-                        ten = data["Ten"].ToString(),
+                        title = data["Ten"].ToString(),
                         mota = data["MoTa"].ToString(),
                         status = (AimStatus)Convert.ToInt32(data["TrangThai"]),
                         date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
@@ -487,13 +487,13 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 var data = new Dictionary<string, object>
-        {
-            { "Ten", aim.ten },
-            { "MoTa", aim.mota },
-            { "TrangThai", (int)aim.status },
-            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
-            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
-        };
+                {
+                    { "Ten", aim.title },
+                    { "MoTa", aim.mota },
+                    { "TrangThai", (int)aim.status },
+                    { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+                };
 
                 await userDoc
                     .Collection("MucTieu")

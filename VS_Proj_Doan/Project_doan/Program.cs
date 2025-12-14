@@ -65,7 +65,7 @@ namespace Project_doan
         //    {
         //        MaMT = "MT001",
         //        MaND = "ND001",
-        //        TenMT = "Đạt GPA 3.5",
+        //        Title = "Đạt GPA 3.5",
         //        Loai = "Học tập",
         //        MoTa = "Cải thiện kết quả học kỳ 1",
         //        NgayBD = DateTime.UtcNow,                       // ✅

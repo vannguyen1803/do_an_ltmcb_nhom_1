@@ -13,5 +13,9 @@ namespace Project_doan.Models
         public static string Username { get; set; }
         public static string HoTen { get; set; }
         public static string MaND { get; set; }
+        public static string Phone { get; set; }
+        public static DateTime Birthday { get; set; }
+        public static string Language { get; set; }
+        public static Dictionary<string, string> ScheduleCache { get; set; } = new Dictionary<string, string>();
     }
 }

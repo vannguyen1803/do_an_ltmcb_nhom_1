@@ -174,6 +174,12 @@
     <Compile Include="Forgot_pass.Designer.cs">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ItemAim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemAim.Designer.cs">
+      <DependentUpon>ItemAim.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Muc_tieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -221,7 +227,6 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="UserControls\Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +244,9 @@
     </Compile>
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ItemAim.resx">
+      <DependentUpon>ItemAim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Muc_tieu.resx">
       <DependentUpon>Muc_tieu.cs</DependentUpon>
