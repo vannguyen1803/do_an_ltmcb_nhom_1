@@ -50,15 +50,17 @@
             this.pn_menu.Controls.Add(this.btn_cal);
             this.pn_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pn_menu.Location = new System.Drawing.Point(0, 0);
+            this.pn_menu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_menu.Name = "pn_menu";
-            this.pn_menu.Size = new System.Drawing.Size(223, 699);
+            this.pn_menu.Size = new System.Drawing.Size(251, 874);
             this.pn_menu.TabIndex = 0;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(98, 349);
+            this.button6.Location = new System.Drawing.Point(110, 436);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(84, 29);
             this.button6.TabIndex = 5;
             this.button6.Text = "Tài khoản";
             this.button6.UseVisualStyleBackColor = true;
@@ -66,27 +68,31 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(62, 283);
+            this.button5.Location = new System.Drawing.Point(70, 354);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 23);
+            this.button5.Size = new System.Drawing.Size(117, 29);
             this.button5.TabIndex = 4;
             this.button5.Text = "Pomodoro";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(71, 240);
+            this.button4.Location = new System.Drawing.Point(80, 300);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 25);
+            this.button4.Size = new System.Drawing.Size(94, 31);
             this.button4.TabIndex = 3;
             this.button4.Text = "Nhật ký";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(71, 192);
+            this.button3.Location = new System.Drawing.Point(80, 240);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(84, 29);
             this.button3.TabIndex = 2;
             this.button3.Text = "Ghi chú";
             this.button3.UseVisualStyleBackColor = true;
@@ -94,18 +100,20 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(71, 138);
+            this.button2.Location = new System.Drawing.Point(80, 172);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(84, 29);
             this.button2.TabIndex = 1;
             this.button2.Text = "Mục tiêu";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // btn_cal
             // 
-            this.btn_cal.Location = new System.Drawing.Point(62, 85);
+            this.btn_cal.Location = new System.Drawing.Point(70, 106);
+            this.btn_cal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_cal.Name = "btn_cal";
-            this.btn_cal.Size = new System.Drawing.Size(113, 23);
+            this.btn_cal.Size = new System.Drawing.Size(127, 29);
             this.btn_cal.TabIndex = 0;
             this.btn_cal.Text = "Thời gian biểu";
             this.btn_cal.UseVisualStyleBackColor = true;
@@ -114,27 +122,30 @@
             // pn_header
             // 
             this.pn_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pn_header.Location = new System.Drawing.Point(223, 0);
+            this.pn_header.Location = new System.Drawing.Point(251, 0);
+            this.pn_header.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_header.Name = "pn_header";
-            this.pn_header.Size = new System.Drawing.Size(994, 51);
+            this.pn_header.Size = new System.Drawing.Size(1118, 64);
             this.pn_header.TabIndex = 1;
             // 
             // pn_content
             // 
             this.pn_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_content.Location = new System.Drawing.Point(223, 51);
+            this.pn_content.Location = new System.Drawing.Point(251, 64);
+            this.pn_content.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pn_content.Name = "pn_content";
-            this.pn_content.Size = new System.Drawing.Size(994, 648);
+            this.pn_content.Size = new System.Drawing.Size(1118, 810);
             this.pn_content.TabIndex = 2;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 699);
+            this.ClientSize = new System.Drawing.Size(1369, 874);
             this.Controls.Add(this.pn_content);
             this.Controls.Add(this.pn_header);
             this.Controls.Add(this.pn_menu);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);

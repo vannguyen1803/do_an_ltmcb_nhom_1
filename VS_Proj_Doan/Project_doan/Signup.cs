@@ -13,6 +13,7 @@ namespace Project_doan
     public partial class Signup : Form
     {
         FirebaseAuthService firebase = new FirebaseAuthService();
+        private string _currentUserId = null;
         public Signup()
         {
             InitializeComponent();
@@ -39,5 +40,6 @@ namespace Project_doan
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }
