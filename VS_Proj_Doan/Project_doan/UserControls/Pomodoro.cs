@@ -50,8 +50,8 @@ namespace Project_doan.UserControls
 
             if (select == "25/5")
             {
-                workTime = TimeSpan.FromMinutes(25);
-                breakTime = TimeSpan.FromMinutes(5);
+                workTime = TimeSpan.FromMinutes(1);
+                breakTime = TimeSpan.FromMinutes(1);
             }
             else
             {
@@ -79,8 +79,8 @@ namespace Project_doan.UserControls
             }
         }
         private void StartWork()
-        {
-            lb_pomo.ForeColor = Color.White;
+        {     
+            lb_pomo.ForeColor = Color.DeepSkyBlue;
             lb_break.ForeColor = Color.Black;
             currentState = PomoState.Work;
             currentTime = workTime;
@@ -92,7 +92,7 @@ namespace Project_doan.UserControls
         }
         private void StartBreak()
         {
-            lb_break.ForeColor = Color.White;
+            lb_break.ForeColor = Color.DeepSkyBlue;
             lb_pomo.ForeColor = Color.Black;
             currentState = PomoState.Break;
             currentTime = breakTime;
