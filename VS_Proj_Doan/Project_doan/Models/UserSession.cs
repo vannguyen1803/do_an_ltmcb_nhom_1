@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_doan
+namespace Project_doan.Models
 {
-    internal class UserSession
+    public class UserSession
     {
         public static string UserId { get; set; }
         public static string Email { get; set; }
