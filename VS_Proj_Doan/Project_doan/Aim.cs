@@ -1,0 +1,21 @@
+﻿using System;
+
+namespace Project_doan
+{
+    internal enum AimStatus
+    {
+        DangThucHien = 0,
+        HoanThanh = 1,
+        ChuaThucHien = 2
+    }
+    internal class Aim
+    {
+        public string Id { get; set; }
+        public string ten { get; set; }
+        public string mota { get; set; }
+        public AimStatus status { get; set; }
+        public DateTime date_start { get; set; }
+        public DateTime date_end { get; set; }
+
+    }
+}
