@@ -31,7 +31,7 @@
             this.pn_menu = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_diary = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_cal = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             // 
             this.pn_menu.Controls.Add(this.button6);
             this.pn_menu.Controls.Add(this.button5);
-            this.pn_menu.Controls.Add(this.button4);
+            this.pn_menu.Controls.Add(this.btn_diary);
             this.pn_menu.Controls.Add(this.button3);
             this.pn_menu.Controls.Add(this.button2);
             this.pn_menu.Controls.Add(this.btn_cal);
@@ -76,16 +76,16 @@
             this.button5.Text = "Pomodoro";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_diary
             // 
-            this.button4.Location = new System.Drawing.Point(80, 300);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 31);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Nhật ký";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_diary.Location = new System.Drawing.Point(80, 300);
+            this.btn_diary.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_diary.Name = "btn_diary";
+            this.btn_diary.Size = new System.Drawing.Size(94, 31);
+            this.btn_diary.TabIndex = 3;
+            this.btn_diary.Text = "Nhật ký";
+            this.btn_diary.UseVisualStyleBackColor = true;
+            this.btn_diary.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -136,6 +136,7 @@
             this.pn_content.Name = "pn_content";
             this.pn_content.Size = new System.Drawing.Size(1118, 810);
             this.pn_content.TabIndex = 2;
+            this.pn_content.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_content_Paint);
             // 
             // Home
             // 
@@ -160,7 +161,7 @@
         private System.Windows.Forms.Panel pn_header;
         private System.Windows.Forms.Panel pn_content;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_diary;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_cal;
