@@ -23,7 +23,10 @@ namespace Project_doan
 
         private void Home_Load(object sender, EventArgs e)
         {
-            KiemTraVaGuiMail(aim);
+            if (aim != null)
+            {
+                KiemTraVaGuiMail(aim);
+            }
         }
 
         private void btn_cal_Click(object sender, EventArgs e)
@@ -119,5 +122,10 @@ namespace Project_doan
             smtp.Send(mail);
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            NhatKy nhatKy = new NhatKy();
+            nhatKy.Show();
+        }
     }
 }

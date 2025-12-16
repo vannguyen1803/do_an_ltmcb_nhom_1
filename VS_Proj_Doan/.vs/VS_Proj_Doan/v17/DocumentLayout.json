@@ -1,117 +1,169 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\",
+  "WorkspaceRootPath": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\nhatky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\nhatky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an_ck\\vs_proj_doan\\project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an_ck\\vs_proj_doan\\project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an_ck\\vs_proj_doan\\project_doan\\schedulenote.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\schedulenote.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\services\\firestoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\services\\firestoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\services\\firestoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|e:\\ltmcb\\do_an_ck\\vs_proj_doan\\project_doan\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\nhatky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\nhatky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\muc_tieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\muc_tieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\nhatky.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\nhatky.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\nhatkylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\nhatkylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\diary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\diary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\nhatkylist.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\nhatkylist.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\nhatkylist.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\nhatkylist.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\nhatkylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\nhatkylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\forgot_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\forgot_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Project_doan||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\calendar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\calendar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\aim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\aim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\schedulenote.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\schedulenote.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\signup.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\forgot_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\forgot_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\edituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\calendar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\calendar.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\calendar.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\calendar.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\signup.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\signup.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\forgot_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\schedulenote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\calendar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\firebaseauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\editnote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\forgot_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\forgot_pass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\forgot_pass.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\forgot_pass.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\forgot_pass.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\project_doan\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\project_doan\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|d:\\n\u0103m hai\\ltmcb\\doan\\do_an_ltmcb_nhom_1\\vs_proj_doan\\project_doan\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{47BE20DF-0C2D-4D75-AC8A-D7C4DB84E5F3}|Project_doan\\Project_doan.csproj|solutionrelative:project_doan\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -121,350 +173,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 553,
-          "SelectedChildIndex": 4,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ScheduleNote.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs",
-              "RelativeDocumentMoniker": "Project_doan\\ScheduleNote.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs",
-              "RelativeToolTip": "Project_doan\\ScheduleNote.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T18:05:27.732Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Event.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Event.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Event.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Event.cs",
-              "RelativeToolTip": "Project_doan\\Event.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T05:57:11.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ScheduleNote.Designer.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\ScheduleNote.Designer.cs",
-              "RelativeDocumentMoniker": "Project_doan\\ScheduleNote.Designer.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\ScheduleNote.Designer.cs",
-              "RelativeToolTip": "Project_doan\\ScheduleNote.Designer.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAwwBwAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T19:20:03.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Calendar.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Calendar.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Calendar.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Calendar.cs [Design]*",
-              "RelativeToolTip": "Project_doan\\Calendar.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T09:00:18.693Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Home.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Home.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Home.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Home.cs [Design]*",
-              "RelativeToolTip": "Project_doan\\Home.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T09:03:59.627Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ScheduleNote.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs",
-              "RelativeDocumentMoniker": "Project_doan\\ScheduleNote.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs [Design]",
-              "RelativeToolTip": "Project_doan\\ScheduleNote.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T18:05:25.764Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EditNote.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\EditNote.cs",
-              "RelativeDocumentMoniker": "Project_doan\\EditNote.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\EditNote.cs",
-              "RelativeToolTip": "Project_doan\\EditNote.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:44:54.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Note.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Note.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Note.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Note.cs",
-              "RelativeToolTip": "Project_doan\\Note.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAApwGYAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:42:21.236Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "User.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\User.cs",
-              "RelativeDocumentMoniker": "Project_doan\\User.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\User.cs [Design]",
-              "RelativeToolTip": "Project_doan\\User.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:39:41.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Note.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Note.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Note.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Note.cs [Design]",
-              "RelativeToolTip": "Project_doan\\Note.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:39:29.689Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EditUser.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\EditUser.cs",
-              "RelativeDocumentMoniker": "Project_doan\\EditUser.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\EditUser.cs [Design]",
-              "RelativeToolTip": "Project_doan\\EditUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:39:21.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EditNote.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\EditNote.cs",
-              "RelativeDocumentMoniker": "Project_doan\\EditNote.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\EditNote.cs [Design]",
-              "RelativeToolTip": "Project_doan\\EditNote.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:39:16.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FirebaseAuthService.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\FirebaseAuthService.cs",
-              "RelativeDocumentMoniker": "Project_doan\\FirebaseAuthService.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\FirebaseAuthService.cs",
-              "RelativeToolTip": "Project_doan\\FirebaseAuthService.cs",
-              "ViewState": "AgIAAEIBAAAAAAAAAAAcwOkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:14:04.197Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Properties\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Properties\\AssemblyInfo.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Properties\\AssemblyInfo.cs",
-              "RelativeToolTip": "Project_doan\\Properties\\AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T07:19:02.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Project_doan",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Project_doan.csproj",
-              "RelativeDocumentMoniker": "Project_doan\\Project_doan.csproj",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Project_doan.csproj",
-              "RelativeToolTip": "Project_doan\\Project_doan.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-05T07:18:38.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Calendar.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Calendar.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Calendar.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Calendar.cs*",
-              "RelativeToolTip": "Project_doan\\Calendar.cs*",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAgwGIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T15:19:08.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FirestoreService.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Services\\FirestoreService.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Services\\FirestoreService.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Services\\FirestoreService.cs",
-              "RelativeToolTip": "Project_doan\\Services\\FirestoreService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA5wBsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T17:02:34.796Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Home.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Home.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Home.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Home.cs*",
-              "RelativeToolTip": "Project_doan\\Home.cs*",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T02:04:48.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Calendar.Designer.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Calendar.Designer.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Calendar.Designer.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Calendar.Designer.cs*",
-              "RelativeToolTip": "Project_doan\\Calendar.Designer.cs*",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAYwCkAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T01:18:35.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Signup.Designer.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Signup.Designer.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Signup.Designer.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Signup.Designer.cs",
-              "RelativeToolTip": "Project_doan\\Signup.Designer.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAUwFkAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T09:11:05.933Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Login.Designer.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.Designer.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Login.Designer.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.Designer.cs",
-              "RelativeToolTip": "Project_doan\\Login.Designer.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAYwG8AAACAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T09:08:13.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Signup.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Signup.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Signup.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Signup.cs",
-              "RelativeToolTip": "Project_doan\\Signup.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBkAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:04:00.875Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Forgot_pass.Designer.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Forgot_pass.Designer.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Forgot_pass.Designer.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Forgot_pass.Designer.cs",
-              "RelativeToolTip": "Project_doan\\Forgot_pass.Designer.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAkwGoAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:26:05.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Program.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Program.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Program.cs",
-              "RelativeToolTip": "Project_doan\\Program.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwBgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:22:26.276Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Login.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Login.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.cs",
-              "RelativeToolTip": "Project_doan\\Login.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwCEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:15:01.724Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Forgot_pass.cs",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Forgot_pass.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs",
-              "RelativeToolTip": "Project_doan\\Forgot_pass.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBgAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:04:15.361Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Forgot_pass.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Forgot_pass.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs [Design]",
-              "RelativeToolTip": "Project_doan\\Forgot_pass.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T02:04:11.48Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.cs",
-              "RelativeDocumentMoniker": "Project_doan\\Login.cs",
-              "ToolTip": "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Login.cs [Design]",
-              "RelativeToolTip": "Project_doan\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T07:11:29.184Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 119,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -477,6 +186,510 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Muc_tieu.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Muc_tieu.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Muc_tieu.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Muc_tieu.cs [Design]",
+              "RelativeToolTip": "Project_doan\\Muc_tieu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T08:38:49.792Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Signup.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Signup.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Signup.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Signup.cs [Design]",
+              "RelativeToolTip": "Project_doan\\Signup.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T08:35:49.4Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FirestoreService.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Services\\FirestoreService.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Services\\FirestoreService.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Services\\FirestoreService.cs",
+              "RelativeToolTip": "Project_doan\\Services\\FirestoreService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T17:02:34.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NhatKy.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKy.cs",
+              "RelativeDocumentMoniker": "Project_doan\\NhatKy.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKy.cs [Design]",
+              "RelativeToolTip": "Project_doan\\NhatKy.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T10:22:27.684Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NhatKy.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKy.cs",
+              "RelativeDocumentMoniker": "Project_doan\\NhatKy.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKy.cs",
+              "RelativeToolTip": "Project_doan\\NhatKy.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAH8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T10:38:09.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Signup.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Signup.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Signup.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Signup.cs",
+              "RelativeToolTip": "Project_doan\\Signup.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwCIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:04:00.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Login.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.cs",
+              "RelativeToolTip": "Project_doan\\Login.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAA3wBkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:15:01.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Login.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.cs [Design]",
+              "RelativeToolTip": "Project_doan\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T07:11:29.184Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NhatKyList.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.cs",
+              "RelativeDocumentMoniker": "Project_doan\\NhatKyList.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.cs",
+              "RelativeToolTip": "Project_doan\\NhatKyList.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAzwE8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T11:37:26.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NhatKy.Designer.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKy.Designer.cs",
+              "RelativeDocumentMoniker": "Project_doan\\NhatKy.Designer.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKy.Designer.cs",
+              "RelativeToolTip": "Project_doan\\NhatKy.Designer.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAwwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T11:51:41.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Diary.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Diary.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Diary.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Diary.cs",
+              "RelativeToolTip": "Project_doan\\Diary.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAcwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T11:29:18.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NhatKyList.Designer.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.Designer.cs",
+              "RelativeDocumentMoniker": "Project_doan\\NhatKyList.Designer.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.Designer.cs",
+              "RelativeToolTip": "Project_doan\\NhatKyList.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T11:39:55.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NhatKyList.resx",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.resx",
+              "RelativeDocumentMoniker": "Project_doan\\NhatKyList.resx",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.resx",
+              "RelativeToolTip": "Project_doan\\NhatKyList.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-14T11:40:04.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NhatKyList.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.cs",
+              "RelativeDocumentMoniker": "Project_doan\\NhatKyList.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\NhatKyList.cs [Design]",
+              "RelativeToolTip": "Project_doan\\NhatKyList.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T11:36:09.291Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Note.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Note.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Note.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Note.cs [Design]",
+              "RelativeToolTip": "Project_doan\\Note.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:39:29.689Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Note.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Note.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Note.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Note.cs",
+              "RelativeToolTip": "Project_doan\\Note.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAkwHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:42:21.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "User.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\User.cs",
+              "RelativeDocumentMoniker": "Project_doan\\User.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\User.cs [Design]",
+              "RelativeToolTip": "Project_doan\\User.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:39:41.65Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Home.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Home.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Home.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Home.cs",
+              "RelativeToolTip": "Project_doan\\Home.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAwwH8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T02:04:48.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Project_doan",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Project_doan.csproj",
+              "RelativeDocumentMoniker": "Project_doan\\Project_doan.csproj",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Project_doan.csproj",
+              "RelativeToolTip": "Project_doan\\Project_doan.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-05T07:18:38.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Home.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Home.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Home.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Home.cs [Design]",
+              "RelativeToolTip": "Project_doan\\Home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T09:03:59.627Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ScheduleNote.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs",
+              "RelativeDocumentMoniker": "Project_doan\\ScheduleNote.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs [Design]",
+              "RelativeToolTip": "Project_doan\\ScheduleNote.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T18:05:25.764Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Aim.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Aim.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Aim.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Aim.cs",
+              "RelativeToolTip": "Project_doan\\Aim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T08:36:10.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Event.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Event.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Event.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Event.cs",
+              "RelativeToolTip": "Project_doan\\Event.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T05:57:11.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Calendar.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Calendar.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.cs [Design]",
+              "RelativeToolTip": "Project_doan\\Calendar.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T09:00:18.693Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ScheduleNote.Designer.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\ScheduleNote.Designer.cs",
+              "RelativeDocumentMoniker": "Project_doan\\ScheduleNote.Designer.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\ScheduleNote.Designer.cs",
+              "RelativeToolTip": "Project_doan\\ScheduleNote.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T19:20:03.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Program.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Program.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Program.cs",
+              "RelativeToolTip": "Project_doan\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwBgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:22:26.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Forgot_pass.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Forgot_pass.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs [Design]",
+              "RelativeToolTip": "Project_doan\\Forgot_pass.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:04:11.48Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "EditUser.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\EditUser.cs",
+              "RelativeDocumentMoniker": "Project_doan\\EditUser.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\EditUser.cs [Design]",
+              "RelativeToolTip": "Project_doan\\EditUser.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:39:21.925Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "EditNote.cs [Design]",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\EditNote.cs",
+              "RelativeDocumentMoniker": "Project_doan\\EditNote.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\EditNote.cs [Design]",
+              "RelativeToolTip": "Project_doan\\EditNote.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:39:16.57Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Calendar.Designer.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.Designer.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Calendar.Designer.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.Designer.cs",
+              "RelativeToolTip": "Project_doan\\Calendar.Designer.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T01:18:35.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Calendar.resx",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.resx",
+              "RelativeDocumentMoniker": "Project_doan\\Calendar.resx",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.resx",
+              "RelativeToolTip": "Project_doan\\Calendar.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-14T07:44:53.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Signup.Designer.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Signup.Designer.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Signup.Designer.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Signup.Designer.cs",
+              "RelativeToolTip": "Project_doan\\Signup.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T09:11:05.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ScheduleNote.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs",
+              "RelativeDocumentMoniker": "Project_doan\\ScheduleNote.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\ScheduleNote.cs",
+              "RelativeToolTip": "Project_doan\\ScheduleNote.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T18:05:27.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "EditNote.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\EditNote.cs",
+              "RelativeDocumentMoniker": "Project_doan\\EditNote.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\EditNote.cs",
+              "RelativeToolTip": "Project_doan\\EditNote.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T04:44:54.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "FirebaseAuthService.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\FirebaseAuthService.cs",
+              "RelativeDocumentMoniker": "Project_doan\\FirebaseAuthService.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\FirebaseAuthService.cs",
+              "RelativeToolTip": "Project_doan\\FirebaseAuthService.cs",
+              "ViewState": "AgIAAEIBAAAAAAAAAAAcwOkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:14:04.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "Project_doan\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T07:19:02.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Calendar.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Calendar.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Calendar.cs",
+              "RelativeToolTip": "Project_doan\\Calendar.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAgwGIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:19:08.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Login.Designer.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.Designer.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Login.Designer.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Login.Designer.cs",
+              "RelativeToolTip": "Project_doan\\Login.Designer.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAYwG8AAACAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T09:08:13.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Forgot_pass.Designer.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Forgot_pass.Designer.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Forgot_pass.Designer.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Forgot_pass.Designer.cs",
+              "RelativeToolTip": "Project_doan\\Forgot_pass.Designer.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAkwGoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:26:05.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Forgot_pass.cs",
+              "DocumentMoniker": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs",
+              "RelativeDocumentMoniker": "Project_doan\\Forgot_pass.cs",
+              "ToolTip": "D:\\N\u0103m hai\\LTMCB\\DoAn\\do_an_ltmcb_nhom_1\\VS_Proj_Doan\\Project_doan\\Forgot_pass.cs",
+              "RelativeToolTip": "Project_doan\\Forgot_pass.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBgAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T02:04:15.361Z",
+              "EditorCaption": ""
             }
           ]
         }

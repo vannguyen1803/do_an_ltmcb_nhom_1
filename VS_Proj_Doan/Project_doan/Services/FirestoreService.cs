@@ -9,6 +9,7 @@ namespace Project_doan
     internal class FirestoreService
     {
         private readonly FirestoreDb _db;
+        private string _currentUserId = null;
 
         public FirestoreService()
         {
