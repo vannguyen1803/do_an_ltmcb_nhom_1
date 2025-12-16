@@ -201,5 +201,10 @@ namespace Project_doan
             pn_content.Controls.Add(AimControl);
         }
 
+        private void btn_diary_Click(object sender, EventArgs e)
+        {
+            NhatKy nhatKy = new NhatKy();
+            nhatKy.Show();
+        }
     }
 }

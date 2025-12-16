@@ -56,9 +56,10 @@
             // 
             // btn_acc
             // 
-            this.btn_acc.Location = new System.Drawing.Point(62, 349);
+            this.btn_acc.Location = new System.Drawing.Point(58, 339);
+            this.btn_acc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_acc.Name = "btn_acc";
-            this.btn_acc.Size = new System.Drawing.Size(93, 23);
+            this.btn_acc.Size = new System.Drawing.Size(107, 26);
             this.btn_acc.TabIndex = 5;
             this.btn_acc.Text = "Tài khoản";
             this.btn_acc.UseVisualStyleBackColor = true;
@@ -66,9 +67,10 @@
             // 
             // btn_pomo
             // 
-            this.btn_pomo.Location = new System.Drawing.Point(62, 283);
+            this.btn_pomo.Location = new System.Drawing.Point(58, 294);
+            this.btn_pomo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_pomo.Name = "btn_pomo";
-            this.btn_pomo.Size = new System.Drawing.Size(104, 23);
+            this.btn_pomo.Size = new System.Drawing.Size(107, 27);
             this.btn_pomo.TabIndex = 4;
             this.btn_pomo.Text = "Pomodoro";
             this.btn_pomo.UseVisualStyleBackColor = true;
@@ -76,18 +78,21 @@
             // 
             // btn_diary
             // 
-            this.btn_diary.Location = new System.Drawing.Point(71, 240);
+            this.btn_diary.Location = new System.Drawing.Point(58, 248);
+            this.btn_diary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_diary.Name = "btn_diary";
-            this.btn_diary.Size = new System.Drawing.Size(84, 25);
+            this.btn_diary.Size = new System.Drawing.Size(107, 30);
             this.btn_diary.TabIndex = 3;
             this.btn_diary.Text = "Nhật ký";
             this.btn_diary.UseVisualStyleBackColor = true;
+            this.btn_diary.Click += new System.EventHandler(this.btn_diary_Click);
             // 
             // btn_note
             // 
-            this.btn_note.Location = new System.Drawing.Point(71, 192);
+            this.btn_note.Location = new System.Drawing.Point(58, 196);
+            this.btn_note.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_note.Name = "btn_note";
-            this.btn_note.Size = new System.Drawing.Size(75, 23);
+            this.btn_note.Size = new System.Drawing.Size(107, 30);
             this.btn_note.TabIndex = 2;
             this.btn_note.Text = "Ghi chú";
             this.btn_note.UseVisualStyleBackColor = true;
@@ -95,9 +100,10 @@
             // 
             // btn_aim
             // 
-            this.btn_aim.Location = new System.Drawing.Point(71, 138);
+            this.btn_aim.Location = new System.Drawing.Point(58, 150);
+            this.btn_aim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_aim.Name = "btn_aim";
-            this.btn_aim.Size = new System.Drawing.Size(75, 23);
+            this.btn_aim.Size = new System.Drawing.Size(107, 28);
             this.btn_aim.TabIndex = 1;
             this.btn_aim.Text = "Mục tiêu";
             this.btn_aim.UseVisualStyleBackColor = true;
@@ -105,9 +111,9 @@
             // 
             // btn_cal
             // 
-            this.btn_cal.Location = new System.Drawing.Point(62, 85);
+            this.btn_cal.Location = new System.Drawing.Point(58, 102);
             this.btn_cal.Name = "btn_cal";
-            this.btn_cal.Size = new System.Drawing.Size(113, 23);
+            this.btn_cal.Size = new System.Drawing.Size(107, 29);
             this.btn_cal.TabIndex = 0;
             this.btn_cal.Text = "Thời gian biểu";
             this.btn_cal.UseVisualStyleBackColor = true;
@@ -123,12 +129,11 @@
             // 
             // pn_content
             // 
-            this.pn_content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pn_content.Location = new System.Drawing.Point(223, 47);
+            this.pn_content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_content.Location = new System.Drawing.Point(223, 51);
+            this.pn_content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pn_content.Name = "pn_content";
-            this.pn_content.Size = new System.Drawing.Size(994, 652);
+            this.pn_content.Size = new System.Drawing.Size(994, 648);
             this.pn_content.TabIndex = 0;
             // 
             // Home
