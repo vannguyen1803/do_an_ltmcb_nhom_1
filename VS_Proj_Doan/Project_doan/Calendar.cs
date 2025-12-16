@@ -6,11 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
 
 namespace Project_doan
 {
@@ -34,8 +35,9 @@ namespace Project_doan
             CreateMonthCalendar(month, year);
             lb_month.Text = monthName;
             lb_year.Text = year.ToString();
-        }
 
+        }
+       
         private void CreateDayHeader()
         {
             for (int i = 0; i < 7; i++)
@@ -297,6 +299,57 @@ namespace Project_doan
                 year--;
             }
             ChangeMonth(month, year);
+        }
+
+        private void pn_day_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_xuat_Click(object sender, EventArgs e)
+        {
+            List<Event> eventsToExport = new List<Event>();
+            string currentMonthPrefix = $"{year}-{month:D2}";
+
+            foreach (var key in UserSession.ScheduleCache.Keys)
+            {
+                if (key.StartsWith(currentMonthPrefix))
+                {
+                    eventsToExport.AddRange(UserSession.ScheduleCache[key]);
+                }
+            }
+
+            if (eventsToExport.Count == 0)
+            {
+                MessageBox.Show($"Không có sự kiện nào trong tháng {month}/{year} để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "iCalendar File (*.ics)|*.ics";
+                saveFileDialog.Title = "Chọn nơi lưu file Lịch Tháng";
+                saveFileDialog.FileName = $"Lich_thang_{month}_{year}.ics";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string outputFileName = saveFileDialog.FileName;
+                    string result = XuatLich.ExportEventsToIcs(eventsToExport, outputFileName);
+                    MessageBox.Show(result, "Xuất Lịch Thành Công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Tùy chọn mở thư mục
+                    if (MessageBox.Show("Bạn có muốn mở thư mục chứa file không?", "Hoàn tất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            System.Diagnostics.Process.Start("explorer.exe", Path.GetDirectoryName(outputFileName));
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Không thể mở thư mục: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
         }
     }
 }

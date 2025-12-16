@@ -29,5 +29,10 @@ namespace Project_doan
         {
             OnDelete?.Invoke(this);
         }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
