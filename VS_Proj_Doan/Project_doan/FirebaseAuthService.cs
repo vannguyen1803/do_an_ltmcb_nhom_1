@@ -1,16 +1,14 @@
-﻿using System;
+﻿using Google.Cloud.Firestore;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
-using Google.Cloud.Firestore;
-using Newtonsoft.Json;
-using Project_doan.Models;
-using Project_doan.Services;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Project_doan.Models;
 
 namespace Project_doan
 {
@@ -20,12 +18,7 @@ namespace Project_doan
 
         public FirebaseAuthService()
         {
-            _db = FirestoreService.db;
-
-            if (_db == null)
-            {
-                throw new Exception("Firestore chưa được khởi tạo! Hãy kiểm tra Program.cs");
-            }
+            _db = new FirestoreService().GetDb();
         }
         //Login
 
@@ -529,5 +522,37 @@ namespace Project_doan
             }
         }
 
+        //AddPomo
+        public async Task<string> AddPomoAsync(PomoData data)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                data.MaPomodoro = Guid.NewGuid().ToString();
+
+
+                var pomoDict = new Dictionary<string, object>
+                {
+                    { "MaPomodoro", data.MaPomodoro },
+                    {"MaND", data.MaND },
+                    {"NgayThucHien", Timestamp.FromDateTime(data.NgayThucHien.ToUniversalTime()) },
+                    {"SoPhien", data.SoPhien },
+                    {"TongThoiGian", data.TongThoiGian }
+                };
+
+                await userDoc
+                    .Collection("Pomodoro")
+                    .Document(data.MaPomodoro)
+                    .SetAsync(pomoDict);
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi lưu Pomodoro: " + ex.Message;
+            }
+        }
     }
 }

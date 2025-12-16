@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Cloud.Firestore;
 using Project_doan.Models;
-using Project_doan.Services;
 
 namespace Project_doan.UserControls
 {
     public partial class Pomodoro : UserControl
     {
+        private FirebaseAuthService firebase;
         public enum PomoState
         {
             None,
@@ -50,8 +50,8 @@ namespace Project_doan.UserControls
 
             if (select == "25/5")
             {
-                workTime = TimeSpan.FromMinutes(1);
-                breakTime = TimeSpan.FromMinutes(1);
+                workTime = TimeSpan.FromMinutes(25);
+                breakTime = TimeSpan.FromMinutes(5);
             }
             else
             {
@@ -128,13 +128,19 @@ namespace Project_doan.UserControls
                 {
                     PomoData log = new PomoData()
                     {
+                        MaPomodoro = Guid.NewGuid().ToString(),
                         MaND = UserSession.MaND,
-                        NgayThucHien = DateTime.UtcNow.Date,
+                        NgayThucHien = DateTime.Now,
                         SoPhien = sessionCount,
                         TongThoiGian = totalMinuteWork,
-                        MaPomodoro = Guid.NewGuid().ToString()
                     };
-                    await FirestoreService.AddPomo(log);
+                    firebase = new FirebaseAuthService();
+                    string result = await firebase.AddPomoAsync(log);
+
+                    if (result != "SUCCESS")
+                    {
+                        MessageBox.Show(result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception ex)
                 {

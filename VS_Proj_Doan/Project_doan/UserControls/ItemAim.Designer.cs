@@ -141,7 +141,7 @@
             this.btn_complete.FillColor = System.Drawing.Color.LightSkyBlue;
             this.btn_complete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_complete.ForeColor = System.Drawing.Color.White;
-            this.btn_complete.Location = new System.Drawing.Point(442, 16);
+            this.btn_complete.Location = new System.Drawing.Point(427, 14);
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(152, 50);
             this.btn_complete.TabIndex = 10;
@@ -159,7 +159,7 @@
             this.btn_xoa.FillColor = System.Drawing.Color.LightSkyBlue;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_xoa.Location = new System.Drawing.Point(468, 96);
+            this.btn_xoa.Location = new System.Drawing.Point(453, 94);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(126, 45);
             this.btn_xoa.TabIndex = 11;
@@ -199,7 +199,7 @@
             this.Controls.Add(this.lb_aim);
             this.Controls.Add(this.label1);
             this.Name = "ItemAim";
-            this.Size = new System.Drawing.Size(616, 213);
+            this.Size = new System.Drawing.Size(616, 219);
             this.Click += new System.EventHandler(this.ItemAim_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
