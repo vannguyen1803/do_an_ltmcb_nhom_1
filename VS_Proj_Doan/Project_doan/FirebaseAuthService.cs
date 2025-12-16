@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project_doan
 {
-    internal class FirebaseAuthService
+    public class FirebaseAuthService
     {
         private readonly FirestoreDb _db;
 
@@ -392,6 +392,95 @@ namespace Project_doan
             catch (Exception ex)
             {
                 return "Lỗi xóa note: " + ex.Message;
+            }
+        }
+        private void CheckDbReady()
+        {
+            if (_db == null || string.IsNullOrEmpty(UserSession.Username))
+            {
+                throw new InvalidOperationException("Cơ sở dữ liệu hoặc thông tin người dùng chưa sẵn sàng. Vui lòng kiểm tra kết nối và đăng nhập lại.");
+            }
+        }
+        public async Task<string> SaveDiaryEntryAsync(string documentId, Diary entry)
+        {
+            CheckDbReady();
+
+            try
+            {
+                DocumentReference userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    throw new InvalidOperationException("Không tìm thấy Document người dùng hiện tại.");
+                CollectionReference colRef = userDoc.Collection("diaries");
+
+                if (string.IsNullOrEmpty(documentId))
+                {
+                    DocumentReference docRef = await colRef.AddAsync(entry);
+                    return docRef.Id;
+                }
+                else
+                {
+                    await colRef.Document(documentId).SetAsync(entry);
+                    return documentId;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lưu Nhật ký: " + ex.Message);
+            }
+        }
+
+        public async Task<Diary> LoadDiaryEntryAsync(string documentId)
+        {
+            CheckDbReady();
+
+            try
+            {
+                DocumentReference userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return null;
+
+                DocumentReference docRef = userDoc.Collection("diaries").Document(documentId);
+                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+                if (snapshot.Exists)
+                {
+                    return snapshot.ConvertTo<Diary>();
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tải Nhật ký: " + ex.Message);
+            }
+        }
+        public async Task<List<Dictionary<string, object>>> GetAllDiaryEntriesAsync()
+        {
+            CheckDbReady();
+            var diaryList = new List<Dictionary<string, object>>();
+
+            try
+            {
+                DocumentReference userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return diaryList;
+                QuerySnapshot snap = await userDoc
+                    .Collection("diaries")
+                    .OrderByDescending("Date")
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
+                {
+                    var data = doc.ToDictionary();
+                    data.Add("DocumentId", doc.Id);
+                    diaryList.Add(data);
+                }
+
+                return diaryList;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi tải danh sách nhật ký: " + ex.Message);
+                throw new Exception("Lỗi khi tải danh sách nhật ký: " + ex.Message);
             }
         }
     }

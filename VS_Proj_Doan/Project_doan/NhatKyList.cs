@@ -14,16 +14,15 @@ namespace Project_doan
 {
     public partial class NhatKyList : Form
     {
-        private FirestoreDb db;
-        private string userId;
+        private readonly FirebaseAuthService _firebase;
         public event Action<string> EntrySelected;
-        public NhatKyList(FirestoreDb firestoreDb, string currentUserId)
+        public NhatKyList(FirebaseAuthService firebaseService)
         {
             InitializeComponent();
-            db = firestoreDb;
-            userId = currentUserId;
+            _firebase = firebaseService;
+
             this.Load += DiaryListForm_Load;
-            dataGridView1.CellDoubleClick += dataGridView1_CellContentClick;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
         }
         private async void DiaryListForm_Load(object sender, EventArgs e)
         {
@@ -32,32 +31,31 @@ namespace Project_doan
 
         private async Task LoadEntriesAsync()
         {
-            if (db == null || string.IsNullOrEmpty(userId)) return;
+            if (string.IsNullOrEmpty(UserSession.Username)) return;
 
             try
             {
-                QuerySnapshot snapshot = await db.Collection("users")
-                                                 .Document(userId)
-                                                 .Collection("diaries")
-                                                 .GetSnapshotAsync();
-                var displayList = new List<dynamic>();
+                var diaryData = await _firebase.GetAllDiaryEntriesAsync();
 
-                foreach (DocumentSnapshot document in snapshot.Documents)
+                if (diaryData.Count == 0)
                 {
-                    if (document.Exists)
-                    {
-                        Diary entry = document.ConvertTo<Diary>();
-
-                        displayList.Add(new
-                        {
-                            ID = document.Id,
-                            Ngày = entry.Date,
-                            Tiêu_đề = entry.Title
-                        });
-                    }
+                    MessageBox.Show("Chưa có bài nhật ký nào được lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ID", typeof(string));
+                dt.Columns.Add("Ngày", typeof(string));
+                dt.Columns.Add("Tiêu đề", typeof(string));
 
-                dataGridView1.DataSource = displayList;
+                foreach (var entry in diaryData)
+                {
+                    dt.Rows.Add(
+                        entry["DocumentId"].ToString(),
+                        entry.ContainsKey("Date") ? entry["Date"].ToString() : "N/A",
+                        entry.ContainsKey("Title") ? entry["Title"].ToString() : "(Không tiêu đề)"
+                    );
+                }
+                dataGridView1.DataSource = dt;
                 if (dataGridView1.Columns.Contains("ID"))
                 {
                     dataGridView1.Columns["ID"].Visible = false;
@@ -69,6 +67,10 @@ namespace Project_doan
             }
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
