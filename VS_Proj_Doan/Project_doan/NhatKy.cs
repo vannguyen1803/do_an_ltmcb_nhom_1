@@ -15,30 +15,10 @@ namespace Project_doan
 {
     public partial class NhatKy : Form
     {
-        private FirestoreDb db;
         private FirebaseAuthService firebase = new FirebaseAuthService();
         private string _currentDocumentId = null;
-        private string _currentUserId = null;
         public NhatKy(string userId, string projectId) : this()
         {
-            _currentUserId = userId;
-
-            try
-            {
-                string projectPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)
-                                      .Parent.Parent.FullName;
-                string path = Path.Combine(projectPath, "serviceAccountKey.json");
-                Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-                db = FirestoreDb.Create(projectId);
-                if (db == null)
-                {
-                    MessageBox.Show("Khởi tạo FirestoreDb thất bại sau khi xác thực.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khởi tạo Firestore: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         public NhatKy()
         {
@@ -61,9 +41,9 @@ namespace Project_doan
 
         private async void btn_save_Click(object sender, EventArgs e)
         {
-            if (db == null || string.IsNullOrEmpty(_currentUserId))
+            if (string.IsNullOrEmpty(UserSession.Username))
             {
-                MessageBox.Show("Firestore chưa sẵn sàng. Vui lòng đăng nhập lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng đăng nhập lại để lưu dữ liệu.", "Lỗi Xác thực", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (string.IsNullOrWhiteSpace(tb_title.Text))
@@ -72,29 +52,30 @@ namespace Project_doan
                 tb_title.Focus();
                 return;
             }
+
             try
             {
                 var entry = new Diary
                 {
                     Title = tb_title.Text,
                     Date = dtpDate.Value.ToString("yyyy-MM-dd"),
-                    ContentRtf = rtb_content.Rtf
+                    ContentRtf = rtb_content.Text
                 };
-                CollectionReference colRef = db.Collection("users")
-                                                .Document(_currentUserId)
-                                                .Collection("diaries");
+                string newDocumentId = await firebase.SaveDiaryEntryAsync(_currentDocumentId, entry);
 
                 if (string.IsNullOrEmpty(_currentDocumentId))
                 {
-                    DocumentReference docRef = await colRef.AddAsync(entry);
-                    _currentDocumentId = docRef.Id;
+                    _currentDocumentId = newDocumentId;
                     MessageBox.Show("Tạo nhật ký mới thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    await colRef.Document(_currentDocumentId).SetAsync(entry);
                     MessageBox.Show("Cập nhật nhật ký thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            catch (InvalidOperationException ex) 
+            {
+                MessageBox.Show(ex.Message, "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -104,11 +85,25 @@ namespace Project_doan
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-            if (db == null || string.IsNullOrEmpty(_currentUserId)) return;
+            if (string.IsNullOrEmpty(UserSession.Username))
+            {
+                MessageBox.Show("Vui lòng đăng nhập để xem danh sách.", "Lỗi Xác thực", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            NhatKyList listForm = new NhatKyList(db, _currentUserId);
-            listForm.EntrySelected += (documentId) => LoadEntryFromFirestore(documentId);
-            listForm.ShowDialog();
+            try
+            {
+                NhatKyList listForm = new NhatKyList(firebase);
+                listForm.EntrySelected += (documentId) =>
+                {
+                    LoadEntryFromFirestore(documentId);
+                };
+                listForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể mở danh sách nhật ký: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void tb_title_TextChanged(object sender, EventArgs e)
@@ -121,25 +116,24 @@ namespace Project_doan
 
         private async void LoadEntryFromFirestore(string documentId)
         {
-            if (db == null || string.IsNullOrEmpty(_currentUserId)) return;
+            if (string.IsNullOrEmpty(UserSession.Username)) return;
 
             try
             {
-                DocumentReference docRef = db.Collection("users")
-                                                .Document(_currentUserId)
-                                                .Collection("diaries")
-                                                .Document(documentId);
+                // Gọi Service để tải
+                Diary entry = await firebase.LoadDiaryEntryAsync(documentId);
 
-                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
-
-                if (snapshot.Exists)
+                if (entry != null)
                 {
-                    Diary entry = snapshot.ConvertTo<Diary>();
                     _currentDocumentId = documentId;
                     tb_title.Text = entry.Title;
-                    rtb_content.Rtf = entry.ContentRtf;
+                    rtb_content.Text = entry.ContentRtf;
                     dtpDate.Value = DateTime.Parse(entry.Date);
                 }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi kết nối", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
