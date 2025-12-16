@@ -60,9 +60,8 @@
             this.lb_aim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_aim.Location = new System.Drawing.Point(205, 12);
             this.lb_aim.Name = "lb_aim";
-            this.lb_aim.Size = new System.Drawing.Size(56, 18);
+            this.lb_aim.Size = new System.Drawing.Size(0, 18);
             this.lb_aim.TabIndex = 1;
-            this.lb_aim.Text = "sfbsfbs";
             // 
             // label3
             // 
@@ -90,9 +89,8 @@
             this.lb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_status.Location = new System.Drawing.Point(205, 120);
             this.lb_status.Name = "lb_status";
-            this.lb_status.Size = new System.Drawing.Size(36, 18);
+            this.lb_status.Size = new System.Drawing.Size(0, 18);
             this.lb_status.TabIndex = 5;
-            this.lb_status.Text = "ssfb";
             // 
             // label7
             // 
@@ -108,11 +106,10 @@
             // 
             this.lb_start.AutoSize = true;
             this.lb_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_start.Location = new System.Drawing.Point(205, 149);
+            this.lb_start.Location = new System.Drawing.Point(205, 153);
             this.lb_start.Name = "lb_start";
-            this.lb_start.Size = new System.Drawing.Size(48, 18);
+            this.lb_start.Size = new System.Drawing.Size(0, 18);
             this.lb_start.TabIndex = 7;
-            this.lb_start.Text = "sfbsfb";
             // 
             // label9
             // 
@@ -130,9 +127,8 @@
             this.lb_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_end.Location = new System.Drawing.Point(205, 181);
             this.lb_end.Name = "lb_end";
-            this.lb_end.Size = new System.Drawing.Size(56, 18);
+            this.lb_end.Size = new System.Drawing.Size(0, 18);
             this.lb_end.TabIndex = 9;
-            this.lb_end.Text = "sfbsfbs";
             // 
             // btn_complete
             // 
