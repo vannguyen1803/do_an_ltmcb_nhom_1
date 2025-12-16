@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using Project_doan.Models;
+
 
 namespace Project_doan
 {
@@ -18,7 +18,7 @@ namespace Project_doan
 
         public FirebaseAuthService()
         {
-            _db = new FirestoreService().GetDb();
+            _db = Program.db;
         }
         //Login
 

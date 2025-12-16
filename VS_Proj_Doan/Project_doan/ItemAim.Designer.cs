@@ -1,4 +1,4 @@
-﻿namespace Project_doan.UserControls
+﻿namespace Project_doan
 {
     partial class ItemAim
     {

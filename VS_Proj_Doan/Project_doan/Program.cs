@@ -32,7 +32,7 @@ namespace Project_doan
 
         //public static class FirebaseInit
         //{
-        private static FirestoreDb db;
+        public static FirestoreDb db;
 
         // 🔹 Khởi tạo kết nối Firestore
         public static void Init()
@@ -40,7 +40,7 @@ namespace Project_doan
             string path = AppDomain.CurrentDomain.BaseDirectory + @"serviceAccountKey.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            //db = FirestoreDb.Create("do-an-ltmcb-nhom1"); // 🔸 thay bằng project id của bạn
+            db = FirestoreDb.Create("do-an-ltmcb-nhom1"); // 🔸 thay bằng project id của bạn
         }
 
         //public static async Task SeedDataAsync()

@@ -162,10 +162,10 @@
   <ItemGroup>
     <Compile Include="Aim.cs" />
     <Compile Include="NotificationHelper.cs" />
-    <Compile Include="UserControls\Calendar.cs">
+    <Compile Include="Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Calendar.Designer.cs">
+    <Compile Include="Calendar.Designer.cs">
       <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Diary.cs" />
@@ -189,16 +189,16 @@
     <Compile Include="Forgot_pass.Designer.cs">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\ItemAim.cs">
+    <Compile Include="ItemAim.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\ItemAim.Designer.cs">
+    <Compile Include="ItemAim.Designer.cs">
       <DependentUpon>ItemAim.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Muc_tieu.cs">
+    <Compile Include="Muc_tieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Muc_tieu.Designer.cs">
+    <Compile Include="Muc_tieu.Designer.cs">
       <DependentUpon>Muc_tieu.cs</DependentUpon>
     </Compile>
     <Compile Include="NhatKy.cs">
@@ -237,8 +237,8 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\PomoData.cs" />
-    <Compile Include="Models\UserSession.cs" />
+    <Compile Include="PomoData.cs" />
+    <Compile Include="UserSession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleNote.cs">
@@ -247,14 +247,13 @@
     <Compile Include="ScheduleNote.Designer.cs">
       <DependentUpon>ScheduleNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\FirestoreService.cs" />
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\Calendar.resx">
+    <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditNote.resx">
@@ -263,19 +262,19 @@
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="UserControls\Pomodoro.cs">
+    <Compile Include="Pomodoro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Pomodoro.Designer.cs">
+    <Compile Include="Pomodoro.Designer.cs">
       <DependentUpon>Pomodoro.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\ItemAim.resx">
+    <EmbeddedResource Include="ItemAim.resx">
       <DependentUpon>ItemAim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Muc_tieu.resx">
+    <EmbeddedResource Include="Muc_tieu.resx">
       <DependentUpon>Muc_tieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhatKy.resx">
@@ -312,7 +311,7 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Pomodoro.resx">
+    <EmbeddedResource Include="Pomodoro.resx">
       <DependentUpon>Pomodoro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

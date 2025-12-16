@@ -9,8 +9,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Project_doan.UserControls;
-using Project_doan.Models;
+
 namespace Project_doan
 {
     public partial class Home : Form

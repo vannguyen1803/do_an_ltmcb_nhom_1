@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_doan.UserControls
+namespace Project_doan
 {
     public partial class ItemAim : UserControl
     {

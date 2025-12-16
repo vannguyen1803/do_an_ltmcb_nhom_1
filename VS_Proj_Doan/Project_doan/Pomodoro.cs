@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Cloud.Firestore;
-using Project_doan.Models;
 
-namespace Project_doan.UserControls
+
+namespace Project_doan
 {
     public partial class Pomodoro : UserControl
     {
