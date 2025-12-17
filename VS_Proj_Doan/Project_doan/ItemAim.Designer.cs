@@ -199,7 +199,7 @@
             this.Controls.Add(this.lb_aim);
             this.Controls.Add(this.label1);
             this.Name = "ItemAim";
-            this.Size = new System.Drawing.Size(616, 219);
+            this.Size = new System.Drawing.Size(616, 227);
             this.Click += new System.EventHandler(this.ItemAim_Click);
             this.ResumeLayout(false);
             this.PerformLayout();

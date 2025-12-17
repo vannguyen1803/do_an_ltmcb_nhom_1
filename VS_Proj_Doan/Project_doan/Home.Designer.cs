@@ -42,7 +42,6 @@
             // 
             // pn_menu
             // 
-            
             this.pn_menu.Controls.Add(this.btn_acc);
             this.pn_menu.Controls.Add(this.btn_pomo);
             this.pn_menu.Controls.Add(this.btn_diary);
@@ -158,14 +157,12 @@
 
         private System.Windows.Forms.Panel pn_menu;
         private System.Windows.Forms.Panel pn_header;
-        private System.Windows.Forms.Panel pn_content;
-        
+        private System.Windows.Forms.Panel pn_content;       
         private System.Windows.Forms.Button btn_pomo;
         private System.Windows.Forms.Button btn_diary;
         private System.Windows.Forms.Button btn_note;
         private System.Windows.Forms.Button btn_aim;
         private System.Windows.Forms.Button btn_cal;
         private System.Windows.Forms.Button btn_acc;
-        private System.Windows.Forms.Panel pn_content;
     }
 }
