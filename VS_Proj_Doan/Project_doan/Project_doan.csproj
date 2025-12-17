@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aim.cs" />
+    <Compile Include="NotificationHelper.cs" />
     <Compile Include="Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -187,6 +188,12 @@
     </Compile>
     <Compile Include="Forgot_pass.Designer.cs">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemAim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemAim.Designer.cs">
+      <DependentUpon>ItemAim.cs</DependentUpon>
     </Compile>
     <Compile Include="Muc_tieu.cs">
       <SubType>UserControl</SubType>
@@ -230,6 +237,8 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PomoData.cs" />
+    <Compile Include="UserSession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleNote.cs">
@@ -238,7 +247,6 @@
     <Compile Include="ScheduleNote.Designer.cs">
       <DependentUpon>ScheduleNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\FirestoreService.cs" />
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,8 +269,17 @@
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Pomodoro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pomodoro.Designer.cs">
+      <DependentUpon>Pomodoro.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemAim.resx">
+      <DependentUpon>ItemAim.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Muc_tieu.resx">
       <DependentUpon>Muc_tieu.cs</DependentUpon>
@@ -287,8 +304,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -303,6 +320,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlNhatKy.resx">
       <DependentUpon>UserControlNhatKy.cs</DependentUpon>
+    <EmbeddedResource Include="Pomodoro.resx">
+      <DependentUpon>Pomodoro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -314,6 +333,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="serviceAccountKey.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -378,8 +400,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\login.jpg" />
-    <None Include="Resources\login.jpg" />
+    <Resource Include="Resources\login.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Google.Api.CommonProtos.2.17.0\build\Google.Api.CommonProtos.targets" Condition="Exists('..\packages\Google.Api.CommonProtos.2.17.0\build\Google.Api.CommonProtos.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
