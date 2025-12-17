@@ -335,6 +335,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlNhatKy.resx">
       <DependentUpon>UserControlNhatKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pomodoro.resx">
       <DependentUpon>Pomodoro.cs</DependentUpon>
     </EmbeddedResource>

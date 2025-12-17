@@ -166,6 +166,5 @@
         private System.Windows.Forms.Button btn_aim;
         private System.Windows.Forms.Button btn_cal;
         private System.Windows.Forms.Button btn_acc;
-        private System.Windows.Forms.Panel pn_content;
     }
 }
