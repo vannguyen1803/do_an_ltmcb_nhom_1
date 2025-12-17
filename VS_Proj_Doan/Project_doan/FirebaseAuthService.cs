@@ -9,15 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+
 namespace Project_doan
 {
-    internal class FirebaseAuthService
+    public class FirebaseAuthService
     {
         private readonly FirestoreDb _db;
 
         public FirebaseAuthService()
         {
-            _db = new FirestoreService().GetDb();
+            _db = Program.db;
         }
         //Login
 
@@ -46,6 +47,7 @@ namespace Project_doan
                     UserSession.HoTen = data["HoTen"].ToString();
                     UserSession.Phone = data.ContainsKey("Phone") ? data["Phone"].ToString() : "";
                     UserSession.Language = data.ContainsKey("Language") ? data["Language"].ToString() : "";
+                    UserSession.MaND = data.ContainsKey("MaND") ? data["MaND"].ToString() : "";
                     if (data.ContainsKey("Birthday"))
                     {
                         Timestamp t = (Timestamp)data["Birthday"];
@@ -68,6 +70,7 @@ namespace Project_doan
             {
                 return "Lỗi đăng nhập: " + ex.Message;
             }
+
         }
         //signup
         public async Task<string> SignUpAsync(string username, string password, string email, string hoten)
@@ -168,11 +171,11 @@ namespace Project_doan
                 else
                 {
                     await userDoc.UpdateAsync(new Dictionary<string, object>
-        {
-            { "Phone", phone },
-            { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
-            { "Language", language }
-        });
+                    {
+                        { "Phone", phone },
+                        { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
+                        { "Language", language }
+                    });
 
                     UserSession.Phone = phone;
                     UserSession.Birthday = birthday;
@@ -212,11 +215,11 @@ namespace Project_doan
                 string noteId = Guid.NewGuid().ToString();
 
                 var noteData = new Dictionary<string, object>
-        {
-            { "Id", noteId },
-            { "Content", content }
+                {
+                    { "Id", noteId },
+                    { "Content", content }
 
-        };
+                };
 
                 await userDoc
                     .Collection("Notes")
@@ -547,10 +550,10 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 var noteData = new Dictionary<string, object>
-        {
-            { "Id", noteId },
-            { "Content", content }
-        };
+                {
+                    { "Id", noteId },
+                    { "Content", content }
+                };
 
                 await userDoc
                     .Collection("Notes")
@@ -599,14 +602,14 @@ namespace Project_doan
                 aim.Id = aimId;
 
                 var data = new Dictionary<string, object>
-        {
-            { "Id", aimId },
-            { "Ten", aim.ten },
-            { "MoTa", aim.mota },
-            { "TrangThai", (int)aim.status },
-            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
-            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
-        };
+                {
+                    { "Id", aimId },
+                    { "Ten", aim.title },
+                    { "MoTa", aim.mota },
+                    { "TrangThai", (int)aim.status },
+                    { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+                };
 
                 await userDoc
                     .Collection("MucTieu")
@@ -642,7 +645,7 @@ namespace Project_doan
                     Aim aim = new Aim
                     {
                         Id = data["Id"].ToString(),
-                        ten = data["Ten"].ToString(),
+                        title = data["Ten"].ToString(),
                         mota = data["MoTa"].ToString(),
                         status = (AimStatus)Convert.ToInt32(data["TrangThai"]),
                         date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
@@ -669,13 +672,13 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 var data = new Dictionary<string, object>
-        {
-            { "Ten", aim.ten },
-            { "MoTa", aim.mota },
-            { "TrangThai", (int)aim.status },
-            { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
-            { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
-        };
+                {
+                    { "Ten", aim.title },
+                    { "MoTa", aim.mota },
+                    { "TrangThai", (int)aim.status },
+                    { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
+                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+                };
 
                 await userDoc
                     .Collection("MucTieu")
@@ -711,5 +714,126 @@ namespace Project_doan
             }
         }
 
+        //AddPomo
+        public async Task<string> AddPomoAsync(PomoData data)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                data.MaPomodoro = Guid.NewGuid().ToString();
+
+
+                var pomoDict = new Dictionary<string, object>
+                {
+                    { "MaPomodoro", data.MaPomodoro },
+                    {"MaND", data.MaND },
+                    {"NgayThucHien", Timestamp.FromDateTime(data.NgayThucHien.ToUniversalTime()) },
+                    {"SoPhien", data.SoPhien },
+                    {"TongThoiGian", data.TongThoiGian }
+                };
+
+                await userDoc
+                    .Collection("Pomodoro")
+                    .Document(data.MaPomodoro)
+                    .SetAsync(pomoDict);
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi lưu Pomodoro: " + ex.Message;
+            }
+        }
+        private void CheckDbReady()
+        {
+            if (_db == null || string.IsNullOrEmpty(UserSession.Username))
+            {
+                throw new InvalidOperationException("Cơ sở dữ liệu hoặc thông tin người dùng chưa sẵn sàng. Vui lòng kiểm tra kết nối và đăng nhập lại.");
+            }
+        }
+        public async Task<string> SaveDiaryEntryAsync(string documentId, Diary entry)
+        {
+            CheckDbReady();
+
+            try
+            {
+                DocumentReference userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    throw new InvalidOperationException("Không tìm thấy Document người dùng hiện tại.");
+                CollectionReference colRef = userDoc.Collection("diaries");
+
+                if (string.IsNullOrEmpty(documentId))
+                {
+                    DocumentReference docRef = await colRef.AddAsync(entry);
+                    return docRef.Id;
+                }
+                else
+                {
+                    await colRef.Document(documentId).SetAsync(entry);
+                    return documentId;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lưu Nhật ký: " + ex.Message);
+            }
+        }
+
+        public async Task<Diary> LoadDiaryEntryAsync(string documentId)
+        {
+            CheckDbReady();
+
+            try
+            {
+                DocumentReference userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return null;
+
+                DocumentReference docRef = userDoc.Collection("diaries").Document(documentId);
+                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
+
+                if (snapshot.Exists)
+                {
+                    return snapshot.ConvertTo<Diary>();
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tải Nhật ký: " + ex.Message);
+            }
+        }
+        public async Task<List<Dictionary<string, object>>> GetAllDiaryEntriesAsync()
+        {
+            CheckDbReady();
+            var diaryList = new List<Dictionary<string, object>>();
+
+            try
+            {
+                DocumentReference userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return diaryList;
+                QuerySnapshot snap = await userDoc
+                    .Collection("diaries")
+                    .OrderByDescending("Date")
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
+                {
+                    var data = doc.ToDictionary();
+                    data.Add("DocumentId", doc.Id);
+                    diaryList.Add(data);
+                }
+
+                return diaryList;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi tải danh sách nhật ký: " + ex.Message);
+                throw new Exception("Lỗi khi tải danh sách nhật ký: " + ex.Message);
+            }
+        }
     }
 }
