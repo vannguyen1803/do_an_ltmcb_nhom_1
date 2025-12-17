@@ -14,7 +14,7 @@ namespace Project_doan
 {
     public partial class Home : Form
     {
-
+        Aim aim;
         private FirebaseAuthService firebase;
         public Home()
         {
@@ -202,8 +202,20 @@ namespace Project_doan
 
         private void btn_diary_Click(object sender, EventArgs e)
         {
-            NhatKy nhatKy = new NhatKy();
-            nhatKy.Show();
+            if (_firebaseService == null)
+            {
+                _firebaseService = new FirebaseAuthService();
+            }
+            pn_content.Controls.Clear();
+
+            var diaryControl = new UserControlNhatKy(_firebaseService);
+            diaryControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(diaryControl);
+        }
+
+        private void pn_content_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

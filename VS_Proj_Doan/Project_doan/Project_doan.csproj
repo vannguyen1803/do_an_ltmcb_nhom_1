@@ -253,6 +253,13 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlNhatKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNhatKy.Designer.cs">
+      <DependentUpon>UserControlNhatKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +318,8 @@
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlNhatKy.resx">
+      <DependentUpon>UserControlNhatKy.cs</DependentUpon>
     <EmbeddedResource Include="Pomodoro.resx">
       <DependentUpon>Pomodoro.cs</DependentUpon>
     </EmbeddedResource>
