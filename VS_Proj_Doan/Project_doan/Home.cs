@@ -16,6 +16,7 @@ namespace Project_doan
     {
         Aim aim;
         private FirebaseAuthService _firebaseService;
+        private NhatKy _nhatKyForm;
         public Home()
         {
             InitializeComponent();
@@ -128,13 +129,38 @@ namespace Project_doan
             {
                 _firebaseService = new FirebaseAuthService();
             }
+            if (_nhatKyForm == null)
+            {
+                _nhatKyForm = new NhatKy(_firebaseService);
+                _nhatKyForm.Dock = DockStyle.Fill;
+                _nhatKyForm.BackToListRequested += NhatKy_BackToListRequested;
+            }
             pn_content.Controls.Clear();
 
-            var diaryControl = new UserControlNhatKy(_firebaseService);
+            var diaryControl = new UserControlNhatKyList(_firebaseService);
             diaryControl.Dock = DockStyle.Fill;
+            diaryControl.EntrySelected += (documentId) =>
+            {
+                _nhatKyForm.LoadEntryFromFirestore(documentId);
+                pn_content.Controls.Clear();
+                pn_content.Controls.Add(_nhatKyForm);
+            };
             pn_content.Controls.Add(diaryControl);
         }
+        private void NhatKy_BackToListRequested()
+        {
+            pn_content.Controls.Clear();
+            var listControl = new UserControlNhatKyList(_firebaseService);
+            listControl.Dock = DockStyle.Fill;
+            listControl.EntrySelected += (documentId) =>
+            {
+                _nhatKyForm.LoadEntryFromFirestore(documentId);
+                pn_content.Controls.Clear();
+                pn_content.Controls.Add(_nhatKyForm);
+            };
 
+            pn_content.Controls.Add(listControl);
+        }
         private void pn_content_Paint(object sender, PaintEventArgs e)
         {
 

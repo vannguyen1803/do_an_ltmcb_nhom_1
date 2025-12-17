@@ -168,6 +168,12 @@
       <DependentUpon>Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Diary.cs" />
+    <Compile Include="DiaryItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DiaryItem.Designer.cs">
+      <DependentUpon>DiaryItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,7 +201,7 @@
       <DependentUpon>Muc_tieu.cs</DependentUpon>
     </Compile>
     <Compile Include="NhatKy.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="NhatKy.Designer.cs">
       <DependentUpon>NhatKy.cs</DependentUpon>
@@ -251,9 +257,18 @@
     <Compile Include="UserControlNhatKy.Designer.cs">
       <DependentUpon>UserControlNhatKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlNhatKyList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlNhatKyList.Designer.cs">
+      <DependentUpon>UserControlNhatKyList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="Calendar.resx">
       <DependentUpon>Calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiaryItem.resx">
+      <DependentUpon>DiaryItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditNote.resx">
       <DependentUpon>EditNote.cs</DependentUpon>
@@ -303,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlNhatKy.resx">
       <DependentUpon>UserControlNhatKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlNhatKyList.resx">
+      <DependentUpon>UserControlNhatKyList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,6 +1,6 @@
 ﻿namespace Project_doan
 {
-    partial class UserControlNhatKy
+    partial class UserControlNhatKyList
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label2
@@ -38,43 +37,39 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(464, 65);
+            this.label2.Location = new System.Drawing.Point(451, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(169, 32);
-            this.label2.TabIndex = 11;
+            this.label2.TabIndex = 12;
             this.label2.Text = "MY DIARY";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // dataGridView1
+            // flowLayoutPanel1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(92, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 443);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 85);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1113, 722);
+            this.flowLayoutPanel1.TabIndex = 13;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // UserControlNhatKy
+            // UserControlNhatKyList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "UserControlNhatKy";
+            this.Name = "UserControlNhatKyList";
             this.Size = new System.Drawing.Size(1118, 810);
-            this.Load += new System.EventHandler(this.UserControlNhatKy_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UserControlNhatKyList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

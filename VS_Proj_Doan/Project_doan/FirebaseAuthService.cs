@@ -394,6 +394,7 @@ namespace Project_doan
                 return "Lỗi xóa note: " + ex.Message;
             }
         }
+        //Nhat Ky
         private void CheckDbReady()
         {
             if (_db == null || string.IsNullOrEmpty(UserSession.Username))
