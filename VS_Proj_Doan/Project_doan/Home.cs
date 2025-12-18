@@ -20,6 +20,9 @@ namespace Project_doan
         private Account acc;
         private Ghi_chu note;
         Aim aim;
+        
+        private NhatKy _nhatKyForm;
+        
         public Home()
         {
             InitializeComponent();
@@ -145,9 +148,27 @@ namespace Project_doan
             btn_diary.FillColor = Color.FromArgb(51, 153, 255);
             btn_acc.FillColor = Color.Transparent;
             btn_pomo.FillColor = Color.Transparent;
+            
+            if (firebase == null)
+            {
+                firebase = new FirebaseAuthService();
+            }
+            if (_nhatKyForm == null)
+            {
+                _nhatKyForm = new NhatKy(_firebaseService);
+                _nhatKyForm.Dock = DockStyle.Fill;
+                _nhatKyForm.BackToListRequested += NhatKy_BackToListRequested;
+            }
             pn_content.Controls.Clear();
-            var diaryControl = new UserControlNhatKy(_firebaseService);
+
+            var diaryControl = new UserControlNhatKyList(_firebaseService);
             diaryControl.Dock = DockStyle.Fill;
+            diaryControl.EntrySelected += (documentId) =>
+            {
+                _nhatKyForm.LoadEntryFromFirestore(documentId);
+                pn_content.Controls.Clear();
+                pn_content.Controls.Add(_nhatKyForm);
+            };
             pn_content.Controls.Add(diaryControl);
         }
 
@@ -282,31 +303,24 @@ namespace Project_doan
             catch { }
         }
 
-        private void btn_pomo_Click(object sender, EventArgs e)
+                
+        private void NhatKy_BackToListRequested()
         {
             pn_content.Controls.Clear();
-            var PomodoroControl = new Pomodoro();
-            PomodoroControl.Dock = DockStyle.Fill;
-            pn_content.Controls.Add(PomodoroControl);
-        }
+            var listControl = new UserControlNhatKyList(_firebaseService);
+            listControl.Dock = DockStyle.Fill;
+            listControl.EntrySelected += (documentId) =>
+            {
+                _nhatKyForm.LoadEntryFromFirestore(documentId);
+                pn_content.Controls.Clear();
+                pn_content.Controls.Add(_nhatKyForm);
+            };
 
-        private void btn_aim_Click(object sender, EventArgs e)
+            pn_content.Controls.Add(listControl);
+        }
+        private void pn_content_Paint(object sender, PaintEventArgs e)
         {
-            pn_content.Controls.Clear();
-            var AimControl = new Muc_tieu();
-            AimControl.Dock = DockStyle.Fill;
-            pn_content.Controls.Add(AimControl);
+
         }
-
-        private void btn_diary_Click(object sender, EventArgs e)
-        {
-            
-            pn_content.Controls.Clear();
-
-            var diaryControl = new UserControlNhatKy(firebase);
-            diaryControl.Dock = DockStyle.Fill;
-            pn_content.Controls.Add(diaryControl);
-        }
-
     }
 }

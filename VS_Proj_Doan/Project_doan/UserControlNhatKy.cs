@@ -77,5 +77,10 @@ namespace Project_doan
                 //this.Close();
             }
         }
+
+        private void UserControlNhatKy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
