@@ -20,7 +20,6 @@ namespace Project_doan
         public ItemAim()
         {
             InitializeComponent();
-            this.Click += ItemAim_Click;
         }
 
         
