@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_doan
 {
-    internal class Event
+    public class Event
     {
         public string UId {  get; set; }
         public string Title { get; set; }

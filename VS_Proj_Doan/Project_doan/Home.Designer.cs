@@ -37,6 +37,12 @@
             this.btn_cal = new System.Windows.Forms.Button();
             this.pn_header = new System.Windows.Forms.Panel();
             this.pn_content = new System.Windows.Forms.Panel();
+            this.btn_cal = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_aim = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_note = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_diary = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_pomo = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_acc = new Guna.UI2.WinForms.Guna2Button();
             this.pn_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,91 +57,133 @@
             this.pn_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pn_menu.Location = new System.Drawing.Point(0, 0);
             this.pn_menu.Name = "pn_menu";
-            this.pn_menu.Size = new System.Drawing.Size(223, 699);
+            this.pn_menu.Size = new System.Drawing.Size(217, 699);
             this.pn_menu.TabIndex = 0;
-            // 
-            
-            // btn_acc
-            // 
-            this.btn_acc.Location = new System.Drawing.Point(58, 339);
-            this.btn_acc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_acc.Name = "btn_acc";
-            this.btn_acc.Size = new System.Drawing.Size(107, 26);
-            this.btn_acc.TabIndex = 5;
-            this.btn_acc.Text = "Tài khoản";
-            this.btn_acc.UseVisualStyleBackColor = true;
-            this.btn_acc.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btn_pomo
-            // 
-            this.btn_pomo.Location = new System.Drawing.Point(58, 294);
-            this.btn_pomo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_pomo.Name = "btn_pomo";
-            this.btn_pomo.Size = new System.Drawing.Size(107, 27);
-            this.btn_pomo.TabIndex = 4;
-            this.btn_pomo.Text = "Pomodoro";
-            this.btn_pomo.UseVisualStyleBackColor = true;
-            this.btn_pomo.Click += new System.EventHandler(this.btn_pomo_Click);
-            // 
-            // btn_diary
-            // 
-            this.btn_diary.Location = new System.Drawing.Point(58, 248);
-            this.btn_diary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_diary.Name = "btn_diary";
-            this.btn_diary.Size = new System.Drawing.Size(107, 30);
-            this.btn_diary.TabIndex = 3;
-            this.btn_diary.Text = "Nhật ký";
-            this.btn_diary.UseVisualStyleBackColor = true;
-            this.btn_diary.Click += new System.EventHandler(this.btn_diary_Click);
-            // 
-            // btn_note
-            // 
-            this.btn_note.Location = new System.Drawing.Point(58, 196);
-            this.btn_note.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_note.Name = "btn_note";
-            this.btn_note.Size = new System.Drawing.Size(107, 30);
-            this.btn_note.TabIndex = 2;
-            this.btn_note.Text = "Ghi chú";
-            this.btn_note.UseVisualStyleBackColor = true;
-            this.btn_note.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btn_aim
-            // 
-            this.btn_aim.Location = new System.Drawing.Point(58, 150);
-            this.btn_aim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_aim.Name = "btn_aim";
-            this.btn_aim.Size = new System.Drawing.Size(107, 28);
-            this.btn_aim.TabIndex = 1;
-            this.btn_aim.Text = "Mục tiêu";
-            this.btn_aim.UseVisualStyleBackColor = true;
-            this.btn_aim.Click += new System.EventHandler(this.btn_aim_Click);
-            // 
-            // btn_cal
-            // 
-            this.btn_cal.Location = new System.Drawing.Point(58, 102);
-            this.btn_cal.Name = "btn_cal";
-            this.btn_cal.Size = new System.Drawing.Size(107, 29);
-            this.btn_cal.TabIndex = 0;
-            this.btn_cal.Text = "Thời gian biểu";
-            this.btn_cal.UseVisualStyleBackColor = true;
-            this.btn_cal.Click += new System.EventHandler(this.btn_cal_Click);
             // 
             // pn_header
             // 
+            this.pn_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(206)))), ((int)(((byte)(252)))));
             this.pn_header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pn_header.Location = new System.Drawing.Point(223, 0);
+            this.pn_header.Location = new System.Drawing.Point(217, 0);
             this.pn_header.Name = "pn_header";
-            this.pn_header.Size = new System.Drawing.Size(994, 51);
+            this.pn_header.Size = new System.Drawing.Size(1000, 51);
             this.pn_header.TabIndex = 1;
             // 
             // pn_content
             // 
+            this.pn_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(206)))), ((int)(((byte)(252)))));
             this.pn_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_content.Location = new System.Drawing.Point(223, 51);
-            this.pn_content.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pn_content.Location = new System.Drawing.Point(217, 51);
             this.pn_content.Name = "pn_content";
-            this.pn_content.Size = new System.Drawing.Size(994, 648);
-            this.pn_content.TabIndex = 0;
+            this.pn_content.Size = new System.Drawing.Size(1000, 648);
+            this.pn_content.TabIndex = 2;
+            // 
+            // btn_cal
+            // 
+            this.btn_cal.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cal.BorderRadius = 17;
+            this.btn_cal.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cal.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_cal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_cal.FillColor = System.Drawing.Color.Transparent;
+            this.btn_cal.Font = new System.Drawing.Font("1FTV Naserra", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cal.ForeColor = System.Drawing.Color.White;
+            this.btn_cal.Location = new System.Drawing.Point(3, 122);
+            this.btn_cal.Name = "btn_cal";
+            this.btn_cal.Size = new System.Drawing.Size(208, 42);
+            this.btn_cal.TabIndex = 6;
+            this.btn_cal.Text = "Thời gian biểu";
+            this.btn_cal.Click += new System.EventHandler(this.btn_cal_Click);
+            // 
+            // btn_aim
+            // 
+            this.btn_aim.BackColor = System.Drawing.Color.Transparent;
+            this.btn_aim.BorderRadius = 17;
+            this.btn_aim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_aim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_aim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_aim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_aim.FillColor = System.Drawing.Color.Transparent;
+            this.btn_aim.Font = new System.Drawing.Font("1FTV Naserra", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aim.ForeColor = System.Drawing.Color.White;
+            this.btn_aim.Location = new System.Drawing.Point(4, 190);
+            this.btn_aim.Name = "btn_aim";
+            this.btn_aim.Size = new System.Drawing.Size(208, 42);
+            this.btn_aim.TabIndex = 7;
+            this.btn_aim.Text = "Mục tiêu";
+            this.btn_aim.Click += new System.EventHandler(this.btn_aim_Click);
+            // 
+            // btn_note
+            // 
+            this.btn_note.BackColor = System.Drawing.Color.Transparent;
+            this.btn_note.BorderRadius = 17;
+            this.btn_note.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_note.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_note.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_note.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_note.FillColor = System.Drawing.Color.Transparent;
+            this.btn_note.Font = new System.Drawing.Font("1FTV Naserra", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_note.ForeColor = System.Drawing.Color.White;
+            this.btn_note.Location = new System.Drawing.Point(4, 258);
+            this.btn_note.Name = "btn_note";
+            this.btn_note.Size = new System.Drawing.Size(208, 42);
+            this.btn_note.TabIndex = 8;
+            this.btn_note.Text = "Ghi chú";
+            this.btn_note.Click += new System.EventHandler(this.btn_note_Click);
+            // 
+            // btn_diary
+            // 
+            this.btn_diary.BackColor = System.Drawing.Color.Transparent;
+            this.btn_diary.BorderRadius = 17;
+            this.btn_diary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_diary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_diary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_diary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_diary.FillColor = System.Drawing.Color.Transparent;
+            this.btn_diary.Font = new System.Drawing.Font("1FTV Naserra", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_diary.ForeColor = System.Drawing.Color.White;
+            this.btn_diary.Location = new System.Drawing.Point(4, 326);
+            this.btn_diary.Name = "btn_diary";
+            this.btn_diary.Size = new System.Drawing.Size(208, 42);
+            this.btn_diary.TabIndex = 9;
+            this.btn_diary.Text = "Nhật ký";
+            this.btn_diary.Click += new System.EventHandler(this.btn_diary_Click);
+            // 
+            // btn_pomo
+            // 
+            this.btn_pomo.BackColor = System.Drawing.Color.Transparent;
+            this.btn_pomo.BorderRadius = 17;
+            this.btn_pomo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_pomo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_pomo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_pomo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_pomo.FillColor = System.Drawing.Color.Transparent;
+            this.btn_pomo.Font = new System.Drawing.Font("1FTV Naserra", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pomo.ForeColor = System.Drawing.Color.White;
+            this.btn_pomo.Location = new System.Drawing.Point(3, 394);
+            this.btn_pomo.Name = "btn_pomo";
+            this.btn_pomo.Size = new System.Drawing.Size(208, 42);
+            this.btn_pomo.TabIndex = 10;
+            this.btn_pomo.Text = "Pomodoro";
+            this.btn_pomo.Click += new System.EventHandler(this.btn_pomo_Click);
+            // 
+            // btn_acc
+            // 
+            this.btn_acc.BackColor = System.Drawing.Color.Transparent;
+            this.btn_acc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_acc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_acc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_acc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_acc.FillColor = System.Drawing.Color.Transparent;
+            this.btn_acc.Font = new System.Drawing.Font("1FTV Naserra", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_acc.ForeColor = System.Drawing.Color.White;
+            this.btn_acc.Location = new System.Drawing.Point(-1, 625);
+            this.btn_acc.Name = "btn_acc";
+            this.btn_acc.Size = new System.Drawing.Size(223, 62);
+            this.btn_acc.TabIndex = 11;
+            this.btn_acc.Text = "Tài khoản";
+            this.btn_acc.Click += new System.EventHandler(this.btn_acc_Click);
             // 
             // Home
             // 
@@ -157,12 +205,12 @@
 
         private System.Windows.Forms.Panel pn_menu;
         private System.Windows.Forms.Panel pn_header;
-        private System.Windows.Forms.Panel pn_content;       
-        private System.Windows.Forms.Button btn_pomo;
-        private System.Windows.Forms.Button btn_diary;
-        private System.Windows.Forms.Button btn_note;
-        private System.Windows.Forms.Button btn_aim;
-        private System.Windows.Forms.Button btn_cal;
-        private System.Windows.Forms.Button btn_acc;
+        private System.Windows.Forms.Panel pn_content;
+        private Guna.UI2.WinForms.Guna2Button btn_aim;
+        private Guna.UI2.WinForms.Guna2Button btn_cal;
+        private Guna.UI2.WinForms.Guna2Button btn_pomo;
+        private Guna.UI2.WinForms.Guna2Button btn_diary;
+        private Guna.UI2.WinForms.Guna2Button btn_note;
+        private Guna.UI2.WinForms.Guna2Button btn_acc;
     }
 }

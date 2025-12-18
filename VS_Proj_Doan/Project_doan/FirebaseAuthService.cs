@@ -59,6 +59,7 @@ namespace Project_doan
                     }
 
                     UserSession.ScheduleCache = await GetAllSchedulesAsync();
+                    UserSession.NoteCache   = await GetAllNotesAsync();
 
                     return "SUCCESS";
                 }
@@ -265,7 +266,9 @@ namespace Project_doan
 
 
         //saveSchedule
-        public async Task<string> SaveScheduleAsync(DateTime date, string content)
+        
+        // Sửa lại SaveScheduleAsync (Thêm mới/Ghi đè nếu đã tồn tại)
+        public async Task<string> SaveScheduleAsync(DateTime date, Event ev)
         {
             try
             {
@@ -274,19 +277,51 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 string dateKey = date.ToString("yyyy-MM-dd");
+                if (string.IsNullOrEmpty(ev.UId))
+                    ev.UId = Guid.NewGuid().ToString();
 
-                var data = new Dictionary<string, object>
+                // 1. Lấy danh sách sự kiện hiện tại (từ cache hoặc Firebase)
+                List<Event> events;
+                if (UserSession.ScheduleCache.ContainsKey(dateKey))
                 {
-                    { "Date", dateKey },
-                    { "Content", content },
-                    { "UpdatedAt", Timestamp.GetCurrentTimestamp() }
-                };
+                    events = UserSession.ScheduleCache[dateKey];
+                }
+                else
+                {
+                    // Tải từ Firebase nếu chưa có trong cache
+                    events = await GetEventsFromFirebase(userDoc, dateKey);
+                }
 
+                // 2. Thêm sự kiện mới vào danh sách
+                events.Add(ev);
+
+                // Cập nhật lại cache
+                UserSession.ScheduleCache[dateKey] = events;
+
+                // 3. Chuyển đổi danh sách Event sang format lưu trữ của Firebase (List of Map)
+                var eventsData = events.Select(e => new Dictionary<string, object>
+        {
+            { "UId", e.UId },
+            { "Title", e.Title },
+            { "Start", e.Start },
+            { "End", e.End },
+            { "Frequency", e.Frequency },
+            { "Description", e.Description },
+            { "TimezoneId", e.TimezoneId },
+            // Có thể thêm CreatedAt, UpdatedAt
+        }).ToList();
+
+                var updateData = new Dictionary<string, object>
+        {
+            { "Events", eventsData }
+        };
+
+                // 4. Lưu lại toàn bộ danh sách cập nhật vào document ngày
+                // SetAsync sẽ tạo mới nếu chưa có, hoặc ghi đè nếu đã có
                 await userDoc
                     .Collection("Schedule")
                     .Document(dateKey)
-                    .SetAsync(data);
-                UserSession.ScheduleCache[dateKey] = content;
+                    .SetAsync(updateData);
 
                 return "SUCCESS";
             }
@@ -295,59 +330,216 @@ namespace Project_doan
                 return "Lỗi lưu lịch: " + ex.Message;
             }
         }
-        // loadSchedule
-        public async Task<string> GetScheduleAsync(DateTime date)
+
+        // Hàm hỗ trợ đọc Events từ Firebase và chuyển đổi sang List<Event>
+        private async Task<List<Event>> GetEventsFromFirebase(DocumentReference userDoc, string dateKey)
         {
-            try
+            var snap = await userDoc
+                .Collection("Schedule")
+                .Document(dateKey)
+                .GetSnapshotAsync();
+
+            if (!snap.Exists || !snap.ToDictionary().TryGetValue("Events", out object eventsObj))
             {
-                string dateKey = date.ToString("yyyy-MM-dd");
-
-                // Kiểm tra cache trước
-                if (UserSession.ScheduleCache.ContainsKey(dateKey))
-                {
-                    return UserSession.ScheduleCache[dateKey];
-                }
-
-                return "";
+                return new List<Event>();
             }
-            catch
+
+            if (eventsObj is List<object> eventsList)
             {
-                return "";
-            }
-        }
-        // Load all schedule  
-        public async Task<Dictionary<string, string>> GetAllSchedulesAsync()
-        {
-            var scheduleDict = new Dictionary<string, string>();
-
-            try
-            {
-                var userDoc = await GetCurrentUserDocAsync();
-                if (userDoc == null)
-                    return scheduleDict;
-
-                QuerySnapshot snap = await userDoc
-                    .Collection("Schedule")
-                    .GetSnapshotAsync();
-
-                foreach (var doc in snap.Documents)
+                return eventsList.Select(item =>
                 {
-                    var data = doc.ToDictionary();
-                    if (data.ContainsKey("Date") && data.ContainsKey("Content"))
+                    if (item is Dictionary<string, object> data)
                     {
-                        string dateKey = data["Date"].ToString();
-                        string content = data["Content"].ToString();
-                        scheduleDict[dateKey] = content;
+                        // Logic map từ Dictionary sang Event
+                        DateTime start = (data["Start"] is Timestamp ts) ? ts.ToDateTime() : DateTime.Parse(data["Start"].ToString());
+                        DateTime end = (data["End"] is Timestamp tsEnd) ? tsEnd.ToDateTime() : DateTime.Parse(data["End"].ToString());
+
+                        return new Event
+                        {
+                            UId = data["UId"].ToString(),
+                            Title = data["Title"].ToString(),
+                            Description = data.ContainsKey("Description") ? data["Description"].ToString() : "",
+                            Frequency = data.ContainsKey("Frequency") ? data["Frequency"].ToString() : "None",
+                            Start = start,
+                            End = end,
+                            // Thêm các trường khác nếu cần
+                        };
                     }
+                    return null;
+                }).Where(e => e != null).ToList();
+            }
+
+            return new List<Event>();
+        }
+        // loadSchedule
+        // Trong FirebaseAuthService.cs
+        // Sửa GetScheduleAsync (Dùng để load 1 ngày nếu cache miss)
+        public async Task<List<Event>> GetScheduleAsync(DateTime date)
+        {
+            string dateKey = date.ToString("yyyy-MM-dd");
+
+            // 1. Cache
+            if (UserSession.ScheduleCache.ContainsKey(dateKey))
+                return UserSession.ScheduleCache[dateKey];
+
+            var userDoc = await GetCurrentUserDocAsync();
+            if (userDoc == null)
+                return new List<Event>();
+
+            // 2. Load từ Firebase và Cache lại
+            var events = await GetEventsFromFirebase(userDoc, dateKey);
+
+            // 3. Cache
+            UserSession.ScheduleCache[dateKey] = events;
+
+            return events;
+        }
+
+        // Load all schedule  
+        public async Task<Dictionary<string, List<Event>>> GetAllSchedulesAsync()
+        {
+            var result = new Dictionary<string, List<Event>>();
+            var userDoc = await GetCurrentUserDocAsync();
+            if (userDoc == null)
+                return result;
+
+            var snap = await userDoc
+                .Collection("Schedule")
+                .GetSnapshotAsync();
+
+            foreach (var doc in snap.Documents)
+            {
+                var data = doc.ToDictionary();
+                // Kiểm tra các trường cần thiết trước khi cast
+                if (!data.ContainsKey("UId") || !data.ContainsKey("Title") || !data.ContainsKey("Start") || !data.ContainsKey("End"))
+                {
+                    // Bỏ qua document không hợp lệ
+                    continue;
                 }
 
-                return scheduleDict;
+                DateTime start;
+                DateTime end;
+
+                // Xử lý Start và End từ Timestamp hoặc DateTime (tùy thuộc vào cách bạn lưu)
+                if (data["Start"] is Timestamp startTs)
+                    start = startTs.ToDateTime();
+                else if (data["Start"] is DateTime startDt)
+                    start = startDt;
+                else
+                    continue; // Bỏ qua nếu không phải Timestamp hoặc DateTime
+
+                if (data["End"] is Timestamp endTs)
+                    end = endTs.ToDateTime();
+                else if (data["End"] is DateTime endDt)
+                    end = endDt;
+                else
+                    continue; // Bỏ qua nếu không phải Timestamp hoặc DateTime
+
+
+                var ev = new Event
+                {
+                    UId = data["UId"].ToString(), // Lấy UId từ trường UId trong Document
+                    Title = data["Title"].ToString(),
+                    Description = data.ContainsKey("Description") ? data["Description"].ToString() : "",
+                    Frequency = data.ContainsKey("Frequency") ? data["Frequency"].ToString() : "None",
+                    Start = start,
+                    End = end,
+                };
+
+                // Lấy DateKey (chỉ ngày) của sự kiện
+                string dateKey = ev.Start.ToString("yyyy-MM-dd");
+
+                if (!result.ContainsKey(dateKey))
+                    result[dateKey] = new List<Event>();
+
+                // Thêm vào danh sách sự kiện của ngày tương ứng
+                result[dateKey].Add(ev);
             }
-            catch (Exception ex)
-            {
-                return scheduleDict;
-            }
+
+            UserSession.ScheduleCache = result;
+            return result;
         }
+
+        //Update event
+        public async Task UpdateEventAsync(DateTime date, Event ev)
+        {
+            var userDoc = await GetCurrentUserDocAsync();
+            if (userDoc == null) return;
+
+            string dateKey = date.ToString("yyyy-MM-dd");
+
+            var data = new Dictionary<string, object>
+    {
+        { "Title", ev.Title },
+        { "Description", ev.Description },
+        { "Start", ev.Start },
+        { "End", ev.End },
+        { "Frequency", ev.Frequency },
+        { "TimezoneId", ev.TimezoneId }
+    };
+
+            await userDoc
+                .Collection("Schedule")
+                .Document(dateKey)
+                .UpdateAsync(data);
+        }
+
+        // Delete event
+        public async Task<string> DeleteEventAsync(Event ev)
+        {
+            var userDoc = await GetCurrentUserDocAsync();
+            if (userDoc == null)
+                return "Không tìm thấy user";
+
+            string dateKey = ev.Start.ToString("yyyy-MM-dd");
+
+            // 1. Kiểm tra cache (Calendar.cs đã xử lý xóa event khỏi cache trước khi gọi hàm này)
+            if (!UserSession.ScheduleCache.ContainsKey(dateKey) || UserSession.ScheduleCache[dateKey].Count == 0)
+            {
+                // Điều kiện này xảy ra khi: 
+                // a) Ngày không tồn tại trong cache HOẶC
+                // b) Calendar vừa xóa sự kiện cuối cùng trong cache.
+
+                // Nếu list events trong cache rỗng, ta xóa luôn Document ngày trên Firebase.
+                await userDoc
+                    .Collection("Schedule")
+                    .Document(dateKey)
+                    .DeleteAsync();
+
+                return "SUCCESS";
+            }
+
+            // 2. Nếu vẫn còn sự kiện trong ngày (List trong cache chưa rỗng)
+
+            var events = UserSession.ScheduleCache[dateKey]; // List đã được cập nhật từ Calendar.cs
+
+            // 3. Cập nhật Firebase bằng List đã xóa sự kiện
+            var eventsData = events.Select(e => new Dictionary<string, object>
+    {
+        { "UId", e.UId },
+        { "Title", e.Title },
+        { "Start", e.Start },
+        { "End", e.End },
+        { "Frequency", e.Frequency },
+        { "Description", e.Description },
+        { "TimezoneId", e.TimezoneId },
+    }).ToList();
+
+            var updateData = new Dictionary<string, object>
+    {
+        { "Events", eventsData }
+    };
+
+            // Ghi đè lại Document ngày với List sự kiện còn lại
+            await userDoc
+                .Collection("Schedule")
+                .Document(dateKey)
+                .SetAsync(updateData);
+
+            return "SUCCESS";
+        }
+
+
         // Update Note
         public async Task<string> UpdateNoteAsync(string noteId, string content)
         {

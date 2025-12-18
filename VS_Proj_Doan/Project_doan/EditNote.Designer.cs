@@ -38,17 +38,17 @@
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(935, 710);
+            this.richTextBox1.Size = new System.Drawing.Size(681, 473);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(968, 432);
+            this.button1.Location = new System.Drawing.Point(704, 288);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 148);
+            this.button1.Size = new System.Drawing.Size(55, 99);
             this.button1.TabIndex = 11;
             this.button1.Text = "thoát";
             this.button1.UseVisualStyleBackColor = true;
@@ -56,9 +56,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(968, 164);
+            this.button2.Location = new System.Drawing.Point(704, 109);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 148);
+            this.button2.Size = new System.Drawing.Size(55, 99);
             this.button2.TabIndex = 12;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
@@ -66,22 +67,25 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(968, 32);
+            this.button3.Location = new System.Drawing.Point(704, 21);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 99);
+            this.button3.Size = new System.Drawing.Size(55, 66);
             this.button3.TabIndex = 13;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // EditNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 710);
+            this.ClientSize = new System.Drawing.Size(797, 473);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditNote";
             this.Text = "EditNote";
             this.Load += new System.EventHandler(this.EditNote_Load);

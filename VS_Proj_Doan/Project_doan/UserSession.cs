@@ -16,6 +16,7 @@ namespace Project_doan
         public static string Phone { get; set; }
         public static DateTime Birthday { get; set; }
         public static string Language { get; set; }
-        public static Dictionary<string, string> ScheduleCache { get; set; } = new Dictionary<string, string>();
+        public static Dictionary<string, List<Event>> ScheduleCache { get; set; } = new Dictionary<string, List<Event>>();
+        public static List<Dictionary<string, object>> NoteCache { get; set; } = new List<Dictionary<string, object>> { };
     }
 }
