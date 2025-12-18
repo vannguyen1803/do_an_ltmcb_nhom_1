@@ -282,5 +282,31 @@ namespace Project_doan
             catch { }
         }
 
+        private void btn_pomo_Click(object sender, EventArgs e)
+        {
+            pn_content.Controls.Clear();
+            var PomodoroControl = new Pomodoro();
+            PomodoroControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(PomodoroControl);
+        }
+
+        private void btn_aim_Click(object sender, EventArgs e)
+        {
+            pn_content.Controls.Clear();
+            var AimControl = new Muc_tieu();
+            AimControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(AimControl);
+        }
+
+        private void btn_diary_Click(object sender, EventArgs e)
+        {
+            
+            pn_content.Controls.Clear();
+
+            var diaryControl = new UserControlNhatKy(firebase);
+            diaryControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(diaryControl);
+        }
+
     }
 }

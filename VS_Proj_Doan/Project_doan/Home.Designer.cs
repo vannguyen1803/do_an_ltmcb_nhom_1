@@ -48,7 +48,6 @@
             // 
             // pn_menu
             // 
-            
             this.pn_menu.Controls.Add(this.btn_acc);
             this.pn_menu.Controls.Add(this.btn_pomo);
             this.pn_menu.Controls.Add(this.btn_diary);

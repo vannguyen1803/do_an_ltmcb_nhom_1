@@ -167,6 +167,12 @@
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
     <Compile Include="Aim.cs" />
+    <Compile Include="NewAim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAim.Designer.cs">
+      <DependentUpon>NewAim.cs</DependentUpon>
+    </Compile>
     <Compile Include="NotificationHelper.cs" />
     <Compile Include="Calendar.cs">
       <SubType>UserControl</SubType>
@@ -329,6 +335,9 @@
     <EmbeddedResource Include="Muc_tieu.resx">
       <DependentUpon>Muc_tieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewAim.resx">
+      <DependentUpon>NewAim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhatKy.resx">
       <DependentUpon>NhatKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,6 +374,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlNhatKy.resx">
       <DependentUpon>UserControlNhatKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pomodoro.resx">
       <DependentUpon>Pomodoro.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,22 +13,27 @@ namespace Project_doan
     public partial class Muc_tieu : UserControl
     {
         private FirebaseAuthService firebase;
-
-        //biến lưu object chỉnh sửa
-        private Aim currentEditAim = null;
+        
         public Muc_tieu()
         {
             InitializeComponent();
             firebase = new FirebaseAuthService();
-            pn_listAim.Visible = true;
-            pn_newAim.Visible = false;
         }
 
         private void Muc_tieu_Load(object sender, EventArgs e)
         {
             LoadAimData();
         }
+        private void OpenNewAim(Aim aim)
+        {
+            NewAim newaim = new NewAim(aim);
 
+            newaim.OnDataSave += (s, args) =>
+            {
+                LoadAimData();
+            };
+            newaim.Show();
+        }
         public async void LoadAimData()
         {
             try
@@ -82,19 +87,11 @@ namespace Project_doan
                         }
                     };
 
-                    item.OnEditClicked += (s, aimChinhSua) =>
+                    item.OnEditClicked += (s, aimEdit) =>
                     {
-                        currentEditAim = aimChinhSua;
-
-                        tb_title.Text = aimChinhSua.title;
-                        rtb_mota.Text = aimChinhSua.mota;
-                        dtp_start.Value = aimChinhSua.date_start;
-                        dtp_end.Value = aimChinhSua.date_end;
-
-                        pn_listAim.Visible = false;
-                        pn_newAim.Visible = true;
-                        btn_add.Visible = false;
+                        OpenNewAim(aimEdit);
                     };
+
                     flowLayoutPanel1.Controls.Add(item);
 
                 }
@@ -106,94 +103,7 @@ namespace Project_doan
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            currentEditAim = null;
-            ClearInfo();
-
-            pn_listAim.Visible = false;
-            btn_add.Visible = false;
-            pn_newAim.Visible = true;
-
-        }
-
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            currentEditAim = null;
-            ClearInfo();
-
-            pn_listAim.Visible = true;
-            btn_add.Visible = true;
-            pn_newAim.Visible = false;
-        }
-
-        private async void btn_save_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tb_title.Text))
-            {
-                MessageBox.Show("Vui lòng nhập tiêu đề mục tiêu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tb_title.Focus();
-                return;
-            }
-            if (dtp_end.Value.Date < dtp_start.Value.Date)
-            {
-                MessageBox.Show("Ngày kết thúc không được nhỏ hơn ngày bắt đầu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            btn_save.Enabled = false;
-
-            try
-            {
-                string result = "";
-                
-                if(currentEditAim == null)
-                {
-                    Aim newAim = new Aim
-                    {
-                        title = tb_title.Text.Trim(),
-                        mota = rtb_mota.Text.Trim(),
-                        date_start = dtp_start.Value,
-                        date_end = dtp_end.Value,
-                        status = AimStatus.DangThucHien
-                    };
-                    result = await firebase.AddAimAsync(newAim);
-                }
-                else
-                {
-                    currentEditAim.title = tb_title.Text.Trim();
-                    currentEditAim.mota = rtb_mota.Text.Trim();
-                    currentEditAim.date_start = dtp_start.Value;
-                    currentEditAim.date_end = dtp_end.Value;
-
-                    result = await firebase.UpdateAimAsync(currentEditAim);
-                }
-
-                if (result == "SUCCESS")
-                {
-                    ClearInfo();
-                    currentEditAim = null;
-                    LoadAimData();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại: " + result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                btn_save.Enabled = true;
-            }
-        }
-
-        private void ClearInfo()
-        {
-            tb_title.Text = "";
-            rtb_mota.Text = "";
-            dtp_start.Value = DateTime.Now;
-            dtp_end.Value = DateTime.Now;
+            OpenNewAim(null);
         }
     }
 }      
