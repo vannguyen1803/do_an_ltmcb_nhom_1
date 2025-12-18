@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_doan
 {
-    internal class UserSession
+    public class UserSession
     {
         public static string UserId { get; set; }
         public static string Email { get; set; }

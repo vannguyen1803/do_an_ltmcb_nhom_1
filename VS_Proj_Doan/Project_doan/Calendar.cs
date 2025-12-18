@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Project_doan
 {
     public partial class Calendar : UserControl
@@ -23,6 +24,9 @@ namespace Project_doan
         private Dictionary<Guna2CircleButton, Label> buttonTaskLabelMap = new Dictionary<Guna2CircleButton, Label>();
         public event Func<DateTime, Task<List<Event>>> OnRequestSchedule;
         public event Func<Event, Task> OnDeleteEventRequested;
+
+        List<Aim> cacheAim = new List<Aim>();
+
         int month = DateTime.Now.Month;
         int year = DateTime.Now.Year;
         string monthName = DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture);
@@ -38,6 +42,22 @@ namespace Project_doan
 
         }
        
+            LoadDataAsync();
+            lb_month.Text = month.ToString();
+            lb_year.Text = year.ToString();
+        }
+        public async void LoadDataAsync()
+        {
+            try
+            {
+                cacheAim = await firebase.GetAllAimsAsync();
+                CreateMonthCalendar(month, year);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải mục tiêu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void CreateDayHeader()
         {
             for (int i = 0; i < 7; i++)

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Project_doan
 {
     public partial class Login : Form
@@ -34,6 +35,7 @@ namespace Project_doan
                     home.Show();
                     this.Hide();
                 }
+
 
             }
             catch (Exception ex)
