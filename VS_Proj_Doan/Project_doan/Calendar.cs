@@ -24,6 +24,7 @@ namespace Project_doan
         private Dictionary<Guna2CircleButton, Label> buttonTaskLabelMap = new Dictionary<Guna2CircleButton, Label>();
         public event Func<DateTime, Task<List<Event>>> OnRequestSchedule;
         public event Func<Event, Task> OnDeleteEventRequested;
+        FirebaseAuthService firebase = new FirebaseAuthService();
 
         List<Aim> cacheAim = new List<Aim>();
 
@@ -41,11 +42,7 @@ namespace Project_doan
             lb_year.Text = year.ToString();
 
         }
-       
-            LoadDataAsync();
-            lb_month.Text = month.ToString();
-            lb_year.Text = year.ToString();
-        }
+        
         public async void LoadDataAsync()
         {
             try
@@ -297,7 +294,9 @@ namespace Project_doan
 
         private void Calendar_Load(object sender, EventArgs e)
         {
-
+            LoadDataAsync();
+            lb_month.Text = month.ToString();
+            lb_year.Text = year.ToString();
         }
 
         private void btn_nextmonth_Click(object sender, EventArgs e)
@@ -370,6 +369,11 @@ namespace Project_doan
                     }
                 }
             }
+        }
+
+        private void weekday_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

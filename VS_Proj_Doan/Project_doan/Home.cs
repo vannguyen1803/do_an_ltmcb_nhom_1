@@ -39,11 +39,11 @@ namespace Project_doan
             };
 
             //Tạo account
-            var acc = new Account();
+            acc = new Account();
             acc.Dock = DockStyle.Fill;
 
             //Tạo ghi chú
-            var note = new Ghi_chu();
+            note = new Ghi_chu();
             note.Dock = DockStyle.Fill;
             if (aim != null)
             {
@@ -155,13 +155,13 @@ namespace Project_doan
             }
             if (_nhatKyForm == null)
             {
-                _nhatKyForm = new NhatKy(_firebaseService);
+                _nhatKyForm = new NhatKy(firebase);
                 _nhatKyForm.Dock = DockStyle.Fill;
                 _nhatKyForm.BackToListRequested += NhatKy_BackToListRequested;
             }
             pn_content.Controls.Clear();
 
-            var diaryControl = new UserControlNhatKyList(_firebaseService);
+            var diaryControl = new UserControlNhatKyList(firebase);
             diaryControl.Dock = DockStyle.Fill;
             diaryControl.EntrySelected += (documentId) =>
             {
@@ -307,7 +307,7 @@ namespace Project_doan
         private void NhatKy_BackToListRequested()
         {
             pn_content.Controls.Clear();
-            var listControl = new UserControlNhatKyList(_firebaseService);
+            var listControl = new UserControlNhatKyList(firebase);
             listControl.Dock = DockStyle.Fill;
             listControl.EntrySelected += (documentId) =>
             {

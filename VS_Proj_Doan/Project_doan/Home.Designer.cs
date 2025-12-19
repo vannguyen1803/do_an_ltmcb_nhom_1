@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.pn_menu = new System.Windows.Forms.Panel();
-            this.btn_acc = new System.Windows.Forms.Button();
-            this.btn_pomo = new System.Windows.Forms.Button();
-            this.btn_diary = new System.Windows.Forms.Button();
-            this.btn_note = new System.Windows.Forms.Button();
-            this.btn_aim = new System.Windows.Forms.Button();
-            this.btn_cal = new System.Windows.Forms.Button();
             this.pn_header = new System.Windows.Forms.Panel();
             this.pn_content = new System.Windows.Forms.Panel();
             this.btn_cal = new Guna.UI2.WinForms.Guna2Button();
