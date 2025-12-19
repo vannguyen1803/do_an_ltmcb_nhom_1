@@ -167,6 +167,12 @@
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
     <Compile Include="Aim.cs" />
+    <Compile Include="Calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Calendar.Designer.cs">
+      <DependentUpon>Calendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewAim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,12 +180,6 @@
       <DependentUpon>NewAim.cs</DependentUpon>
     </Compile>
     <Compile Include="NotificationHelper.cs" />
-    <Compile Include="Calendar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Calendar.Designer.cs">
-      <DependentUpon>Calendar.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,12 +243,6 @@
     <Compile Include="NhatKy.Designer.cs">
       <DependentUpon>NhatKy.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhatKyList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhatKyList.Designer.cs">
-      <DependentUpon>NhatKyList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Note.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,12 +282,6 @@
     </Compile>
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlNhatKy.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlNhatKy.Designer.cs">
-      <DependentUpon>UserControlNhatKy.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlNhatKyList.cs">
       <SubType>UserControl</SubType>
@@ -347,9 +335,6 @@
     <EmbeddedResource Include="NhatKy.resx">
       <DependentUpon>NhatKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhatKyList.resx">
-      <DependentUpon>NhatKyList.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,9 +362,6 @@
     </Compile>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlNhatKy.resx">
-      <DependentUpon>UserControlNhatKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pomodoro.resx">
       <DependentUpon>Pomodoro.cs</DependentUpon>

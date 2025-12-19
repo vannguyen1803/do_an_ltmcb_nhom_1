@@ -57,9 +57,25 @@ namespace Project_doan
                     {
                         UserSession.Birthday = DateTime.MinValue;
                     }
+                    try
+                    {
+                        UserSession.ScheduleCache = await GetAllSchedulesAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error loading schedule cache: " + ex.Message);
+                        UserSession.ScheduleCache = new Dictionary<string, List<Event>>();
+                    }
 
-                    UserSession.ScheduleCache = await GetAllSchedulesAsync();
-                    UserSession.NoteCache   = await GetAllNotesAsync();
+                    try
+                    {
+                        UserSession.NoteCache = await GetAllNotesAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error loading note cache: " + ex.Message);
+                        UserSession.NoteCache = new List<Dictionary<string, object>>();
+                    }
 
                     return "SUCCESS";
                 }
