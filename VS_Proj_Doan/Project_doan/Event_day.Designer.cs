@@ -71,10 +71,9 @@
             this.btn_xoa.FillColor2 = System.Drawing.Color.LightSkyBlue;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_xoa.Location = new System.Drawing.Point(597, 242);
-            this.btn_xoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_xoa.Location = new System.Drawing.Point(434, 161);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(114, 36);
+            this.btn_xoa.Size = new System.Drawing.Size(83, 24);
             this.btn_xoa.TabIndex = 8;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
@@ -128,12 +127,12 @@
             this.tb_desc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_desc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_desc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_desc.Location = new System.Drawing.Point(151, 178);
-            this.tb_desc.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.tb_desc.Location = new System.Drawing.Point(110, 119);
+            this.tb_desc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_desc.Name = "tb_desc";
             this.tb_desc.PlaceholderText = "";
             this.tb_desc.SelectedText = "";
-            this.tb_desc.Size = new System.Drawing.Size(560, 45);
+            this.tb_desc.Size = new System.Drawing.Size(407, 30);
             this.tb_desc.TabIndex = 5;
             // 
             // tb_title
@@ -147,12 +146,12 @@
             this.tb_title.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_title.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_title.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_title.Location = new System.Drawing.Point(151, 15);
-            this.tb_title.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.tb_title.Location = new System.Drawing.Point(110, 10);
+            this.tb_title.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_title.Name = "tb_title";
             this.tb_title.PlaceholderText = "";
             this.tb_title.SelectedText = "";
-            this.tb_title.Size = new System.Drawing.Size(560, 45);
+            this.tb_title.Size = new System.Drawing.Size(407, 30);
             this.tb_title.TabIndex = 4;
             // 
             // label4
