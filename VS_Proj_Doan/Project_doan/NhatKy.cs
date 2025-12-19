@@ -13,12 +13,14 @@ using Firebase.Auth;
 
 namespace Project_doan
 {
-    public partial class NhatKy : Form
+    public partial class NhatKy : UserControl
     {
         private FirebaseAuthService firebase = new FirebaseAuthService();
         private string _currentDocumentId = null;
-        public NhatKy(string userId, string projectId) : this()
+        public event Action BackToListRequested;
+        public NhatKy(FirebaseAuthService firebaseService) : this()
         {
+            this.firebase = firebaseService;
         }
         public NhatKy()
         {
@@ -85,25 +87,7 @@ namespace Project_doan
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(UserSession.Username))
-            {
-                MessageBox.Show("Vui lòng đăng nhập để xem danh sách.", "Lỗi Xác thực", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            try
-            {
-                NhatKyList listForm = new NhatKyList(firebase);
-                listForm.EntrySelected += (documentId) =>
-                {
-                    LoadEntryFromFirestore(documentId);
-                };
-                listForm.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể mở danh sách nhật ký: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            BackToListRequested?.Invoke();
         }
 
         private void tb_title_TextChanged(object sender, EventArgs e)
@@ -114,7 +98,7 @@ namespace Project_doan
         {
         }
 
-        private async void LoadEntryFromFirestore(string documentId)
+        public async void LoadEntryFromFirestore(string documentId)
         {
             if (string.IsNullOrEmpty(UserSession.Username)) return;
 
