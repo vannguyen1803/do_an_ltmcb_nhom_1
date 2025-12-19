@@ -142,10 +142,6 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Xml.Linq" />
@@ -224,6 +220,7 @@
     </Compile>
     <Compile Include="Ghi_chu.Designer.cs">
       <DependentUpon>Ghi_chu.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemAim.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -307,7 +304,6 @@
     <Compile Include="UserControlNhatKyList.Designer.cs">
       <DependentUpon>UserControlNhatKyList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserSession.cs" />
     <Compile Include="XuatLich.cs" />
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
@@ -317,6 +313,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiaryItem.resx">
       <DependentUpon>DiaryItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditEvent.resx">
       <DependentUpon>EditEvent.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +331,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ghi_chu.resx">
       <DependentUpon>Ghi_chu.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Pomodoro.cs">
       <SubType>UserControl</SubType>
     </Compile>
