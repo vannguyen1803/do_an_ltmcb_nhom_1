@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,7 +17,7 @@ namespace Project_doan
         private async void Ghi_chu_Load(object sender, EventArgs e)
         {
             await LoadAllNotes();
-                    
+
         }
         private async Task LoadAllNotes()
         {
@@ -42,11 +38,12 @@ namespace Project_doan
                 Panel addPanel = CreateAddNewPanel();
                 flowLayoutPanel1.Controls.Add(addPanel);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show("Lỗi load note: " + ex.Message);
             }
 
-            
+
         }
         private Panel CreateNotePanel(string content, string noteId, bool isNew)
         {
@@ -102,7 +99,7 @@ namespace Project_doan
                 Cursor = Cursors.Hand
             };
             addPanel.Controls.Add(lblPlus);
-            
+
 
             lblPlus.Location = new Point(
                 (addPanel.Width - lblPlus.Width) / 2,
@@ -124,7 +121,7 @@ namespace Project_doan
                 addPanel.Height - 20
             );
 
-            
+
 
             addPanel.Click += AddNewPanel_Click;
             lblPlus.Click += AddNewPanel_Click;
@@ -166,6 +163,6 @@ namespace Project_doan
             }
         }
 
-        
+
     }
 }

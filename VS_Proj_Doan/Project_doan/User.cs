@@ -37,7 +37,6 @@ namespace Project_doan
             txt_hoten.Text = UserSession.HoTen.ToString();
             txt_user.Text = UserSession.Username.ToString();
             txt_phone.Text = UserSession.Phone ?? "";
-            txt_country.Text = UserSession.Language ?? "";
             txt_date.Text = UserSession.Birthday == DateTime.MinValue
                 ? ""
                 : UserSession.Birthday.ToString("MM/dd/yyyy");
