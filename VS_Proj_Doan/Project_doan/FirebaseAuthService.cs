@@ -1,24 +1,18 @@
 ﻿using Google.Cloud.Firestore;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
 
 namespace Project_doan
 {
-    public class FirebaseAuthService
+    internal class FirebaseAuthService
     {
         private readonly FirestoreDb _db;
 
         public FirebaseAuthService()
         {
-            _db = Program.db;
+            _db = new FirestoreService().GetDb();
         }
         //Login
 
@@ -42,24 +36,43 @@ namespace Project_doan
 
                 if (data.ContainsKey("Pass") && data["Pass"].ToString() == password)
                 {
-                    UserSession.Email = data["Email"].ToString();
+                    UserSession.UserId = doc.Id;
+
+
                     UserSession.Username = data["Username"].ToString();
+                    UserSession.Email = data["Email"].ToString();
                     UserSession.HoTen = data["HoTen"].ToString();
+
                     UserSession.Phone = data.ContainsKey("Phone") ? data["Phone"].ToString() : "";
-                    UserSession.Language = data.ContainsKey("Language") ? data["Language"].ToString() : "";
-                    UserSession.MaND = data.ContainsKey("MaND") ? data["MaND"].ToString() : "";
+
                     if (data.ContainsKey("Birthday"))
                     {
                         Timestamp t = (Timestamp)data["Birthday"];
-                        UserSession.Birthday = t.ToDateTime();
+                        UserSession.Birthday = t.ToDateTime().ToLocalTime();
                     }
                     else
                     {
                         UserSession.Birthday = DateTime.MinValue;
                     }
+                    try
+                    {
+                        UserSession.ScheduleCache = await GetAllSchedulesAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error loading schedule cache: " + ex.Message);
+                        UserSession.ScheduleCache = new Dictionary<string, List<Event>>();
+                    }
 
-                    UserSession.ScheduleCache = await GetAllSchedulesAsync();
-                    UserSession.NoteCache   = await GetAllNotesAsync();
+                    try
+                    {
+                        UserSession.NoteCache = await GetAllNotesAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error loading note cache: " + ex.Message);
+                        UserSession.NoteCache = new List<Dictionary<string, object>>();
+                    }
 
                     return "SUCCESS";
                 }
@@ -70,7 +83,6 @@ namespace Project_doan
             {
                 return "Lỗi đăng nhập: " + ex.Message;
             }
-
         }
         //signup
         public async Task<string> SignUpAsync(string username, string password, string email, string hoten)
@@ -166,20 +178,18 @@ namespace Project_doan
                         { "Language", language }
                     });
                     UserSession.Birthday = birthday;
-                    UserSession.Language = language;
                 }
                 else
                 {
                     await userDoc.UpdateAsync(new Dictionary<string, object>
-                    {
-                        { "Phone", phone },
-                        { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
-                        { "Language", language }
-                    });
+        {
+            { "Phone", phone },
+            { "Birthday", Timestamp.FromDateTime(birthday.ToUniversalTime()) },
+            { "Language", language }
+        });
 
                     UserSession.Phone = phone;
                     UserSession.Birthday = birthday;
-                    UserSession.Language = language;
                 }
                 return "SUCCESS";
             }
@@ -215,11 +225,11 @@ namespace Project_doan
                 string noteId = Guid.NewGuid().ToString();
 
                 var noteData = new Dictionary<string, object>
-                {
-                    { "Id", noteId },
-                    { "Content", content }
+        {
+            { "Id", noteId },
+            { "Content", content }
 
-                };
+        };
 
                 await userDoc
                     .Collection("Notes")
@@ -266,9 +276,7 @@ namespace Project_doan
 
 
         //saveSchedule
-        
-        // Sửa lại SaveScheduleAsync (Thêm mới/Ghi đè nếu đã tồn tại)
-        public async Task<string> SaveScheduleAsync(DateTime date, Event ev)
+        public async Task<string> SaveScheduleAsync(DateTime date, Event evt)
         {
             try
             {
@@ -277,269 +285,100 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 string dateKey = date.ToString("yyyy-MM-dd");
-                if (string.IsNullOrEmpty(ev.UId))
-                    ev.UId = Guid.NewGuid().ToString();
 
-                // 1. Lấy danh sách sự kiện hiện tại (từ cache hoặc Firebase)
-                List<Event> events;
-                if (UserSession.ScheduleCache.ContainsKey(dateKey))
-                {
-                    events = UserSession.ScheduleCache[dateKey];
-                }
-                else
-                {
-                    // Tải từ Firebase nếu chưa có trong cache
-                    events = await GetEventsFromFirebase(userDoc, dateKey);
-                }
-
-                // 2. Thêm sự kiện mới vào danh sách
-                events.Add(ev);
-
-                // Cập nhật lại cache
-                UserSession.ScheduleCache[dateKey] = events;
-
-                // 3. Chuyển đổi danh sách Event sang format lưu trữ của Firebase (List of Map)
-                var eventsData = events.Select(e => new Dictionary<string, object>
+                var eventData = new Dictionary<string, object>
         {
-            { "UId", e.UId },
-            { "Title", e.Title },
-            { "Start", e.Start },
-            { "End", e.End },
-            { "Frequency", e.Frequency },
-            { "Description", e.Description },
-            { "TimezoneId", e.TimezoneId },
-            // Có thể thêm CreatedAt, UpdatedAt
-        }).ToList();
-
-                var updateData = new Dictionary<string, object>
-        {
-            { "Events", eventsData }
+            { "UId", evt.UId },
+            { "Title", evt.Title },
+            { "Description", evt.Description ?? "" },
+            { "Start", Timestamp.FromDateTime(evt.Start.ToUniversalTime()) },
+            { "End", Timestamp.FromDateTime(evt.End.ToUniversalTime()) },
+            { "Frequency", evt.Frequency ?? "None" },
+            { "TimezoneId", evt.TimezoneId ?? TimeZoneInfo.Local.Id },
+            { "Date", dateKey },
+            { "UpdatedAt", Timestamp.GetCurrentTimestamp() }
         };
 
-                // 4. Lưu lại toàn bộ danh sách cập nhật vào document ngày
-                // SetAsync sẽ tạo mới nếu chưa có, hoặc ghi đè nếu đã có
                 await userDoc
                     .Collection("Schedule")
-                    .Document(dateKey)
-                    .SetAsync(updateData);
+                    .Document(evt.UId)
+                    .SetAsync(eventData);
+
+                if (!UserSession.ScheduleCache.ContainsKey(dateKey))
+                {
+                    UserSession.ScheduleCache[dateKey] = new List<Event>();
+                }
+
+                UserSession.ScheduleCache[dateKey].RemoveAll(e => e.UId == evt.UId);
+
+                UserSession.ScheduleCache[dateKey].Add(evt);
 
                 return "SUCCESS";
             }
             catch (Exception ex)
             {
-                return "Lỗi lưu lịch: " + ex.Message;
+                return "Lỗi lưu event: " + ex.Message;
             }
         }
 
-        // Hàm hỗ trợ đọc Events từ Firebase và chuyển đổi sang List<Event>
-        private async Task<List<Event>> GetEventsFromFirebase(DocumentReference userDoc, string dateKey)
-        {
-            var snap = await userDoc
-                .Collection("Schedule")
-                .Document(dateKey)
-                .GetSnapshotAsync();
-
-            if (!snap.Exists || !snap.ToDictionary().TryGetValue("Events", out object eventsObj))
-            {
-                return new List<Event>();
-            }
-
-            if (eventsObj is List<object> eventsList)
-            {
-                return eventsList.Select(item =>
-                {
-                    if (item is Dictionary<string, object> data)
-                    {
-                        // Logic map từ Dictionary sang Event
-                        DateTime start = (data["Start"] is Timestamp ts) ? ts.ToDateTime() : DateTime.Parse(data["Start"].ToString());
-                        DateTime end = (data["End"] is Timestamp tsEnd) ? tsEnd.ToDateTime() : DateTime.Parse(data["End"].ToString());
-
-                        return new Event
-                        {
-                            UId = data["UId"].ToString(),
-                            Title = data["Title"].ToString(),
-                            Description = data.ContainsKey("Description") ? data["Description"].ToString() : "",
-                            Frequency = data.ContainsKey("Frequency") ? data["Frequency"].ToString() : "None",
-                            Start = start,
-                            End = end,
-                            // Thêm các trường khác nếu cần
-                        };
-                    }
-                    return null;
-                }).Where(e => e != null).ToList();
-            }
-
-            return new List<Event>();
-        }
-        // loadSchedule
-        // Trong FirebaseAuthService.cs
-        // Sửa GetScheduleAsync (Dùng để load 1 ngày nếu cache miss)
-        public async Task<List<Event>> GetScheduleAsync(DateTime date)
-        {
-            string dateKey = date.ToString("yyyy-MM-dd");
-
-            // 1. Cache
-            if (UserSession.ScheduleCache.ContainsKey(dateKey))
-                return UserSession.ScheduleCache[dateKey];
-
-            var userDoc = await GetCurrentUserDocAsync();
-            if (userDoc == null)
-                return new List<Event>();
-
-            // 2. Load từ Firebase và Cache lại
-            var events = await GetEventsFromFirebase(userDoc, dateKey);
-
-            // 3. Cache
-            UserSession.ScheduleCache[dateKey] = events;
-
-            return events;
-        }
-
-        // Load all schedule  
+        // Load all schedule với Event objects
         public async Task<Dictionary<string, List<Event>>> GetAllSchedulesAsync()
         {
-            var result = new Dictionary<string, List<Event>>();
-            var userDoc = await GetCurrentUserDocAsync();
-            if (userDoc == null)
-                return result;
+            var scheduleDict = new Dictionary<string, List<Event>>();
 
-            var snap = await userDoc
-                .Collection("Schedule")
-                .GetSnapshotAsync();
-
-            foreach (var doc in snap.Documents)
+            try
             {
-                var data = doc.ToDictionary();
-                // Kiểm tra các trường cần thiết trước khi cast
-                if (!data.ContainsKey("UId") || !data.ContainsKey("Title") || !data.ContainsKey("Start") || !data.ContainsKey("End"))
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return scheduleDict;
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("Schedule")
+                    .GetSnapshotAsync();
+
+                foreach (var doc in snap.Documents)
                 {
-                    // Bỏ qua document không hợp lệ
-                    continue;
+                    try
+                    {
+                        var data = doc.ToDictionary();
+
+                        if (!data.ContainsKey("Date"))
+                            continue;
+
+                        string dateKey = data["Date"].ToString();
+
+                        Event evt = new Event
+                        {
+                            UId = doc.Id,
+                            Title = data.ContainsKey("Title") ? data["Title"].ToString() :
+                                    data.ContainsKey("Content") ? data["Content"].ToString() : "Untitled",
+                            Description = data.ContainsKey("Description") ? data["Description"].ToString() : "",
+                            Start = data.ContainsKey("Start") ? ((Timestamp)data["Start"]).ToDateTime().ToLocalTime() : DateTime.Parse(dateKey),
+                            End = data.ContainsKey("End") ? ((Timestamp)data["End"]).ToDateTime().ToLocalTime() : DateTime.Parse(dateKey).AddHours(1)
+                        };
+
+                        if (!scheduleDict.ContainsKey(dateKey))
+                        {
+                            scheduleDict[dateKey] = new List<Event>();
+                        }
+
+                        scheduleDict[dateKey].Add(evt);
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Error parsing schedule document: {ex.Message}");
+                        continue;
+                    }
                 }
 
-                DateTime start;
-                DateTime end;
-
-                // Xử lý Start và End từ Timestamp hoặc DateTime (tùy thuộc vào cách bạn lưu)
-                if (data["Start"] is Timestamp startTs)
-                    start = startTs.ToDateTime();
-                else if (data["Start"] is DateTime startDt)
-                    start = startDt;
-                else
-                    continue; // Bỏ qua nếu không phải Timestamp hoặc DateTime
-
-                if (data["End"] is Timestamp endTs)
-                    end = endTs.ToDateTime();
-                else if (data["End"] is DateTime endDt)
-                    end = endDt;
-                else
-                    continue; // Bỏ qua nếu không phải Timestamp hoặc DateTime
-
-
-                var ev = new Event
-                {
-                    UId = data["UId"].ToString(), // Lấy UId từ trường UId trong Document
-                    Title = data["Title"].ToString(),
-                    Description = data.ContainsKey("Description") ? data["Description"].ToString() : "",
-                    Frequency = data.ContainsKey("Frequency") ? data["Frequency"].ToString() : "None",
-                    Start = start,
-                    End = end,
-                };
-
-                // Lấy DateKey (chỉ ngày) của sự kiện
-                string dateKey = ev.Start.ToString("yyyy-MM-dd");
-
-                if (!result.ContainsKey(dateKey))
-                    result[dateKey] = new List<Event>();
-
-                // Thêm vào danh sách sự kiện của ngày tương ứng
-                result[dateKey].Add(ev);
+                return scheduleDict;
             }
-
-            UserSession.ScheduleCache = result;
-            return result;
-        }
-
-        //Update event
-        public async Task UpdateEventAsync(DateTime date, Event ev)
-        {
-            var userDoc = await GetCurrentUserDocAsync();
-            if (userDoc == null) return;
-
-            string dateKey = date.ToString("yyyy-MM-dd");
-
-            var data = new Dictionary<string, object>
-    {
-        { "Title", ev.Title },
-        { "Description", ev.Description },
-        { "Start", ev.Start },
-        { "End", ev.End },
-        { "Frequency", ev.Frequency },
-        { "TimezoneId", ev.TimezoneId }
-    };
-
-            await userDoc
-                .Collection("Schedule")
-                .Document(dateKey)
-                .UpdateAsync(data);
-        }
-
-        // Delete event
-        public async Task<string> DeleteEventAsync(Event ev)
-        {
-            var userDoc = await GetCurrentUserDocAsync();
-            if (userDoc == null)
-                return "Không tìm thấy user";
-
-            string dateKey = ev.Start.ToString("yyyy-MM-dd");
-
-            // 1. Kiểm tra cache (Calendar.cs đã xử lý xóa event khỏi cache trước khi gọi hàm này)
-            if (!UserSession.ScheduleCache.ContainsKey(dateKey) || UserSession.ScheduleCache[dateKey].Count == 0)
+            catch (Exception ex)
             {
-                // Điều kiện này xảy ra khi: 
-                // a) Ngày không tồn tại trong cache HOẶC
-                // b) Calendar vừa xóa sự kiện cuối cùng trong cache.
-
-                // Nếu list events trong cache rỗng, ta xóa luôn Document ngày trên Firebase.
-                await userDoc
-                    .Collection("Schedule")
-                    .Document(dateKey)
-                    .DeleteAsync();
-
-                return "SUCCESS";
+                System.Diagnostics.Debug.WriteLine($"Error in GetAllSchedulesAsync: {ex.Message}");
+                return scheduleDict;
             }
-
-            // 2. Nếu vẫn còn sự kiện trong ngày (List trong cache chưa rỗng)
-
-            var events = UserSession.ScheduleCache[dateKey]; // List đã được cập nhật từ Calendar.cs
-
-            // 3. Cập nhật Firebase bằng List đã xóa sự kiện
-            var eventsData = events.Select(e => new Dictionary<string, object>
-    {
-        { "UId", e.UId },
-        { "Title", e.Title },
-        { "Start", e.Start },
-        { "End", e.End },
-        { "Frequency", e.Frequency },
-        { "Description", e.Description },
-        { "TimezoneId", e.TimezoneId },
-    }).ToList();
-
-            var updateData = new Dictionary<string, object>
-    {
-        { "Events", eventsData }
-    };
-
-            // Ghi đè lại Document ngày với List sự kiện còn lại
-            await userDoc
-                .Collection("Schedule")
-                .Document(dateKey)
-                .SetAsync(updateData);
-
-            return "SUCCESS";
         }
-
-
         // Update Note
         public async Task<string> UpdateNoteAsync(string noteId, string content)
         {
@@ -550,10 +389,10 @@ namespace Project_doan
                     return "Không tìm thấy user";
 
                 var noteData = new Dictionary<string, object>
-                {
-                    { "Id", noteId },
-                    { "Content", content }
-                };
+        {
+            { "Id", noteId },
+            { "Content", content }
+        };
 
                 await userDoc
                     .Collection("Notes")
@@ -589,8 +428,9 @@ namespace Project_doan
                 return "Lỗi xóa note: " + ex.Message;
             }
         }
-        //Thêm mục tiêu
-        public async Task<string> AddAimAsync(Aim aim)
+
+        // Save Pomodoro Session
+        public async Task<string> SavePomodoroSessionAsync(PomodoroSession session)
         {
             try
             {
@@ -598,242 +438,367 @@ namespace Project_doan
                 if (userDoc == null)
                     return "Không tìm thấy user";
 
-                string aimId = Guid.NewGuid().ToString();
-                aim.Id = aimId;
-
-                var data = new Dictionary<string, object>
-                {
-                    { "Id", aimId },
-                    { "Ten", aim.title },
-                    { "MoTa", aim.mota },
-                    { "TrangThai", (int)aim.status },
-                    { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
-                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
-                };
+                var sessionData = new Dictionary<string, object>
+        {
+            { "SessionId", session.SessionId },
+            { "NgayBatDau", Timestamp.FromDateTime(session.NgayBatDau.ToUniversalTime()) },
+            { "NgayKetThuc", Timestamp.FromDateTime(session.NgayKetThuc.ToUniversalTime()) },
+            { "PhutHoc", session.PhutHoc },
+            { "PhutNghi", session.PhutNghi },
+            { "TongPhutHocThucTe", session.TongPhutHocThucTe },
+            { "TrangThai", session.TrangThai },
+            { "NgayTao", session.NgayBatDau.Date.ToString("yyyy-MM-dd") }
+        };
 
                 await userDoc
-                    .Collection("MucTieu")
-                    .Document(aimId)
-                    .SetAsync(data);
+                    .Collection("PomodoroSessions")
+                    .Document(session.SessionId)
+                    .SetAsync(sessionData);
 
                 return "SUCCESS";
             }
             catch (Exception ex)
             {
-                return "Lỗi thêm mục tiêu: " + ex.Message;
+                return "Lỗi lưu session: " + ex.Message;
             }
         }
-        //Lấy dữ liệu mục tiêu
-        public async Task<List<Aim>> GetAllAimsAsync()
+
+        // Get Pomodoro Sessions by Date
+        public async Task<List<PomodoroSession>> GetPomodoroSessionsByDateAsync(DateTime date)
         {
-            var list = new List<Aim>();
+            var list = new List<PomodoroSession>();
 
             try
             {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                {
+                    System.Diagnostics.Debug.WriteLine("User document not found");
+                    return list;
+                }
+
+                string dateKey = date.Date.ToString("yyyy-MM-dd");
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("PomodoroSessions")
+                    .WhereEqualTo("NgayTao", dateKey)
+                    .GetSnapshotAsync();
+
+                if (snap == null || snap.Count == 0)
+                {
+                    System.Diagnostics.Debug.WriteLine($"No sessions found for {dateKey}");
+                    return list;
+                }
+
+                foreach (var doc in snap.Documents)
+                {
+                    try
+                    {
+                        var data = doc.ToDictionary();
+
+                        var session = new PomodoroSession
+                        {
+                            SessionId = data.ContainsKey("SessionId") ? data["SessionId"].ToString() : "",
+                            NgayBatDau = data.ContainsKey("NgayBatDau") ? ((Timestamp)data["NgayBatDau"]).ToDateTime().ToLocalTime() : DateTime.MinValue,
+                            NgayKetThuc = data.ContainsKey("NgayKetThuc") ? ((Timestamp)data["NgayKetThuc"]).ToDateTime().ToLocalTime() : DateTime.MinValue,
+                            PhutHoc = data.ContainsKey("PhutHoc") ? Convert.ToInt32(data["PhutHoc"]) : 0,
+                            PhutNghi = data.ContainsKey("PhutNghi") ? Convert.ToInt32(data["PhutNghi"]) : 0,
+                            TongPhutHocThucTe = data.ContainsKey("TongPhutHocThucTe") ? Convert.ToInt32(data["TongPhutHocThucTe"]) : 0,
+                            TrangThai = data.ContainsKey("TrangThai") ? data["TrangThai"].ToString() : "Unknown"
+                        };
+
+                        list.Add(session);
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Error parsing session document: {ex.Message}");
+                        continue;
+                    }
+                }
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error in GetPomodoroSessionsByDateAsync: " + ex.Message);
+                return list;
+            }
+        }
+
+        // Get Statistics by Date Range
+        public async Task<Dictionary<string, int>> GetPomodoroStatisticsAsync(DateTime fromDate, DateTime toDate)
+        {
+            var stats = new Dictionary<string, int>();
+
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                {
+                    System.Diagnostics.Debug.WriteLine("User document not found");
+                    return stats;
+                }
+
+                QuerySnapshot snap = await userDoc
+                    .Collection("PomodoroSessions")
+                    .GetSnapshotAsync();
+
+                if (snap == null || snap.Count == 0)
+                {
+                    System.Diagnostics.Debug.WriteLine("No sessions found");
+                    return stats;
+                }
+
+                foreach (var doc in snap.Documents)
+                {
+                    try
+                    {
+                        var data = doc.ToDictionary();
+
+                        if (!data.ContainsKey("NgayBatDau") || !data.ContainsKey("TongPhutHocThucTe"))
+                            continue;
+
+                        DateTime ngayBatDau = ((Timestamp)data["NgayBatDau"]).ToDateTime().ToLocalTime();
+
+                        // Lọc theo date range
+                        if (ngayBatDau.Date >= fromDate.Date && ngayBatDau.Date <= toDate.Date)
+                        {
+                            string dateKey = ngayBatDau.ToString("yyyy-MM-dd");
+                            int phutHoc = Convert.ToInt32(data["TongPhutHocThucTe"]);
+
+                            if (stats.ContainsKey(dateKey))
+                                stats[dateKey] += phutHoc;
+                            else
+                                stats[dateKey] = phutHoc;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Error parsing statistics document: {ex.Message}");
+                        continue;
+                    }
+                }
+
+                return stats;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error in GetPomodoroStatisticsAsync: " + ex.Message);
+                return stats;
+            }
+        }
+
+        // Get Total Minutes Today
+        public async Task<int> GetTotalMinutesTodayAsync()
+        {
+            try
+            {
+                var sessions = await GetPomodoroSessionsByDateAsync(DateTime.Today);
+
+                if (sessions == null || sessions.Count == 0)
+                    return 0;
+
+                return sessions.Where(s => s != null && s.TrangThai == "Hoàn thành")
+                              .Sum(s => s.TongPhutHocThucTe);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error in GetTotalMinutesTodayAsync: " + ex.Message);
+                return 0;
+            }
+        }
+        // Update Event
+        public async Task<string> UpdateEventAsync(DateTime date, Event evt)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                string dateKey = date.ToString("yyyy-MM-dd");
+
+                var eventData = new Dictionary<string, object>
+        {
+            { "UId", evt.UId },
+            { "Title", evt.Title },
+            { "Description", evt.Description ?? "" },
+            { "Start", Timestamp.FromDateTime(evt.Start.ToUniversalTime()) },
+            { "End", Timestamp.FromDateTime(evt.End.ToUniversalTime()) },
+            { "Frequency", evt.Frequency ?? "None" },
+            { "TimezoneId", evt.TimezoneId ?? TimeZoneInfo.Local.Id },
+            { "Date", dateKey },
+            { "UpdatedAt", Timestamp.GetCurrentTimestamp() }
+        };
+
+                await userDoc
+                    .Collection("Schedule")
+                    .Document(evt.UId)
+                    .SetAsync(eventData);
+
+                if (!UserSession.ScheduleCache.ContainsKey(dateKey))
+                {
+                    UserSession.ScheduleCache[dateKey] = new List<Event>();
+                }
+
+                UserSession.ScheduleCache[dateKey].RemoveAll(e => e.UId == evt.UId);
+
+                UserSession.ScheduleCache[dateKey].Add(evt);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi cập nhật event: " + ex.Message;
+            }
+        }
+
+        // Delete Event
+        public async Task<string> DeleteEventAsync(Event evt)
+        {
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null)
+                    return "Không tìm thấy user";
+
+                await userDoc
+                    .Collection("Schedule")
+                    .Document(evt.UId)
+                    .DeleteAsync();
+
+                // Update cache
+                string dateKey = evt.Start.ToString("yyyy-MM-dd");
+                if (UserSession.ScheduleCache.ContainsKey(dateKey))
+                {
+                    UserSession.ScheduleCache[dateKey].RemoveAll(e => e.UId == evt.UId);
+                }
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi xóa event: " + ex.Message;
+            }
+        }
+
+        // Get Events by Date
+
+
+
+        public async Task<List<Event>> GetEventsByDateAsync(DateTime date)
+        {
+            var list = new List<Event>();
+
+            try
+            {
+                string dateKey = date.ToString("yyyy-MM-dd");
+
+                // Kiểm tra cache trước
+                if (UserSession.ScheduleCache != null &&
+                    UserSession.ScheduleCache.ContainsKey(dateKey))
+                {
+                    // ⚠️ FIX: Lọc lại để đảm bảo chỉ lấy events đúng ngày
+                    return UserSession.ScheduleCache[dateKey]
+                        .Where(e => e.Start.Date == date.Date)
+                        .ToList();
+                }
+
+                // Nếu không có trong cache, query từ Firestore
                 var userDoc = await GetCurrentUserDocAsync();
                 if (userDoc == null)
                     return list;
 
                 QuerySnapshot snap = await userDoc
-                    .Collection("MucTieu")
+                    .Collection("Schedule")
+                    .WhereEqualTo("Date", dateKey)
                     .GetSnapshotAsync();
 
                 foreach (var doc in snap.Documents)
                 {
-                    var data = doc.ToDictionary();
-
-                    Aim aim = new Aim
+                    try
                     {
-                        Id = data["Id"].ToString(),
-                        title = data["Ten"].ToString(),
-                        mota = data["MoTa"].ToString(),
-                        status = (AimStatus)Convert.ToInt32(data["TrangThai"]),
-                        date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
-                        date_end = ((Timestamp)data["DateEnd"]).ToDateTime()
-                    };
+                        var data = doc.ToDictionary();
 
-                    list.Add(aim);
+                        // ⚠️ FIX: Kiểm tra dữ liệu đầy đủ trước khi tạo Event
+                        if (!data.ContainsKey("Title") && !data.ContainsKey("Content"))
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Skipping document {doc.Id}: Missing Title/Content");
+                            continue;
+                        }
+
+                        Event evt = new Event
+                        {
+                            UId = doc.Id,
+                            Title = data.ContainsKey("Title") ? data["Title"].ToString() :
+                                    data.ContainsKey("Content") ? data["Content"].ToString() : "Không có tiêu đề",
+                            Description = data.ContainsKey("Description") ? data["Description"].ToString() : "",
+                            Start = data.ContainsKey("Start") ?
+                                    ((Timestamp)data["Start"]).ToDateTime().ToLocalTime() :
+                                    DateTime.Parse(dateKey).AddHours(8),
+                            End = data.ContainsKey("End") ?
+                                  ((Timestamp)data["End"]).ToDateTime().ToLocalTime() :
+                                  DateTime.Parse(dateKey).AddHours(9),
+                            Frequency = data.ContainsKey("Frequency") ? data["Frequency"].ToString() : "None",
+                            TimezoneId = data.ContainsKey("TimezoneId") ? data["TimezoneId"].ToString() : TimeZoneInfo.Local.Id
+                        };
+
+                        if (evt.Start.Date == date.Date)
+                        {
+                            list.Add(evt);
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Skipping event {evt.UId}: Start date {evt.Start.Date} != query date {date.Date}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Error parsing event: {ex.Message}");
+                        continue;
+                    }
                 }
 
-                return list;
-            }
-            catch
-            {
-                return list;
-            }
-        }
-        //Update dữ liệu
-        public async Task<string> UpdateAimAsync(Aim aim)
-        {
-            try
-            {
-                var userDoc = await GetCurrentUserDocAsync();
-                if (userDoc == null)
-                    return "Không tìm thấy user";
-
-                var data = new Dictionary<string, object>
+                if (!UserSession.ScheduleCache.ContainsKey(dateKey))
                 {
-                    { "Ten", aim.title },
-                    { "MoTa", aim.mota },
-                    { "TrangThai", (int)aim.status },
-                    { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
-                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
-                };
-
-                await userDoc
-                    .Collection("MucTieu")
-                    .Document(aim.Id)
-                    .UpdateAsync(data);
-
-                return "SUCCESS";
-            }
-            catch (Exception ex)
-            {
-                return "Lỗi cập nhật mục tiêu: " + ex.Message;
-            }
-        }
-        //Xóa mục tiêu
-        public async Task<string> DeleteAimAsync(string aimId)
-        {
-            try
-            {
-                var userDoc = await GetCurrentUserDocAsync();
-                if (userDoc == null)
-                    return "Không tìm thấy user";
-
-                await userDoc
-                    .Collection("MucTieu")
-                    .Document(aimId)
-                    .DeleteAsync();
-
-                return "SUCCESS";
-            }
-            catch (Exception ex)
-            {
-                return "Lỗi xóa mục tiêu: " + ex.Message;
-            }
-        }
-
-        //AddPomo
-        public async Task<string> AddPomoAsync(PomoData data)
-        {
-            try
-            {
-                var userDoc = await GetCurrentUserDocAsync();
-                if (userDoc == null)
-                    return "Không tìm thấy user";
-
-                data.MaPomodoro = Guid.NewGuid().ToString();
-
-
-                var pomoDict = new Dictionary<string, object>
-                {
-                    { "MaPomodoro", data.MaPomodoro },
-                    {"MaND", data.MaND },
-                    {"NgayThucHien", Timestamp.FromDateTime(data.NgayThucHien.ToUniversalTime()) },
-                    {"SoPhien", data.SoPhien },
-                    {"TongThoiGian", data.TongThoiGian }
-                };
-
-                await userDoc
-                    .Collection("Pomodoro")
-                    .Document(data.MaPomodoro)
-                    .SetAsync(pomoDict);
-                return "SUCCESS";
-            }
-            catch (Exception ex)
-            {
-                return "Lỗi lưu Pomodoro: " + ex.Message;
-            }
-        }
-        private void CheckDbReady()
-        {
-            if (_db == null || string.IsNullOrEmpty(UserSession.Username))
-            {
-                throw new InvalidOperationException("Cơ sở dữ liệu hoặc thông tin người dùng chưa sẵn sàng. Vui lòng kiểm tra kết nối và đăng nhập lại.");
-            }
-        }
-        public async Task<string> SaveDiaryEntryAsync(string documentId, Diary entry)
-        {
-            CheckDbReady();
-
-            try
-            {
-                DocumentReference userDoc = await GetCurrentUserDocAsync();
-                if (userDoc == null)
-                    throw new InvalidOperationException("Không tìm thấy Document người dùng hiện tại.");
-                CollectionReference colRef = userDoc.Collection("diaries");
-
-                if (string.IsNullOrEmpty(documentId))
-                {
-                    DocumentReference docRef = await colRef.AddAsync(entry);
-                    return docRef.Id;
+                    UserSession.ScheduleCache[dateKey] = list;
                 }
                 else
                 {
-                    await colRef.Document(documentId).SetAsync(entry);
-                    return documentId;
+                    UserSession.ScheduleCache[dateKey] = list;
                 }
+
+                return list;
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi lưu Nhật ký: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine($"Error in GetEventsByDateAsync: {ex.Message}");
+                return list;
             }
         }
 
-        public async Task<Diary> LoadDiaryEntryAsync(string documentId)
+        //logout
+        public void LogOut()
         {
-            CheckDbReady();
-
             try
             {
-                DocumentReference userDoc = await GetCurrentUserDocAsync();
-                if (userDoc == null)
-                    return null;
+                UserSession.UserId = null;
+                UserSession.Username = null;
+                UserSession.Email = null;
+                UserSession.HoTen = null;
+                UserSession.Phone = null;
+                UserSession.Birthday = DateTime.MinValue;
+                UserSession.ScheduleCache?.Clear();
+                UserSession.NoteCache?.Clear();
 
-                DocumentReference docRef = userDoc.Collection("diaries").Document(documentId);
-                DocumentSnapshot snapshot = await docRef.GetSnapshotAsync();
-
-                if (snapshot.Exists)
-                {
-                    return snapshot.ConvertTo<Diary>();
-                }
-                return null;
+                System.Diagnostics.Debug.WriteLine("User logged out successfully");
             }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi tải Nhật ký: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine($"Error during logout: {ex.Message}");
             }
         }
-        public async Task<List<Dictionary<string, object>>> GetAllDiaryEntriesAsync()
-        {
-            CheckDbReady();
-            var diaryList = new List<Dictionary<string, object>>();
 
-            try
-            {
-                DocumentReference userDoc = await GetCurrentUserDocAsync();
-                if (userDoc == null)
-                    return diaryList;
-                QuerySnapshot snap = await userDoc
-                    .Collection("diaries")
-                    .OrderByDescending("Date")
-                    .GetSnapshotAsync();
-
-                foreach (var doc in snap.Documents)
-                {
-                    var data = doc.ToDictionary();
-                    data.Add("DocumentId", doc.Id);
-                    diaryList.Add(data);
-                }
-
-                return diaryList;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi tải danh sách nhật ký: " + ex.Message);
-                throw new Exception("Lỗi khi tải danh sách nhật ký: " + ex.Message);
-            }
-        }
     }
+
 }

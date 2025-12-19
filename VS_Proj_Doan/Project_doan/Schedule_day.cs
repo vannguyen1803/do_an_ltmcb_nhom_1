@@ -12,6 +12,7 @@ namespace Project_doan
 
         public event Action<Event> OnDeleteEvent;
         public event Action<Event> OnAddEvent;
+        public bool is_changed = false;
 
         public Schedule_day(DateTime date, List<Event> events)
         {
@@ -28,7 +29,8 @@ namespace Project_doan
         private void LoadEvents()
         {
             flp_events.Controls.Clear();
-            if (_events.Count == 0)
+
+            if (_events == null || _events.Count == 0)
             {
                 flp_events.Controls.Add(new Label
                 {
@@ -43,36 +45,46 @@ namespace Project_doan
 
             foreach (var ev in _events)
             {
-                var item = new Event_day(ev);
+                Event_day item = new Event_day(ev);
                 item.Width = flp_events.ClientSize.Width - 25;
                 item.Margin = new Padding(10);
-
+                item.OnDelete -= Item_OnDelete;
                 item.OnDelete += Item_OnDelete;
 
-                // Thêm event cho phép chỉnh sửa
-                item.Click += Item_OnClick; // Khi click vào panel Event_day
+                item.Click -= Item_OnClick;
+                item.Click += Item_OnClick;
 
                 flp_events.Controls.Add(item);
             }
         }
+
         private void Item_OnClick(object sender, EventArgs e)
         {
-            var item = sender as Event_day;
+            Event_day item = sender as Event_day;
             if (item == null) return;
 
-            EditEvent frm = new EditEvent(item.CurrentEvent); // Dùng constructor EDIT MODE
+            EditEvent frm = new EditEvent(item.CurrentEvent);
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                // Sau khi chỉnh sửa, LoadEvents để làm mới list
-                LoadEvents();
+                is_changed = true;
 
-                // Báo cho Calendar biết đã có sự kiện được cập nhật/thay đổi
-                OnAddEvent?.Invoke(frm.CurrentEvent); // Reuse OnAddEvent cho việc Update
+                int idx = _events.FindIndex(x => x.UId == frm.CurrentEvent.UId);
+                if (idx >= 0)
+                {
+                    _events[idx] = frm.CurrentEvent;
+                }
+
+                LoadEvents();
+                OnAddEvent?.Invoke(frm.CurrentEvent);
             }
         }
+
         private void Item_OnDelete(Event_day item)
         {
+            if (item == null || item.CurrentEvent == null)
+                return;
+
             if (MessageBox.Show(
                 "Bạn có chắc muốn xóa sự kiện này?",
                 "Xác nhận",
@@ -81,7 +93,10 @@ namespace Project_doan
                 return;
 
             flp_events.Controls.Remove(item);
-            _events.Remove(item.CurrentEvent);
+
+            _events.RemoveAll(e => e.UId == item.CurrentEvent.UId);
+
+            is_changed = true;
 
             OnDeleteEvent?.Invoke(item.CurrentEvent);
 
@@ -100,10 +115,23 @@ namespace Project_doan
                 _events.Add(newEvent);
 
                 LoadEvents();
+                is_changed = true;
 
-                // báo cho Calendar 
                 OnAddEvent?.Invoke(newEvent);
             }
+        }
+
+        private void Schedule_day_Load(object sender, EventArgs e)
+        {
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (is_changed)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            base.OnFormClosing(e);
         }
     }
 }

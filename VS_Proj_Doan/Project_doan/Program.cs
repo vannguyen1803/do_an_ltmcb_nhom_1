@@ -1,15 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Google.Apis.Auth.OAuth2;
-using Google.Cloud.Firestore;
-using static Project_doan.Program;
 
 namespace Project_doan
 {
@@ -32,7 +22,7 @@ namespace Project_doan
 
         //public static class FirebaseInit
         //{
-        public static FirestoreDb db;
+        //   private static FirestoreDb db;
 
         // 🔹 Khởi tạo kết nối Firestore
         public static void Init()
@@ -40,7 +30,7 @@ namespace Project_doan
             string path = AppDomain.CurrentDomain.BaseDirectory + @"serviceAccountKey.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            db = FirestoreDb.Create("do-an-ltmcb-nhom1"); // 🔸 thay bằng project id của bạn
+            //db = FirestoreDb.Create("do-an-ltmcb-nhom1"); // 🔸 thay bằng project id của bạn
         }
 
         //public static async Task SeedDataAsync()
@@ -76,7 +66,7 @@ namespace Project_doan
         //    {
         //        MaMT = "MT001",
         //        MaND = "ND001",
-        //        Title = "Đạt GPA 3.5",
+        //        TenMT = "Đạt GPA 3.5",
         //        Loai = "Học tập",
         //        MoTa = "Cải thiện kết quả học kỳ 1",
         //        NgayBD = DateTime.UtcNow,                       // ✅
