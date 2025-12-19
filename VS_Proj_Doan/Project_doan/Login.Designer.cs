@@ -33,7 +33,7 @@
             this.llb_forgot_pass = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.llb_signup = new System.Windows.Forms.LinkLabel();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_login = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_pass = new Guna.UI2.WinForms.Guna2TextBox();
             this.tb_username = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.llb_forgot_pass);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.llb_signup);
-            this.panel1.Controls.Add(this.guna2GradientButton1);
+            this.panel1.Controls.Add(this.btn_login);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.tb_pass);
             this.panel1.Controls.Add(this.tb_username);
@@ -87,6 +87,7 @@
             this.llb_forgot_pass.TabIndex = 10;
             this.llb_forgot_pass.TabStop = true;
             this.llb_forgot_pass.Text = "Quên mật khẩu";
+            this.llb_forgot_pass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_forgot_pass_LinkClicked);
             // 
             // label4
             // 
@@ -108,31 +109,33 @@
             this.llb_signup.TabIndex = 8;
             this.llb_signup.TabStop = true;
             this.llb_signup.Text = "Đăng ký";
+            this.llb_signup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_signup_LinkClicked);
             // 
-            // guna2GradientButton1
+            // btn_login
             // 
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderRadius = 20;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.Blue;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.DarkSlateBlue;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Location = new System.Drawing.Point(419, 348);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.ShadowDecoration.BorderRadius = 20;
-            this.guna2GradientButton1.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.ShadowDecoration.CustomizableEdges.BottomLeft = false;
-            this.guna2GradientButton1.ShadowDecoration.Depth = 20;
-            this.guna2GradientButton1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 5, 10, 10);
-            this.guna2GradientButton1.Size = new System.Drawing.Size(421, 45);
-            this.guna2GradientButton1.TabIndex = 7;
-            this.guna2GradientButton1.Text = "Đăng nhập";
+            this.btn_login.BackColor = System.Drawing.Color.Transparent;
+            this.btn_login.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_login.BorderRadius = 20;
+            this.btn_login.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_login.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_login.FillColor = System.Drawing.Color.Blue;
+            this.btn_login.FillColor2 = System.Drawing.Color.DarkSlateBlue;
+            this.btn_login.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login.ForeColor = System.Drawing.Color.White;
+            this.btn_login.Location = new System.Drawing.Point(419, 348);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.ShadowDecoration.BorderRadius = 20;
+            this.btn_login.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
+            this.btn_login.ShadowDecoration.CustomizableEdges.BottomLeft = false;
+            this.btn_login.ShadowDecoration.Depth = 20;
+            this.btn_login.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 5, 10, 10);
+            this.btn_login.Size = new System.Drawing.Size(421, 45);
+            this.btn_login.TabIndex = 7;
+            this.btn_login.Text = "Đăng nhập";
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // label3
             // 
@@ -203,10 +206,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SFU Belle", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(410, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 53);
+            this.label1.Size = new System.Drawing.Size(202, 42);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng nhập";
             // 
@@ -234,7 +237,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox tb_pass;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_login;
         private System.Windows.Forms.LinkLabel llb_signup;
         private System.Windows.Forms.LinkLabel llb_forgot_pass;
         private System.Windows.Forms.Label label4;

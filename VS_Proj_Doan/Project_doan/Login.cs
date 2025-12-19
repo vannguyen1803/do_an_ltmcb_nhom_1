@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Project_doan
 {
     public partial class Login : Form
@@ -21,19 +22,20 @@ namespace Project_doan
 
         }
 
-        private async void guna2GradientButton1_Click(object sender, EventArgs e)
+        private async void btn_login_Click(object sender, EventArgs e)
         {
             try
             {
-                string email = tb_username.Text.Trim();
+                string username = tb_username.Text.Trim();
                 string password = tb_pass.Text.Trim();
-                string result = await firebase.SignInAsync(email, password);
-                if (result.Contains("idToken"))
+                string result = await firebase.SignInAsync(username, password);
+                if (result == "SUCCESS")
                 {
-                    Form1 form1 = new Form1();
-                    form1.Show();
+                    Home home = new Home();
+                    home.Show();
                     this.Hide();
                 }
+
 
             }
             catch (Exception ex)
@@ -55,5 +57,6 @@ namespace Project_doan
             f_pass.Show();
             this.Hide();
         }
+
     }
 }
