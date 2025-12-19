@@ -1,18 +1,11 @@
-﻿using Grpc.Core;
-using Guna.UI2.WinForms;
+﻿using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace Project_doan
 {
@@ -22,14 +15,12 @@ namespace Project_doan
         List<Guna2CircleButton> dayButtons = new List<Guna2CircleButton>();
         private Dictionary<Guna2CircleButton, DateTime> buttonDateMap = new Dictionary<Guna2CircleButton, DateTime>();
         private Dictionary<Guna2CircleButton, Label> buttonTaskLabelMap = new Dictionary<Guna2CircleButton, Label>();
-        public event Func<DateTime, Task<List<Event>>> OnRequestSchedule;
-        public event Func<Event, Task> OnDeleteEventRequested;
-
-        List<Aim> cacheAim = new List<Aim>();
 
         int month = DateTime.Now.Month;
         int year = DateTime.Now.Year;
-        string monthName = DateTime.Now.ToString("MMMM", CultureInfo.InvariantCulture);
+
+        FirebaseAuthService firebase = new FirebaseAuthService();
+
         public Calendar()
         {
             InitializeComponent();
@@ -37,27 +28,10 @@ namespace Project_doan
             CreateDayHeader();
             buildCalendar();
             CreateMonthCalendar(month, year);
-            lb_month.Text = monthName;
-            lb_year.Text = year.ToString();
-
-        }
-       
-            LoadDataAsync();
             lb_month.Text = month.ToString();
             lb_year.Text = year.ToString();
         }
-        public async void LoadDataAsync()
-        {
-            try
-            {
-                cacheAim = await firebase.GetAllAimsAsync();
-                CreateMonthCalendar(month, year);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi tải mục tiêu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
+
         private void CreateDayHeader()
         {
             for (int i = 0; i < 7; i++)
@@ -71,7 +45,7 @@ namespace Project_doan
                 lbl.Text = days[i];
                 lbl.Dock = DockStyle.Fill;
                 lbl.TextAlign = ContentAlignment.MiddleCenter;
-                lbl.Font = new Font("Segoe UI", 11);
+                lbl.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                 lbl.BackColor = Color.Transparent;
 
                 weekday.Controls.Add(lbl, i, 0);
@@ -94,14 +68,13 @@ namespace Project_doan
                 {
                     Panel cell = new Panel();
                     cell.Dock = DockStyle.Fill;
-                    cell.BackColor = Color.FromArgb(228, 243, 255);
-                    cell.Margin = new Padding(0);
+                    cell.BackColor = Color.White;
+                    cell.Margin = new Padding(1);
 
                     var btn = new Guna2CircleButton();
                     btn.Width = 34;
                     btn.Height = 34;
-                    btn.FillColor = Color.FromArgb(141, 201, 250);
-                    btn.ForeColor = Color.Black;
+                    btn.FillColor = Color.LightGray;
                     btn.Location = new Point(2, 2);
                     btn.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
                     btn.AutoSize = true;
@@ -112,6 +85,7 @@ namespace Project_doan
                     btn.Click += Button_Click;
 
                     cell.Controls.Add(btn);
+
                     Label lbTask = new Label();
                     lbTask.Location = new Point(2, 38);
                     lbTask.MaximumSize = new Size(cell.Width - 4, 0);
@@ -119,7 +93,7 @@ namespace Project_doan
                     lbTask.Font = new Font("Segoe UI", 7);
                     lbTask.ForeColor = Color.DarkBlue;
                     lbTask.TextAlign = ContentAlignment.TopCenter;
-                    lbTask.Click += Button_Click; // Cũng có thể click vào label
+                    lbTask.Click += Button_Click;
                     cell.Controls.Add(lbTask);
 
                     daycell.Add(cell);
@@ -138,7 +112,7 @@ namespace Project_doan
                 btn.Text = "";
                 btn.Tag = null;
                 btn.Visible = false;
-                btn.FillColor = Color.FromArgb(141, 201, 250);
+                btn.FillColor = Color.LightGray;
 
                 if (buttonTaskLabelMap.ContainsKey(btn))
                 {
@@ -172,32 +146,49 @@ namespace Project_doan
                 index++;
             }
         }
+
         private void LoadTaskForButton(Guna2CircleButton button, DateTime date)
         {
-            string dateKey = date.ToString("yyyy-MM-dd");
-
-            if (!buttonTaskLabelMap.ContainsKey(button))
-                return;
-
-            var label = buttonTaskLabelMap[button];
-            label.Text = "";
-
-            if (UserSession.ScheduleCache.ContainsKey(dateKey))
+            try
             {
-                var events = UserSession.ScheduleCache[dateKey];
-                if (events.Count > 0)
-                {
-                    label.Text = string.Join(
-                        Environment.NewLine,
-                        events.Take(3).Select(e => "• " + e.Title)
-                    );
+                string dateKey = date.ToString("yyyy-MM-dd");
 
-                    if (events.Count > 3)
-                        label.Text += Environment.NewLine + "...";
+                if (buttonTaskLabelMap.ContainsKey(button))
+                {
+                    buttonTaskLabelMap[button].Text = "";
+                }
+                button.FillColor = Color.LightGray;
+
+                if (UserSession.ScheduleCache != null &&
+                    UserSession.ScheduleCache.ContainsKey(dateKey))
+                {
+                    var events = UserSession.ScheduleCache[dateKey];
+
+                    if (events != null && events.Count > 0 &&
+                        buttonTaskLabelMap.ContainsKey(button))
+                    {
+                        var displayEvents = events.Take(3).ToList();
+
+                        string preview = string.Join(
+                            Environment.NewLine,
+                            displayEvents.Select(e => "• " + e.Title)
+                        );
+
+                        if (events.Count > 3)
+                        {
+                            preview += Environment.NewLine + $"... +{events.Count - 3}";
+                        }
+
+                        buttonTaskLabelMap[button].Text = preview;
+
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error in LoadTaskForButton: " + ex.Message);
+            }
         }
-
 
         private async void Button_Click(object sender, EventArgs e)
         {
@@ -205,65 +196,44 @@ namespace Project_doan
             Guna2CircleButton button = null;
 
             if (ctrl is Guna2CircleButton)
-                button = (Guna2CircleButton)ctrl;
+            {
+                button = ctrl as Guna2CircleButton;
+            }
             else if (ctrl is Label)
             {
-                button = buttonTaskLabelMap
-                    .FirstOrDefault(x => x.Value == ctrl).Key;
+                foreach (var kvp in buttonTaskLabelMap)
+                {
+                    if (kvp.Value == ctrl)
+                    {
+                        button = kvp.Key;
+                        break;
+                    }
+                }
             }
 
             if (button == null || !buttonDateMap.ContainsKey(button))
                 return;
 
             DateTime selectedDate = buttonDateMap[button];
-            string dateKey = selectedDate.ToString("yyyy-MM-dd");
 
+            string dateKey = selectedDate.ToString("yyyy-MM-dd");
             List<Event> events = new List<Event>();
-            if (UserSession.ScheduleCache.ContainsKey(dateKey))
+
+            if (UserSession.ScheduleCache != null &&
+                UserSession.ScheduleCache.ContainsKey(dateKey))
             {
-                // Đã có cache → dùng luôn
                 events = UserSession.ScheduleCache[dateKey];
             }
-            else if (OnRequestSchedule != null)
-            {
-                // Chưa có → hỏi Home → Home gọi Firebase
-                var taskResult = OnRequestSchedule.Invoke(selectedDate);
-                events = await taskResult;
 
-                // Cache lại (Nếu logic của Home/FirebaseService không làm điều này)
-                UserSession.ScheduleCache[dateKey] = events;
+
+            Schedule_day noteForm = new Schedule_day(selectedDate, events);
+
+
+            if (noteForm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshCalendar();
             }
-            events = events.OrderBy(ev => ev.Start).ToList();
-
-            Schedule_day frm = new Schedule_day(selectedDate, events);
-            // ADD
-            frm.OnAddEvent += (ev) =>
-            {
-                
-                RefreshCalendar();
-            };
-
-            // DELETE (đã có)
-            frm.OnDeleteEvent += async (ev) =>
-            {
-                // 1. Xóa trong cache
-                if (UserSession.ScheduleCache.ContainsKey(dateKey))
-                {
-                    UserSession.ScheduleCache[dateKey].RemoveAll(item => item.UId == ev.UId);
-
-                    
-                }
-                // 2. Refresh UI
-                RefreshCalendar();
-
-                // 3. Báo cho Home xử lý Firebase
-                if (OnDeleteEventRequested != null)
-                    await OnDeleteEventRequested(ev);
-            };
-
-            frm.ShowDialog();
         }
-
 
         public void RefreshCalendar()
         {
@@ -294,15 +264,18 @@ namespace Project_doan
 
             CreateMonthCalendar(month, year);
         }
-
         private void Calendar_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void pn_header_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void btn_nextmonth_Click(object sender, EventArgs e)
         {
-            month ++;
+            month++;
             if (month > 12)
             {
                 month = 1;
@@ -314,18 +287,13 @@ namespace Project_doan
         private void btn_premonth_Click(object sender, EventArgs e)
         {
             month--;
-            if (month <= 0) {
+            if (month <= 0)
+            {
                 month = 12;
                 year--;
             }
             ChangeMonth(month, year);
         }
-
-        private void pn_day_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_xuat_Click(object sender, EventArgs e)
         {
             List<Event> eventsToExport = new List<Event>();

@@ -174,7 +174,6 @@ namespace Project_doan
             this.pn_day.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.pn_day.Size = new System.Drawing.Size(1125, 694);
             this.pn_day.TabIndex = 2;
-            this.pn_day.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_day_Paint);
             // 
             // btn_xuat
             // 

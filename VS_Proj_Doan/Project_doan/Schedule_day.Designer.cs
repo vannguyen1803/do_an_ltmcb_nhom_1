@@ -78,6 +78,7 @@
             this.Controls.Add(this.flp_events);
             this.Name = "Schedule_day";
             this.Text = "Schedule_day";
+            this.Load += new System.EventHandler(this.Schedule_day_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

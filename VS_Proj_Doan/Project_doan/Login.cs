@@ -1,15 +1,5 @@
-﻿using Google.Cloud.Firestore;
-using Google.Apis.Auth.OAuth2;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-
 
 namespace Project_doan
 {
@@ -35,7 +25,6 @@ namespace Project_doan
                     home.Show();
                     this.Hide();
                 }
-
 
             }
             catch (Exception ex)

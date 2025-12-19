@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Project_doan
@@ -11,10 +11,8 @@ namespace Project_doan
         private DateTime _date;
         private DateTime _originalDate;
         private bool _isEditMode = false;
-
         public Event CurrentEvent { get; private set; }
 
-        // 👉 ADD MODE
         public EditEvent(DateTime date)
         {
             InitializeComponent();
@@ -22,7 +20,6 @@ namespace Project_doan
             _originalDate = date;
         }
 
-        // 👉 EDIT MODE
         public EditEvent(Event ev)
         {
             InitializeComponent();
@@ -37,7 +34,6 @@ namespace Project_doan
             frequency.SelectedIndex = 0;
             if (_isEditMode && CurrentEvent != null)
             {
-                // load dữ liệu cũ
                 tb_title.Text = CurrentEvent.Title;
                 tb_desc.Text = CurrentEvent.Description;
                 day_start.Value = CurrentEvent.Start;
@@ -46,7 +42,6 @@ namespace Project_doan
             }
             else
             {
-                // default khi thêm mới
                 day_start.Value = _date.AddHours(8);
                 day_end.Value = _date.AddHours(9);
                 frequency.SelectedIndex = 0;
@@ -73,38 +68,69 @@ namespace Project_doan
 
                 if (_isEditMode)
                 {
-                    // 👉 UPDATE
+
                     CurrentEvent.Title = tb_title.Text.Trim();
                     CurrentEvent.Description = tb_desc.Text.Trim();
                     CurrentEvent.Start = day_start.Value;
                     CurrentEvent.End = day_end.Value;
                     CurrentEvent.Frequency = frequency.Text;
 
-                    await firebase.UpdateEventAsync(_date, CurrentEvent);
+                    await firebase.UpdateEventAsync(CurrentEvent.Start.Date, CurrentEvent);
                 }
                 else
                 {
-                    // 👉 ADD
-                    CurrentEvent = new Event
-                    {
-                        UId = Guid.NewGuid().ToString(),
-                        Title = tb_title.Text.Trim(),
-                        Description = tb_desc.Text.Trim(),
-                        Start = day_start.Value,
-                        End = day_end.Value,
-                        Frequency = frequency.Text,
-                        TimezoneId = TimeZoneInfo.Local.Id
-                    };
+                    DateTime startDate = day_start.Value;
+                    DateTime endDate = day_end.Value;
 
-                    await firebase.SaveScheduleAsync(_date, CurrentEvent);
+                    DateTime? recurrenceEnd = endDate.Date;
+
+                    var dates = GenerateRecurringDates(
+                        startDate,
+                        recurrenceEnd,
+                        frequency.Text
+                    );
+
+                    Event firstEvent = null;
+
+                    foreach (var date in dates)
+                    {
+                        DateTime newStart = new DateTime(
+                            date.Year, date.Month, date.Day,
+                            startDate.Hour, startDate.Minute, 0
+                        );
+
+                        DateTime newEnd = new DateTime(
+                            date.Year, date.Month, date.Day,
+                            endDate.Hour, endDate.Minute, 0
+                        );
+                        Event newEvent = new Event
+                        {
+                            UId = Guid.NewGuid().ToString(),
+                            Title = tb_title.Text.Trim(),
+                            Description = tb_desc.Text.Trim(),
+                            Start = newStart,
+                            End = newEnd,
+                            Frequency = frequency.Text, 
+                            TimezoneId = TimeZoneInfo.Local.Id
+                        };
+
+                        await firebase.SaveScheduleAsync(newStart.Date, newEvent);
+
+                        if (firstEvent == null)
+                            firstEvent = newEvent;
+                    }
+
+                    CurrentEvent = firstEvent;
                 }
+
+
 
                 DialogResult = DialogResult.OK;
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Lỗi lưu event: {ex.Message}");
             }
             finally
             {
@@ -112,7 +138,54 @@ namespace Project_doan
             }
         }
 
-        
-    }
+        private List<DateTime> GenerateRecurringDates(
+            DateTime start,
+            DateTime? end,
+            string frequency)
+        {
+            var dates = new List<DateTime>();
 
+            if (end == null || frequency == "None")
+            {
+                dates.Add(start.Date);
+                return dates;
+            }
+
+            DateTime current = start.Date;
+            DateTime endDate = end.Value.Date;
+
+            int maxIterations = 365; // Giới hạn tối đa 1 năm
+            int iteration = 0;
+
+            while (current <= endDate && iteration < maxIterations)
+            {
+                dates.Add(current);
+                iteration++;
+
+                switch (frequency)
+                {
+                    case "Tuần":
+                        current = current.AddDays(7);
+                        break;
+
+                    case "2 Tuần":
+                        current = current.AddDays(14);
+                        break;
+
+                    case "Tháng":
+                        current = current.AddMonths(1);
+                        break;
+
+                    case "Năm":
+                        current = current.AddYears(1);
+                        break;
+
+                    default:
+                        return dates;
+                }
+            }
+
+            return dates;
+        }
+    }
 }

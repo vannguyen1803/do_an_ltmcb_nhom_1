@@ -32,7 +32,7 @@ namespace Project_doan
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-
+            OnDelete?.Invoke(this);
         }
     }
 }
