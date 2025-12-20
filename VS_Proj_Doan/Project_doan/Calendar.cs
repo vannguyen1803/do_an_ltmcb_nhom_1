@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace Project_doan
 
         int month = DateTime.Now.Month;
         int year = DateTime.Now.Year;
+        
 
         FirebaseAuthService firebase = new FirebaseAuthService();
 
@@ -28,7 +30,7 @@ namespace Project_doan
             CreateDayHeader();
             buildCalendar();
             CreateMonthCalendar(month, year);
-            lb_month.Text = month.ToString();
+            lb_month.Text = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(month);
             lb_year.Text = year.ToString();
         }
 
@@ -248,7 +250,7 @@ namespace Project_doan
             month = newMonth;
             year = newYear;
 
-            lb_month.Text = month.ToString();
+            lb_month.Text = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(month);
             lb_year.Text = year.ToString();
 
             CreateMonthCalendar(month, year);
@@ -259,7 +261,7 @@ namespace Project_doan
             month = DateTime.Now.Month;
             year = DateTime.Now.Year;
 
-            lb_month.Text = month.ToString();
+            lb_month.Text = CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(month);
             lb_year.Text = year.ToString();
 
             CreateMonthCalendar(month, year);

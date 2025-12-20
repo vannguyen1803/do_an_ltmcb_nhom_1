@@ -44,20 +44,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Noto Sans SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 162);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 16);
+            this.label5.Size = new System.Drawing.Size(139, 29);
             this.label5.TabIndex = 21;
             this.label5.Text = "Ngày kết thúc";
             // 
             // frequency
             // 
             this.frequency.BackColor = System.Drawing.Color.Transparent;
+            this.frequency.BorderRadius = 10;
             this.frequency.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.frequency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.frequency.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.frequency.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.frequency.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.frequency.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.frequency.Font = new System.Drawing.Font("Noto Serif SC", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frequency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.frequency.ItemHeight = 30;
             this.frequency.Items.AddRange(new object[] {
@@ -66,17 +69,18 @@
             "2 Tuần",
             "Tháng",
             "Năm"});
-            this.frequency.Location = new System.Drawing.Point(161, 222);
+            this.frequency.Location = new System.Drawing.Point(160, 222);
             this.frequency.Name = "frequency";
-            this.frequency.Size = new System.Drawing.Size(265, 36);
+            this.frequency.Size = new System.Drawing.Size(266, 36);
             this.frequency.TabIndex = 20;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 222);
+            this.label4.Font = new System.Drawing.Font("Noto Sans SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 222);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
+            this.label4.Size = new System.Drawing.Size(74, 29);
             this.label4.TabIndex = 19;
             this.label4.Text = "Lặp lại";
             // 
@@ -85,9 +89,9 @@
             this.day_end.BorderRadius = 10;
             this.day_end.Checked = true;
             this.day_end.FillColor = System.Drawing.Color.White;
-            this.day_end.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.day_end.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.day_end.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.day_end.Location = new System.Drawing.Point(160, 162);
+            this.day_end.Location = new System.Drawing.Point(161, 162);
             this.day_end.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.day_end.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.day_end.Name = "day_end";
@@ -103,7 +107,7 @@
             this.day_start.Checked = true;
             this.day_start.FillColor = System.Drawing.SystemColors.ButtonHighlight;
             this.day_start.FocusedColor = System.Drawing.Color.Black;
-            this.day_start.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.day_start.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.day_start.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.day_start.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.day_start.Location = new System.Drawing.Point(161, 93);
@@ -118,52 +122,60 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Noto Sans SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.Size = new System.Drawing.Size(133, 29);
             this.label3.TabIndex = 16;
             this.label3.Text = "Ngày bắt đầu";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Noto Sans SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 296);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.Size = new System.Drawing.Size(83, 29);
             this.label2.TabIndex = 15;
             this.label2.Text = "Ghi chú";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Font = new System.Drawing.Font("Noto Sans SC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 16);
+            this.label1.Size = new System.Drawing.Size(81, 29);
             this.label1.TabIndex = 14;
             this.label1.Text = "Tiêu đề";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tb_title
             // 
+            this.tb_title.BackColor = System.Drawing.Color.Transparent;
+            this.tb_title.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.tb_title.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_title.DefaultText = "";
             this.tb_title.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.tb_title.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.tb_title.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tb_title.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tb_title.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.tb_title.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_title.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_title.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_title.Location = new System.Drawing.Point(149, 8);
+            this.tb_title.Location = new System.Drawing.Point(160, 8);
             this.tb_title.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_title.Name = "tb_title";
-            this.tb_title.PlaceholderText = "";
+            this.tb_title.PlaceholderText = "Nhập title";
             this.tb_title.SelectedText = "";
-            this.tb_title.Size = new System.Drawing.Size(277, 48);
+            this.tb_title.Size = new System.Drawing.Size(489, 48);
+            this.tb_title.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tb_title.TabIndex = 13;
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(594, 405);
+            this.btn_save.Location = new System.Drawing.Point(595, 405);
             this.btn_save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(134, 48);
@@ -174,10 +186,12 @@
             // 
             // tb_desc
             // 
-            this.tb_desc.Location = new System.Drawing.Point(126, 296);
+            this.tb_desc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.tb_desc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_desc.Location = new System.Drawing.Point(160, 296);
             this.tb_desc.Margin = new System.Windows.Forms.Padding(2);
             this.tb_desc.Name = "tb_desc";
-            this.tb_desc.Size = new System.Drawing.Size(602, 105);
+            this.tb_desc.Size = new System.Drawing.Size(489, 105);
             this.tb_desc.TabIndex = 11;
             this.tb_desc.Text = "";
             // 
@@ -185,6 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(232)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(740, 463);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.frequency);

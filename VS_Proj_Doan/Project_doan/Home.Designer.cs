@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pn_menu = new System.Windows.Forms.Panel();
+            this.btn_tk = new Guna.UI2.WinForms.Guna2Button();
             this.btn_acc = new Guna.UI2.WinForms.Guna2Button();
             this.btn_pomo = new Guna.UI2.WinForms.Guna2Button();
             this.btn_diary = new Guna.UI2.WinForms.Guna2Button();
@@ -37,14 +38,16 @@
             this.btn_cal = new Guna.UI2.WinForms.Guna2Button();
             this.pn_header = new System.Windows.Forms.Panel();
             this.pn_content = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pn_menu.SuspendLayout();
+            this.pn_header.SuspendLayout();
             this.SuspendLayout();
             // 
             // pn_menu
             // 
-            this.pn_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(255)))));
-            this.pn_menu.Controls.Add(this.guna2Button1);
+            this.pn_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(208)))), ((int)(((byte)(253)))));
+            this.pn_menu.Controls.Add(this.btn_tk);
             this.pn_menu.Controls.Add(this.btn_acc);
             this.pn_menu.Controls.Add(this.btn_pomo);
             this.pn_menu.Controls.Add(this.btn_diary);
@@ -57,16 +60,35 @@
             this.pn_menu.Size = new System.Drawing.Size(217, 699);
             this.pn_menu.TabIndex = 0;
             // 
+            // btn_tk
+            // 
+            this.btn_tk.BackColor = System.Drawing.Color.Transparent;
+            this.btn_tk.BorderRadius = 17;
+            this.btn_tk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_tk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_tk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_tk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_tk.FillColor = System.Drawing.Color.Transparent;
+            this.btn_tk.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tk.ForeColor = System.Drawing.Color.Black;
+            this.btn_tk.Location = new System.Drawing.Point(3, 461);
+            this.btn_tk.Name = "btn_tk";
+            this.btn_tk.Size = new System.Drawing.Size(208, 42);
+            this.btn_tk.TabIndex = 12;
+            this.btn_tk.Text = "Thống kê";
+            this.btn_tk.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // btn_acc
             // 
             this.btn_acc.BackColor = System.Drawing.Color.Transparent;
+            this.btn_acc.BorderRadius = 10;
             this.btn_acc.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_acc.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_acc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_acc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_acc.FillColor = System.Drawing.Color.Transparent;
-            this.btn_acc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_acc.ForeColor = System.Drawing.Color.White;
+            this.btn_acc.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_acc.ForeColor = System.Drawing.Color.Black;
             this.btn_acc.Location = new System.Drawing.Point(-1, 625);
             this.btn_acc.Name = "btn_acc";
             this.btn_acc.Size = new System.Drawing.Size(223, 62);
@@ -83,8 +105,8 @@
             this.btn_pomo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_pomo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_pomo.FillColor = System.Drawing.Color.Transparent;
-            this.btn_pomo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_pomo.ForeColor = System.Drawing.Color.White;
+            this.btn_pomo.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pomo.ForeColor = System.Drawing.Color.Black;
             this.btn_pomo.Location = new System.Drawing.Point(3, 394);
             this.btn_pomo.Name = "btn_pomo";
             this.btn_pomo.Size = new System.Drawing.Size(208, 42);
@@ -101,8 +123,8 @@
             this.btn_diary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_diary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_diary.FillColor = System.Drawing.Color.Transparent;
-            this.btn_diary.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_diary.ForeColor = System.Drawing.Color.White;
+            this.btn_diary.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_diary.ForeColor = System.Drawing.Color.Black;
             this.btn_diary.Location = new System.Drawing.Point(4, 326);
             this.btn_diary.Name = "btn_diary";
             this.btn_diary.Size = new System.Drawing.Size(208, 42);
@@ -119,8 +141,8 @@
             this.btn_note.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_note.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_note.FillColor = System.Drawing.Color.Transparent;
-            this.btn_note.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_note.ForeColor = System.Drawing.Color.White;
+            this.btn_note.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_note.ForeColor = System.Drawing.Color.Black;
             this.btn_note.Location = new System.Drawing.Point(4, 258);
             this.btn_note.Name = "btn_note";
             this.btn_note.Size = new System.Drawing.Size(208, 42);
@@ -137,8 +159,8 @@
             this.btn_aim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_aim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_aim.FillColor = System.Drawing.Color.Transparent;
-            this.btn_aim.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aim.ForeColor = System.Drawing.Color.White;
+            this.btn_aim.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aim.ForeColor = System.Drawing.Color.Black;
             this.btn_aim.Location = new System.Drawing.Point(4, 190);
             this.btn_aim.Name = "btn_aim";
             this.btn_aim.Size = new System.Drawing.Size(208, 42);
@@ -155,18 +177,20 @@
             this.btn_cal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_cal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_cal.FillColor = System.Drawing.Color.Transparent;
-            this.btn_cal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cal.ForeColor = System.Drawing.Color.White;
+            this.btn_cal.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cal.ForeColor = System.Drawing.Color.Black;
             this.btn_cal.Location = new System.Drawing.Point(3, 122);
             this.btn_cal.Name = "btn_cal";
             this.btn_cal.Size = new System.Drawing.Size(208, 42);
             this.btn_cal.TabIndex = 6;
-            this.btn_cal.Text = "Thời gian biểu";
+            this.btn_cal.Text = "Lịch";
             this.btn_cal.Click += new System.EventHandler(this.btn_cal_Click);
             // 
             // pn_header
             // 
             this.pn_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(206)))), ((int)(((byte)(252)))));
+            this.pn_header.Controls.Add(this.label2);
+            this.pn_header.Controls.Add(this.label1);
             this.pn_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.pn_header.Location = new System.Drawing.Point(217, 0);
             this.pn_header.Name = "pn_header";
@@ -175,30 +199,34 @@
             // 
             // pn_content
             // 
-            this.pn_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(206)))), ((int)(((byte)(252)))));
+            this.pn_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(232)))), ((int)(((byte)(254)))));
             this.pn_content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_content.Font = new System.Drawing.Font("Noto Sans SC Medium", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pn_content.Location = new System.Drawing.Point(217, 51);
             this.pn_content.Name = "pn_content";
             this.pn_content.Size = new System.Drawing.Size(1000, 648);
             this.pn_content.TabIndex = 2;
             // 
-            // guna2Button1
+            // label1
             // 
-            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 17;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(3, 442);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(208, 42);
-            this.guna2Button1.TabIndex = 12;
-            this.guna2Button1.Text = "Thống kê";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("1FTV Blenda Script", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(333, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chúc bạn học tập hiệu quả và vui vẻ!";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Noto Sans SC", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(840, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 34);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
             // 
             // Home
             // 
@@ -212,6 +240,8 @@
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             this.pn_menu.ResumeLayout(false);
+            this.pn_header.ResumeLayout(false);
+            this.pn_header.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,6 +257,8 @@
         private Guna.UI2.WinForms.Guna2Button btn_diary;
         private Guna.UI2.WinForms.Guna2Button btn_note;
         private Guna.UI2.WinForms.Guna2Button btn_acc;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_tk;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

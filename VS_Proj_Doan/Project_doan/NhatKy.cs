@@ -104,7 +104,6 @@ namespace Project_doan
 
             try
             {
-                // Gọi Service để tải
                 Diary entry = await firebase.LoadDiaryEntryAsync(documentId);
 
                 if (entry != null)
@@ -123,6 +122,14 @@ namespace Project_doan
             {
                 MessageBox.Show("Lỗi tải bài viết từ Firestore: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        public void PrepareForNewEntry()
+        {
+            _currentDocumentId = null;
+            dtpDate.Value = DateTime.Now;
+            tb_title.Clear();
+            rtb_content.Clear();
+            tb_title.Focus();
         }
     }
 }

@@ -35,6 +35,9 @@
             // 
             // flp_events
             // 
+            this.flp_events.AutoScroll = true;
+            this.flp_events.AutoScrollMargin = new System.Drawing.Size(1, 1);
+            this.flp_events.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.flp_events.Location = new System.Drawing.Point(1, 57);
             this.flp_events.Name = "flp_events";
             this.flp_events.Size = new System.Drawing.Size(800, 392);
@@ -72,6 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(222)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lb_date);
             this.Controls.Add(this.btn_add);

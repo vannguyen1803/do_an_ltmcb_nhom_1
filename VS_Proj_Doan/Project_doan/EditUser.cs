@@ -13,11 +13,7 @@ namespace Project_doan
 
         private void EditUser_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(new string[]
-             {
-                "Vietnamese", "English",
-             });
-            comboBox1.SelectedIndex = 0;
+            
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -26,8 +22,9 @@ namespace Project_doan
             {
                 string phone = textBox1.Text.Trim();
                 DateTime birthday = monthCalendar1.SelectionStart;
-                string language = comboBox1.Text;
+                string language = "Vietnamese";
                 string result = await firebase.UserdetailAsync(phone, birthday, language);
+                this.Close();
             }
             catch (Exception ex)
             {

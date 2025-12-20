@@ -27,6 +27,7 @@ namespace Project_doan
 
         private async void Home_Load(object sender, EventArgs e)
         {
+            label2.Text = UserSession.HoTen.ToString();
             try
             {
                 pn_content.Controls.Clear();
@@ -116,7 +117,10 @@ namespace Project_doan
         {
             ResetButtonColors();
             btn_aim.FillColor = Color.FromArgb(51, 153, 255);
-
+            pn_content.Controls.Clear();
+            var AimControl = new Muc_tieu();
+            AimControl.Dock = DockStyle.Fill;
+            pn_content.Controls.Add(AimControl);
         }
 
         private void btn_diary_Click(object sender, EventArgs e)
@@ -138,6 +142,12 @@ namespace Project_doan
 
             var diaryControl = new UserControlNhatKyList(firebase);
             diaryControl.Dock = DockStyle.Fill;
+            diaryControl.NewEntryRequested += () =>
+            {
+                _nhatKyForm.PrepareForNewEntry();
+                pn_content.Controls.Clear();
+                pn_content.Controls.Add(_nhatKyForm);
+            };
             diaryControl.EntrySelected += (documentId) =>
             {
                 _nhatKyForm.LoadEntryFromFirestore(documentId);

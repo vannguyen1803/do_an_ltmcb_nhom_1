@@ -14,6 +14,7 @@ namespace Project_doan
     {
         private readonly FirebaseAuthService _firebase;
         public event Action<string> EntrySelected;
+        public event Action NewEntryRequested;
         public UserControlNhatKyList(FirebaseAuthService firebaseService)
         {
             InitializeComponent();
@@ -79,6 +80,11 @@ namespace Project_doan
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            NewEntryRequested?.Invoke();
         }
     }
 }

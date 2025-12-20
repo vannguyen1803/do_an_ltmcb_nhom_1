@@ -243,12 +243,6 @@
     </Compile>
     <Compile Include="PomoData.cs" />
     <Compile Include="PomodoroSession.cs" />
-    <Compile Include="Note.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Note.Designer.cs">
-      <DependentUpon>Note.cs</DependentUpon>
-    </Compile>
     <Compile Include="Schedule_day.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,18 +275,13 @@
     <Compile Include="thongke_pomodoro.Designer.cs">
       <DependentUpon>thongke_pomodoro.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="User.Designer.cs">
-      <DependentUpon>User.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlNhatKyList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlNhatKyList.Designer.cs">
       <DependentUpon>UserControlNhatKyList.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <Compile Include="XuatLich.cs" />
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
@@ -339,9 +328,6 @@
     <EmbeddedResource Include="NhatKy.resx">
       <DependentUpon>NhatKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Note.resx">
-      <DependentUpon>Note.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Schedule_day.resx">
       <DependentUpon>Schedule_day.cs</DependentUpon>
     </EmbeddedResource>
@@ -367,9 +353,6 @@
     <EmbeddedResource Include="thongke_pomodoro.resx">
       <DependentUpon>thongke_pomodoro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User.resx">
-      <DependentUpon>User.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pomodoro.resx">
       <DependentUpon>Pomodoro.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,7 +369,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="serviceAccountKey.json" />
+    <None Include="serviceAccountKey.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
