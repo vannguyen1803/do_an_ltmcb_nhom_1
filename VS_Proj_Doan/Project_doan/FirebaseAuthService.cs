@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace Project_doan
@@ -9,6 +11,7 @@ namespace Project_doan
     internal class FirebaseAuthService
     {
         private readonly FirestoreDb _db;
+        private static Dictionary<string, string> otpStorage = new Dictionary<string, string>();
 
         public FirebaseAuthService()
         {
@@ -124,31 +127,121 @@ namespace Project_doan
             }
         }
         //foget password
-        public async Task<string> ResetPasswordAsync(string email)
+        public async Task<string> SendOTPAsync(string email)
         {
             try
             {
                 if (string.IsNullOrEmpty(email))
                     return "Vui lòng nhập email";
-
                 CollectionReference users = _db.Collection("NguoiDung");
                 Query query = users.WhereEqualTo("Email", email);
-
                 QuerySnapshot snap = await query.GetSnapshotAsync();
 
                 if (snap.Count == 0)
                     return "Email không tồn tại trong hệ thống";
 
-                DocumentSnapshot doc = snap.Documents[0];
-                var data = doc.ToDictionary();
+                Random random = new Random();
+                string otp = random.Next(100000, 999999).ToString();
+                otpStorage[email] = otp;
+                await SendOTPEmailAsync(email, otp);
 
-                string oldPass = data["Pass"].ToString();
-
-                return $"Mật khẩu của bạn là: {oldPass}";
+                return "SUCCESS";
             }
             catch (Exception ex)
             {
-                return "Lỗi reset mật khẩu: " + ex.Message;
+                return "Lỗi gửi OTP: " + ex.Message;
+            }
+        }
+
+        // Gửi  OTP
+        private async Task SendOTPEmailAsync(string toEmail, string otp)
+        {
+            try
+            {
+                string fromEmail = "trandung310875@gmail.com";
+                string appPassword = "skxz bhzs sxse uabz\r\n";
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(fromEmail);
+                mail.To.Add(toEmail);
+                mail.Subject = "Mã OTP khôi phục mật khẩu - Project Doan";
+                mail.Body = $@"
+                Xin chào,
+
+                Mã OTP của bạn là: {otp}
+
+                Mã này có hiệu lực trong 5 phút.
+
+                Nếu bạn không yêu cầu khôi phục mật khẩu, vui lòng bỏ qua email này.
+
+                Trân trọng,
+                Project Doan Team
+                 ";
+                mail.IsBodyHtml = false;
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.Port = 587;
+                smtp.Credentials = new NetworkCredential(fromEmail, appPassword);
+                smtp.EnableSsl = true;
+
+                await smtp.SendMailAsync(mail);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Không thể gửi email: " + ex.Message);
+            }
+        }
+
+        //  Xác thực OTP
+        public string VerifyOTP(string email, string otp)
+        {
+            try
+            {
+                if (!otpStorage.ContainsKey(email))
+                    return "Mã OTP không tồn tại hoặc đã hết hạn";
+
+                if (otpStorage[email] != otp)
+                    return "Mã OTP không chính xác";
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi xác thực OTP: " + ex.Message;
+            }
+        }
+
+        //  Đổi mật khẩu mới 
+        public async Task<string> ResetPasswordAsync(string email, string newPassword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(newPassword))
+                    return "Vui lòng nhập đầy đủ thông tin";
+
+                if (newPassword.Length < 6)
+                    return "Mật khẩu phải có ít nhất 6 ký tự";
+
+                CollectionReference users = _db.Collection("NguoiDung");
+                Query query = users.WhereEqualTo("Email", email);
+                QuerySnapshot snap = await query.GetSnapshotAsync();
+
+                if (snap.Count == 0)
+                    return "Email không tồn tại";
+
+                DocumentReference userDoc = snap.Documents[0].Reference;
+
+                await userDoc.UpdateAsync(new Dictionary<string, object>
+        {
+            { "Pass", newPassword }
+        });
+                if (otpStorage.ContainsKey(email))
+                    otpStorage.Remove(email);
+
+                return "SUCCESS";
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi đổi mật khẩu: " + ex.Message;
             }
         }
 
