@@ -39,7 +39,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(401, 18);
+            this.label2.Location = new System.Drawing.Point(343, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 27);
             this.label2.TabIndex = 12;
@@ -48,16 +48,20 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 68);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(989, 578);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(876, 496);
             this.flowLayoutPanel1.TabIndex = 13;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // btn_newdiary
             // 
+            this.btn_newdiary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_newdiary.BorderRadius = 10;
             this.btn_newdiary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_newdiary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -68,7 +72,7 @@
             this.btn_newdiary.FillColor2 = System.Drawing.Color.DeepSkyBlue;
             this.btn_newdiary.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_newdiary.ForeColor = System.Drawing.Color.White;
-            this.btn_newdiary.Location = new System.Drawing.Point(825, 15);
+            this.btn_newdiary.Location = new System.Drawing.Point(777, 15);
             this.btn_newdiary.Name = "btn_newdiary";
             this.btn_newdiary.Size = new System.Drawing.Size(101, 39);
             this.btn_newdiary.TabIndex = 14;
@@ -85,7 +89,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserControlNhatKyList";
-            this.Size = new System.Drawing.Size(994, 648);
+            this.Size = new System.Drawing.Size(880, 568);
             this.Load += new System.EventHandler(this.UserControlNhatKyList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

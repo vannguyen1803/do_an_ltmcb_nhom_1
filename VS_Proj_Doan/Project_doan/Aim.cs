@@ -16,6 +16,6 @@ namespace Project_doan
         public AimStatus status { get; set; }
         public DateTime date_start { get; set; }
         public DateTime date_end { get; set; }
-
+        public bool isDeleted { get; set; } = false;
     }
 }

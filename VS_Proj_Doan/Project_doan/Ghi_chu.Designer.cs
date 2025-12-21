@@ -34,25 +34,29 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 168);
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 75);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1152, 539);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(898, 563);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BorderRadius = 20;
             this.button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(843, 71);
+            this.button1.Location = new System.Drawing.Point(785, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 45);
+            this.button1.Size = new System.Drawing.Size(113, 45);
             this.button1.TabIndex = 1;
-            this.button1.Text = "guna2Button1";
+            this.button1.Text = "Mới";
             // 
             // Ghi_chu
             // 
@@ -61,7 +65,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Ghi_chu";
-            this.Size = new System.Drawing.Size(1152, 707);
+            this.Size = new System.Drawing.Size(902, 643);
             this.Load += new System.EventHandler(this.Ghi_chu_Load);
             this.ResumeLayout(false);
 

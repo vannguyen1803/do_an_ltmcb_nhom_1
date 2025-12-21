@@ -13,6 +13,8 @@ namespace Project_doan
         private Account acc;
         private Ghi_chu note;
         private NhatKy _nhatKyForm;
+        private Muc_tieu muc_Tieu;
+        private Charts chart;
         Aim aim;
         
         
@@ -27,7 +29,7 @@ namespace Project_doan
 
         private async void Home_Load(object sender, EventArgs e)
         {
-            label2.Text = UserSession.HoTen.ToString();
+            lb_name.Text = UserSession.HoTen.ToString();
             try
             {
                 pn_content.Controls.Clear();
@@ -52,19 +54,26 @@ namespace Project_doan
                 note = new Ghi_chu();
                 note.Dock = DockStyle.Fill;
 
+                muc_Tieu = new Muc_tieu();
+                muc_Tieu.Dock = DockStyle.Fill;
+
                 pom = new Pomodoro();
                 pom.Dock = DockStyle.Fill;
 
                 tk_pom = new thongke_pomodoro();
                 tk_pom.Dock = DockStyle.Fill;
+
+                chart = new Charts();
+                chart.Dock = DockStyle.Fill;
+
                 if (aim != null)
                 {
                     KiemTraVaGuiMail(aim);
                 }
 
                 pn_content.Controls.Clear();
-                pn_content.Controls.Add(calendar);
-                btn_cal.FillColor = Color.FromArgb(51, 153, 255);
+                pn_content.Controls.Add(chart);
+                btn_nha.FillColor = Color.FromArgb(51, 153, 255);
             }
             catch (Exception ex)
             {
@@ -118,9 +127,11 @@ namespace Project_doan
             ResetButtonColors();
             btn_aim.FillColor = Color.FromArgb(51, 153, 255);
             pn_content.Controls.Clear();
-            var AimControl = new Muc_tieu();
-            AimControl.Dock = DockStyle.Fill;
-            pn_content.Controls.Add(AimControl);
+            if (muc_Tieu != null)
+            {
+                pn_content.Controls.Add(muc_Tieu);
+            }
+            
         }
 
         private void btn_diary_Click(object sender, EventArgs e)
@@ -165,6 +176,7 @@ namespace Project_doan
             PomodoroControl.Dock = DockStyle.Fill;
             pn_content.Controls.Add(PomodoroControl);
         }
+
         private void ResetButtonColors()
         {
             btn_cal.FillColor = Color.Transparent;
@@ -312,6 +324,19 @@ namespace Project_doan
             ResetButtonColors();
             pn_content.Controls.Clear();
             if (tk_pom != null) pn_content.Controls.Add(tk_pom);
+        }
+
+        private void btn_nha_Click(object sender, EventArgs e)
+        {
+            ResetButtonColors();
+            btn_nha.FillColor = Color.FromArgb(51, 153, 255);
+            pn_content.Controls.Clear();
+
+            if (chart != null)
+            {
+                pn_content.Controls.Add(chart);
+                chart.LoadData();
+            }
         }
     }
 }

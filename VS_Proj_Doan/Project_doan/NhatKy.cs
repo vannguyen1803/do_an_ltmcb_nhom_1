@@ -27,11 +27,6 @@ namespace Project_doan
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_new_Click(object sender, EventArgs e)
         {
             _currentDocumentId = null;
@@ -88,14 +83,6 @@ namespace Project_doan
         private void btn_open_Click(object sender, EventArgs e)
         {
             BackToListRequested?.Invoke();
-        }
-
-        private void tb_title_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void rtb_content_TextChanged(object sender, EventArgs e)
-        {
         }
 
         public async void LoadEntryFromFirestore(string documentId)

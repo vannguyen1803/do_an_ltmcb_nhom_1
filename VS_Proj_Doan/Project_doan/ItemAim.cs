@@ -21,13 +21,8 @@ namespace Project_doan
         {
             InitializeComponent();
         }
-
-        
-
         public void SetData(Aim aim)
         {
-            btn_complete.Visible = true;
-            btn_complete.Enabled = true;
 
             DateTime today = DateTime.Now;
             DateTime startDay = aim.date_start.Date;

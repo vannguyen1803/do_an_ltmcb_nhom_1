@@ -65,8 +65,7 @@ namespace Project_doan
             // 
             // pn_header
             // 
-            this.pn_header.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pn_header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.pn_header.Controls.Add(this.btn_xuat);
@@ -82,6 +81,7 @@ namespace Project_doan
             // 
             // btn_xuat
             // 
+            this.btn_xuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_xuat.BorderRadius = 10;
             this.btn_xuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_xuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -91,7 +91,7 @@ namespace Project_doan
             this.btn_xuat.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(201)))), ((int)(((byte)(250)))));
             this.btn_xuat.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xuat.ForeColor = System.Drawing.Color.White;
-            this.btn_xuat.Location = new System.Drawing.Point(878, 12);
+            this.btn_xuat.Location = new System.Drawing.Point(894, 12);
             this.btn_xuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_xuat.Name = "btn_xuat";
             this.btn_xuat.Size = new System.Drawing.Size(103, 24);
@@ -116,7 +116,7 @@ namespace Project_doan
             this.lb_year.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_year.AutoSize = true;
             this.lb_year.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_year.Location = new System.Drawing.Point(771, 11);
+            this.lb_year.Location = new System.Drawing.Point(667, 11);
             this.lb_year.Name = "lb_year";
             this.lb_year.Size = new System.Drawing.Size(63, 26);
             this.lb_year.TabIndex = 3;
@@ -132,7 +132,7 @@ namespace Project_doan
             this.btn_nextmonth.FlatAppearance.BorderSize = 0;
             this.btn_nextmonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nextmonth.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_nextmonth.Location = new System.Drawing.Point(614, 5);
+            this.btn_nextmonth.Location = new System.Drawing.Point(542, 4);
             this.btn_nextmonth.Name = "btn_nextmonth";
             this.btn_nextmonth.Size = new System.Drawing.Size(83, 42);
             this.btn_nextmonth.TabIndex = 2;
@@ -145,7 +145,7 @@ namespace Project_doan
             this.lb_month.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_month.AutoSize = true;
             this.lb_month.Font = new System.Drawing.Font("Cooper Black", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_month.Location = new System.Drawing.Point(463, 11);
+            this.lb_month.Location = new System.Drawing.Point(391, 10);
             this.lb_month.Name = "lb_month";
             this.lb_month.Size = new System.Drawing.Size(90, 26);
             this.lb_month.TabIndex = 1;
@@ -161,7 +161,7 @@ namespace Project_doan
             this.btn_premonth.FlatAppearance.BorderSize = 0;
             this.btn_premonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_premonth.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_premonth.Location = new System.Drawing.Point(280, 5);
+            this.btn_premonth.Location = new System.Drawing.Point(208, 4);
             this.btn_premonth.Name = "btn_premonth";
             this.btn_premonth.Size = new System.Drawing.Size(83, 42);
             this.btn_premonth.TabIndex = 0;
@@ -171,8 +171,7 @@ namespace Project_doan
             // 
             // pn_day
             // 
-            this.pn_day.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pn_day.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_day.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pn_day.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;

@@ -447,7 +447,8 @@ namespace Project_doan
                     { "MoTa", aim.mota },
                     { "TrangThai", (int)aim.status },
                     { "DateStart", Timestamp.FromDateTime(aim.date_start.ToUniversalTime()) },
-                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) }
+                    { "DateEnd", Timestamp.FromDateTime(aim.date_end.ToUniversalTime()) },
+                    { "isDeleted", aim.isDeleted }
                 };
 
                 await userDoc
@@ -488,7 +489,8 @@ namespace Project_doan
                         mota = data["MoTa"].ToString(),
                         status = (AimStatus)Convert.ToInt32(data["TrangThai"]),
                         date_start = ((Timestamp)data["DateStart"]).ToDateTime(),
-                        date_end = ((Timestamp)data["DateEnd"]).ToDateTime()
+                        date_end = ((Timestamp)data["DateEnd"]).ToDateTime(),
+                        isDeleted = data.ContainsKey("isDeleted") ? Convert.ToBoolean(data["isDeleted"]) : false
                     };
 
                     list.Add(aim);
@@ -543,7 +545,10 @@ namespace Project_doan
                 await userDoc
                     .Collection("MucTieu")
                     .Document(aimId)
-                    .DeleteAsync();
+                    .UpdateAsync(new Dictionary<string, object>
+                    {
+                        {"isDeleted", true }
+                    });
 
                 return "SUCCESS";
             }
@@ -710,7 +715,37 @@ namespace Project_doan
                 return stats;
             }
         }
+        //Get Session Pomodoro in range
+        public async Task<List<PomodoroSession>>GetPomoInRange(DateTime fromDate, DateTime toDate)
+        {
+            var list = new List<PomodoroSession>();
 
+            try
+            {
+                var userDoc = await GetCurrentUserDocAsync();
+                if (userDoc == null) return list;
+
+                QuerySnapshot snap = await userDoc.Collection("PomodoroSessions").GetSnapshotAsync();
+
+                foreach(var doc in snap.Documents)
+                {
+                    var data = doc.ToDictionary();
+                    DateTime startDay = ((Timestamp)data["NgayBatDau"]).ToDateTime().ToLocalTime();
+
+                    if (startDay.Date >= fromDate.Date && startDay.Date <= toDate.Date)
+                    {
+                        list.Add(new PomodoroSession
+                        {
+                            TrangThai = data.ContainsKey("TrangThai") ? data["TrangThai"].ToString() : "Unknown",
+                            TongPhutHocThucTe = Convert.ToInt32(data["TongPhutHocThucTe"]),
+                            NgayBatDau = startDay
+                        });
+                    }
+                }
+            }
+            catch { }
+            return list;
+        }
         // Get Total Minutes Today
         public async Task<int> GetTotalMinutesTodayAsync()
         {
@@ -806,9 +841,6 @@ namespace Project_doan
         }
 
         // Get Events by Date
-
-
-
         public async Task<List<Event>> GetEventsByDateAsync(DateTime date)
         {
             var list = new List<Event>();

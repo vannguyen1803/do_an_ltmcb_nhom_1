@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace Project_doan
 {
@@ -53,10 +54,17 @@ namespace Project_doan
                 return;
             }
 
-            btn_save.Enabled = false;
 
+            btn_save.Enabled = false;
+            
             try
             {
+                AimStatus initialStatus = AimStatus.DangThucHien;
+                if (DateTime.Now.Date < dtp_start.Value.Date)
+                {
+                    initialStatus = AimStatus.ChuaThucHien;
+                }
+
                 string result = "";
 
                 if (currentEditAim == null)
@@ -67,7 +75,7 @@ namespace Project_doan
                         mota = rtb_mota.Text.Trim(),
                         date_start = dtp_start.Value,
                         date_end = dtp_end.Value,
-                        status = AimStatus.DangThucHien
+                        status = initialStatus
                     };
                     result = await firebase.AddAimAsync(newAim);
                 }
@@ -77,6 +85,14 @@ namespace Project_doan
                     currentEditAim.mota = rtb_mota.Text.Trim();
                     currentEditAim.date_start = dtp_start.Value;
                     currentEditAim.date_end = dtp_end.Value;
+
+                    if (currentEditAim.status != AimStatus.HoanThanh)
+                    {
+                        if (DateTime.Now.Date < dtp_start.Value.Date)
+                            currentEditAim.status = AimStatus.ChuaThucHien;
+                        else
+                            currentEditAim.status = AimStatus.DangThucHien;
+                    }
 
                     result = await firebase.UpdateAimAsync(currentEditAim);
                 }
