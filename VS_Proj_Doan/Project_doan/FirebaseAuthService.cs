@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_doan
 {
@@ -79,10 +81,19 @@ namespace Project_doan
 
                 return "Sai mật khẩu";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi đăng nhập: " + ex.Message;
+                return "Lỗi hệ thống. Vui lòng thử lại.";
             }
+            
         }
         //signup
         public async Task<string> SignUpAsync(string username, string password, string email, string hoten)
@@ -118,9 +129,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi đăng ký: " + ex.Message;
+                return "Lỗi hệ thống. Vui lòng thử lại.";
             }
         }
         //foget password
@@ -146,12 +165,19 @@ namespace Project_doan
 
                 return $"Mật khẩu của bạn là: {oldPass}";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi reset mật khẩu: " + ex.Message;
+                return "Lỗi hệ thống. Vui lòng thử lại.";
             }
         }
-
 
         // user_detail
         public async Task<string> UserdetailAsync(string phone, DateTime birthday, string language)
@@ -193,24 +219,51 @@ namespace Project_doan
                 }
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi cập nhật: " + ex.Message;
+                return "Lỗi hệ thống. Vui lòng thử lại.";
             }
         }
 
         //getcurrentuser
         private async Task<DocumentReference> GetCurrentUserDocAsync()
         {
-            CollectionReference users = _db.Collection("NguoiDung");
-            Query query = users.WhereEqualTo("Username", UserSession.Username);
+            try
+            {
+                CollectionReference users = _db.Collection("NguoiDung");
+                Query query = users.WhereEqualTo("Username", UserSession.Username);
 
-            QuerySnapshot snap = await query.GetSnapshotAsync();
+                QuerySnapshot snap = await query.GetSnapshotAsync();
 
-            if (snap.Count == 0)
+                if (snap.Count == 0)
+                    return null;
+
+                return snap.Documents[0].Reference;
+            }
+            catch (HttpRequestException)
+            {
+                MessageBox.Show("Không có kết nối Internet. Vui lòng kiểm tra mạng.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
+            }
+            catch (TaskCanceledException)
+            {
+                MessageBox.Show("Kết nối quá thời gian. Vui lòng thử lại.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống. Vui lòng thử lại.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
 
-            return snap.Documents[0].Reference;
         }
 
         // Save note 
@@ -238,12 +291,19 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi lưu note: " + ex.Message;
+                return "Lỗi lưu ghi chú. Vui lòng thử lại.";
             }
         }
-
 
         // LoadNote
         public async Task<List<Dictionary<string, object>>> GetAllNotesAsync()
@@ -315,9 +375,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi lưu event: " + ex.Message;
+                return "Lỗi lưu sự kiện. Vui lòng thử lại.";
             }
         }
 
@@ -401,9 +469,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi cập nhật note: " + ex.Message;
+                return "Lỗi cập nhật ghi chú. Vui lòng thử lại.";
             }
         }
 
@@ -423,9 +499,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi xóa note: " + ex.Message;
+                return "Lỗi xóa ghi chú. Vui lòng thử lại.";
             }
         }
         //Thêm mục tiêu
@@ -457,9 +541,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi thêm mục tiêu: " + ex.Message;
+                return "Lỗi thêm mục tiêu. Vui lòng thử lại.";
             }
         }
         //Lấy dữ liệu mục tiêu
@@ -526,9 +618,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi cập nhật mục tiêu: " + ex.Message;
+                return "Lỗi cập nhật mục tiêu: ";
             }
         }
         //Xóa mục tiêu
@@ -547,9 +647,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi xóa mục tiêu: " + ex.Message;
+                return "Lỗi xóa mục tiêu: " ;
             }
         }
         // Save Pomodoro Session
@@ -580,9 +688,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi lưu session: " + ex.Message;
+                return "Lỗi phiên pomodoro: ";
             }
         }
 
@@ -770,9 +886,17 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                return "Lỗi cập nhật event: " + ex.Message;
+                return "Lỗi cập nhật event: ";
             }
         }
 
@@ -799,6 +923,14 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
                 return "Lỗi xóa event: " + ex.Message;
@@ -806,9 +938,6 @@ namespace Project_doan
         }
 
         // Get Events by Date
-
-
-
         public async Task<List<Event>> GetEventsByDateAsync(DateTime date)
         {
             var list = new List<Event>();
@@ -928,9 +1057,17 @@ namespace Project_doan
                     return documentId;
                 }
             }
+            catch (HttpRequestException)
+            {
+                return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (TaskCanceledException)
+            {
+                return "Kết nối quá thời gian. Vui lòng thử lại.";
+            }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi lưu Nhật ký: " + ex.Message);
+                throw new Exception("Lỗi khi lưu Nhật ký: ");
             }
         }
 
@@ -953,9 +1090,19 @@ namespace Project_doan
                 }
                 return null;
             }
+            catch (HttpRequestException)
+            {
+                MessageBox.Show("Không có kết nối Internet. Vui lòng kiểm tra mạng.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            catch (TaskCanceledException)
+            {
+                MessageBox.Show("Kết nối quá thời gian. Vui lòng thử lại.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
             catch (Exception ex)
             {
-                throw new Exception("Lỗi khi tải Nhật ký: " + ex.Message);
+                throw new Exception("Lỗi khi tải Nhật ký: " );
             }
         }
         public async Task<List<Dictionary<string, object>>> GetAllDiaryEntriesAsync()
@@ -981,6 +1128,16 @@ namespace Project_doan
                 }
 
                 return diaryList;
+            }
+            catch (HttpRequestException)
+            {
+                MessageBox.Show("Không có kết nối Internet. Vui lòng kiểm tra mạng.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            catch (TaskCanceledException)
+            {
+                MessageBox.Show("Kết nối quá thời gian. Vui lòng thử lại.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
             catch (Exception ex)
             {

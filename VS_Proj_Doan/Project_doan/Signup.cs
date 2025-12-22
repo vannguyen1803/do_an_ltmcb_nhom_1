@@ -33,6 +33,7 @@ namespace Project_doan
                     login.Show();
                     this.Close();
                 }
+                else MessageBox.Show($"{result}", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {

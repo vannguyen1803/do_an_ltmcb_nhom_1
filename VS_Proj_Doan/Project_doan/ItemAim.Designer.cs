@@ -141,7 +141,7 @@
             this.btn_complete.FillColor = System.Drawing.Color.LightSkyBlue;
             this.btn_complete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_complete.ForeColor = System.Drawing.Color.White;
-            this.btn_complete.Location = new System.Drawing.Point(427, 14);
+            this.btn_complete.Location = new System.Drawing.Point(443, 22);
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(152, 50);
             this.btn_complete.TabIndex = 10;

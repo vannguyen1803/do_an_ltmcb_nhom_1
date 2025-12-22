@@ -110,6 +110,5 @@ namespace Project_doan
             dtp_end.Value = DateTime.Now;
         }
 
-        
     }
 }
