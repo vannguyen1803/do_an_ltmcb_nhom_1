@@ -1,4 +1,5 @@
 ﻿using Google.Cloud.Firestore;
+using Grpc.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,9 +82,13 @@ namespace Project_doan
 
                 return "Sai mật khẩu";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -129,9 +134,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -165,9 +174,13 @@ namespace Project_doan
 
                 return $"Mật khẩu của bạn là: {oldPass}";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -219,9 +232,13 @@ namespace Project_doan
                 }
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -248,9 +265,14 @@ namespace Project_doan
 
                 return snap.Documents[0].Reference;
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 MessageBox.Show("Không có kết nối Internet. Vui lòng kiểm tra mạng.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            catch (RpcException ex)
+            {
+                MessageBox.Show("Không thể kết nối dữ liệu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             catch (TaskCanceledException)
@@ -291,9 +313,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -375,9 +401,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -469,9 +499,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -499,9 +533,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -541,9 +579,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -618,9 +660,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -647,9 +693,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -688,9 +738,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -886,9 +940,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -923,9 +981,13 @@ namespace Project_doan
 
                 return "SUCCESS";
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -1057,9 +1119,13 @@ namespace Project_doan
                     return documentId;
                 }
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 return "Không có kết nối Internet. Vui lòng kiểm tra mạng.";
+            }
+            catch (RpcException ex)
+            {
+                return "Không thể kết nối dữ liệu.";
             }
             catch (TaskCanceledException)
             {
@@ -1090,9 +1156,14 @@ namespace Project_doan
                 }
                 return null;
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 MessageBox.Show("Không có kết nối Internet. Vui lòng kiểm tra mạng.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            catch (RpcException ex)
+            {
+                MessageBox.Show("Không thể kết nối dữ liệu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             catch (TaskCanceledException)
@@ -1129,9 +1200,14 @@ namespace Project_doan
 
                 return diaryList;
             }
-            catch (HttpRequestException)
+            catch (RpcException ex) when (ex.StatusCode == StatusCode.Unavailable)
             {
                 MessageBox.Show("Không có kết nối Internet. Vui lòng kiểm tra mạng.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            catch (RpcException ex)
+            {
+                MessageBox.Show("Không thể kết nối dữ liệu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return null;
             }
             catch (TaskCanceledException)
@@ -1166,7 +1242,5 @@ namespace Project_doan
                 System.Diagnostics.Debug.WriteLine($"Error during logout: {ex.Message}");
             }
         }
-
     }
-
 }

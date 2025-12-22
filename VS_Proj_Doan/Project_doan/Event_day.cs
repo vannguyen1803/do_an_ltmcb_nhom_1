@@ -25,11 +25,6 @@ namespace Project_doan
             tb_desc.Text = ev.Description;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            OnDelete?.Invoke(this);
-        }
-
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             OnDelete?.Invoke(this);
