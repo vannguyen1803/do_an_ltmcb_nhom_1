@@ -54,6 +54,7 @@
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.LightCyan;
             this.guna2Panel1.Location = new System.Drawing.Point(3, 12);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -62,6 +63,7 @@
             // 
             // btn_xoa
             // 
+            this.btn_xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_xoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_xoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_xoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -80,6 +82,8 @@
             // 
             // dtp_end
             // 
+            this.dtp_end.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_end.BackColor = System.Drawing.Color.Transparent;
             this.dtp_end.Checked = true;
             this.dtp_end.FillColor = System.Drawing.Color.AliceBlue;
@@ -98,6 +102,8 @@
             // 
             // tb_frequen
             // 
+            this.tb_frequen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_frequen.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_frequen.DefaultText = "";
             this.tb_frequen.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -117,6 +123,8 @@
             // 
             // tb_desc
             // 
+            this.tb_desc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_desc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_desc.DefaultText = "";
             this.tb_desc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -131,11 +139,13 @@
             this.tb_desc.Name = "tb_desc";
             this.tb_desc.PlaceholderText = "";
             this.tb_desc.SelectedText = "";
-            this.tb_desc.Size = new System.Drawing.Size(407, 30);
+            this.tb_desc.Size = new System.Drawing.Size(407, 29);
             this.tb_desc.TabIndex = 5;
             // 
             // tb_title
             // 
+            this.tb_title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_title.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_title.DefaultText = "";
             this.tb_title.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -150,7 +160,7 @@
             this.tb_title.Name = "tb_title";
             this.tb_title.PlaceholderText = "";
             this.tb_title.SelectedText = "";
-            this.tb_title.Size = new System.Drawing.Size(407, 30);
+            this.tb_title.Size = new System.Drawing.Size(407, 29);
             this.tb_title.TabIndex = 4;
             // 
             // label4

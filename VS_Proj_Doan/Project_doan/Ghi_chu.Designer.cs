@@ -45,7 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Ghi_chu";
-            this.Size = new System.Drawing.Size(1152, 707);
+            this.Size = new System.Drawing.Size(902, 643);
             this.Load += new System.EventHandler(this.Ghi_chu_Load);
             this.ResumeLayout(false);
 

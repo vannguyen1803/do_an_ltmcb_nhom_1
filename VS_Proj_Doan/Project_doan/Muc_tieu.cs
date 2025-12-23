@@ -32,19 +32,19 @@ namespace Project_doan
             {
                 LoadAimData();
             };
-            newaim.Show();
+            newaim.ShowDialog();
         }
         public async void LoadAimData()
         {
             try
             {
-                pn_list.Controls.Clear();
+                flowLayoutPanel1.Controls.Clear();
 
                 List<Aim> aimlist = await firebase.GetAllAimsAsync();
 
                 if (aimlist == null || aimlist.Count == 0) return;
 
-                aimlist = aimlist.OrderBy(x => x.status).ThenBy(x => x.date_end).ToList();
+                aimlist = aimlist.Where(a=>a.isDeleted == false).OrderBy(x => x.status).ThenBy(x => x.date_end).ToList();
 
                 foreach (Aim aim in aimlist)
                 {
@@ -52,7 +52,7 @@ namespace Project_doan
 
                     item.SetData(aim);
 
-                    item.Width = pn_list.ClientSize.Width;
+                    item.Width = flowLayoutPanel1.ClientSize.Width;
 
                     item.OnDeleteCliked += async (s, args) =>
                     {
@@ -62,7 +62,7 @@ namespace Project_doan
                             string result = await firebase.DeleteAimAsync(aim.Id);
                             if (result == "SUCCESS")
                             {
-                                pn_list.Controls.Remove(item);
+                                flowLayoutPanel1.Controls.Remove(item);
                             }
                             else
                             {
@@ -74,7 +74,7 @@ namespace Project_doan
                     item.OnCompleteCliked += async (s, args) =>
                     {
                         aim.status = AimStatus.HoanThanh;
-
+                        
                         string result = await firebase.UpdateAimAsync(aim);
                         if (result == "SUCCESS")
                         {
@@ -92,7 +92,7 @@ namespace Project_doan
                         OpenNewAim(aimEdit);
                     };
 
-                    pn_list.Controls.Add(item);
+                    flowLayoutPanel1.Controls.Add(item);
 
                 }
             }

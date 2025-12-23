@@ -50,6 +50,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(236)))), ((int)(((byte)(253)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -106,21 +109,22 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(18, 38);
+            this.groupBox1.Location = new System.Drawing.Point(18, 16);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1013, 123);
+            this.groupBox1.Size = new System.Drawing.Size(664, 123);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chọn khoảng thời gian";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(801, 67);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(505, 25);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 37);
+            this.button2.Size = new System.Drawing.Size(96, 37);
             this.button2.TabIndex = 5;
             this.button2.Text = "Hôm nay";
             this.button2.UseVisualStyleBackColor = true;
@@ -128,12 +132,13 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button1.Location = new System.Drawing.Point(572, 64);
+            this.button1.Location = new System.Drawing.Point(505, 68);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 37);
+            this.button1.Size = new System.Drawing.Size(96, 37);
             this.button1.TabIndex = 4;
             this.button1.Text = "Xem";
             this.button1.UseVisualStyleBackColor = false;
@@ -179,24 +184,26 @@
             // 
             // lblAverage
             // 
+            this.lblAverage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAverage.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblAverage.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblAverage.Location = new System.Drawing.Point(562, 559);
+            this.lblAverage.Location = new System.Drawing.Point(449, 185);
             this.lblAverage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAverage.Name = "lblAverage";
-            this.lblAverage.Size = new System.Drawing.Size(480, 31);
+            this.lblAverage.Size = new System.Drawing.Size(231, 31);
             this.lblAverage.TabIndex = 7;
             this.lblAverage.Text = "Trung bình: 0 phút/ngày";
             this.lblAverage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTotal
             // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblTotal.ForeColor = System.Drawing.Color.Green;
-            this.lblTotal.Location = new System.Drawing.Point(561, 517);
+            this.lblTotal.Location = new System.Drawing.Point(449, 145);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(480, 31);
+            this.lblTotal.Size = new System.Drawing.Size(231, 31);
             this.lblTotal.TabIndex = 6;
             this.lblTotal.Text = "Tổng: 0 phút";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,7 +219,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "thongke_pomodoro";
-            this.Size = new System.Drawing.Size(1115, 690);
+            this.Size = new System.Drawing.Size(702, 654);
             this.Load += new System.EventHandler(this.thongke_pomodoro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

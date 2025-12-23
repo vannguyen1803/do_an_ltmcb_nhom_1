@@ -35,6 +35,9 @@
             // 
             // flp_events
             // 
+            this.flp_events.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flp_events.AutoScroll = true;
             this.flp_events.AutoScrollMargin = new System.Drawing.Size(1, 1);
             this.flp_events.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -45,6 +48,7 @@
             // 
             // btn_add
             // 
+            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_add.BorderRadius = 20;
             this.btn_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -55,9 +59,9 @@
             this.btn_add.FillColor2 = System.Drawing.Color.SteelBlue;
             this.btn_add.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(606, 6);
+            this.btn_add.Location = new System.Drawing.Point(621, 6);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(180, 34);
+            this.btn_add.Size = new System.Drawing.Size(180, 45);
             this.btn_add.TabIndex = 1;
             this.btn_add.Text = "Thêm sự kiện";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
@@ -65,11 +69,10 @@
             // lb_date
             // 
             this.lb_date.AutoSize = true;
-            this.lb_date.Location = new System.Drawing.Point(32, 15);
+            this.lb_date.Location = new System.Drawing.Point(12, 23);
             this.lb_date.Name = "lb_date";
-            this.lb_date.Size = new System.Drawing.Size(44, 16);
+            this.lb_date.Size = new System.Drawing.Size(0, 16);
             this.lb_date.TabIndex = 2;
-            this.lb_date.Text = "label1";
             // 
             // Schedule_day
             // 

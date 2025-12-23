@@ -169,27 +169,17 @@ namespace Project_doan
         {
             if (currentSession == null)
                 return;
-
+            int phutThucTe = (int)workTime.TotalMinutes;
+            if (currentState == PomoState.Work)
+            {
+                TimeSpan studied = workTime.Subtract(currentTime);
+                phutThucTe = (int)studied.TotalMinutes;
+            }
             try
             {
                 currentSession.NgayKetThuc = DateTime.Now;
-
-                if (currentState == PomoState.Work)
-                {
-                    TimeSpan studied = workTime.Subtract(currentTime);
-                    currentSession.TongPhutHocThucTe = (int)studied.TotalMinutes;
-                }
-                else if (currentState == PomoState.Break)
-                {
-                    currentSession.TongPhutHocThucTe = (int)workTime.TotalMinutes;
-                }
-
+                currentSession.TongPhutHocThucTe = phutThucTe;
                 currentSession.TrangThai = completed ? "Hoàn thành" : "Hủy";
-
-                if (firebase == null)
-                {
-                    firebase = new FirebaseAuthService();
-                }
 
                 string result = await firebase.SavePomodoroSessionAsync(currentSession);
 
@@ -197,8 +187,7 @@ namespace Project_doan
                 {
                     if (completed)
                     {
-                        sessionCount++;
-                        totalMinuteWork += currentSession.TongPhutHocThucTe;
+                        totalMinuteWork += phutThucTe;
                     }
 
                     MessageBox.Show(
@@ -250,13 +239,15 @@ namespace Project_doan
                 }
                 else if (currentState == PomoState.Break)
                 {
-                    timer1.Stop();
-                    FinishSession(true);
-                    ResetUI();
+                    HandleCompleteBreak();
                 }
             }
         }
-
+        private async void HandleCompleteBreak()
+        {
+            await FinishSession(true);
+            ResetUI();
+        }
         private void ResetUI()
         {
             timer1.Stop();

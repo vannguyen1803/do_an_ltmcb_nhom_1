@@ -86,6 +86,8 @@
             // 
             // guna2Shapes3
             // 
+            this.guna2Shapes3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Shapes3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Shapes3.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Shapes3.FillColor = System.Drawing.Color.Black;
@@ -104,6 +106,8 @@
             // 
             // guna2Shapes2
             // 
+            this.guna2Shapes2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Shapes2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Shapes2.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Shapes2.FillColor = System.Drawing.Color.Black;
@@ -122,6 +126,8 @@
             // 
             // guna2Shapes1
             // 
+            this.guna2Shapes1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Shapes1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Shapes1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2Shapes1.FillColor = System.Drawing.Color.Black;
@@ -170,6 +176,7 @@
             // 
             // btn_edit_user
             // 
+            this.btn_edit_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_edit_user.BackColor = System.Drawing.Color.Transparent;
             this.btn_edit_user.BorderRadius = 10;
             this.btn_edit_user.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -225,6 +232,8 @@
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -236,6 +245,7 @@
             // 
             // guna2Button1
             // 
+            this.guna2Button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button1.BorderRadius = 10;
             this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
