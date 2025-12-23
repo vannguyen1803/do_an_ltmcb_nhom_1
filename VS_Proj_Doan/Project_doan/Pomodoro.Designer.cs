@@ -27,11 +27,10 @@
             // 
             // lb_pomo
             // 
-            this.lb_pomo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_pomo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_pomo.AutoSize = true;
             this.lb_pomo.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lb_pomo.ForeColor = System.Drawing.Color.Black;
             this.lb_pomo.Location = new System.Drawing.Point(71, 21);
             this.lb_pomo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_pomo.Name = "lb_pomo";
@@ -41,10 +40,10 @@
             // 
             // lb_break
             // 
-            this.lb_break.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_break.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_break.AutoSize = true;
             this.lb_break.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lb_break.ForeColor = System.Drawing.Color.Black;
             this.lb_break.Location = new System.Drawing.Point(330, 21);
             this.lb_break.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_break.Name = "lb_break";
@@ -54,7 +53,7 @@
             // 
             // cbb_option
             // 
-            this.cbb_option.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_option.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbb_option.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_option.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbb_option.FormattingEnabled = true;
@@ -67,8 +66,7 @@
             // 
             // btn_pomo
             // 
-            this.btn_pomo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_pomo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_pomo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(149)))), ((int)(((byte)(237)))));
             this.btn_pomo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pomo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
@@ -84,7 +82,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label1.Location = new System.Drawing.Point(75, 419);
@@ -96,9 +94,7 @@
             // 
             // panel_circle
             // 
-            this.panel_circle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_circle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel_circle.Controls.Add(this.lb_timepomo);
             this.panel_circle.Location = new System.Drawing.Point(70, 84);
             this.panel_circle.Margin = new System.Windows.Forms.Padding(4);
@@ -126,13 +122,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_pomo);
             this.Controls.Add(this.cbb_option);
             this.Controls.Add(this.panel_circle);
             this.Controls.Add(this.lb_break);
             this.Controls.Add(this.lb_pomo);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pomodoro";
             this.Size = new System.Drawing.Size(547, 572);
