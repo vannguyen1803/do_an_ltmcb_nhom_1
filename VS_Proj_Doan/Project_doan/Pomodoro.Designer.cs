@@ -112,6 +112,7 @@
             this.lb_timepomo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_timepomo.BackColor = System.Drawing.Color.Transparent;
             this.lb_timepomo.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold);
             this.lb_timepomo.ForeColor = System.Drawing.Color.White;
             this.lb_timepomo.Location = new System.Drawing.Point(0, -1);
