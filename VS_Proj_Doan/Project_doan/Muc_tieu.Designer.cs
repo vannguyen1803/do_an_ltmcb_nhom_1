@@ -65,6 +65,7 @@
             this.Controls.Add(this.pn_list);
             this.Name = "Muc_tieu";
             this.Size = new System.Drawing.Size(921, 607);
+            this.Load += new System.EventHandler(this.Muc_tieu_Load);
             this.ResumeLayout(false);
 
         }
