@@ -447,6 +447,7 @@
   <ItemGroup>
     <Content Include="Images\login.jpg" />
     <None Include="Resources\home.png" />
+    <Content Include="Resources\avt.png" />
     <None Include="Resources\login.jpg" />
   </ItemGroup>
   <ItemGroup>

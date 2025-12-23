@@ -19,8 +19,8 @@ namespace Project_doan
         private void LoadUserInfo()
         {
             txt_email.Text = UserSession.Email.ToString();
-            txt_hoten.Text = UserSession.HoTen.ToString();
-            txt_user.Text = UserSession.Username.ToString();
+            txt_user.Text = UserSession.HoTen.ToString();
+            txt_hoten.Text = UserSession.Username.ToString();
             txt_phone.Text = UserSession.Phone ?? "";
             txt_date.Text = UserSession.Birthday == DateTime.MinValue
                 ? ""
@@ -35,11 +35,11 @@ namespace Project_doan
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
             var result = MessageBox.Show(
-         "Bạn có chắc chắn muốn đăng xuất?",
-         "Xác nhận đăng xuất",
-         MessageBoxButtons.YesNo,
-         MessageBoxIcon.Question
-     );
+            "Bạn có chắc chắn muốn đăng xuất?",
+            "Xác nhận đăng xuất",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+        );
 
             if (result == DialogResult.Yes)
             {

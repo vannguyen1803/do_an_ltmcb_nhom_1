@@ -134,6 +134,7 @@
             this.Controls.Add(this.panel_circle);
             this.Controls.Add(this.lb_break);
             this.Controls.Add(this.lb_pomo);
+            this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pomodoro";
             this.Size = new System.Drawing.Size(547, 572);

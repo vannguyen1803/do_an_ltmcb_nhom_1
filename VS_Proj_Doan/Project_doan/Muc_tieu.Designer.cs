@@ -69,7 +69,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btn_add);
             this.Name = "Muc_tieu";
-            this.Size = new System.Drawing.Size(908, 591);
+            this.Size = new System.Drawing.Size(921, 607);
             this.Load += new System.EventHandler(this.Muc_tieu_Load);
             this.ResumeLayout(false);
 

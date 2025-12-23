@@ -229,7 +229,15 @@ namespace Project_doan
 
 
             Schedule_day noteForm = new Schedule_day(selectedDate, events);
-
+            noteForm.OnDeleteEvent += async (evt) =>
+            {
+                string result = await firebase.DeleteEventAsync(evt);
+                if (result != "SUCCESS")
+                {
+                    MessageBox.Show(result, "Delete Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            };
 
             if (noteForm.ShowDialog() == DialogResult.OK)
             {

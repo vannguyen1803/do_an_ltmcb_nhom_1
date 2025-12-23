@@ -141,13 +141,21 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 18);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Trạng thái: ";
+            this.btn_complete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_complete.BorderRadius = 20;
+            this.btn_complete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_complete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_complete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_complete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_complete.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.btn_complete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_complete.ForeColor = System.Drawing.Color.White;
+            this.btn_complete.Location = new System.Drawing.Point(443, 22);
+            this.btn_complete.Name = "btn_complete";
+            this.btn_complete.Size = new System.Drawing.Size(152, 50);
+            this.btn_complete.TabIndex = 10;
+            this.btn_complete.Text = "Hoàn thành";
+            this.btn_complete.Click += new System.EventHandler(this.btn_complete_Click);
             // 
             // label3
             // 

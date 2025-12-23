@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Account));
             this.txt_date = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txt_phone = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.txt_email = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -38,8 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_edit_user = new Guna.UI2.WinForms.Guna2Button();
-            this.txt_hoten = new System.Windows.Forms.Label();
             this.txt_user = new System.Windows.Forms.Label();
+            this.txt_hoten = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -193,35 +194,38 @@
             this.btn_edit_user.Text = "EDIT";
             this.btn_edit_user.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // txt_hoten
-            // 
-            this.txt_hoten.AutoSize = true;
-            this.txt_hoten.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_hoten.Location = new System.Drawing.Point(240, 162);
-            this.txt_hoten.Name = "txt_hoten";
-            this.txt_hoten.Size = new System.Drawing.Size(145, 20);
-            this.txt_hoten.TabIndex = 19;
-            this.txt_hoten.Text = "@TenDangNhap";
-            // 
             // txt_user
             // 
             this.txt_user.AutoSize = true;
-            this.txt_user.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user.Location = new System.Drawing.Point(238, 136);
+            this.txt_user.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user.Location = new System.Drawing.Point(240, 162);
             this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(157, 29);
-            this.txt_user.TabIndex = 18;
-            this.txt_user.Text = "USER NAME";
+            this.txt_user.Size = new System.Drawing.Size(145, 20);
+            this.txt_user.TabIndex = 19;
+            this.txt_user.Text = "@TenDangNhap";
+            // 
+            // txt_hoten
+            // 
+            this.txt_hoten.AutoSize = true;
+            this.txt_hoten.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_hoten.Location = new System.Drawing.Point(238, 136);
+            this.txt_hoten.Name = "txt_hoten";
+            this.txt_hoten.Size = new System.Drawing.Size(157, 29);
+            this.txt_hoten.TabIndex = 18;
+            this.txt_hoten.Text = "USER NAME";
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.BorderRadius = 45;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageLocation = "E:\\LTMCB\\Do_an_ck\\VS_Proj_Doan\\Project_doan\\Resources\\avt.png";
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(39, 47);
             this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(167, 150);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 17;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
@@ -275,8 +279,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_edit_user);
-            this.Controls.Add(this.txt_hoten);
             this.Controls.Add(this.txt_user);
+            this.Controls.Add(this.txt_hoten);
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.guna2PictureBox1);
             this.Name = "Account";
@@ -300,8 +304,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btn_edit_user;
-        private System.Windows.Forms.Label txt_hoten;
         private System.Windows.Forms.Label txt_user;
+        private System.Windows.Forms.Label txt_hoten;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;

@@ -25,8 +25,10 @@ namespace Project_doan
                     home.Show();
                     this.Hide();
                 }
-
+                else MessageBox.Show($"{result}","Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
