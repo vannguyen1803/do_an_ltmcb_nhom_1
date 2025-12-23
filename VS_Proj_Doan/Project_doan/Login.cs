@@ -28,15 +28,14 @@ namespace Project_doan
             {
                 string username = tb_username.Text.Trim();
                 string password = tb_pass.Text.Trim();
-
                 string result = await firebase.SignInAsync(username, password);
-
                 if (result == "SUCCESS")
                 {
                     Home home = new Home();
                     home.Show();
                     this.Hide();
                 }
+
 
             }
             catch (Exception ex)

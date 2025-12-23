@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aim.cs" />
+    <Compile Include="NotificationHelper.cs" />
     <Compile Include="UserControls\Calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +173,12 @@
     </Compile>
     <Compile Include="Forgot_pass.Designer.cs">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ItemAim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ItemAim.Designer.cs">
+      <DependentUpon>ItemAim.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Muc_tieu.cs">
       <SubType>UserControl</SubType>
@@ -205,7 +212,6 @@
     </Compile>
     <Compile Include="Models\PomoData.cs" />
     <Compile Include="Models\UserSession.cs" />
-    <Compile Include="NotificationHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleNote.cs">
@@ -214,12 +220,7 @@
     <Compile Include="ScheduleNote.Designer.cs">
       <DependentUpon>ScheduleNote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Services\FirestoreServices.cs" />
+    <Compile Include="Services\FirestoreService.cs" />
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +245,9 @@
     <EmbeddedResource Include="Forgot_pass.resx">
       <DependentUpon>Forgot_pass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ItemAim.resx">
+      <DependentUpon>ItemAim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Muc_tieu.resx">
       <DependentUpon>Muc_tieu.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,7 +267,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -355,7 +358,6 @@
     <None Include="protos\google\type\timeofday.proto" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitignore" />
     <Content Include="Images\login.jpg" />
     <Resource Include="Resources\login.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

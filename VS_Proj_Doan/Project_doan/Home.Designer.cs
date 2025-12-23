@@ -56,9 +56,9 @@
             // 
             // btn_acc
             // 
-            this.btn_acc.Location = new System.Drawing.Point(98, 349);
+            this.btn_acc.Location = new System.Drawing.Point(62, 349);
             this.btn_acc.Name = "btn_acc";
-            this.btn_acc.Size = new System.Drawing.Size(75, 23);
+            this.btn_acc.Size = new System.Drawing.Size(93, 23);
             this.btn_acc.TabIndex = 5;
             this.btn_acc.Text = "Tài khoản";
             this.btn_acc.UseVisualStyleBackColor = true;
@@ -123,11 +123,13 @@
             // 
             // pn_content
             // 
-            this.pn_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_content.Location = new System.Drawing.Point(223, 51);
+            this.pn_content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pn_content.Location = new System.Drawing.Point(223, 47);
             this.pn_content.Name = "pn_content";
-            this.pn_content.Size = new System.Drawing.Size(994, 648);
-            this.pn_content.TabIndex = 2;
+            this.pn_content.Size = new System.Drawing.Size(994, 652);
+            this.pn_content.TabIndex = 0;
             // 
             // Home
             // 
@@ -149,12 +151,12 @@
 
         private System.Windows.Forms.Panel pn_menu;
         private System.Windows.Forms.Panel pn_header;
-        private System.Windows.Forms.Panel pn_content;
         private System.Windows.Forms.Button btn_pomo;
         private System.Windows.Forms.Button btn_diary;
         private System.Windows.Forms.Button btn_note;
         private System.Windows.Forms.Button btn_aim;
         private System.Windows.Forms.Button btn_cal;
         private System.Windows.Forms.Button btn_acc;
+        private System.Windows.Forms.Panel pn_content;
     }
 }

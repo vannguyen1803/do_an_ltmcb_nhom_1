@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project_doan.Models;
+
 namespace Project_doan
 {
     public partial class Calendar : UserControl
@@ -19,6 +20,8 @@ namespace Project_doan
         List<Guna2CircleButton> dayButtons = new List<Guna2CircleButton>();
         private Dictionary<Guna2CircleButton, DateTime> buttonDateMap = new Dictionary<Guna2CircleButton, DateTime>();
         private Dictionary<Guna2CircleButton, Label> buttonTaskLabelMap = new Dictionary<Guna2CircleButton, Label>();
+
+        List<Aim> cacheAim = new List<Aim>();
 
         int month = DateTime.Now.Month;
         int year = DateTime.Now.Year;
@@ -31,11 +34,22 @@ namespace Project_doan
 
             CreateDayHeader();
             buildCalendar();
-            CreateMonthCalendar(month, year);
+            LoadDataAsync();
             lb_month.Text = month.ToString();
             lb_year.Text = year.ToString();
         }
-
+        public async void LoadDataAsync()
+        {
+            try
+            {
+                cacheAim = await firebase.GetAllAimsAsync();
+                CreateMonthCalendar(month, year);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải mục tiêu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void CreateDayHeader()
         {
             for (int i = 0; i < 7; i++)
@@ -153,29 +167,47 @@ namespace Project_doan
         {
             try
             {
-                string dateKey = date.ToString("yyyy-MM-dd");
+                if (!buttonTaskLabelMap.ContainsKey(button)) return;
 
+                Label lblTask = buttonTaskLabelMap[button];
+                StringBuilder displayText = new StringBuilder();
+
+
+                //Hiển thị ghi chú
+                string dateKey = date.ToString("yyyy-MM-dd");
                 if (UserSession.ScheduleCache.ContainsKey(dateKey))
                 {
                     string content = UserSession.ScheduleCache[dateKey];
 
                     if (!string.IsNullOrEmpty(content) && buttonTaskLabelMap.ContainsKey(button))
                     {
-                        string preview = content.Length > 20
-                            ? content.Substring(0, 17) + "..."
-                            : content;
+                        displayText.AppendLine("📝 " + ShortenText(content, 15));
 
-                        buttonTaskLabelMap[button].Text = preview;
-                        
+
                     }
                 }
+                //Hiển thị cho mục tiêu
+                if (cacheAim != null)
+                {
+                    var aimToday = cacheAim.Where(a => date.Date >= a.date_start.Date && date.Date <= a.date_end.Date && a.status != AimStatus.HoanThanh).ToList();
+
+                    foreach (var aim in aimToday)
+                    {
+                        displayText.AppendLine("🎯 " + ShortenText(aim.title, 15));
+                    }
+                }
+                lblTask.Text = displayText.ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private string ShortenText(string text, int maxLenght)
+        {
+            if (string.IsNullOrEmpty(text)) return "";
+            return text.Length>maxLenght?text.Substring(0, maxLenght) + "..." : text;
+        }
         private async void Button_Click(object sender, EventArgs e)
         {
             Control ctrl = sender as Control;
@@ -238,11 +270,6 @@ namespace Project_doan
             lb_year.Text = year.ToString();
 
             CreateMonthCalendar(month, year);
-        }
-
-        private void btn_premonth_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

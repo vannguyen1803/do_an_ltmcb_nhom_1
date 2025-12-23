@@ -70,7 +70,7 @@ namespace Project_doan.UserControls
 
             if (currentState == PomoState.Work || currentState == PomoState.Break)
             {
-                
+
                 await StopAndReset();
             }
             else
@@ -79,8 +79,8 @@ namespace Project_doan.UserControls
             }
         }
         private void StartWork()
-        {
-            lb_pomo.ForeColor = Color.White;
+        {     
+            lb_pomo.ForeColor = Color.DeepSkyBlue;
             lb_break.ForeColor = Color.Black;
             currentState = PomoState.Work;
             currentTime = workTime;
@@ -92,8 +92,8 @@ namespace Project_doan.UserControls
         }
         private void StartBreak()
         {
-            lb_break.ForeColor = Color.White;
-            lb_pomo.ForeColor= Color.Black;
+            lb_break.ForeColor = Color.DeepSkyBlue;
+            lb_pomo.ForeColor = Color.Black;
             currentState = PomoState.Break;
             currentTime = breakTime;
             lb_timepomo.Text = currentTime.ToString(@"mm\:ss");
@@ -103,9 +103,9 @@ namespace Project_doan.UserControls
         private async Task StopAndReset()
         {
             timer1.Stop();
-            DialogResult dialogResult =  MessageBox.Show("Bạn có chắc chắn muốn dừng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
-            
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn dừng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
             if (dialogResult == DialogResult.No)
             {
                 timer1.Start();
@@ -134,7 +134,7 @@ namespace Project_doan.UserControls
                         TongThoiGian = totalMinuteWork,
                         MaPomodoro = Guid.NewGuid().ToString()
                     };
-                    await FirestoreServices.AddPomo(log);
+                    await FirestoreService.AddPomo(log);
                 }
                 catch (Exception ex)
                 {
@@ -161,7 +161,7 @@ namespace Project_doan.UserControls
                     totalMinuteWork += (int)workTime.TotalMinutes;
                     StartBreak();
                 }
-                else if(currentState == PomoState.Break)
+                else if (currentState == PomoState.Break)
                 {
                     NotificationHelper.Show("Hết giờ nghỉ!", "Quay lại làm việc thôi.");
                     StartWork();

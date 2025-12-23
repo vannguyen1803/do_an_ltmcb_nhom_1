@@ -44,7 +44,7 @@
             // 
             // pn_pomo
             // 
-            this.pn_pomo.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pn_pomo.BackColor = System.Drawing.Color.Transparent;
             this.pn_pomo.Controls.Add(this.cbb_option);
             this.pn_pomo.Controls.Add(this.label3);
             this.pn_pomo.Controls.Add(this.btn_pomo);
@@ -62,7 +62,7 @@
             this.cbb_option.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbb_option.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_option.FormattingEnabled = true;
-            this.cbb_option.Location = new System.Drawing.Point(272, 458);
+            this.cbb_option.Location = new System.Drawing.Point(256, 458);
             this.cbb_option.Name = "cbb_option";
             this.cbb_option.Size = new System.Drawing.Size(78, 28);
             this.cbb_option.TabIndex = 11;
@@ -73,7 +73,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(120, 461);
+            this.label3.Location = new System.Drawing.Point(97, 461);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 20);
             this.label3.TabIndex = 10;
@@ -87,9 +87,10 @@
             this.btn_pomo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_pomo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_pomo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_pomo.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_pomo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pomo.ForeColor = System.Drawing.Color.White;
-            this.btn_pomo.Location = new System.Drawing.Point(168, 516);
+            this.btn_pomo.Location = new System.Drawing.Point(145, 516);
             this.btn_pomo.Name = "btn_pomo";
             this.btn_pomo.Size = new System.Drawing.Size(134, 45);
             this.btn_pomo.TabIndex = 9;
@@ -122,13 +123,13 @@
             // duongtron
             // 
             this.duongtron.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.duongtron.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.duongtron.BackColor = System.Drawing.Color.Transparent;
             this.duongtron.Controls.Add(this.lb_timepomo);
             this.duongtron.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.duongtron.FillThickness = 2;
             this.duongtron.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.duongtron.ForeColor = System.Drawing.Color.White;
-            this.duongtron.Location = new System.Drawing.Point(69, 106);
+            this.duongtron.Location = new System.Drawing.Point(54, 101);
             this.duongtron.Minimum = 0;
             this.duongtron.Name = "duongtron";
             this.duongtron.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -139,11 +140,11 @@
             // 
             this.lb_timepomo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lb_timepomo.AutoSize = true;
-            this.lb_timepomo.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_timepomo.ForeColor = System.Drawing.Color.White;
-            this.lb_timepomo.Location = new System.Drawing.Point(85, 128);
+            this.lb_timepomo.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_timepomo.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lb_timepomo.Location = new System.Drawing.Point(42, 110);
             this.lb_timepomo.Name = "lb_timepomo";
-            this.lb_timepomo.Size = new System.Drawing.Size(176, 81);
+            this.lb_timepomo.Size = new System.Drawing.Size(251, 106);
             this.lb_timepomo.TabIndex = 0;
             this.lb_timepomo.Text = "00:00";
             this.lb_timepomo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

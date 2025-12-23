@@ -1,33 +1,48 @@
-﻿using Google.Cloud.Firestore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.NetworkInformation;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Google.Cloud.Firestore;
+using Project_doan.Models;
+using Project_doan.UserControls;
 
-namespace Project_doan
+namespace Project_doan.Services
 {
     internal class FirestoreService
     {
-        private readonly FirestoreDb _db;
+        public static FirestoreDb db { get; private set; }
 
-        public FirestoreService()
+        private const string ProjectId = "do-an-ltmcb-nhom1"; 
+
+        public static void Initialize()
         {
-            string projectPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)
-                               .Parent.Parent.FullName;
+            try
+            {
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "serviceAccountKey.json");
+                Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-
-            string path = Path.Combine(projectPath, "serviceAccountKey.json");
-
-
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS",path);
-
-
-            _db = FirestoreDb.Create("do-an-ltmcb-nhom1");
+                db = FirestoreDb.Create(ProjectId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể kết nối Firestore: " + ex.Message);
+            }
+        }
+        public static async Task AddPomo(PomoData data)
+        {
+            try
+            {
+                CollectionReference collection = db.Collection("Pomodoro");
+                await collection.AddAsync(data);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi lưu dữ liệu: " + ex.Message);
+            }
         }
 
-        public FirestoreDb GetDb()
-        {
-            return _db;
-        }
     }
 }

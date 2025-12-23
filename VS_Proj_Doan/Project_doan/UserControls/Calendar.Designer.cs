@@ -117,7 +117,7 @@ namespace Project_doan
             this.lb_month.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_month.AutoSize = true;
             this.lb_month.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lb_month.Location = new System.Drawing.Point(450, 11);
+            this.lb_month.Location = new System.Drawing.Point(385, 11);
             this.lb_month.Name = "lb_month";
             this.lb_month.Size = new System.Drawing.Size(66, 25);
             this.lb_month.TabIndex = 1;
@@ -139,7 +139,6 @@ namespace Project_doan
             this.btn_premonth.TabIndex = 0;
             this.btn_premonth.Text = "<";
             this.btn_premonth.UseVisualStyleBackColor = false;
-            this.btn_premonth.Click += new System.EventHandler(this.btn_premonth_Click);
             // 
             // pn_day
             // 

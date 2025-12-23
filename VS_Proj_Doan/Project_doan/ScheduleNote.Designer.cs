@@ -200,7 +200,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ScheduleNote";
             this.Text = "ScheduleNote";
-            this.Load += new System.EventHandler(this.ScheduleNotes_1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

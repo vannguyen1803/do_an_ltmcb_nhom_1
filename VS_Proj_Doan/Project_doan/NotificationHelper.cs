@@ -15,11 +15,11 @@ namespace Project_doan
         {
             try
             {
-              
+
                 if (notify == null)
                 {
                     notify = new NotifyIcon();
-                    notify.Icon = SystemIcons.Application; 
+                    notify.Icon = SystemIcons.Application;
                     notify.Visible = true;
                 }
 
@@ -38,6 +38,6 @@ namespace Project_doan
             }
         }
 
-        
+
     }
 }
