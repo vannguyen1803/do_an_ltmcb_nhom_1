@@ -436,6 +436,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\login.jpg" />
+    <Content Include="Resources\avt.png" />
     <None Include="Resources\login.jpg" />
   </ItemGroup>
   <ItemGroup>
