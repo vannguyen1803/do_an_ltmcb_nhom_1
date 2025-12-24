@@ -178,6 +178,12 @@
     <Compile Include="Charts.Designer.cs">
       <DependentUpon>Charts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Muctieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Muctieu.Designer.cs">
+      <DependentUpon>Muctieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewAim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,12 +241,6 @@
     </Compile>
     <Compile Include="ItemAim.Designer.cs">
       <DependentUpon>ItemAim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Muc_tieu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Muc_tieu.Designer.cs">
-      <DependentUpon>Muc_tieu.cs</DependentUpon>
     </Compile>
     <Compile Include="NhatKy.cs">
       <SubType>UserControl</SubType>
@@ -329,8 +329,8 @@
     <EmbeddedResource Include="ItemAim.resx">
       <DependentUpon>ItemAim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Muc_tieu.resx">
-      <DependentUpon>Muc_tieu.cs</DependentUpon>
+    <EmbeddedResource Include="Muctieu.resx">
+      <DependentUpon>Muctieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewAim.resx">
       <DependentUpon>NewAim.cs</DependentUpon>
