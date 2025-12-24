@@ -91,9 +91,9 @@ namespace Project_doan
             if (calendar != null)
             {
                 pn_content.Controls.Add(calendar);
-                calendar.GoToToday();
-                calendar.RefreshCalendar();
             }
+            calendar.GoToToday();
+            calendar.RefreshCalendar();
         }
 
         private void btn_acc_Click(object sender, EventArgs e)

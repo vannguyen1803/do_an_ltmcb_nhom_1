@@ -26,7 +26,8 @@ namespace Project_doan
                 string password = tb_pass.Text.Trim();
                 string user = tb_username.Text.Trim();
                 string full_name = tb_fullname.Text.Trim();
-                string result = await firebase.SignUpAsync(user, password, email, full_name);
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+                string result = await firebase.SignUpAsync(user, hashedPassword, email, full_name);
                 if (result == "SUCCESS")
                 {
                     Login login = new Login();
@@ -39,6 +40,11 @@ namespace Project_doan
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
