@@ -43,6 +43,7 @@
             // 
             // pn_newAim
             // 
+            this.pn_newAim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(223)))), ((int)(((byte)(252)))));
             this.pn_newAim.Controls.Add(this.rtb_mota);
             this.pn_newAim.Controls.Add(this.btn_save);
             this.pn_newAim.Controls.Add(this.dtp_end);
@@ -60,9 +61,8 @@
             // 
             // rtb_mota
             // 
-            this.rtb_mota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtb_mota.Location = new System.Drawing.Point(229, 108);
+            this.rtb_mota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
+            this.rtb_mota.Location = new System.Drawing.Point(251, 156);
             this.rtb_mota.Name = "rtb_mota";
             this.rtb_mota.Size = new System.Drawing.Size(238, 96);
             this.rtb_mota.TabIndex = 5;
@@ -101,8 +101,7 @@
             // 
             // tb_title
             // 
-            this.tb_title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
             this.tb_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_title.Location = new System.Drawing.Point(229, 41);
             this.tb_title.Name = "tb_title";
