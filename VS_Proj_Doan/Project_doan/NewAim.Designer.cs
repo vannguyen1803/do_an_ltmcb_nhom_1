@@ -62,7 +62,7 @@
             // rtb_mota
             // 
             this.rtb_mota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(244)))), ((int)(((byte)(254)))));
-            this.rtb_mota.Location = new System.Drawing.Point(251, 156);
+            this.rtb_mota.Location = new System.Drawing.Point(229, 105);
             this.rtb_mota.Name = "rtb_mota";
             this.rtb_mota.Size = new System.Drawing.Size(238, 96);
             this.rtb_mota.TabIndex = 5;

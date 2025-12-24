@@ -57,7 +57,7 @@
             this.cbb_option.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_option.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbb_option.FormattingEnabled = true;
-            this.cbb_option.Location = new System.Drawing.Point(268, 419);
+            this.cbb_option.Location = new System.Drawing.Point(283, 422);
             this.cbb_option.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_option.Name = "cbb_option";
             this.cbb_option.Size = new System.Drawing.Size(154, 31);
@@ -71,7 +71,7 @@
             this.btn_pomo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pomo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btn_pomo.ForeColor = System.Drawing.Color.White;
-            this.btn_pomo.Location = new System.Drawing.Point(172, 473);
+            this.btn_pomo.Location = new System.Drawing.Point(187, 476);
             this.btn_pomo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_pomo.Name = "btn_pomo";
             this.btn_pomo.Size = new System.Drawing.Size(138, 50);
@@ -85,7 +85,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.Location = new System.Drawing.Point(75, 419);
+            this.label1.Location = new System.Drawing.Point(90, 422);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 23);
@@ -96,7 +96,7 @@
             // 
             this.panel_circle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel_circle.Controls.Add(this.lb_timepomo);
-            this.panel_circle.Location = new System.Drawing.Point(70, 84);
+            this.panel_circle.Location = new System.Drawing.Point(79, 84);
             this.panel_circle.Margin = new System.Windows.Forms.Padding(4);
             this.panel_circle.Name = "panel_circle";
             this.panel_circle.Size = new System.Drawing.Size(371, 316);
@@ -111,7 +111,7 @@
             this.lb_timepomo.BackColor = System.Drawing.Color.Transparent;
             this.lb_timepomo.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold);
             this.lb_timepomo.ForeColor = System.Drawing.Color.White;
-            this.lb_timepomo.Location = new System.Drawing.Point(0, -1);
+            this.lb_timepomo.Location = new System.Drawing.Point(0, 0);
             this.lb_timepomo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_timepomo.Name = "lb_timepomo";
             this.lb_timepomo.Size = new System.Drawing.Size(371, 317);
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_pomo);
             this.Controls.Add(this.cbb_option);
