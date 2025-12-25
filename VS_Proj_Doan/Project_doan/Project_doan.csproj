@@ -449,6 +449,7 @@
     <None Include="protos\google\type\timeofday.proto" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\alarm.wav" />
     <Content Include="Images\login.jpg" />
     <None Include="Resources\home.png" />
     <Content Include="Resources\avt.png" />

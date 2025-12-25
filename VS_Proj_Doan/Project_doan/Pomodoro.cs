@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -225,6 +226,7 @@ namespace Project_doan
 
                 if (currentState == PomoState.Work)
                 {
+                    PlayAlarm();
                     MessageBox.Show(
                         $"Đã học xong {workTime.TotalMinutes} phút!\nGiờ nghỉ {breakTime.TotalMinutes} phút.",
                         "Thông báo",
@@ -336,6 +338,20 @@ namespace Project_doan
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error loading stats: " + ex.Message);
+            }
+        }
+        private void PlayAlarm()
+        {
+            try
+            {
+                // Nếu bạn đã thêm vào Resource
+                SoundPlayer player = new SoundPlayer(Properties.Resources.alarm);
+                player.Play(); // Phát một lần
+                               // player.PlayLooping(); // Nếu muốn phát lặp đi lặp lại đến khi bấm dừng
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không tìm thấy file âm thanh: " + ex.Message);
             }
         }
     }
