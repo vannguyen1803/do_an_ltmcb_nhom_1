@@ -3,41 +3,39 @@ using System.Windows.Forms;
 
 namespace Project_doan
 {
-    public partial class EditNote : Form
+    public partial class EditNote1 : UserControl 
     {
         private string noteId;
         private bool isNewNote;
         FirebaseAuthService firebase = new FirebaseAuthService();
+        public event EventHandler NoteChanged;
 
-        public EditNote()
+        public EditNote1()
         {
             InitializeComponent();
             isNewNote = true;
-            this.Text = "Add New Note";
-
             if (button3 != null)
                 button3.Visible = false;
         }
 
-        public EditNote(string id, string content)
+        public EditNote1(string id, string content)
         {
             InitializeComponent();
             noteId = id;
             isNewNote = false;
-            this.Text = "Edit Note";
 
             richTextBox1.Text = content;
             if (button3 != null)
                 button3.Visible = true;
         }
 
-        private void EditNote_Load(object sender, EventArgs e)
+        private void UserControl1_Load(object sender, EventArgs e)
         {
             richTextBox1.Focus();
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private async void button2_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -60,8 +58,7 @@ namespace Project_doan
                     {
                         MessageBox.Show("Đã tạo note mới thành công!", "Thành công",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        NoteChanged?.Invoke(this, EventArgs.Empty);
                     }
                     else
                     {
@@ -77,8 +74,7 @@ namespace Project_doan
                     {
                         MessageBox.Show("Đã cập nhật note thành công!", "Thành công",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        NoteChanged?.Invoke(this, EventArgs.Empty);
                     }
                     else
                     {
@@ -94,7 +90,7 @@ namespace Project_doan
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(richTextBox1.Text.Trim()))
             {
@@ -109,8 +105,7 @@ namespace Project_doan
                     return;
             }
 
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            NoteChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private async void button3_Click(object sender, EventArgs e)
@@ -135,8 +130,7 @@ namespace Project_doan
                     {
                         MessageBox.Show("Đã xóa note thành công!", "Thành công",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        NoteChanged?.Invoke(this, EventArgs.Empty);
                     }
                     else
                     {
@@ -152,6 +146,6 @@ namespace Project_doan
             }
         }
 
-
+       
     }
 }

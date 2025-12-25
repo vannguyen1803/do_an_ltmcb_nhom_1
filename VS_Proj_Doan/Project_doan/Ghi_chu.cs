@@ -9,16 +9,32 @@ namespace Project_doan
     public partial class Ghi_chu : UserControl
     {
         FirebaseAuthService firebase = new FirebaseAuthService();
+        private Panel editPanel; 
+        private EditNote1 currentEditControl;
+
         public Ghi_chu()
         {
             InitializeComponent();
+            CreateEditPanel();
+        }
+
+        private void CreateEditPanel()
+        {
+            editPanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                Visible = false,
+                BackColor = Color.White
+            };
+            this.Controls.Add(editPanel);
+            editPanel.BringToFront();
         }
 
         private async void Ghi_chu_Load(object sender, EventArgs e)
         {
             await LoadAllNotes();
-
         }
+
         private async Task LoadAllNotes()
         {
             try
@@ -42,9 +58,8 @@ namespace Project_doan
             {
                 MessageBox.Show("Lỗi load note: " + ex.Message);
             }
-
-
         }
+
         private Panel CreateNotePanel(string content, string noteId, bool isNew)
         {
             Panel card = new Panel
@@ -54,7 +69,7 @@ namespace Project_doan
                 BackColor = Color.LightSkyBlue,
                 Padding = new Padding(10),
                 Cursor = Cursors.Hand,
-                Tag = noteId // Lưu ID vào Tag
+                Tag = noteId
             };
 
             Label lbl = new Label
@@ -100,7 +115,6 @@ namespace Project_doan
             };
             addPanel.Controls.Add(lblPlus);
 
-
             lblPlus.Location = new Point(
                 (addPanel.Width - lblPlus.Width) / 2,
                 (addPanel.Height - lblPlus.Height) / 2
@@ -121,8 +135,6 @@ namespace Project_doan
                 addPanel.Height - 20
             );
 
-
-
             addPanel.Click += AddNewPanel_Click;
             lblPlus.Click += AddNewPanel_Click;
             lblText.Click += AddNewPanel_Click;
@@ -132,6 +144,7 @@ namespace Project_doan
 
             return addPanel;
         }
+
         private void NotePanel_Click(object sender, EventArgs e)
         {
             Control ctrl = sender as Control;
@@ -145,24 +158,51 @@ namespace Project_doan
             Label lbl = panel.Controls.OfType<Label>().FirstOrDefault();
             string currentContent = lbl?.Text ?? "";
 
-            EditNote editForm = new EditNote(noteId, currentContent);
-
-            if (editForm.ShowDialog() == DialogResult.OK)
-            {
-                LoadAllNotes();
-            }
+            ShowEditControl(noteId, currentContent);
         }
 
-        private async void AddNewPanel_Click(object sender, EventArgs e)
+        private void AddNewPanel_Click(object sender, EventArgs e)
         {
-            EditNote editForm = new EditNote();
-
-            if (editForm.ShowDialog() == DialogResult.OK)
-            {
-                await LoadAllNotes();
-            }
+            ShowEditControl(null, null);
         }
 
+        private void ShowEditControl(string noteId, string content)
+        {
+            if (currentEditControl != null)
+            {
+                editPanel.Controls.Remove(currentEditControl);
+                currentEditControl.Dispose();
+            }
+            if (string.IsNullOrEmpty(noteId))
+            {
+                currentEditControl = new EditNote1();
+            }
+            else
+            {
+                currentEditControl = new EditNote1(noteId, content);
+            }
 
+            currentEditControl.NoteChanged += async (s, e) =>
+            {
+                HideEditControl();
+                await LoadAllNotes();
+            };
+
+            currentEditControl.Dock = DockStyle.Fill;
+            editPanel.Controls.Add(currentEditControl);
+            editPanel.Visible = true;
+            editPanel.BringToFront();
+        }
+
+        private void HideEditControl()
+        {
+            editPanel.Visible = false;
+            if (currentEditControl != null)
+            {
+                editPanel.Controls.Remove(currentEditControl);
+                currentEditControl.Dispose();
+                currentEditControl = null;
+            }
+        }
     }
 }
