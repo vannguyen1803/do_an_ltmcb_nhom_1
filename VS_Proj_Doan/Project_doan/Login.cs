@@ -54,5 +54,12 @@ namespace Project_doan
             this.Hide();
         }
 
+        private void tb_pass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btn_login.PerformClick();
+            }
+        }
     }
 }

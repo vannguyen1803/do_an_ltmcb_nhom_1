@@ -70,5 +70,10 @@ namespace Project_doan
             dateTimePicker2.Value = DateTime.Today;
             LoadStatistics();
         }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

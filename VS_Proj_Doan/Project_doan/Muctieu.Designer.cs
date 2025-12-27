@@ -48,8 +48,8 @@
             // 
             // pn_newAim
             // 
-            this.pn_newAim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pn_newAim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_newAim.Controls.Add(this.rtb_mota);
             this.pn_newAim.Controls.Add(this.btn_save);
@@ -63,7 +63,7 @@
             this.pn_newAim.Controls.Add(this.lb_title);
             this.pn_newAim.Location = new System.Drawing.Point(0, 0);
             this.pn_newAim.Name = "pn_newAim";
-            this.pn_newAim.Size = new System.Drawing.Size(921, 607);
+            this.pn_newAim.Size = new System.Drawing.Size(732, 607);
             this.pn_newAim.TabIndex = 2;
             // 
             // rtb_mota
@@ -71,7 +71,7 @@
             this.rtb_mota.Location = new System.Drawing.Point(243, 156);
             this.rtb_mota.Name = "rtb_mota";
             this.rtb_mota.Size = new System.Drawing.Size(258, 96);
-            this.rtb_mota.TabIndex = 11;
+            this.rtb_mota.TabIndex = 5;
             this.rtb_mota.Text = "";
             // 
             // btn_save
@@ -80,7 +80,7 @@
             this.btn_save.Location = new System.Drawing.Point(715, 501);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(106, 58);
-            this.btn_save.TabIndex = 9;
+            this.btn_save.TabIndex = 8;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -90,7 +90,7 @@
             this.btn_back.Location = new System.Drawing.Point(3, 3);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
-            this.btn_back.TabIndex = 8;
+            this.btn_back.TabIndex = 9;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
@@ -159,14 +159,14 @@
             // 
             // pn_listAim
             // 
-            this.pn_listAim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pn_listAim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_listAim.Controls.Add(this.btn_add);
             this.pn_listAim.Controls.Add(this.flowLayoutPanel1);
             this.pn_listAim.Location = new System.Drawing.Point(0, 0);
             this.pn_listAim.Name = "pn_listAim";
-            this.pn_listAim.Size = new System.Drawing.Size(921, 607);
+            this.pn_listAim.Size = new System.Drawing.Size(732, 607);
             this.pn_listAim.TabIndex = 10;
             // 
             // btn_add
@@ -178,7 +178,7 @@
             this.btn_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_add.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(840, 7);
+            this.btn_add.Location = new System.Drawing.Point(651, 7);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(78, 37);
             this.btn_add.TabIndex = 1;
@@ -187,23 +187,23 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 50);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(915, 557);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(726, 557);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
-            // Muc_tieu
+            // Muctieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pn_listAim);
             this.Controls.Add(this.pn_newAim);
-            this.Name = "Muc_tieu";
-            this.Size = new System.Drawing.Size(921, 607);
+            this.Name = "Muctieu";
+            this.Size = new System.Drawing.Size(732, 607);
             this.Load += new System.EventHandler(this.Muc_tieu_Load);
             this.pn_newAim.ResumeLayout(false);
             this.pn_newAim.PerformLayout();

@@ -47,8 +47,6 @@ namespace Project_doan
 
                     item.SetData(aim);
 
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
-
                     item.OnDeleteCliked += async (s, args) =>
                     {
                         var dialogResult = MessageBox.Show($"Bạn có chắc muốn xóa mục tiêu: {aim.title}?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -96,7 +94,6 @@ namespace Project_doan
                         btn_add.Visible = false;
                     };
                     flowLayoutPanel1.Controls.Add(item);
-
                 }
             }
             catch (Exception ex) {
