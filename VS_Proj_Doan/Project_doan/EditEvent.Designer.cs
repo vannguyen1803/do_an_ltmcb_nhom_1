@@ -111,6 +111,7 @@
             this.day_start.BackColor = System.Drawing.Color.Transparent;
             this.day_start.BorderRadius = 17;
             this.day_start.Checked = true;
+            this.day_start.Enabled = false;
             this.day_start.FillColor = System.Drawing.SystemColors.ButtonHighlight;
             this.day_start.FocusedColor = System.Drawing.Color.Black;
             this.day_start.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

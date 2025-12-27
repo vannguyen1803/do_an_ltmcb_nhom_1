@@ -60,9 +60,8 @@
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1046, 662);
+            this.guna2Panel1.Size = new System.Drawing.Size(930, 530);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
@@ -81,15 +80,14 @@
             this.btn_signup.FillColor2 = System.Drawing.Color.SlateBlue;
             this.btn_signup.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_signup.ForeColor = System.Drawing.Color.White;
-            this.btn_signup.Location = new System.Drawing.Point(508, 554);
-            this.btn_signup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_signup.Location = new System.Drawing.Point(452, 443);
             this.btn_signup.Name = "btn_signup";
             this.btn_signup.ShadowDecoration.BorderRadius = 20;
             this.btn_signup.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
             this.btn_signup.ShadowDecoration.CustomizableEdges.BottomLeft = false;
             this.btn_signup.ShadowDecoration.Depth = 20;
             this.btn_signup.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(2, 5, 10, 10);
-            this.btn_signup.Size = new System.Drawing.Size(506, 56);
+            this.btn_signup.Size = new System.Drawing.Size(450, 45);
             this.btn_signup.TabIndex = 22;
             this.btn_signup.Text = "Đăng ký";
             this.btn_signup.Click += new System.EventHandler(this.btn_signup_Click);
@@ -109,12 +107,12 @@
             this.tb_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_email.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_email.Location = new System.Drawing.Point(508, 365);
-            this.tb_email.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tb_email.Location = new System.Drawing.Point(452, 292);
+            this.tb_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_email.Name = "tb_email";
             this.tb_email.PlaceholderText = "";
             this.tb_email.SelectedText = "";
-            this.tb_email.Size = new System.Drawing.Size(506, 45);
+            this.tb_email.Size = new System.Drawing.Size(450, 36);
             this.tb_email.TabIndex = 21;
             // 
             // label5
@@ -123,9 +121,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(498, 329);
+            this.label5.Location = new System.Drawing.Point(443, 263);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 29);
+            this.label5.Size = new System.Drawing.Size(60, 25);
             this.label5.TabIndex = 20;
             this.label5.Text = "Email";
             // 
@@ -144,12 +142,12 @@
             this.tb_fullname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_fullname.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_fullname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_fullname.Location = new System.Drawing.Point(508, 256);
-            this.tb_fullname.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tb_fullname.Location = new System.Drawing.Point(452, 205);
+            this.tb_fullname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_fullname.Name = "tb_fullname";
             this.tb_fullname.PlaceholderText = "";
             this.tb_fullname.SelectedText = "";
-            this.tb_fullname.Size = new System.Drawing.Size(506, 45);
+            this.tb_fullname.Size = new System.Drawing.Size(450, 36);
             this.tb_fullname.TabIndex = 19;
             // 
             // label4
@@ -158,9 +156,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(498, 220);
+            this.label4.Location = new System.Drawing.Point(443, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 29);
+            this.label4.Size = new System.Drawing.Size(97, 25);
             this.label4.TabIndex = 18;
             this.label4.Text = "Full name";
             // 
@@ -170,9 +168,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(503, 429);
+            this.label3.Location = new System.Drawing.Point(447, 343);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 29);
+            this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 17;
             this.label3.Text = "Password";
             // 
@@ -191,13 +189,13 @@
             this.tb_pass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_pass.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_pass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_pass.Location = new System.Drawing.Point(508, 465);
-            this.tb_pass.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tb_pass.Location = new System.Drawing.Point(452, 372);
+            this.tb_pass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.PasswordChar = '*';
             this.tb_pass.PlaceholderText = "";
             this.tb_pass.SelectedText = "";
-            this.tb_pass.Size = new System.Drawing.Size(506, 45);
+            this.tb_pass.Size = new System.Drawing.Size(450, 36);
             this.tb_pass.TabIndex = 16;
             // 
             // tb_username
@@ -215,12 +213,12 @@
             this.tb_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_username.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_username.Location = new System.Drawing.Point(508, 158);
-            this.tb_username.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tb_username.Location = new System.Drawing.Point(452, 126);
+            this.tb_username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_username.Name = "tb_username";
             this.tb_username.PlaceholderText = "";
             this.tb_username.SelectedText = "";
-            this.tb_username.Size = new System.Drawing.Size(506, 45);
+            this.tb_username.Size = new System.Drawing.Size(450, 36);
             this.tb_username.TabIndex = 15;
             // 
             // label2
@@ -229,9 +227,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(498, 121);
+            this.label2.Location = new System.Drawing.Point(443, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 29);
+            this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 14;
             this.label2.Text = "Username";
             // 
@@ -240,9 +238,9 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F);
-            this.label1.Location = new System.Drawing.Point(497, 52);
+            this.label1.Location = new System.Drawing.Point(442, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 39);
+            this.label1.Size = new System.Drawing.Size(248, 33);
             this.label1.TabIndex = 13;
             this.label1.Text = "Đăng ký tài khoản";
             // 
@@ -258,19 +256,18 @@
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(462, 654);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(319, 523);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 12;
             this.guna2PictureBox1.TabStop = false;
             // 
             // Signup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1046, 662);
+            this.ClientSize = new System.Drawing.Size(930, 530);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Signup";
             this.Text = "Signup";
             this.guna2Panel1.ResumeLayout(false);

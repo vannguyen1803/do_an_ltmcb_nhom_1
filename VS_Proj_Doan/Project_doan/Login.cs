@@ -14,6 +14,7 @@ namespace Project_doan
 
         private async void btn_login_Click(object sender, EventArgs e)
         {
+            btn_login.Enabled = false;
             try
             {
                 string username = tb_username.Text.Trim();
@@ -25,7 +26,11 @@ namespace Project_doan
                     home.Show();
                     this.Hide();
                 }
-                else MessageBox.Show($"{result}","Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                else {
+                    btn_login.Enabled = true;
+                    MessageBox.Show($"{result}", "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
                 
             }
 
