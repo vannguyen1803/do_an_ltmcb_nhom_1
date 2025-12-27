@@ -121,10 +121,11 @@ namespace Project_doan
                 QuerySnapshot snap = await query.GetSnapshotAsync();
                 if (snap.Count > 0)
                     return "Username đã tồn tại";
+                string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
                 var userData = new Dictionary<string, object>
                 {
                     { "Username", username },
-                    { "Pass", password },
+                    { "Pass", passwordHash },
                     { "Email", email },
                     { "HoTen", hoten },
                     { "TrangThai", true },
@@ -707,7 +708,6 @@ namespace Project_doan
                 foreach (var doc in snap.Documents)
                 {
                     var data = doc.ToDictionary();
-
                     Aim aim = new Aim
                     {
                         Id = data["Id"].ToString(),

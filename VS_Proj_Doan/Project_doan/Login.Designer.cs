@@ -56,27 +56,24 @@
             this.panel1.Controls.Add(this.tb_username);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(27, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 553);
+            this.panel1.Size = new System.Drawing.Size(863, 501);
             this.panel1.TabIndex = 0;
             // 
             // guna2PictureBox1
             // 
-            this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.guna2PictureBox1.BorderRadius = 15;
+            this.guna2PictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2PictureBox1.FillColor = System.Drawing.SystemColors.Window;
             this.guna2PictureBox1.Image = global::Project_doan.Properties.Resources.login;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(0, 0);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(413, 553);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(253, 501);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 11;
             this.guna2PictureBox1.TabStop = false;
@@ -86,7 +83,7 @@
             this.llb_forgot_pass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.llb_forgot_pass.AutoSize = true;
             this.llb_forgot_pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.llb_forgot_pass.Location = new System.Drawing.Point(752, 307);
+            this.llb_forgot_pass.Location = new System.Drawing.Point(700, 307);
             this.llb_forgot_pass.Name = "llb_forgot_pass";
             this.llb_forgot_pass.Size = new System.Drawing.Size(122, 20);
             this.llb_forgot_pass.TabIndex = 10;
@@ -99,7 +96,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(507, 405);
+            this.label4.Location = new System.Drawing.Point(455, 405);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(191, 25);
             this.label4.TabIndex = 9;
@@ -110,7 +107,7 @@
             this.llb_signup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.llb_signup.AutoSize = true;
             this.llb_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.llb_signup.Location = new System.Drawing.Point(718, 405);
+            this.llb_signup.Location = new System.Drawing.Point(666, 405);
             this.llb_signup.Name = "llb_signup";
             this.llb_signup.Size = new System.Drawing.Size(84, 25);
             this.llb_signup.TabIndex = 8;
@@ -133,7 +130,7 @@
             this.btn_login.FillColor2 = System.Drawing.Color.Blue;
             this.btn_login.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(437, 346);
+            this.btn_login.Location = new System.Drawing.Point(385, 346);
             this.btn_login.Name = "btn_login";
             this.btn_login.ShadowDecoration.BorderRadius = 20;
             this.btn_login.ShadowDecoration.Color = System.Drawing.Color.DarkGray;
@@ -151,7 +148,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(432, 228);
+            this.label3.Location = new System.Drawing.Point(380, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 5;
@@ -172,7 +169,7 @@
             this.tb_pass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_pass.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_pass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_pass.Location = new System.Drawing.Point(435, 257);
+            this.tb_pass.Location = new System.Drawing.Point(383, 257);
             this.tb_pass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.PasswordChar = '*';
@@ -196,7 +193,7 @@
             this.tb_username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_username.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tb_username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tb_username.Location = new System.Drawing.Point(435, 172);
+            this.tb_username.Location = new System.Drawing.Point(383, 172);
             this.tb_username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_username.Name = "tb_username";
             this.tb_username.PlaceholderText = "";
@@ -210,7 +207,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(431, 140);
+            this.label2.Location = new System.Drawing.Point(379, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 25);
             this.label2.TabIndex = 2;
@@ -220,10 +217,10 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(428, 54);
+            this.label1.Font = new System.Drawing.Font("1FTV Insight Melody", 28.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(376, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 42);
+            this.label1.Size = new System.Drawing.Size(268, 56);
             this.label1.TabIndex = 1;
             this.label1.Text = "Đăng nhập";
             // 

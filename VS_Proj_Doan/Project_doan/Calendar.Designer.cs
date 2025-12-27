@@ -44,8 +44,7 @@ namespace Project_doan
             // 
             // weekday
             // 
-            this.weekday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.weekday.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.weekday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(201)))), ((int)(((byte)(250)))));
             this.weekday.ColumnCount = 7;
@@ -171,7 +170,8 @@ namespace Project_doan
             // 
             // pn_day
             // 
-            this.pn_day.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.pn_day.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_day.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pn_day.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
@@ -200,8 +200,8 @@ namespace Project_doan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pn_day);
             this.Controls.Add(this.weekday);
+            this.Controls.Add(this.pn_day);
             this.Controls.Add(this.pn_header);
             this.Name = "Calendar";
             this.Size = new System.Drawing.Size(1000, 648);

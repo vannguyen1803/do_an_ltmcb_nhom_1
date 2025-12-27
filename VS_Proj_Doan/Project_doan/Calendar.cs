@@ -52,8 +52,6 @@ namespace Project_doan
 
                 weekday.Controls.Add(lbl, i, 0);
             }
-
-            this.Controls.Add(weekday);
         }
 
         void buildCalendar()

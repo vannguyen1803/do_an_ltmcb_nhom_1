@@ -13,7 +13,7 @@ namespace Project_doan
         private Account acc;
         private Ghi_chu note;
         private NhatKy _nhatKyForm;
-        private Muc_tieu muc_Tieu;
+        private Muctieu muc_Tieu;
         private Charts chart;
         Aim aim;
         
@@ -54,7 +54,7 @@ namespace Project_doan
                 note = new Ghi_chu();
                 note.Dock = DockStyle.Fill;
 
-                muc_Tieu = new Muc_tieu();
+                muc_Tieu = new Muctieu();
                 muc_Tieu.Dock = DockStyle.Fill;
 
                 pom = new Pomodoro();
@@ -91,9 +91,9 @@ namespace Project_doan
             if (calendar != null)
             {
                 pn_content.Controls.Add(calendar);
-                calendar.GoToToday();
-                calendar.RefreshCalendar();
             }
+            calendar.GoToToday();
+            calendar.RefreshCalendar();
         }
 
         private void btn_acc_Click(object sender, EventArgs e)

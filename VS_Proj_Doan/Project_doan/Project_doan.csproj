@@ -51,6 +51,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net48\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Api.CommonProtos, Version=2.17.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Api.CommonProtos.2.17.0\lib\net461\Google.Api.CommonProtos.dll</HintPath>
     </Reference>
@@ -178,12 +181,13 @@
     <Compile Include="Charts.Designer.cs">
       <DependentUpon>Charts.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewAim.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Muctieu.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NewAim.Designer.cs">
-      <DependentUpon>NewAim.cs</DependentUpon>
+    <Compile Include="Muctieu.Designer.cs">
+      <DependentUpon>Muctieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="HashPassword.cs" />
     <Compile Include="NotificationHelper.cs" />
     <Compile Include="EditEvent.cs">
       <SubType>Form</SubType>
@@ -235,12 +239,6 @@
     </Compile>
     <Compile Include="ItemAim.Designer.cs">
       <DependentUpon>ItemAim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Muc_tieu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Muc_tieu.Designer.cs">
-      <DependentUpon>Muc_tieu.cs</DependentUpon>
     </Compile>
     <Compile Include="NhatKy.cs">
       <SubType>UserControl</SubType>
@@ -329,11 +327,8 @@
     <EmbeddedResource Include="ItemAim.resx">
       <DependentUpon>ItemAim.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Muc_tieu.resx">
-      <DependentUpon>Muc_tieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewAim.resx">
-      <DependentUpon>NewAim.cs</DependentUpon>
+    <EmbeddedResource Include="Muctieu.resx">
+      <DependentUpon>Muctieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhatKy.resx">
       <DependentUpon>NhatKy.cs</DependentUpon>
