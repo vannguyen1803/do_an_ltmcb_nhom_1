@@ -38,7 +38,6 @@
             this.lb_start = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lb_status = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_aim = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,11 +50,11 @@
             // 
             // rtb_mota
             // 
-            this.rtb_mota.Location = new System.Drawing.Point(231, 53);
+            this.rtb_mota.Location = new System.Drawing.Point(232, 46);
             this.rtb_mota.Name = "rtb_mota";
             this.rtb_mota.ReadOnly = true;
             this.rtb_mota.Size = new System.Drawing.Size(177, 61);
-            this.rtb_mota.TabIndex = 36;
+            this.rtb_mota.TabIndex = 58;
             this.rtb_mota.Text = "";
             // 
             // btn_xoa
@@ -69,10 +68,10 @@
             this.btn_xoa.FillColor = System.Drawing.Color.LightSkyBlue;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_xoa.Location = new System.Drawing.Point(601, 102);
+            this.btn_xoa.Location = new System.Drawing.Point(505, 83);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(126, 45);
-            this.btn_xoa.TabIndex = 35;
+            this.btn_xoa.TabIndex = 57;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
@@ -87,10 +86,10 @@
             this.btn_complete.FillColor = System.Drawing.Color.LightSkyBlue;
             this.btn_complete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_complete.ForeColor = System.Drawing.Color.White;
-            this.btn_complete.Location = new System.Drawing.Point(575, 37);
+            this.btn_complete.Location = new System.Drawing.Point(490, 27);
             this.btn_complete.Name = "btn_complete";
             this.btn_complete.Size = new System.Drawing.Size(152, 50);
-            this.btn_complete.TabIndex = 10;
+            this.btn_complete.TabIndex = 48;
             this.btn_complete.Text = "Hoàn thành";
             this.btn_complete.Click += new System.EventHandler(this.btn_complete_Click);
             // 
@@ -98,83 +97,76 @@
             // 
             this.lb_end.AutoSize = true;
             this.lb_end.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_end.Location = new System.Drawing.Point(227, 190);
+            this.lb_end.Location = new System.Drawing.Point(228, 183);
             this.lb_end.Name = "lb_end";
             this.lb_end.Size = new System.Drawing.Size(0, 18);
-            this.lb_end.TabIndex = 33;
+            this.lb_end.TabIndex = 56;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(37, 193);
+            this.label9.Location = new System.Drawing.Point(38, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(106, 18);
-            this.label9.TabIndex = 32;
+            this.label9.TabIndex = 55;
             this.label9.Text = "Ngày kết thúc: ";
             // 
             // lb_start
             // 
             this.lb_start.AutoSize = true;
             this.lb_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_start.Location = new System.Drawing.Point(227, 162);
+            this.lb_start.Location = new System.Drawing.Point(228, 155);
             this.lb_start.Name = "lb_start";
             this.lb_start.Size = new System.Drawing.Size(0, 18);
-            this.lb_start.TabIndex = 31;
+            this.lb_start.TabIndex = 54;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(37, 162);
+            this.label7.Location = new System.Drawing.Point(38, 155);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 18);
-            this.label7.TabIndex = 30;
+            this.label7.TabIndex = 53;
             this.label7.Text = "Ngày bắt đầu: ";
             // 
             // lb_status
             // 
             this.lb_status.AutoSize = true;
             this.lb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_status.Location = new System.Drawing.Point(227, 129);
+            this.lb_status.Location = new System.Drawing.Point(228, 122);
             this.lb_status.Name = "lb_status";
             this.lb_status.Size = new System.Drawing.Size(0, 18);
-            this.lb_status.TabIndex = 29;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 37;
+            this.lb_status.TabIndex = 52;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(37, 51);
+            this.label3.Location = new System.Drawing.Point(38, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 18);
-            this.label3.TabIndex = 27;
+            this.label3.TabIndex = 51;
             this.label3.Text = "Mô tả: ";
             // 
             // lb_aim
             // 
             this.lb_aim.AutoSize = true;
             this.lb_aim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_aim.Location = new System.Drawing.Point(227, 21);
+            this.lb_aim.Location = new System.Drawing.Point(228, 14);
             this.lb_aim.Name = "lb_aim";
             this.lb_aim.Size = new System.Drawing.Size(0, 18);
-            this.lb_aim.TabIndex = 26;
+            this.lb_aim.TabIndex = 50;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 21);
+            this.label1.Location = new System.Drawing.Point(38, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 18);
-            this.label1.TabIndex = 25;
+            this.label1.TabIndex = 49;
             this.label1.Text = "Mục tiêu: ";
             // 
             // ItemAim
@@ -191,12 +183,11 @@
             this.Controls.Add(this.lb_start);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lb_status);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_aim);
             this.Controls.Add(this.label1);
             this.Name = "ItemAim";
-            this.Size = new System.Drawing.Size(769, 244);
+            this.Size = new System.Drawing.Size(680, 237);
             this.Click += new System.EventHandler(this.ItemAim_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,7 +204,6 @@
         private System.Windows.Forms.Label lb_start;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lb_status;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_aim;
         private System.Windows.Forms.Label label1;

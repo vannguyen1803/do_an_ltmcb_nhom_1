@@ -86,10 +86,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(74, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 50);
+            this.label2.Size = new System.Drawing.Size(123, 44);
             this.label2.TabIndex = 0;
             this.label2.Text = "Study\nManagement";
             // 
@@ -260,10 +260,8 @@
             // 
             // pn_content
             // 
-            this.pn_content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(232)))), ((int)(((byte)(254)))));
+            this.pn_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_content.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pn_content.Location = new System.Drawing.Point(217, 51);
             this.pn_content.Name = "pn_content";

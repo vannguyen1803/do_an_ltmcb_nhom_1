@@ -708,7 +708,6 @@ namespace Project_doan
                 foreach (var doc in snap.Documents)
                 {
                     var data = doc.ToDictionary();
-
                     Aim aim = new Aim
                     {
                         Id = data["Id"].ToString(),

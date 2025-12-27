@@ -37,17 +37,15 @@ namespace Project_doan
 
                 List<Aim> aimlist = await firebase.GetAllAimsAsync();
 
-                if (aimlist == null || aimlist.Count == 0) return;                    
+                if (aimlist == null || aimlist.Count == 0) return;  
 
-                aimlist = aimlist.OrderBy(x => x.status).ThenBy(x => x.date_end).ToList();
+                aimlist = aimlist.Where(x => x.isDeleted == false).OrderBy(x => x.status).ThenBy(x => x.date_end).ToList();
 
                 foreach (Aim aim in aimlist)
                 {
                     ItemAim item = new ItemAim();
 
                     item.SetData(aim);
-
-                    item.Width = flowLayoutPanel1.ClientSize.Width;
 
                     item.OnDeleteCliked += async (s, args) =>
                     {
@@ -96,7 +94,6 @@ namespace Project_doan
                         btn_add.Visible = false;
                     };
                     flowLayoutPanel1.Controls.Add(item);
-
                 }
             }
             catch (Exception ex) {
