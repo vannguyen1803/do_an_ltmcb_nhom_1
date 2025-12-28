@@ -76,7 +76,7 @@
             this.btn_nha.ForeColor = System.Drawing.Color.White;
             this.btn_nha.Image = global::Project_doan.Properties.Resources.home;
             this.btn_nha.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_nha.Location = new System.Drawing.Point(12, 3);
+            this.btn_nha.Location = new System.Drawing.Point(4, 3);
             this.btn_nha.Name = "btn_nha";
             this.btn_nha.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btn_nha.Size = new System.Drawing.Size(60, 60);
@@ -86,10 +86,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(74, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 50);
+            this.label2.Size = new System.Drawing.Size(123, 44);
             this.label2.TabIndex = 0;
             this.label2.Text = "Study\nManagement";
             // 
@@ -103,7 +103,7 @@
             this.btn_tk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_tk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_tk.FillColor = System.Drawing.Color.Transparent;
-            this.btn_tk.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tk.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tk.ForeColor = System.Drawing.Color.Black;
             this.btn_tk.Location = new System.Drawing.Point(3, 461);
             this.btn_tk.Name = "btn_tk";
@@ -122,7 +122,7 @@
             this.btn_acc.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_acc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_acc.FillColor = System.Drawing.Color.Transparent;
-            this.btn_acc.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_acc.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_acc.ForeColor = System.Drawing.Color.Black;
             this.btn_acc.Location = new System.Drawing.Point(0, 561);
             this.btn_acc.Name = "btn_acc";
@@ -141,7 +141,7 @@
             this.btn_pomo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_pomo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_pomo.FillColor = System.Drawing.Color.Transparent;
-            this.btn_pomo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pomo.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pomo.ForeColor = System.Drawing.Color.Black;
             this.btn_pomo.Location = new System.Drawing.Point(3, 394);
             this.btn_pomo.Name = "btn_pomo";
@@ -160,7 +160,7 @@
             this.btn_diary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_diary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_diary.FillColor = System.Drawing.Color.Transparent;
-            this.btn_diary.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_diary.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_diary.ForeColor = System.Drawing.Color.Black;
             this.btn_diary.Location = new System.Drawing.Point(4, 326);
             this.btn_diary.Name = "btn_diary";
@@ -179,7 +179,7 @@
             this.btn_note.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_note.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_note.FillColor = System.Drawing.Color.Transparent;
-            this.btn_note.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_note.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_note.ForeColor = System.Drawing.Color.Black;
             this.btn_note.Location = new System.Drawing.Point(4, 258);
             this.btn_note.Name = "btn_note";
@@ -198,7 +198,7 @@
             this.btn_aim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_aim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_aim.FillColor = System.Drawing.Color.Transparent;
-            this.btn_aim.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aim.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aim.ForeColor = System.Drawing.Color.Black;
             this.btn_aim.Location = new System.Drawing.Point(4, 190);
             this.btn_aim.Name = "btn_aim";
@@ -217,7 +217,7 @@
             this.btn_cal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_cal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_cal.FillColor = System.Drawing.Color.Transparent;
-            this.btn_cal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cal.Font = new System.Drawing.Font("Noto Sans SC Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cal.ForeColor = System.Drawing.Color.Black;
             this.btn_cal.Location = new System.Drawing.Point(3, 122);
             this.btn_cal.Name = "btn_cal";
@@ -250,20 +250,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MJ Brushwork", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(6, 9);
+            this.label1.Location = new System.Drawing.Point(3, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(399, 29);
+            this.label1.Size = new System.Drawing.Size(456, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chúc bạn học tập hiệu quả và vui vẻ!";
             // 
             // pn_content
             // 
-            this.pn_content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pn_content.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(232)))), ((int)(((byte)(254)))));
+            this.pn_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_content.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pn_content.Location = new System.Drawing.Point(217, 51);
             this.pn_content.Name = "pn_content";

@@ -39,7 +39,7 @@ namespace Project_doan
                 }
             }
             this.CurrentAim = aim;
-
+            
             lb_aim.Text = aim.title;
             rtb_mota.Text = aim.mota;
             lb_start.Text = aim.date_start.ToString("dd/MM/yyyy");
@@ -84,5 +84,6 @@ namespace Project_doan
         {
             OnEditClicked?.Invoke(this, this.CurrentAim);
         }
+
     }
 }
