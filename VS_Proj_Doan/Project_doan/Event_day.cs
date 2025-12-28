@@ -8,13 +8,25 @@ namespace Project_doan
         public Event CurrentEvent { get; private set; }
 
         public event Action<Event_day> OnDelete;
+        public event Action<Event_day> OnEdit;
 
         public Event_day(Event ev)
         {
             InitializeComponent();
             LoadEvent(ev);
+            AttachClickEvent(this);
         }
+        private void AttachClickEvent(Control parent)
+        {
+            if (parent == btn_xoa)
+                return;
+            parent.Click += Event_day_Click;
 
+            foreach (Control c in parent.Controls)
+            {
+                AttachClickEvent(c);
+            }
+        }
         private void LoadEvent(Event ev)
         {
             CurrentEvent = ev;
@@ -28,6 +40,10 @@ namespace Project_doan
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             OnDelete?.Invoke(this);
+        }
+        private void Event_day_Click(object sender, EventArgs e)
+        {
+            OnEdit?.Invoke(this);
         }
     }
 }

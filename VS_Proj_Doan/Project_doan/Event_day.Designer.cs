@@ -56,9 +56,9 @@
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.Color.LightCyan;
-            this.guna2Panel1.Location = new System.Drawing.Point(3, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(563, 215);
+            this.guna2Panel1.Size = new System.Drawing.Size(569, 230);
             this.guna2Panel1.TabIndex = 0;
             // 
             // btn_xoa
@@ -72,8 +72,8 @@
             this.btn_xoa.FillColor2 = System.Drawing.Color.LightSkyBlue;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_xoa.Location = new System.Drawing.Point(447, 162);
-            this.btn_xoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_xoa.Location = new System.Drawing.Point(453, 177);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(2);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(70, 31);
             this.btn_xoa.TabIndex = 8;
@@ -86,6 +86,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtp_end.BackColor = System.Drawing.Color.Transparent;
             this.dtp_end.Checked = true;
+            this.dtp_end.Enabled = false;
             this.dtp_end.FillColor = System.Drawing.Color.AliceBlue;
             this.dtp_end.FocusedColor = System.Drawing.Color.Azure;
             this.dtp_end.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -96,7 +97,7 @@
             this.dtp_end.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtp_end.Name = "dtp_end";
             this.dtp_end.ShadowDecoration.Color = System.Drawing.Color.Gainsboro;
-            this.dtp_end.Size = new System.Drawing.Size(407, 23);
+            this.dtp_end.Size = new System.Drawing.Size(413, 23);
             this.dtp_end.TabIndex = 7;
             this.dtp_end.Value = new System.DateTime(2025, 12, 13, 20, 35, 46, 656);
             // 
@@ -117,8 +118,9 @@
             this.tb_frequen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_frequen.Name = "tb_frequen";
             this.tb_frequen.PlaceholderText = "";
+            this.tb_frequen.ReadOnly = true;
             this.tb_frequen.SelectedText = "";
-            this.tb_frequen.Size = new System.Drawing.Size(407, 30);
+            this.tb_frequen.Size = new System.Drawing.Size(413, 30);
             this.tb_frequen.TabIndex = 6;
             // 
             // tb_desc
@@ -138,8 +140,9 @@
             this.tb_desc.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_desc.Name = "tb_desc";
             this.tb_desc.PlaceholderText = "";
+            this.tb_desc.ReadOnly = true;
             this.tb_desc.SelectedText = "";
-            this.tb_desc.Size = new System.Drawing.Size(407, 29);
+            this.tb_desc.Size = new System.Drawing.Size(413, 29);
             this.tb_desc.TabIndex = 5;
             // 
             // tb_title
@@ -159,8 +162,9 @@
             this.tb_title.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tb_title.Name = "tb_title";
             this.tb_title.PlaceholderText = "";
+            this.tb_title.ReadOnly = true;
             this.tb_title.SelectedText = "";
-            this.tb_title.Size = new System.Drawing.Size(407, 29);
+            this.tb_title.Size = new System.Drawing.Size(413, 29);
             this.tb_title.TabIndex = 4;
             // 
             // label4
@@ -207,6 +211,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "Event_day";
             this.Size = new System.Drawing.Size(569, 230);
+            this.Click += new System.EventHandler(this.Event_day_Click);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

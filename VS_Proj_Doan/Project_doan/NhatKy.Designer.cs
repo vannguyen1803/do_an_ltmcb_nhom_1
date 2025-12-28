@@ -34,9 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.btn_open = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_new = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_new = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // dtpDate
@@ -109,7 +109,7 @@
             this.btn_save.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_save.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(377, 421);
+            this.btn_save.Location = new System.Drawing.Point(813, 421);
             this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(121, 35);
@@ -119,7 +119,7 @@
             // 
             // btn_open
             // 
-            this.btn_open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_open.BorderRadius = 10;
             this.btn_open.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_open.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -129,33 +129,13 @@
             this.btn_open.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_open.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_open.ForeColor = System.Drawing.Color.White;
-            this.btn_open.Location = new System.Drawing.Point(667, 421);
+            this.btn_open.Location = new System.Drawing.Point(4, 421);
             this.btn_open.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_open.Name = "btn_open";
             this.btn_open.Size = new System.Drawing.Size(121, 35);
             this.btn_open.TabIndex = 6;
-            this.btn_open.Text = "List";
+            this.btn_open.Text = "Back";
             this.btn_open.Click += new System.EventHandler(this.btn_open_Click);
-            // 
-            // btn_new
-            // 
-            this.btn_new.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_new.BorderRadius = 10;
-            this.btn_new.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_new.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_new.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_new.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_new.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_new.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_new.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(812, 421);
-            this.btn_new.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(121, 35);
-            this.btn_new.TabIndex = 7;
-            this.btn_new.Text = "New";
-            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // label2
             // 
@@ -180,12 +160,33 @@
             this.guna2Button1.FillColor = System.Drawing.Color.DeepSkyBlue;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(521, 421);
+            this.guna2Button1.Location = new System.Drawing.Point(672, 421);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(121, 35);
             this.guna2Button1.TabIndex = 9;
             this.guna2Button1.Text = "Delete";
+            // 
+            // btn_new
+            // 
+            this.btn_new.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_new.BorderRadius = 10;
+            this.btn_new.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_new.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_new.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_new.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_new.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_new.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_new.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_new.ForeColor = System.Drawing.Color.White;
+            this.btn_new.Location = new System.Drawing.Point(812, 421);
+            this.btn_new.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_new.Name = "btn_new";
+            this.btn_new.Size = new System.Drawing.Size(121, 35);
+            this.btn_new.TabIndex = 7;
+            this.btn_new.Text = "New";
+            this.btn_new.Visible = false;
+            this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
             // NhatKy
             // 
@@ -216,8 +217,8 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btn_save;
         private Guna.UI2.WinForms.Guna2Button btn_open;
-        private Guna.UI2.WinForms.Guna2Button btn_new;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_new;
     }
 }

@@ -51,34 +51,37 @@ namespace Project_doan
                 item.OnDelete -= Item_OnDelete;
                 item.OnDelete += Item_OnDelete;
 
-                item.Click -= Item_OnClick;
-                item.Click += Item_OnClick;
+                item.OnEdit -= Item_OnEdit;   // 👈 sửa
+                item.OnEdit += Item_OnEdit;
 
                 flp_events.Controls.Add(item);
             }
         }
 
-        private void Item_OnClick(object sender, EventArgs e)
+        private void Item_OnEdit(Event_day item)
         {
-            Event_day item = sender as Event_day;
-            if (item == null) return;
+            if (item == null || item.CurrentEvent == null)
+                return;
 
-            EditEvent frm = new EditEvent(item.CurrentEvent);
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            using (EditEvent frm = new EditEvent(item.CurrentEvent))
             {
-                is_changed = true;
-
-                int idx = _events.FindIndex(x => x.UId == frm.CurrentEvent.UId);
-                if (idx >= 0)
+                if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    _events[idx] = frm.CurrentEvent;
-                }
+                    is_changed = true;
 
-                LoadEvents();
-                OnAddEvent?.Invoke(frm.CurrentEvent);
+                    int idx = _events.FindIndex(x => x.UId == frm.CurrentEvent.UId);
+                    if (idx >= 0)
+                    {
+                        _events[idx] = frm.CurrentEvent;
+                    }
+
+                    LoadEvents();
+
+                    OnAddEvent?.Invoke(frm.CurrentEvent); // refresh calendar
+                }
             }
         }
+
 
         private void Item_OnDelete(Event_day item)
         {

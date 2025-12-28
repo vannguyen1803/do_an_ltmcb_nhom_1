@@ -276,11 +276,7 @@ namespace Project_doan
         {
 
         }
-        private void pn_header_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        
         private void btn_nextmonth_Click(object sender, EventArgs e)
         {
             month++;

@@ -155,7 +155,6 @@
             this.label1.Size = new System.Drawing.Size(78, 25);
             this.label1.TabIndex = 14;
             this.label1.Text = "Tiêu đề";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tb_title
             // 

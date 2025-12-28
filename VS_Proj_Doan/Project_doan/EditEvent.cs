@@ -188,9 +188,5 @@ namespace Project_doan
             return dates;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
