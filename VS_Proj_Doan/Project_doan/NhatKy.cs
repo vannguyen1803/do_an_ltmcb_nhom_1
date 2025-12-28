@@ -118,5 +118,10 @@ namespace Project_doan
             rtb_content.Clear();
             tb_title.Focus();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
