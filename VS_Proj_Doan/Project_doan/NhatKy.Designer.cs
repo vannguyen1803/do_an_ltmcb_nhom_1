@@ -42,7 +42,7 @@
             // dtpDate
             // 
             this.dtpDate.Checked = true;
-            this.dtpDate.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.dtpDate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(163)))), ((int)(((byte)(250)))));
             this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpDate.Location = new System.Drawing.Point(4, 45);
@@ -106,7 +106,7 @@
             this.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_save.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_save.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(163)))), ((int)(((byte)(250)))));
             this.btn_save.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.Color.White;
             this.btn_save.Location = new System.Drawing.Point(813, 421);
@@ -126,7 +126,7 @@
             this.btn_open.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_open.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_open.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_open.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_open.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(163)))), ((int)(((byte)(250)))));
             this.btn_open.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_open.ForeColor = System.Drawing.Color.White;
             this.btn_open.Location = new System.Drawing.Point(4, 421);
@@ -141,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(163)))), ((int)(((byte)(250)))));
             this.label2.Location = new System.Drawing.Point(397, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 27);
@@ -157,7 +157,7 @@
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(163)))), ((int)(((byte)(250)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Location = new System.Drawing.Point(672, 421);
@@ -176,10 +176,10 @@
             this.btn_new.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_new.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_new.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_new.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_new.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(163)))), ((int)(((byte)(250)))));
             this.btn_new.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new.ForeColor = System.Drawing.Color.White;
-            this.btn_new.Location = new System.Drawing.Point(812, 421);
+            this.btn_new.Location = new System.Drawing.Point(520, 421);
             this.btn_new.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(121, 35);
